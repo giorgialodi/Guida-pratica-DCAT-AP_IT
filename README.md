@@ -216,7 +216,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 ####Elementi che contribuiscono a descrivere un Catalogo in DCAT-AP_IT
 Un catalogo è descritto da alcuni elementi **obbligatori**:
 
-> **_TITOLO del CATALOGO_**: ``dct:title``
+1) **_TITOLO del CATALOGO_**: ``dct:title``
 
 <table align="left">
   <tr> 
@@ -289,7 +289,7 @@ Un catalogo è descritto da alcuni elementi **obbligatori**:
 	
 ```
 
->**_DESCRIZIONE del CATALOGO_**: ``dct:description``
+2) **_DESCRIZIONE del CATALOGO_**: ``dct:description``
 
 <table align="left">
   <tr> 
