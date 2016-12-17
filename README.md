@@ -215,6 +215,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 <a name="elementi-catalogo" />
 ####Elementi che contribuiscono a descrivere un Catalogo in DCAT-AP_IT
 Un catalogo è descritto da alcuni elementi **obbligatori**:
+
 <br />
 1) **_TITOLO del CATALOGO_**: ``dct:title``
 
@@ -233,11 +234,11 @@ Un catalogo è descritto da alcuni elementi **obbligatori**:
   </tr>
   <tr>
     <td align="left">Riferimento</td>
-    <td align="left">http://dublincore.org/documents/dcmi-terms/#terms-title</td>
+    <td align="left">hhttp://purl.org/dc/terms/title</td>
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">inserire il nome ufficiale del catalogo. <br /><b>Si raccomanda di inserire un testo semplice e corto. Si raccomanda di non utilizzare acronimi o abbreviazioni incomprensibili. Se si vogliono utilizzare comunque gli acronimi, riportare anche il nome esteso. Nel caso il catalogo sia parte di un progetto più ampio, si consiglia di indicare, tra parentesi, il nome del progetto alla fine del titolo stesso.</b> <br />Esempio: "Catalogo dei dati aperti dell'AgID (Agenzia per l'Italia Digitale)" oppure "Catalogo delle banche dati  della Regione Lazio".</td>
+    <td align="left"><b>Si raccomanda di inserire un testo semplice e corto. Si raccomanda di non utilizzare acronimi o abbreviazioni incomprensibili. Se si vogliono utilizzare comunque gli acronimi, riportare anche il nome esteso. Nel caso il catalogo sia parte di un progetto più ampio, si consiglia di indicare, tra parentesi, il nome del progetto alla fine del titolo stesso.</b> <br />Esempio: "Catalogo dei dati aperti dell'AgID (Agenzia per l'Italia Digitale)" oppure "Catalogo delle banche dati  della Regione Lazio".</td>
   </tr>
 </table>
 
@@ -296,13 +297,22 @@ Un catalogo è descritto da alcuni elementi **obbligatori**:
     <td align="left">Cardinalità</td>
     <td align="left">1..N (può esistere più di un'istanza in diverse lingue della stessa proprietà)</td>
   </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Obbligatorio</td>
+  </tr>
+  <tr>
   <tr>
     <td align="left">Descrizione</td>
     <td align="left">La descrizione del Catalogo</td>
   </tr>
   <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://purl.org/dc/terms/description</td>
+  </tr>
+  <tr>
     <td align="left">Uso</td>
-    <td align="left">Inserire la descrizione del catalogo. <br /><b>Si raccomanda di inserire una breve illustrazione delle  caratteristiche principali del catalogo. Evitare di utilizzare un linguaggio ricco di riferimenti normativi. Utilizzare invece un linguaggio semplice che possa aiutare qualsiasi utente a identificare il catalogo. Si ricorda che: nessun tag HTML è consentito.</b> <br />Esempio: "Il catalogo contiene i dati aperti dell'Agenzia per l'Italia Digitale, in particolare, i dati aperti dell'Indice della Pubblica Amministrazione (IPA)" e dei contratti del Sistema Pubblico di Connettività (SPC) relativi alle gare del 2007.</td>
+    <td align="left"><b>Si raccomanda di inserire una breve illustrazione delle  caratteristiche principali del catalogo. Evitare di utilizzare un linguaggio ricco di riferimenti normativi. Utilizzare invece un linguaggio semplice che possa aiutare qualsiasi utente a identificare il catalogo. Si ricorda che: nessun tag HTML è consentito.</b> <br />Esempio: "Il catalogo contiene i dati aperti dell'Agenzia per l'Italia Digitale, in particolare, i dati aperti dell'Indice della Pubblica Amministrazione (IPA)" e dei contratti del Sistema Pubblico di Connettività (SPC) relativi alle gare del 2007.</td>
   </tr>
 </table>
 
@@ -346,4 +356,30 @@ Un catalogo è descritto da alcuni elementi **obbligatori**:
 	dct:description 		"Il catalogo dei dati aperti della pubblica amministrazione italiana"@it ;
 	[altri elementi per specificare il catalogo] .
 ```
->**_EDITORE del CATALOGO_**: ``dct:publisher``
+<br />
+3) **_EDITORE del CATALOGO_**: ``dct:publisher``
+<table align="left">
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">1</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Obbligatorio</td>
+  </tr>
+  <tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">L'editore del Catalogo</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://purl.org/dc/terms/publisher</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Un'organizzazione (o pubblica amministrazione) responsabile di rendere disponibile (pubblicare) il catalogo. <b> Si raccomanda di evitare l'inserimento di nomi di singole persone.</b><br />Si vedano gli <a href="#soggetto-esempi-JSONLD-RDFXML-RDFTURTLE">esempi riportati sull'uso della classe Agente</a></td>
+  </tr>
+</table>
+
+
