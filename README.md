@@ -17,6 +17,7 @@ CC-BY 4.0 (Creative Commons Attribution).
   * [Elementi che descrivono un catalogo](#elementi-catalogo)
     * [dct:title](#dcttitle-JSONLD-RDFXML-RDFTURTLE)
     * [dct:description](#dctdescription-JSONLD-RDFXML-RDFTURTLE)
+    * [dct:publisher](#dctpublisher-JSONLD-RDFXML-RDFTURTLE)
   
   
 
@@ -382,4 +383,9 @@ Un catalogo è descritto da alcuni elementi **obbligatori**:
   </tr>
 </table>
 
+<a name="dctpublisher-JSONLD-RDFXML-RDFTURTLE" />
+##### Esempi di uso di ``dct:description`` in JSON-LD, RDF/XML e RDF/Turtle
+>``JSON-LD``
+
+```JSON
 
