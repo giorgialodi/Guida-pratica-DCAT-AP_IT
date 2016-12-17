@@ -23,8 +23,8 @@ CC-BY 4.0 (Creative Commons Attribution).
 <a name="soggetto" />
 ###Come definire un soggetto/organizzazione in DCAT-AP_IT
 Un soggetto/organizzazione è definito mediante la specifica della classe _Agente_ identificata univocamente da un URI (Uniform Resource Identifier).
-<a name="agent" />
-#### Definitione di ``dcatapit:Agent``
+
+<a name="agent" /> #### Definitione di ``dcatapit:Agent``
 <table align="left">
     <tr>
         <td align="left">URI</td>
