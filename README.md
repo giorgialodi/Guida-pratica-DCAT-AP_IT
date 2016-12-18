@@ -1,8 +1,9 @@
 # Guida pratica a DCAT-AP_IT
 ## Profilo italiano di metadazione per la descrizione di dati presenti in cataloghi (DCAT-AP_IT)
 
-Questo progetto rappresenta la guida pratica offerta dal portale ``dati.gov.it`` per l'adeguamento da parte delle Pubbliche Amministrazioni al profilo nazionale di metadatazione DCAT-AP_IT così come raccomandato nell'ambito delle linee guida per la valorizzazione del patrimonio informativo pubblico (anno 2016).
+Questo progetto rappresenta la guida pratica offerta dal portale ``dati.gov.it`` per l'adeguamento delle Pubbliche Amministrazioni al profilo nazionale di metadatazione DCAT-AP_IT, così come raccomandato nell'ambito delle [linee guida per la valorizzazione del patrimonio informativo pubblico (anno 2016)](http://www.dati.gov.it/sites/default/files/LG2016_0.pdf).
 Per dettagli sulla semantica degli elementi si invita a consultare la [relativa specifica DCAT-AP_IT 1.0](http://www.dati.gov.it/sites/default/files/DCAT-AP_IT_v10.pdf) disponibile anche come [ontologia OWL.](http://dati.gov.it/onto/dcatapit)
+La presente guida pratica fornisce una descrizione degli elementi principali del profilo con le relative proprietà. Per ciascun elemento e proprietà, al fine di facilitare le amministrazioni nella predisposizione dei metadati utili per la fase di harvesting da parte del catalogo ``dati.gov.it``, sono forniti esempi di uso nelle seguenti serializzazioni RDF: JSON-LD, RDF/XML, RDF/Turtle. Per facilitare altresì l'uso della modalità di alimentazione ``dati.gov.it``  "web editor online", screenshot sull'uso dell'applicazione sono inseriti per ciascuna proprietà.
 
 **Licenza:**
 CC-BY 4.0 (Creative Commons Attribution).
@@ -10,19 +11,22 @@ CC-BY 4.0 (Creative Commons Attribution).
 ##Indice
 * [Come definire un soggetto/organizzazione in DCAT-AP_IT](#soggetto)
   * [dcatapit:Agent](#agent)
+  * [Elementi obbligatori che descrivono un Soggetto/Organizzazione in DCAT-AP_IT](#elementi-soggetto)
   * [Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle](#soggetto-esempi-JSONLD-RDFXML-RDFTURTLE)
 * [Come definire un catalogo in DCAT-AP_IT](#catalogo)
   * [dcatapit:Catalog](#catalog)
   * [Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle](#catalogo-esempi-JSONLD-RDFXML-RDFTURTLE)
-  * [Elementi che descrivono un catalogo](#elementi-catalogo)
-    * [dct:title](#dcttitle-JSONLD-RDFXML-RDFTURTLE)
-    * [dct:description](#dctdescription-JSONLD-RDFXML-RDFTURTLE)
-    * [dct:publisher](#dctpublisher-JSONLD-RDFXML-RDFTURTLE)
+  * [Elementi obbligatori che descrivono un Catalogo in DCAT-AP_IT](#elementi-catalogo)
+    * [Titolo del catalogo](#dcttitle-JSONLD-RDFXML-RDFTURTLE)
+    * [Descrizione del catalogo](#dctdescription-JSONLD-RDFXML-RDFTURTLE)
+    * [Editore del catalogo](#dctpublisher-JSONLD-RDFXML-RDFTURTLE)
+    * [Data di ultima modifica del catalogo](#dctmodified-JSONLD-RDFXML-RDFTURTLE)
+    * [Dataset del catalogo](#dcatdataset-JSONLD-RDFXML-RDFTURTLE)
   
   
 
 <a name="soggetto" />
-###Come definire un soggetto/organizzazione in DCAT-AP_IT
+###Come definire un Soggetto/Organizzazione in DCAT-AP_IT
 Un soggetto/organizzazione è definito mediante la specifica della classe _Agente_ identificata univocamente da un URI (Uniform Resource Identifier).
 <a name="agent" /> 
 ####Definizione di ``dcatapit:Agent``
@@ -52,6 +56,63 @@ Un soggetto/organizzazione è definito mediante la specifica della classe _Agent
         <td align="left">http://www.dati.gov.it/onto/dcatapit#Agent</td>
     </tr>
 </table>
+
+<a name="elementi-soggetto" />
+####Elementi obbligatori che descrivono un Soggetto/Organizzazione in DCAT-AP_IT
+
+<br />
+1) **_IDENTIFICATIVO del SOGGETTO_**: ``dct:identifier``
+
+<table align="left">
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">1 </td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Obbligatorio</td>
+  </tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">L'identificativo del soggetto</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://purl.org/dc/terms/identifier</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Nel caso di pubbliche amministrazioni, l'identificativo è rappresentato dal codice IPA (Indice della Pubblica Amministrazione). Per organizzazioni private, l'identiticativo è rappresentato dalla partita IVA.
+ <br />Esempio: "AgID" oppure "r_lazio".</td>
+  </tr>
+</table>
+
+<br />
+1) **_NOME del SOGGETTO_**: ``foaf:name``
+<table align="left">
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">1 </td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Obbligatorio</td>
+  </tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">Il nome del soggetto</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://xmlns.com/foaf/0.1/name</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Specificare il nome ufficiale della pubblica amministrazione così come riportato nell'Indice della Pubblica Amministrazione. Nel caso di oganizzazione privata, specificare il nome ufficiale della stessa così come riportato nel Registro Imprese.
+ <br />Esempio: "Agenzia per l'Italia Digitale".</td>
+  </tr>
+</table>
+
 
 <a name="soggetto-esempi-JSONLD-RDFXML-RDFTURTLE" />
 ####Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle
@@ -214,8 +275,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 	dcat:themeTaxonomy  	<http://publications.europa.eu/resource/authority/data-theme> .
 ```
 <a name="elementi-catalogo" />
-####Elementi che contribuiscono a descrivere un Catalogo in DCAT-AP_IT
-Un catalogo è descritto da alcuni elementi **obbligatori**:
+####Elementi obbligatori che descrivono un Catalogo in DCAT-AP_IT
 
 <br />
 1) **_TITOLO del CATALOGO_**: ``dct:title``
@@ -235,7 +295,7 @@ Un catalogo è descritto da alcuni elementi **obbligatori**:
   </tr>
   <tr>
     <td align="left">Riferimento</td>
-    <td align="left">hhttp://purl.org/dc/terms/title</td>
+    <td align="left">http://purl.org/dc/terms/title</td>
   </tr>
   <tr>
     <td align="left">Uso</td>
@@ -313,7 +373,7 @@ Un catalogo è descritto da alcuni elementi **obbligatori**:
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left"><b>Si raccomanda di inserire una breve illustrazione delle  caratteristiche principali del catalogo. Evitare di utilizzare un linguaggio ricco di riferimenti normativi. Utilizzare invece un linguaggio semplice che possa aiutare qualsiasi utente a identificare il catalogo. Si ricorda che: nessun tag HTML è consentito.</b> <br />Esempio: "Il catalogo contiene i dati aperti dell'Agenzia per l'Italia Digitale, in particolare, i dati aperti dell'Indice della Pubblica Amministrazione (IPA)" e dei contratti del Sistema Pubblico di Connettività (SPC) relativi alle gare del 2007.</td>
+    <td align="left"><b>Si raccomanda di fornire una breve descrizione delle caratteristiche principali del catalogo. Evitare di utilizzare un linguaggio ricco di riferimenti normativi. Utilizzare invece un linguaggio semplice che possa aiutare qualsiasi utente a identificare il catalogo. Si ricorda che nessun tag HTML è consentito.</b> <br />Esempio: "Il catalogo contiene i dati aperti dell'Agenzia per l'Italia Digitale, in particolare, i dati aperti dell'Indice della Pubblica Amministrazione (IPA) e dei contratti del Sistema Pubblico di Connettività (SPC) relativi alle gare del 2007".</td>
   </tr>
 </table>
 
@@ -384,8 +444,196 @@ Un catalogo è descritto da alcuni elementi **obbligatori**:
 </table>
 
 <a name="dctpublisher-JSONLD-RDFXML-RDFTURTLE" />
-##### Esempi di uso di ``dct:description`` in JSON-LD, RDF/XML e RDF/Turtle
+##### Esempi di uso di ``dct:publisher`` in JSON-LD, RDF/XML e RDF/Turtle
 >``JSON-LD``
 
 ```JSON
+      "@id": "http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid",
+      "@type": [
+        "dcat:Catalog",
+        "http://dati.gov.it/onto/dcatapit#\"Catalog"
+      ],
+       "dcterms:publisher": {
+        "@id": "http://dati.gov.it/resource/Amministrazione/agid"
+      },
+      
+      altri elementi che descrivono il catalogo
+      
+   
+      "@id": "http://dati.gov.it/resource/Amministrazione/agid",
+      "@type": [
+        "foaf:Agent",
+        "http://dati.gov.it/onto/dcatapit#\"Agent"
+      ],
+      "dcterms:identifier": "agid",
+      "foaf:name": {
+        "@language": "it",
+        "@value": "Agenzia per l'Italia Digitale"
+      }
+ ```
+ >``RDF/XML``
+ 
+ ```XML
+ 
+ <!-- http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid -->
+    <dcatapit:Catalog rdf:about="http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid">
+        <rdf:type rdf:resource="&dcat;Catalog"/>
+        <dct:publisher rdf:resource="http://dati.gov.it/resource/Amministrazione/agid"/>
+        [altri elementi del catalogo]
+    </dcatapit:Catalog>
+    
+ <!-- http://dati.gov.it/resource/Amministrazione/agid -->
+    <dcatapit:Agent rdf:about="http://dati.gov.it/resource/Amministrazione/agid">
+        <rdf:type rdf:resource="&foaf;Agent"/>
+        <dct:identifier>agid</dct:identifier>
+        <foaf:name xml:lang="it">Agenzia per l'Italia Digitale</foaf:name>
+    </dcatapit:Agent>
+ ```
+ >``RDF/Turtle``
+ 
+ ```Turtle
+ <http://dati.gov.it/resource/Catalogp/datigov_agid>
+	a 		dcatapit:Catalog , dcat:Catalog ;
+	dct:publisher  	<http://dati.gov.it/resource/Amministrazione/agid> ;
+	[altri elementi del catalogo] .
+ 
+ <http://dati.gov.it/resource/Amministrazione/agid>
+	a 		dcatapit:Agent , foaf:Agent ;
+	dct:identifier  "agid" ;
+	foaf:name       "Agenzia per l'Italia Digitale" .
+```
+
+<br />
+4) **_DATA di ULTIMA MODIFICA del CATALOGO_**: ``dct:modified``
+<table align="left">
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">1</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Obbligatorio</td>
+  </tr>
+  <tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">La data di ultima modifica del Catalogo</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://purl.org/dc/terms/modified</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">La data di ultima modifica del catalogo. E' la data corrispondente a qualche operazione di modifica che riguarda il catalogo o i dataset (es. l’inserimento di un nuovo dataset nel catalogo, la modifica dei metadati del catalogo o di uno dei dataset in esso inclusi) </td>
+  </tr>
+</table>
+
+<a name="dctmodified-JSONLD-RDFXML-RDFTURTLE" />
+##### Esempi di uso di ``dct:modified`` in JSON-LD, RDF/XML e RDF/Turtle
+>``JSON-LD``
+
+```JSON
+      "@id": "http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid",
+      "@type": [
+        "dcat:Catalog",
+        "http://dati.gov.it/onto/dcatapit#\"Catalog"
+      ],
+        "dcterms:modified": {
+        "@type": "xsd:date",
+        "@value": "2016-03-20"
+      },
+      
+      altri elementi che descrivono il catalogo
+
+ ```
+ >``RDF/XML``
+ 
+ ```XML
+ 
+ <!-- http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid -->
+    <dcatapit:Catalog rdf:about="http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid">
+        <rdf:type rdf:resource="&dcat;Catalog"/>
+        <dct:modified rdf:datatype="&xsd;date">2016-03-20</dct:modified>
+        [altri elementi del catalogo]
+    </dcatapit:Catalog>
+ ```
+ >``RDF/Turtle``
+ 
+ ```Turtle
+ <http://dati.gov.it/resource/Catalogp/datigov_agid>
+	a 		dcatapit:Catalog , dcat:Catalog ;
+	dct:modified	"2016-03-20"^^xsd:date ;
+	[altri elementi del catalogo] .
+```
+
+<br />
+5) **_DATASET del CATALOGO_**: ``dcat:dataset``
+<table align="left">
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">1</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Obbligatorio</td>
+  </tr>
+  <tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">E' una proprietà che lega un oggetto (dominio) <a href="#catalogo">Catalogo</a> all'oggetto (codominio) Dataset ed è utilizzata per elencare la lista di dataset presenti nel catalogo</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">https://www.w3.org/ns/dcat#dataset</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Indicare tante proprietà quanti sono i dataset presenti nel catalogo</td>
+  </tr>
+</table>
+
+<a name="dcatdataset-JSONLD-RDFXML-RDFTURTLE" />
+##### Esempi di uso di ``dcat:dataset`` in JSON-LD, RDF/XML e RDF/Turtle
+>``JSON-LD``
+
+```JSON
+      "@id": "http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid",
+      "@type": [
+        "dcat:Catalog",
+        "http://dati.gov.it/onto/dcatapit#\"Catalog"
+      ],
+      "dcat:dataset": [
+        {
+          "@id": "http://dati.gov.it/resource/Dataset/LinkedOpenIPA20_agid"
+        },
+        {
+          "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid"
+        }
+      ],
+      
+      altri elementi che descrivono il catalogo
+
+ ```
+ >``RDF/XML``
+ 
+ ```XML
+ 
+ <!-- http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid -->
+    <dcatapit:Catalog rdf:about="http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid">
+        <rdf:type rdf:resource="&dcat;Catalog"/>
+        <dcat:dataset rdf:resource="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid"/>
+        <dcat:dataset rdf:resource="http://dati.gov.it/resource/Dataset/LinkedOpenIPA20_agid"/>
+        [altri elementi del catalogo]
+    </dcatapit:Catalog>
+ ```
+ >``RDF/Turtle``
+ 
+ ```Turtle
+ <http://dati.gov.it/resource/Catalogp/datigov_agid>
+	a 		dcatapit:Catalog , dcat:Catalog ;
+	dcat:dataset    <http://dati.gov.it/resource/Dataset/LinkedOpenIPA20_agid> ;
+	dcat:dataset    <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid> ;
+	[altri elementi del catalogo] .
+```
 
