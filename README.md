@@ -25,6 +25,7 @@ CC-BY 4.0 (Creative Commons Attribution).
     * [Dataset del catalogo](#dcatdataset-JSONLD-RDFXML-RDFTURTLE)
   * [Elementi raccomandati che descrivono un Catalogo in DCAT-AP_IT](#elementi-raccomandati-catalogo)
     * [Home page del catalogo](#foafhomepage-JSONLD-RDFXML-RDFTURTLE)
+    * [Lingua del catalogo](#dctlanguage-JSONLD-RDFXML-RDFTURTLE)
   
   
 
@@ -688,7 +689,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
         "@id": "http://spcdata.digitpa.gov.it/index.html"
       }
       
-    altri elementi per specificere il catalogo
+    altri elementi del catalogo
 ```
 
 >``RDF/XML``
@@ -700,7 +701,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
         <rdf:type rdf:resource="http://dati.gov.it/onto/dcatapit#Catalog"/>
         <rdf:type rdf:resource="&dcat;Catalog"/>
         <foaf:homepage rdf:resource="http://spcdata.digitpa.gov.it/index.html"/>
-        [altri elementi per specificare il catalogo]
+        [altri elementi del catalogo]
     </rdf:Description>
 ```
 
@@ -709,9 +710,79 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 ```Turtle
 <http://dati.gov.it/resource/Catalogp/datigov_agid>
 	a 	        dcatapit:Catalog , dcat:Catalog ;
-	foaf:homepage	<http://spcdata.digitpa.gov.it/index.html> ; ;
+	foaf:homepage	<http://spcdata.digitpa.gov.it/index.html>  ;
   
-  [altri elementi per specificare il catalogo] .
+  [altri elementi del catalogo] .
 	
 ```
+
+<br />
+2) **_LINGUA del CATALOGO_**: ``dct:language``
+
+<table align="left">
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">0..N (possono esistere più istanze della proprietà per ciascuna lingua del catalogo)</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Raccomandato</td>
+  </tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">La lingua del Catalogo. La proprietà lega l'oggetto (dominio) <a href="#catalogo">Catalogo</a> a un oggetto (codominio) di tipo dct:LinguisticSystem (specificato mediante un URI- Uniform Resource Identifier)</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://purl.org/dc/terms/language</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Scegliere una o più lingue utilizzate nel catalogo. <b>La scelta della lingua è regolata dall'uso obbligatorio del <a href="http://publications.europa.eu/mdr/resource/authority/language/skos/languages-skos.rdf">vocabolario definito a livello Europeo sulle lingue.</a></b></td>
+  </tr>
+</table>
+
+<a name="dctlanguage-JSONLD-RDFXML-RDFTURTLE" />
+##### Esempi di uso di ``dct:language`` in JSON-LD, RDF/XML e RDF/Turtle
+>``JSON-LD``
+
+```JSON
+
+      "@id": "http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid",
+      "@type": [
+        "dcat:Catalog",
+        "http://dati.gov.it/onto/dcatapit#\"Catalog"
+      ],
+      "dcterms:language": {
+        "@id": "http://publications.europa.eu/resource/authority/language/ITA"
+      },
+      
+    altri elementi del catalogo
+```
+
+>``RDF/XML``
+
+```XML
+ <!-- http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid -->
+
+    <rdf:Description rdf:about="http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid">
+        <rdf:type rdf:resource="http://dati.gov.it/onto/dcatapit#Catalog"/>
+        <rdf:type rdf:resource="&dcat;Catalog"/>
+        <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/ITA"/>
+        [altri elementi del catalogo]
+    </rdf:Description>
+```
+
+>``RDF/Turtle``
+
+```Turtle
+<http://dati.gov.it/resource/Catalogp/datigov_agid>
+	a 	        dcatapit:Catalog , dcat:Catalog ;
+	dct:language	<http://publications.europa.eu/resource/authority/language/ITA> ;
+  
+  [altri elementi del catalogo] .
+	
+```
+
+
 
