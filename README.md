@@ -11,17 +11,20 @@ CC-BY 4.0 (Creative Commons Attribution).
 ##Indice
 * [Come definire un soggetto/organizzazione in DCAT-AP_IT](#soggetto)
   * [dcatapit:Agent](#agent)
-  * [Elementi obbligatori che descrivono un Soggetto/Organizzazione in DCAT-AP_IT](#elementi-soggetto)
+  * [Elementi obbligatori che descrivono un Soggetto/Organizzazione in DCAT-AP_IT](#elementi-obbligatori-soggetto)
   * [Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle](#soggetto-esempi-JSONLD-RDFXML-RDFTURTLE)
+  * [Come documentare un soggetto in DCAT-AP_IT con il web editor di ``dati.gov.it``](#soggetto-webeditor)
 * [Come definire un catalogo in DCAT-AP_IT](#catalogo)
   * [dcatapit:Catalog](#catalog)
   * [Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle](#catalogo-esempi-JSONLD-RDFXML-RDFTURTLE)
-  * [Elementi obbligatori che descrivono un Catalogo in DCAT-AP_IT](#elementi-catalogo)
+  * [Elementi obbligatori che descrivono un Catalogo in DCAT-AP_IT](#elementi-obbligatori-catalogo)
     * [Titolo del catalogo](#dcttitle-JSONLD-RDFXML-RDFTURTLE)
     * [Descrizione del catalogo](#dctdescription-JSONLD-RDFXML-RDFTURTLE)
     * [Editore del catalogo](#dctpublisher-JSONLD-RDFXML-RDFTURTLE)
     * [Data di ultima modifica del catalogo](#dctmodified-JSONLD-RDFXML-RDFTURTLE)
     * [Dataset del catalogo](#dcatdataset-JSONLD-RDFXML-RDFTURTLE)
+  * [Elementi raccomandati che descrivono un Catalogo in DCAT-AP_IT](#elementi-raccomandati-catalogo)
+    * [Home page del catalogo](#foafhomepage-JSONLD-RDFXML-RDFTURTLE)
   
   
 
@@ -57,7 +60,7 @@ Un soggetto/organizzazione è definito mediante la specifica della classe _Agent
     </tr>
 </table>
 
-<a name="elementi-soggetto" />
+<a name="elementi-obbligatori-soggetto" />
 ####Elementi obbligatori che descrivono un Soggetto/Organizzazione in DCAT-AP_IT
 
 <br />
@@ -153,6 +156,10 @@ Un soggetto/organizzazione è definito mediante la specifica della classe _Agent
 	 dct:identifier  "agid" ;
 	 foaf:name       "Agenzia per l'Italia Digitale" .
 ```
+<a name="soggetto-webeditor" />
+####Come documentare un soggetto in DCAT-AP_IT con il web editor di ``dati.gov.it``
+Selezionare dal menu di sinistra la voce _"Soggetti e Ruoli"_come mostrato nella seguente immagine...
+**Inserire screenshot web editor**
 
 <a name="catalogo" />
 ###Come definire un catalogo di dati in DCAT-AP_IT
@@ -274,7 +281,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 	foaf:homepage   		<http://spcdata.digitpa.gov.it/index.html> ;
 	dcat:themeTaxonomy  	<http://publications.europa.eu/resource/authority/data-theme> .
 ```
-<a name="elementi-catalogo" />
+<a name="elementi-obbligatori-catalogo" />
 ####Elementi obbligatori che descrivono un Catalogo in DCAT-AP_IT
 
 <br />
@@ -635,5 +642,75 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 	dcat:dataset    <http://dati.gov.it/resource/Dataset/LinkedOpenIPA20_agid> ;
 	dcat:dataset    <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid> ;
 	[altri elementi del catalogo] .
+```
+<a name="elementi-raccomandati-catalogo" />
+####Elementi raccomandati che descrivono un Catalogo in DCAT-AP_IT
+
+<br />
+1) **_HOME PAGE del CATALOGO_**: ``foaf:homepage``
+
+<table align="left">
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">0..1</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Raccomandato</td>
+  </tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">L'home page del Catalogo. La proprietà lega l'oggetto (dominio) <a href="#catalogo">Catalogo</a> a un oggetto (codominio) di tipo foaf:Document (specificato mediante un URI- Uniform Resource Identifier)</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://xmlns.com/foaf/0.1/homepage</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left"><b>Si raccomanda di indicare l’URL di una pagina web attiva che funge da pagina principale (home page) del catalogo. Si consiglia di indicare l’indirizzo completo, comprensivo anche di protocollo (es. http://).</b> <br />Esempio: "http://spcdata.digitpa.gov.it/index.html".</td>
+  </tr>
+</table>
+
+<a name="foafhomepage-JSONLD-RDFXML-RDFTURTLE" />
+##### Esempi di uso di ``foaf:homepage`` in JSON-LD, RDF/XML e RDF/Turtle
+>``JSON-LD``
+
+```JSON
+
+      "@id": "http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid",
+      "@type": [
+        "dcat:Catalog",
+        "http://dati.gov.it/onto/dcatapit#\"Catalog"
+      ],
+      "foaf:homepage": {
+        "@id": "http://spcdata.digitpa.gov.it/index.html"
+      }
+      
+    altri elementi per specificere il catalogo
+```
+
+>``RDF/XML``
+
+```XML
+ <!-- http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid -->
+
+    <rdf:Description rdf:about="http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid">
+        <rdf:type rdf:resource="http://dati.gov.it/onto/dcatapit#Catalog"/>
+        <rdf:type rdf:resource="&dcat;Catalog"/>
+        <foaf:homepage rdf:resource="http://spcdata.digitpa.gov.it/index.html"/>
+        [altri elementi per specificare il catalogo]
+    </rdf:Description>
+```
+
+>``RDF/Turtle``
+
+```Turtle
+<http://dati.gov.it/resource/Catalogp/datigov_agid>
+	a 	        dcatapit:Catalog , dcat:Catalog ;
+	foaf:homepage	<http://spcdata.digitpa.gov.it/index.html> ; ;
+  
+  [altri elementi per specificare il catalogo] .
+	
 ```
 
