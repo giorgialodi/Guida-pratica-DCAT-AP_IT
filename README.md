@@ -525,7 +525,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">La data di ultima modifica del catalogo. E' la data corrispondente a qualche operazione di modifica che riguarda il catalogo o i dataset (es. l’inserimento di un nuovo dataset nel catalogo, la modifica dei metadati del catalogo o di uno dei dataset in esso inclusi) </td>
+    <td align="left">La data di ultima modifica del catalogo. E' la data in cui si verificano operazioni di modifica del catalogo o dei dataset (es. l’inserimento di un nuovo dataset nel catalogo, la modifica dei metadati del catalogo o di uno dei dataset in esso inclusi) </td>
   </tr>
 </table>
 
@@ -544,7 +544,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
         "@value": "2016-03-20"
       },
       
-      altri elementi che descrivono il catalogo
+      altri elementi del catalogo
 
  ```
  >``RDF/XML``
@@ -612,7 +612,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
         }
       ],
       
-      altri elementi che descrivono il catalogo
+      altri elementi del catalogo
 
  ```
  >``RDF/XML``
