@@ -643,6 +643,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 	dcat:dataset    <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid> ;
 	[altri elementi del catalogo] .
 ```
+<br />
 <a name="elementi-raccomandati-catalogo" />
 ####Elementi raccomandati che descrivono un Catalogo in DCAT-AP_IT
 
