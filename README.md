@@ -37,8 +37,8 @@ Per poter alimentare il catalogo nazionale è necessario prima accreditarsi pres
 ####Procedura di accreditamento a ``dati.gov.it``
 La procedura di accreditamento avviene secondo due modalità:
 
-1. **autorizzazione via referente IPA**, ovvero attraverso il responsabile dell'inserimento dei dati dell'amministrazione nell'Indice della Pubblica Amministrazione;
-2. **via modulo firmato**: ovvero mediante un modulo da firmare digitalmente e da inviare via Posta Elettronica Certificata (PEC) ad AgID all’indirizzo protocollo@pec.agid.gov.it, indicando nell’oggetto “DATI.GOV.IT - accreditamento".
+1. *autorizzazione via referente IPA*: ovvero attraverso il responsabile dell'inserimento dei dati dell'amministrazione nell'Indice della Pubblica Amministrazione;
+2. *via modulo firmato*: ovvero mediante un modulo da firmare digitalmente e da inviare via Posta Elettronica Certificata (PEC) ad AgID all’indirizzo protocollo@pec.agid.gov.it, indicando nell’oggetto “DATI.GOV.IT - accreditamento".
   
 Nel primo caso l'utente dell'amministrazione sceglie di registrarsi (menu in alto a destra). Nella pagina Web seguente, l'utente inserisce il codice IPA della propria amministrazione. Il codice IPA è reperibile attraverso [l'Indice della Pubblica Amministrazione (IPA)](http://www.indicepa.gov.it). A seguito di tale inserimento il sistema presenta all'utente uno o più nomi di referenti IPA da selezionare e invia una richiesta di accreditamento al referente IPA selezionato. Se la richiesta è accettata, l'utente riceve una notifica a seguito della quale può procedere con la scelta delle credenziali per i successivi accessi all'area privata.
 
@@ -48,8 +48,8 @@ Una volta abilitato, l'utente può iniziare a documentare i propri dataset attra
 ####Modalità di alimentazione del catalogo 
 Esistono due modalità di alimentazione:
 
-1. **editor**: applicazione Web integrata nel catalogo per l'acquisizione e l'aggiornamento guidato dei metadati. L'editor alimenta automaticamente il catalogo in modo da garantire la conformità al profilo DCAT-AP_IT. Tale modalità è consigliata in presenza di pochi dataset che hanno anche una frequenza di aggiornamento ampia.
-2. **harvesting**: funzionalità offerta dal catalogo per l'acquisizione e l'aggiornamento periodico dei metadati. L'uso di tale funzionalità richiede che l'amministrazione comunichi solo una volta l'URL dove poter acquisire tutti i dataset. Sarà lo stesso catalogo nazionale che si occuperà successivamente di raccogliere periodicamente i metadati che descrivono i dati. Tale modalità è consigliata in presenza di un numero elevato di dataset soggetti anche a frequenti aggiornamenti. 
+1. *editor*: applicazione Web integrata nel catalogo per l'acquisizione e l'aggiornamento guidato dei metadati. L'editor alimenta automaticamente il catalogo in modo da garantire la conformità al profilo DCAT-AP_IT. Tale modalità è consigliata in presenza di pochi dataset che hanno anche una frequenza di aggiornamento ampia.
+2. *harvesting*: funzionalità offerta dal catalogo per l'acquisizione e l'aggiornamento periodico dei metadati. L'uso di tale funzionalità richiede che l'amministrazione comunichi solo una volta l'URL dove poter acquisire tutti i dataset. Sarà lo stesso catalogo nazionale che si occuperà successivamente di raccogliere periodicamente i metadati che descrivono i dati. Tale modalità è consigliata in presenza di un numero elevato di dataset soggetti anche a frequenti aggiornamenti. 
 
 <a name="dcatapit" />
 ##Guida a DCAT-AP_IT
