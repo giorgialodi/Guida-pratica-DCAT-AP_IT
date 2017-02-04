@@ -1,34 +1,59 @@
-# Guida pratica a DCAT-AP_IT
-## Profilo italiano di metadazione per la descrizione di dati presenti in cataloghi (DCAT-AP_IT)
+# Guida pratica a DCAT-AP_IT e all'alimentazione del catalogo nazionale ``dati.gov.it``
 
-Questo progetto rappresenta la guida pratica offerta dal portale ``dati.gov.it`` per l'adeguamento delle Pubbliche Amministrazioni al profilo nazionale di metadatazione DCAT-AP_IT, così come raccomandato nell'ambito delle [linee guida per la valorizzazione del patrimonio informativo pubblico (anno 2016)](http://www.dati.gov.it/sites/default/files/LG2016_0.pdf).
+Questo progetto rappresenta la guida pratica offerta dal portale ``dati.gov.it`` per l'accreditamento al portale, per l'alimentazione dello stesso secondo le due diverse modalità previste, e per l'adeguamento delle Pubbliche Amministrazioni al profilo nazionale di metadatazione DCAT-AP_IT, così come raccomandato nell'ambito delle [linee guida per la valorizzazione del patrimonio informativo pubblico (anno 2016)](http://www.dati.gov.it/sites/default/files/LG2016_0.pdf).
 Per dettagli sulla semantica degli elementi si invita a consultare la [relativa specifica DCAT-AP_IT 1.0](http://www.dati.gov.it/sites/default/files/DCAT-AP_IT_v10.pdf) disponibile anche come [ontologia OWL.](http://dati.gov.it/onto/dcatapit)
-La presente guida pratica fornisce una descrizione degli elementi principali del profilo con le relative proprietà. Per ciascun elemento e proprietà, al fine di facilitare le amministrazioni nella predisposizione dei metadati utili per la fase di harvesting da parte del catalogo ``dati.gov.it``, sono forniti esempi di uso nelle seguenti serializzazioni RDF: JSON-LD, RDF/XML, RDF/Turtle. Per facilitare altresì l'uso della modalità di alimentazione ``dati.gov.it``  "web editor online", screenshot sull'uso dell'applicazione sono inseriti per ciascuna proprietà.
+La presente guida pratica fornisce una descrizione degli elementi principali del profilo con le relative proprietà. Per ciascun elemento e proprietà, al fine di facilitare le amministrazioni nella predisposizione dei metadati utili per la fase di harvesting da parte del catalogo ``dati.gov.it``, sono forniti esempi di uso nelle seguenti serializzazioni RDF: JSON-LD, RDF/XML, RDF/Turtle. 
 
 **Licenza:**
 CC-BY 4.0 (Creative Commons Attribution).
 
 ##Indice
-* [Come definire un soggetto/organizzazione in DCAT-AP_IT](#soggetto)
-  * [dcatapit:Agent](#agent)
-  * [Elementi obbligatori che descrivono un Soggetto/Organizzazione in DCAT-AP_IT](#elementi-obbligatori-soggetto)
-  * [Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle](#soggetto-esempi-JSONLD-RDFXML-RDFTURTLE)
-  * [Come documentare un soggetto in DCAT-AP_IT con il web editor di ``dati.gov.it``](#soggetto-webeditor)
-* [Come definire un catalogo in DCAT-AP_IT](#catalogo)
-  * [dcatapit:Catalog](#catalog)
-  * [Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle](#catalogo-esempi-JSONLD-RDFXML-RDFTURTLE)
-  * [Elementi obbligatori che descrivono un Catalogo in DCAT-AP_IT](#elementi-obbligatori-catalogo)
-    * [Titolo del catalogo](#dcttitle-JSONLD-RDFXML-RDFTURTLE)
-    * [Descrizione del catalogo](#dctdescription-JSONLD-RDFXML-RDFTURTLE)
-    * [Editore del catalogo](#dctpublisher-JSONLD-RDFXML-RDFTURTLE)
-    * [Data di ultima modifica del catalogo](#dctmodified-JSONLD-RDFXML-RDFTURTLE)
-    * [Dataset del catalogo](#dcatdataset-JSONLD-RDFXML-RDFTURTLE)
-  * [Elementi raccomandati che descrivono un Catalogo in DCAT-AP_IT](#elementi-raccomandati-catalogo)
-    * [Home page del catalogo](#foafhomepage-JSONLD-RDFXML-RDFTURTLE)
-    * [Lingua del catalogo](#dctlanguage-JSONLD-RDFXML-RDFTURTLE)
+* [Alimentare il catalogo nazionale ``dati.gov.it``](#modalita-inserimento-metadati-catalogo)
+  * [Procedura di accreditamento a``dati.gov.it``](#accreditamento)
+  * [Modalità di alimentazione del catalogo](#modalita-alimentazione)
+* [Guida pratica a DCAT-AP_IT](#dcatapit)
+  * [Come definire un soggetto/organizzazione in DCAT-AP_IT](#soggetto)
+    * [dcatapit:Agent](#agent)
+    * [Elementi obbligatori che descrivono un Soggetto/Organizzazione in DCAT-AP_IT](#elementi-obbligatori-soggetto)
+    * [Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle](#soggetto-esempi-JSONLD-RDFXML-RDFTURTLE)
+  * [Come definire un catalogo in DCAT-AP_IT](#catalogo)
+    * [dcatapit:Catalog](#catalog)
+    * [Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle](#catalogo-esempi-JSONLD-RDFXML-RDFTURTLE)
+    * [Elementi obbligatori che descrivono un Catalogo in DCAT-AP_IT](#elementi-obbligatori-catalogo)
+      * [Titolo del catalogo](#dcttitle-JSONLD-RDFXML-RDFTURTLE)
+      * [Descrizione del catalogo](#dctdescription-JSONLD-RDFXML-RDFTURTLE)
+      * [Editore del catalogo](#dctpublisher-JSONLD-RDFXML-RDFTURTLE)
+      * [Data di ultima modifica del catalogo](#dctmodified-JSONLD-RDFXML-RDFTURTLE)
+      * [Dataset del catalogo](#dcatdataset-JSONLD-RDFXML-RDFTURTLE)
+    * [Elementi raccomandati che descrivono un Catalogo in DCAT-AP_IT](#elementi-raccomandati-catalogo)
+      * [Home page del catalogo](#foafhomepage-JSONLD-RDFXML-RDFTURTLE)
+      * [Lingua del catalogo](#dctlanguage-JSONLD-RDFXML-RDFTURTLE)
   
-  
+<a name="modalita-inserimento-metadati-catalogo" />
+##Alimentare il catalogo nazionale ``dati.gov.it``
+Per poter alimentare il catalogo nazionale è necessario prima accreditarsi presso il catalogo stesso. 
 
+<a name="accreditamento" />
+####Procedura di accreditamento a ``dati.gov.it``
+La procedura di accreditamento avviene secondo due modalità:
+
+1. **autorizzazione via referente IPA**, ovvero attraverso il responsabile dell'inserimento dei dati dell'amministrazione nell'Indice della Pubblica Amministrazione;
+2. **via modulo firmato**: ovvero mediante un modulo da firmare digitalmente e da inviare via Posta Elettronica Certificata (PEC) ad AgID all’indirizzo protocollo@pec.agid.gov.it, indicando nell’oggetto “DATI.GOV.IT - accreditamento".
+  
+Nel primo caso l'utente dell'amministrazione sceglie di registrarsi (menu in alto a destra). Nella pagina Web seguente, l'utente inserisce il codice IPA della propria amministrazione. Il codice IPA è reperibile attraverso [l'Indice della Pubblica Amministrazione (IPA)](http://www.indicepa.gov.it). A seguito di tale inserimento il sistema presenta all'utente uno o più nomi di referenti IPA da selezionare e invia una richiesta di accreditamento al referente IPA selezionato. Se la richiesta è accettata, l'utente riceve una notifica a seguito della quale può procedere con la scelta delle credenziali per i successivi accessi all'area privata.
+
+Una volta abilitato, l'utente può iniziare a documentare i propri dataset attraverso [due modalità previste](#modalita-alimentazione).
+
+<a name="modalita-alimentazione" />
+####Modalità di alimentazione del catalogo 
+Esistono due modalità di alimentazione:
+
+1. **editor**: applicazione Web integrata nel catalogo per l'acquisizione e l'aggiornamento guidato dei metadati. L'editor alimenta automaticamente il catalogo in modo da garantire la conformità al profilo DCAT-AP_IT. Tale modalità è consigliata in presenza di pochi dataset che hanno anche una frequenza di aggiornamento ampia.
+2. **harvesting**: funzionalità offerta dal catalogo per l'acquisizione e l'aggiornamento periodico dei metadati. L'uso di tale funzionalità richiede che l'amministrazione comunichi solo una volta l'URL dove poter acquisire tutti i dataset. Sarà lo stesso catalogo nazionale che si occuperà successivamente di raccogliere periodicamente i metadati che descrivono i dati. Tale modalità è consigliata in presenza di un numero elevato di dataset soggetti anche a frequenti aggiornamenti. 
+
+<a name="dcatapit" />
+##Guida a DCAT-AP_IT
+Nelle seguenti sezioni, per ciascun elemento (classe e proprietà) del profilo di metadatazione DCAT-AP_IT saranno fornite istruzioni per l'uso ed esempi pratici di definizione dei metadati in JSON-LD, RDF/XML e RDF/Turtle
 <a name="soggetto" />
 ###Come definire un Soggetto/Organizzazione in DCAT-AP_IT
 Un soggetto/organizzazione è definito mediante la specifica della classe _Agente_ identificata univocamente da un URI (Uniform Resource Identifier).
