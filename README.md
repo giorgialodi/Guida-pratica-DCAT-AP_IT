@@ -9,8 +9,8 @@ CC-BY 4.0 (Creative Commons Attribution).
 
 ##Indice
 * [Alimentare il catalogo nazionale ``dati.gov.it``](#modalita-inserimento-metadati-catalogo)
-  * [Procedura di accreditamento a``dati.gov.it``](#accreditamento)
-  * [Modalità di alimentazione del catalogo](#modalita-alimentazione)
+  * [Procedura di accreditamento a ``dati.gov.it``](#accreditamento)
+  * [Modalità di alimentazione di ``dati.gov.it``](#modalita-alimentazione)
 * [Guida pratica a DCAT-AP_IT](#dcatapit)
   * [Come definire un soggetto/organizzazione in DCAT-AP_IT](#soggetto)
     * [dcatapit:Agent](#agent)
@@ -28,13 +28,14 @@ CC-BY 4.0 (Creative Commons Attribution).
     * [Elementi raccomandati che descrivono un Catalogo in DCAT-AP_IT](#elementi-raccomandati-catalogo)
       * [Home page del catalogo](#foafhomepage-JSONLD-RDFXML-RDFTURTLE)
       * [Lingua del catalogo](#dctlanguage-JSONLD-RDFXML-RDFTURTLE)
+      * [Data di rilascio del catalogo](#dctissued-JSONLD-RDFXML-RDFTURTLE)
   
 <a name="modalita-inserimento-metadati-catalogo" />
 ##Alimentare il catalogo nazionale ``dati.gov.it``
-Per poter alimentare il catalogo nazionale è necessario prima accreditarsi presso il catalogo stesso. 
+Per poter alimentare il catalogo nazionale è necessario accreditarsi presso il catalogo stesso. 
 
 <a name="accreditamento" />
-####Procedura di accreditamento a ``dati.gov.it``
+####Procedura di accreditamento
 La procedura di accreditamento avviene secondo due modalità:
 
 1. *autorizzazione via referente IPA*: ovvero attraverso il responsabile dell'inserimento dei dati dell'amministrazione nell'Indice della Pubblica Amministrazione;
@@ -53,7 +54,7 @@ Esistono due modalità di alimentazione:
 
 <a name="dcatapit" />
 ##Guida a DCAT-AP_IT
-Nelle seguenti sezioni, per ciascun elemento (classe e proprietà) del profilo di metadatazione DCAT-AP_IT saranno fornite istruzioni per l'uso ed esempi pratici di definizione dei metadati in JSON-LD, RDF/XML e RDF/Turtle
+Nelle seguenti sezioni, per ciascun elemento (classe e proprietà) del profilo di metadatazione DCAT-AP_IT saranno fornite istruzioni per l'uso ed esempi pratici di definizione dei metadati in JSON-LD, RDF/XML e RDF/Turtle.
 <a name="soggetto" />
 ###Come definire un Soggetto/Organizzazione in DCAT-AP_IT
 Un soggetto/organizzazione è definito mediante la specifica della classe _Agente_ identificata univocamente da un URI (Uniform Resource Identifier).
@@ -332,7 +333,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left"><b>Si raccomanda di inserire un testo semplice e corto. Si raccomanda di non utilizzare acronimi o abbreviazioni incomprensibili. Se si vogliono utilizzare comunque gli acronimi, riportare anche il nome esteso. Nel caso il catalogo sia parte di un progetto più ampio, si consiglia di indicare, tra parentesi, il nome del progetto alla fine del titolo stesso.</b> <br />Esempio: "Catalogo dei dati aperti dell'AgID (Agenzia per l'Italia Digitale)" oppure "Catalogo delle banche dati  della Regione Lazio".</td>
+    <td align="left"><b>Si raccomanda di inserire un testo semplice e corto. Si raccomanda di non utilizzare acronimi o abbreviazioni incomprensibili. Se si vogliono utilizzare comunque gli acronimi, riportare anche il nome esteso. Nel caso il catalogo sia parte di un progetto più ampio, si consiglia di indicare, tra parentesi, il nome del progetto alla fine del titolo stesso.</b> <br />Esempio: "Catalogo dei dati aperti dell'AgID (Agenzia per l'Italia Digitale)" oppure "Catalogo delle banche dati della Regione Lazio".</td>
   </tr>
 </table>
 
@@ -808,6 +809,133 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
   [altri elementi del catalogo] .
 	
 ```
+<br />
+3) **_DATA di RILASCIO del CATALOGO_**: ``dct:issued``
+<table align="left">
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">0..1</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Raccomandata</td>
+  </tr>
+  <tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">La data di rilascio del Catalogo</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://purl.org/dc/terms/issued</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">La data di rilascio del catalogo. E' la data in cui il catalogo è reso disponibile. </td>
+  </tr>
+</table>
+
+<a name="dctissued-JSONLD-RDFXML-RDFTURTLE" />
+##### Esempi di uso di ``dct:issued`` in JSON-LD, RDF/XML e RDF/Turtle
+>``JSON-LD``
+
+```JSON
+      "@id": "http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid",
+      "@type": [
+        "dcat:Catalog",
+        "http://dati.gov.it/onto/dcatapit#\"Catalog"
+      ],
+        "dcterms:issued": {
+        "@type": "xsd:date",
+        "@value": "2016-03-20"
+      },
+      
+      altri elementi del catalogo
+
+ ```
+ >``RDF/XML``
+ 
+ ```XML
+ 
+ <!-- http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid -->
+    <dcatapit:Catalog rdf:about="http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid">
+        <rdf:type rdf:resource="&dcat;Catalog"/>
+        <dct:issued rdf:datatype="&xsd;date">2016-03-20</dct:issued>
+        [altri elementi del catalogo]
+    </dcatapit:Catalog>
+ ```
+ >``RDF/Turtle``
+ 
+ ```Turtle
+ <http://dati.gov.it/resource/Catalogp/datigov_agid>
+	a 		dcatapit:Catalog , dcat:Catalog ;
+	dct:issued	"2016-03-20"^^xsd:date ;
+	[altri elementi del catalogo] .
+```
+<br />
+4) **_TEMI del CATALOGO_**: ``dcat:themeTaxonomy``
+<table align="left">
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">0..N</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Raccomandata</td>
+  </tr>
+  <tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">Temi del Catalogo</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://purl.org/dc/terms/themeTaxonomy</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">La data di rilascio del catalogo. E' la data in cui il catalogo è reso disponibile. </td>
+  </tr>
+</table>
+
+<a name="dctissued-JSONLD-RDFXML-RDFTURTLE" />
+##### Esempi di uso di ``dct:issued`` in JSON-LD, RDF/XML e RDF/Turtle
+>``JSON-LD``
+
+```JSON
+      "@id": "http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid",
+      "@type": [
+        "dcat:Catalog",
+        "http://dati.gov.it/onto/dcatapit#\"Catalog"
+      ],
+        "dcterms:issued": {
+        "@type": "xsd:date",
+        "@value": "2016-03-20"
+      },
+      
+      altri elementi del catalogo
+
+ ```
+ >``RDF/XML``
+ 
+ ```XML
+ 
+ <!-- http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid -->
+    <dcatapit:Catalog rdf:about="http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid">
+        <rdf:type rdf:resource="&dcat;Catalog"/>
+        <dct:issued rdf:datatype="&xsd;date">2016-03-20</dct:issued>
+        [altri elementi del catalogo]
+    </dcatapit:Catalog>
+ ```
+ >``RDF/Turtle``
+ 
+ ```Turtle
+ <http://dati.gov.it/resource/Catalogp/datigov_agid>
+	a 		dcatapit:Catalog , dcat:Catalog ;
+	dct:issued	"2016-03-20"^^xsd:date ;
+	[altri elementi del catalogo] .
+```
+
 
 
 
