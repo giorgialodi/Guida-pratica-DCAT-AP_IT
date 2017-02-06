@@ -1,16 +1,16 @@
 # Guida pratica a DCAT-AP_IT e all'alimentazione del catalogo nazionale ``dati.gov.it``
 
-Questo progetto rappresenta la guida pratica offerta dal portale ``dati.gov.it`` per l'accreditamento al portale, per l'alimentazione dello stesso secondo le due diverse modalità previste, e per l'adeguamento delle Pubbliche Amministrazioni al profilo nazionale di metadatazione DCAT-AP_IT, così come raccomandato nell'ambito delle [linee guida per la valorizzazione del patrimonio informativo pubblico (anno 2016)](http://www.dati.gov.it/sites/default/files/LG2016_0.pdf).
-Per dettagli sulla semantica degli elementi si invita a consultare la [relativa specifica DCAT-AP_IT 1.0](http://www.dati.gov.it/sites/default/files/DCAT-AP_IT_v10.pdf) disponibile anche come [ontologia OWL.](http://dati.gov.it/onto/dcatapit)
-La presente guida pratica fornisce una descrizione degli elementi principali del profilo con le relative proprietà. Per ciascun elemento e proprietà, al fine di facilitare le amministrazioni nella predisposizione dei metadati utili per la fase di harvesting da parte del catalogo ``dati.gov.it``, sono forniti esempi di uso nelle seguenti serializzazioni RDF: JSON-LD, RDF/XML, RDF/Turtle. 
+Questo progetto rappresenta la guida pratica offerta da ``dati.gov.it`` per l'accreditamento, l'alimentazione dello stesso secondo le due diverse modalità previste, e per l'adeguamento delle Pubbliche Amministrazioni al profilo nazionale di metadatazione DCAT-AP_IT, così come raccomandato nelle [linee guida per la valorizzazione del patrimonio informativo pubblico (anno 2016)](http://www.dati.gov.it/sites/default/files/LG2016_0.pdf).
+Per dettagli sulla semantica degli elementi si invita a consultare anche l'[ontologia OWL](http://dati.gov.it/onto/dcatapit) del profilo DCAT-AP_IT.
+La presente guida pratica fornisce una descrizione degli elementi principali del profilo con le relative proprietà. Per ciascun elemento e proprietà, al fine di facilitare le amministrazioni nella predisposizione dei metadati per abilitare la modalità di alimentazione del catalogo detta harvesting, sono forniti esempi di uso nelle seguenti serializzazioni RDF: JSON-LD, RDF/XML, RDF/Turtle. 
 
 **Licenza:**
 CC-BY 4.0 (Creative Commons Attribution).
 
 ##Indice
 * [Alimentare il catalogo nazionale ``dati.gov.it``](#modalita-inserimento-metadati-catalogo)
-  * [Procedura di accreditamento a ``dati.gov.it``](#accreditamento)
-  * [Modalità di alimentazione di ``dati.gov.it``](#modalita-alimentazione)
+  * [Procedura di accreditamento](#accreditamento)
+  * [Modalità di alimentazione](#modalita-alimentazione)
 * [Guida pratica a DCAT-AP_IT](#dcatapit)
   * [Come definire un soggetto/organizzazione in DCAT-AP_IT](#soggetto)
     * [dcatapit:Agent](#agent)
@@ -33,24 +33,30 @@ CC-BY 4.0 (Creative Commons Attribution).
 <a name="modalita-inserimento-metadati-catalogo" />
 ##Alimentare il catalogo nazionale ``dati.gov.it``
 Per poter alimentare il catalogo nazionale è necessario accreditarsi presso il catalogo stesso. 
-
 <a name="accreditamento" />
 ####Procedura di accreditamento
-La procedura di accreditamento avviene secondo due modalità:
+La procedura di accreditamento al momento disponibile prevede l'esecuzione dei seguenti passi:
 
-1. *autorizzazione via referente IPA*: ovvero attraverso il responsabile dell'inserimento dei dati dell'amministrazione nell'Indice della Pubblica Amministrazione;
-2. *via modulo firmato*: ovvero mediante un modulo da firmare digitalmente e da inviare via Posta Elettronica Certificata (PEC) ad AgID all’indirizzo protocollo@pec.agid.gov.it, indicando nell’oggetto “DATI.GOV.IT - accreditamento".
-  
-Nel primo caso l'utente dell'amministrazione sceglie di registrarsi (menu in alto a destra). Nella pagina Web seguente, l'utente inserisce il codice IPA della propria amministrazione. Il codice IPA è reperibile attraverso [l'Indice della Pubblica Amministrazione (IPA)](http://www.indicepa.gov.it). A seguito di tale inserimento il sistema presenta all'utente uno o più nomi di referenti IPA da selezionare e invia una richiesta di accreditamento al referente IPA selezionato. Se la richiesta è accettata, l'utente riceve una notifica a seguito della quale può procedere con la scelta delle credenziali per i successivi accessi all'area privata.
+1. l'utente dell'amministrazione accede alla [piattaforma di test](http://93.63.32.55);
+2. l'utente dell'amministrazione avvia la registrazione selezionando la voce *Registrati* nel menu in alto a destra;
+3. nella pagina Web seguente, l'utente inserisce nel box in fondo alla pagina il codice IPA, i.e., codice della propria amministrazione come assegnato dall'Indice della Pubblica Amministrazione (IPA). Il codice IPA è reperibile attraverso [il catalogo IPA;](http://www.indicepa.gov.it). L'utente preme "avanti";
+4. il sistema presenta all'utente uno o più nomi di cosiddetti referenti IPA, ovvero di responsabili, all'interno dell'amministrazione, del corretto e tempestivo aggiornamento dei dati dell'IPA. L'utente seleziona un referente IPA dalla lista e preme "avanti";
+5. l'utente è invitato a completare la registrazione inserendo l'*email* istituzionale, lo *username* da utilizzare per i successivi accessi e il *Nome e Cognome*. L'utente preme "invia";
+6. il sistema provvede a inoltrare una richiesta di accreditamento. Al momento la richiesta è inviata agli amministratori del sistema ``dati.gov.it`` e non al referente selezionato. L'invio al referente IPA sarà abilitato solo in una fase successiva;
+8. l'utente riceverà una email all’indirizzo indicato al suddetto passo 5. con il seguente testo “*Ti ringraziamo per la registrazione su dati.gov.it - i dati aperti della pubblica amministrazione. La tua richiesta di account è in attesa di approvazione. Una volta approvata, riceverai un'altra e-mail con le informazioni necessarie per effettuare il primo accesso, impostare la password ed altri dettagli.*”;
+9. a seguito dell’approvazione da parte degli amministrazioni di ``dati.gov.it``, l'utente riceverà una seconda email con un link; cliccando sul link dell'email, l'utente è indirizzato all'applicazione che gli consente di inserire la password da utilizzare per i successivi accessi.
 
-Una volta abilitato, l'utente può iniziare a documentare i propri dataset attraverso [due modalità previste](#modalita-alimentazione).
+L'Agenzia per l'Italia Digitale sta valutando anche l'implementazione di una seconda modalità di accreditamento a ``dati.gov.it``che non contempla l'uso dei dati dell'IPA. In particolare, analogamente ad altri sistemi dell'Agenzia, si sta valutando l'accreditamento mediante 
+un *modulo firmato* digitalmente da inviare via Posta Elettronica Certificata (PEC) ad AgID. 
+
+Una volta ottenute le credenziali per l'accesso, l'utente può iniziare a documentare i propri dataset scegliendo attraverso [due modalità previste](#modalita-alimentazione).
 
 <a name="modalita-alimentazione" />
 ####Modalità di alimentazione del catalogo 
 Esistono due modalità di alimentazione:
 
-1. *editor*: applicazione Web integrata nel catalogo per l'acquisizione e l'aggiornamento guidato dei metadati. L'editor alimenta automaticamente il catalogo in modo da garantire la conformità al profilo DCAT-AP_IT. Tale modalità è consigliata in presenza di pochi dataset che hanno anche una frequenza di aggiornamento ampia.
-2. *harvesting*: funzionalità offerta dal catalogo per l'acquisizione e l'aggiornamento periodico dei metadati. L'uso di tale funzionalità richiede che l'amministrazione comunichi solo una volta l'URL dove poter acquisire tutti i dataset. Sarà lo stesso catalogo nazionale che si occuperà successivamente di raccogliere periodicamente i metadati che descrivono i dati. Tale modalità è consigliata in presenza di un numero elevato di dataset soggetti anche a frequenti aggiornamenti. 
+1. *editor*: applicazione Web integrata nel catalogo per l'acquisizione e l'aggiornamento guidato dei metadati. L'editor alimenta automaticamente il catalogo in modo da garantire la conformità al profilo DCAT-AP_IT. Tale modalità è consigliata in presenza di pochi dataset che hanno anche una frequenza di aggiornamento ampia. Per usufruirne, l'utente accede all'area privata di ``dati.gov.it`` selezionando *Login* dal menu in alto a destra. Una volta effettuato il login, l'utente può accedere al web editor selezionando la voce di menu *Aggiungi dataset*. Per poter visualizzare l’elenco dei dataset descritti si può selezionare la voce *I miei dataset* in alto a destra. Ogni dataset può essere eventualmente modificato (attraverso l'operazione *Modifica*) o eliminato (attraverso l'operazione *Elimina*);
+2. *harvesting*: funzionalità offerta dal catalogo per l'acquisizione e l'aggiornamento periodico dei metadati. L'uso di tale funzionalità richiede che l'amministrazione comunichi, una volta effettuato il login e solo la prima volta, l'URL dove poter acquisire tutti i dataset. Sarà lo stesso catalogo nazionale che si occuperà successivamente di raccogliere periodicamente i metadati che descrivono i dati. Tale modalità è consigliata in presenza di un numero elevato di dataset, soggetti anche a frequenti aggiornamenti. 
 
 <a name="dcatapit" />
 ##Guida a DCAT-AP_IT
@@ -104,7 +110,7 @@ Un soggetto/organizzazione è definito mediante la specifica della classe _Agent
   </tr>
   <tr>
     <td align="left">Descrizione</td>
-    <td align="left">L'identificativo del soggetto</td>
+    <td align="left">L'identificativo del soggetto (organizzazione)</td>
   </tr>
   <tr>
     <td align="left">Riferimento</td>
@@ -112,8 +118,8 @@ Un soggetto/organizzazione è definito mediante la specifica della classe _Agent
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Nel caso di pubbliche amministrazioni, l'identificativo è rappresentato dal codice IPA (Indice della Pubblica Amministrazione). Per organizzazioni private, l'identiticativo è rappresentato dalla partita IVA.
- <br />Esempio: "AgID" oppure "r_lazio".</td>
+    <td align="left">Nel caso di pubbliche amministrazioni, l'identificativo è rappresentato dal codice IPA (Indice della Pubblica Amministrazione). Per organizzazioni private, l'identiticativo è rappresentato dalla partita IVA. Si consiglia di far riferimento all'organizzazione e non a singoli uffici. 
+ <br />Esempio: "agid" oppure "r_lazio".</td>
   </tr>
 </table>
 
@@ -130,7 +136,7 @@ Un soggetto/organizzazione è definito mediante la specifica della classe _Agent
   </tr>
   <tr>
     <td align="left">Descrizione</td>
-    <td align="left">Il nome del soggetto</td>
+    <td align="left">Il nome del soggetto (organizzazione) </td>
   </tr>
   <tr>
     <td align="left">Riferimento</td>
@@ -183,11 +189,6 @@ Un soggetto/organizzazione è definito mediante la specifica della classe _Agent
 	 dct:identifier  "agid" ;
 	 foaf:name       "Agenzia per l'Italia Digitale" .
 ```
-<a name="soggetto-webeditor" />
-####Come documentare un soggetto in DCAT-AP_IT con il web editor di ``dati.gov.it``
-Selezionare dal menu di sinistra la voce _"Soggetti e Ruoli"_come mostrato nella seguente immagine...
-**Inserire screenshot web editor**
-
 <a name="catalogo" />
 ###Come definire un catalogo di dati in DCAT-AP_IT
 Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente da un URI (Uniform Resource Identifier).
@@ -886,15 +887,15 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
   <tr>
   <tr>
     <td align="left">Descrizione</td>
-    <td align="left">Temi del Catalogo</td>
+    <td align="left">Tema del Catalogo. La proprietà lega l'oggetto (dominio) <a href="#catalogo">Catalogo</a> a un oggetto (codominio) di tipo skos:Concept (specificato mediante un URI- Uniform Resource Identifier)</td>
   </tr>
   <tr>
     <td align="left">Riferimento</td>
-    <td align="left">http://purl.org/dc/terms/themeTaxonomy</td>
+    <td align="left">http://www.w3.org/ns/dcat#themeTaxonomy</td>
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">La data di rilascio del catalogo. E' la data in cui il catalogo è reso disponibile. </td>
+    <td align="left">ndicare un sistema di organizzazione della conoscenza (KOS) usato per classificare i dataset del Catalogo. Il valore da utilizzare per questa proprietà è l’URI dei vocabolari utilizzati (non gli URI dei concetti presenti nel vocabolario). Nel caso del vocabolario Data Theme da utilizzare obbligatoriamente per indicare i temi relativi ai Dataset, usare questo <a href="http://publications.europa.eu/mdr/resource/authority/data-theme/skos/data-theme-skos.rdf"> URI come valore della proprietà tema del catalogo.</a></td>
   </tr>
 </table>
 
