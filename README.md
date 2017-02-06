@@ -895,12 +895,12 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">ndicare un sistema di organizzazione della conoscenza (KOS) usato per classificare i dataset del Catalogo. Il valore da utilizzare per questa proprietà è l’URI dei vocabolari utilizzati (non gli URI dei concetti presenti nel vocabolario). Nel caso del vocabolario Data Theme da utilizzare obbligatoriamente per indicare i temi relativi ai Dataset, usare questo URI http://publications.europa.eu/resource/authority/data-theme come valore della proprietà.</td>
+    <td align="left">ndicare un sistema di organizzazione della conoscenza (KOS) usato per classificare i dataset del Catalogo. Il valore da utilizzare per questa proprietà è l’URI dei vocabolari utilizzati (<b>non gli URI dei concetti presenti nel vocabolario</b>). Nel caso del vocabolario Data Theme da utilizzare obbligatoriamente per indicare i temi relativi ai Dataset, usare questo URI http://publications.europa.eu/resource/authority/data-theme come valore della proprietà.</td>
   </tr>
 </table>
 
 <a name="dctissued-JSONLD-RDFXML-RDFTURTLE" />
-##### Esempi di uso di ``dct:issued`` in JSON-LD, RDF/XML e RDF/Turtle
+##### Esempi di uso di ``dcat:themeTaxonomy`` in JSON-LD, RDF/XML e RDF/Turtle
 >``JSON-LD``
 
 ```JSON
@@ -909,9 +909,8 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
         "dcat:Catalog",
         "http://dati.gov.it/onto/dcatapit#\"Catalog"
       ],
-        "dcterms:issued": {
-        "@type": "xsd:date",
-        "@value": "2016-03-20"
+        "dcat:themeTaxonomy": {
+        "@id": "http://publications.europa.eu/resource/authority/data-theme"
       },
       
       altri elementi del catalogo
@@ -924,7 +923,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
  <!-- http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid -->
     <dcatapit:Catalog rdf:about="http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid">
         <rdf:type rdf:resource="&dcat;Catalog"/>
-        <dct:issued rdf:datatype="&xsd;date">2016-03-20</dct:issued>
+        <dcat:themeTaxonomy rdf:resource="http://publications.europa.eu/resource/authority/data-theme" />
         [altri elementi del catalogo]
     </dcatapit:Catalog>
  ```
@@ -932,8 +931,8 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
  
  ```Turtle
  <http://dati.gov.it/resource/Catalogp/datigov_agid>
-	a 		dcatapit:Catalog , dcat:Catalog ;
-	dct:issued	"2016-03-20"^^xsd:date ;
+	a 			dcatapit:Catalog , dcat:Catalog ;
+	dcat:themeTaxonomy	<http://publications.europa.eu/resource/authority/data-theme> ;
 	[altri elementi del catalogo] .
 ```
 
