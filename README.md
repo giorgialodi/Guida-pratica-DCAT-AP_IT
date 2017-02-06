@@ -124,7 +124,7 @@ Un soggetto/organizzazione è definito mediante la specifica della classe _Agent
 </table>
 
 <br />
-1) **_NOME del SOGGETTO_**: ``foaf:name``
+2) **_NOME del SOGGETTO_**: ``foaf:name``
 <table align="left">
   <tr> 
     <td align="left">Cardinalità</td>
@@ -895,7 +895,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">ndicare un sistema di organizzazione della conoscenza (KOS) usato per classificare i dataset del Catalogo. Il valore da utilizzare per questa proprietà è l’URI dei vocabolari utilizzati (non gli URI dei concetti presenti nel vocabolario). Nel caso del vocabolario Data Theme da utilizzare obbligatoriamente per indicare i temi relativi ai Dataset, usare questo <a href="http://publications.europa.eu/mdr/resource/authority/data-theme/skos/data-theme-skos.rdf"> URI come valore della proprietà tema del catalogo.</a></td>
+    <td align="left">ndicare un sistema di organizzazione della conoscenza (KOS) usato per classificare i dataset del Catalogo. Il valore da utilizzare per questa proprietà è l’URI dei vocabolari utilizzati (non gli URI dei concetti presenti nel vocabolario). Nel caso del vocabolario Data Theme da utilizzare obbligatoriamente per indicare i temi relativi ai Dataset, usare questo URI http://publications.europa.eu/resource/authority/data-theme come valore della proprietà.</td>
   </tr>
 </table>
 
