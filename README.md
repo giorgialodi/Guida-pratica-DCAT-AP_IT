@@ -29,6 +29,9 @@ CC-BY 4.0 (Creative Commons Attribution).
       * [Home page del catalogo](#foafhomepage-JSONLD-RDFXML-RDFTURTLE)
       * [Lingua del catalogo](#dctlanguage-JSONLD-RDFXML-RDFTURTLE)
       * [Data di rilascio del catalogo](#dctissued-JSONLD-RDFXML-RDFTURTLE)
+      * [Temi del catalogo](#dcatthemetaxonomy-JSONLD-RDFXML-RDFTURTLE)
+  * [Come definire un dataset in DCAT-AP_IT](#dataset)
+    * [dcatapit:Dataset](#dcatapitdataset)
   
 <a name="modalita-inserimento-metadati-catalogo" />
 ##Alimentare il catalogo nazionale ``dati.gov.it``
@@ -92,11 +95,9 @@ Un soggetto/organizzazione è definito mediante la specifica della classe _Agent
         <td align="left">http://www.dati.gov.it/onto/dcatapit#Agent</td>
     </tr>
 </table>
-
+<br />
 <a name="elementi-obbligatori-soggetto" />
 ####Elementi obbligatori che descrivono un Soggetto/Organizzazione in DCAT-AP_IT
-
-<br />
 1) **_IDENTIFICATIVO del SOGGETTO_**: ``dct:identifier``
 
 <table align="left">
@@ -193,7 +194,7 @@ Un soggetto/organizzazione è definito mediante la specifica della classe _Agent
 ###Come definire un catalogo di dati in DCAT-AP_IT
 Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente da un URI (Uniform Resource Identifier).
 <a name="catalog" />
-#### Definitione di ``dcatapit:Catalog``
+####Definitione di ``dcatapit:Catalog``
 
 <table align="left">
     <tr>
@@ -221,7 +222,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
         <td align="left">http://www.dati.gov.it/onto/dcatapit#Catalog</td>
     </tr>
 </table>
-
+<br />
 <a name="catalogo-esempi-JSONLD-RDFXML-RDFTURTLE" />
 ####Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle
 >``JSON-LD``
@@ -271,7 +272,6 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
       }
     },
 ```
-
 >``RDF/XML``
 
 ```XML
@@ -292,7 +292,6 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
         <foaf:homepage rdf:resource="http://spcdata.digitpa.gov.it/index.html"/>
     </rdf:Description>
 ```
-
 >``RDF/Turtle``
 
 ```Turtle
@@ -309,10 +308,9 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 	foaf:homepage   		<http://spcdata.digitpa.gov.it/index.html> ;
 	dcat:themeTaxonomy  	<http://publications.europa.eu/resource/authority/data-theme> .
 ```
+<br />
 <a name="elementi-obbligatori-catalogo" />
 ####Elementi obbligatori che descrivono un Catalogo in DCAT-AP_IT
-
-<br />
 1) **_TITOLO del CATALOGO_**: ``dct:title``
 
 <table align="left">
@@ -899,7 +897,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
   </tr>
 </table>
 
-<a name="dctissued-JSONLD-RDFXML-RDFTURTLE" />
+<a name="dcatthemetaxonomy-JSONLD-RDFXML-RDFTURTLE" />
 ##### Esempi di uso di ``dcat:themeTaxonomy`` in JSON-LD, RDF/XML e RDF/Turtle
 >``JSON-LD``
 
@@ -935,7 +933,39 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 	dcat:themeTaxonomy	<http://publications.europa.eu/resource/authority/data-theme> ;
 	[altri elementi del catalogo] .
 ```
+<br>
+<a name="dataset" />
+###Come definire un dataset in DCAT-AP_IT
+Un dataset è definito mediante la classe _Dataset_ identificata univocamente da un URI (Uniform Resource Identifier).
+<a name="dcaapitdataset" />
+####Definitione di ``dcatapit:Dataset``
 
+<table align="left">
+    <tr>
+        <td align="left">URI</td>
+        <td align="left">dcatapit:Dataset</td>
+    </tr>
+     <tr>
+        <td align="left">Sottoclasse</td>
+        <td align="left">dcat:Dataset</td>
+    </tr>
+    <tr>
+        <td align="left">Descrizione</td>
+        <td align="left">Il dataset da descrivere.</td>
+    </tr>
+    <tr>
+        <td align="left">Cardinalità</td>
+        <td align="left">1</td>
+    </tr>
+    <tr>
+        <td align="left">Stato</td>
+        <td align="left">Obbligatorio</td>
+    </tr>
+     <tr>
+        <td align="left">Riferimento</td>
+        <td align="left">http://www.dati.gov.it/onto/dcatapit#Dataset</td>
+    </tr>
+</table>
 
 
 
