@@ -57,7 +57,7 @@ Esistono due modalità di alimentazione:
 2. *harvesting*: funzionalità offerta dal catalogo per l'acquisizione e l'aggiornamento periodico dei metadati. L'uso di tale funzionalità richiede che l'amministrazione comunichi, una volta effettuato il login e solo la prima volta, l'URL del catalogo e selezioni la modalità per l'harvesting (e.g., RDF, CKAN, CSW). Sarà lo stesso catalogo nazionale che si occuperà successivamente di raccogliere periodicamente i metadati che descrivono i dati. Tale modalità è consigliata in presenza di un numero elevato di dataset, soggetti anche a frequenti aggiornamenti. 
 
 <a name="dcatapit" />
-##Guida a DCAT-AP_IT
+##Guida pratica a DCAT-AP_IT
 Nelle seguenti sezioni, per ciascun elemento (classe e proprietà) del profilo di metadatazione DCAT-AP_IT saranno fornite istruzioni per l'uso ed esempi pratici di definizione dei metadati in JSON-LD, RDF/XML e RDF/Turtle.
 <a name="soggetto" />
 ###Come definire un Soggetto/Organizzazione in DCAT-AP_IT
@@ -1282,6 +1282,76 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 	a		dcatapit:Dataset , dcat:Dataset ;
 	dct:description	"Il dataset contiene i dati sui contratti del Sistema Pubblico di Connettività (SPC) 
 			 relativi al Lotto 1 dell'anno 2007."
+
+	[altri elementi per specificare il catalogo] .
+	
+```
+
+4) **_DATA DI ULTIMA MODIFICA del DATASET_**: ``dct:modified``
+
+<table align="left">
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">1</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Obbligatorio</td>
+  </tr>
+  <tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">La data di ultima modifica del Dataset</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://purl.org/dc/terms/modified</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left"><b>Si raccomanda di usare il formato ISO 8601, i.e., yyyy-mm-dd</b></td>
+  </tr>
+</table>
+
+<a name="dctmodifieddataset-JSONLD-RDFXML-RDFTURTLE" />
+##### Esempi di uso di ``dct:modified`` per il Dataset in JSON-LD, RDF/XML e RDF/Turtle
+>``JSON-LD``
+
+```JSON
+
+      "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid",
+      "@type": [
+        "dcat:Dataset",
+        "http://dati.gov.it/onto/dcatapit#\"Dataset"
+      ],
+      "dcterms:modified": {
+        "@type": "xsd:date",
+        "@value": "2015-05-25"
+      },
+      
+     altri elementi per specificare il catalogo
+     
+```
+
+>``RDF/XML``
+
+```XML
+
+   <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
+   <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+        <rdf:type rdf:resource="&dcat;Dataset"/>
+        <dct:modified rdf:datatype="&xsd;date">2015-05-25</dct:modified>
+        [altri elementi per specificare il catalogo]
+   </dcatapit:Dataset>
+   
+```
+
+>``RDF/Turtle``
+
+```Turtle
+ <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
+	a		dcatapit:Dataset , dcat:Dataset ;
+	dct:modified	"2015-05-25"^^xsd:date ;
 
 	[altri elementi per specificare il catalogo] .
 	
