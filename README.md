@@ -1067,7 +1067,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 <br />
 <a name="elementi-obbligatori-dataset" />
 ####Elementi obbligatori
-1) **_TITOLO del DATASET**: ``dct:title``
+1) **_TITOLO del DATASET_**: ``dct:title``
 
 <table align="left">
   <tr> 
