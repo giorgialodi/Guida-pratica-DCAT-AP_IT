@@ -33,6 +33,7 @@ CC-BY 4.0 (Creative Commons Attribution).
     * [dcatapit:Dataset](#dcatapitdataset)
     * [Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle](#dataset-esempi-JSONLD-RDFXML-RDFTURTLE)
     * [Elementi obbligatori](#elementi-obbligatori-dataset)
+      * [Titolo del dataset](#dcttitledataset-JSONLD-RDFXML-RDFTURTLE)
   * [Come mappare i temi di DCAT-AP_IT](#temi)
   
 <a name="modalita-alimentazione" />
@@ -1072,7 +1073,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 <table align="left">
   <tr> 
     <td align="left">Cardinalità</td>
-    <td align="left">1..N (può esistere più di un'istanza in diverse lingue della stessa proprietà)</td>
+    <td align="left">1..N (può esistere più di un'istanza, in diverse lingue, della stessa proprietà)</td>
   </tr>
   <tr> 
     <td align="left">Stato</td>
@@ -1107,10 +1108,11 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
       "dcterms:title": {
         "@language": "it",
         "@value": "Contratti del Sistema Pubblico di Connettività (SPC)"
-      },   
+      },
       
-      altri elementi per specificere il dataset
-```
+      altri elementi del catalogo
+
+ ```
 
 >``RDF/XML``
 
@@ -1133,6 +1135,74 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 
    [altri elementi per specificare il dataset] .
 	
+```
+<br />
+2) **_DESCRIZIONE del DATASET_**: ``dct:description``
+
+<table align="left">
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">1..N (può esistere più di un'istanza, in diverse lingue, della stessa proprietà)</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Obbligatorio</td>
+  </tr>
+  <tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">La descrizione del Dataset che indica cosa contiene il dataset.</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://purl.org/dc/terms/description</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left"><b>Si raccomanda di fornire una breve descrizione dei contenuti principali del dataset. Evitare di utilizzare un linguaggio ricco di riferimenti normativi. Utilizzare invece un linguaggio semplice che possa aiutare qualsiasi utente a identificare il contenuto del dataset. Ove possibile, si può descrivere gli oggetti principali contenuti nel dataset. Si ricorda che nessun tag HTML è consentito.</b> <br />Esempio: "Il dataset contiene i dati sui contratti del Sistema Pubblico di Connettività (SPC) relativi al Lotto 1 dell'anno 2007." oppure "Il dataset contiene i dati relativi ai luoghi della cultura (e.g., musei, biblioteche, siti archeologici, ecc.) e i relativi eventi culturali che si tengono nei luoghi. Informazioni sugli orari di apertura per i luoghi e i relativi eventi sono incluse nel dataset".</td>
+  </tr>
+</table>
+
+<a name="dctdescriptiondataset-JSONLD-RDFXML-RDFTURTLE" />
+##### Esempi di uso di ``dct:description`` per il Dataset in JSON-LD, RDF/XML e RDF/Turtle
+>``JSON-LD``
+
+```JSON
+
+      {
+      "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid",
+      "@type": [
+        "dcat:Dataset",
+        "http://dati.gov.it/onto/dcatapit#\"Dataset"
+      ],
+      "dcterms:description": {
+        "@language": "it",
+        "@value": "Il dataset contiene i dati sui contratti del Sistema Pubblico di Connettività (SPC) relativi al Lotto 1 dell'anno 2007"
+      },
+      
+     altri elementi per specificare il catalogo
+```
+
+>``RDF/XML``
+
+```XML
+
+   <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
+   <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+        <rdf:type rdf:resource="&dcat;Dataset"/>
+        <dct:description xml:lang="it">Il dataset contiene i dati sui contratti del Sistema Pubblico di Connettività (SPC) relativi al Lotto 1 dell'anno 2007.</dct:description>
+        [altri elementi per specificare il catalogo]
+   </dcatapit:Dataset>
+```
+
+>``RDF/Turtle``
+
+```Turtle
+ <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
+	a				dcatapit:Dataset , dcat:Dataset ;
+	dct:description			"Il dataset contiene i dati sui contratti del Sistema Pubblico di Connettività (SPC) relativi al Lotto 1 dell'anno 2007."
+
+	[altri elementi per specificare il catalogo] .
 ```
 
 
