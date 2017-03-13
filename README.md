@@ -946,6 +946,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
     </tr>
 </table>
 
+<br />
 <a name="temi" />
 ####Come mappare i temi di DCAT-AP_IT
 Sulla base della [valutazione dei diversi temi per i dati discussa nell'ambito del gruppo Europeo](https://joinup.ec.europa.eu/asset/dcat_application_profile/document/review-dcat-ap-draft-proposal-list-categorization-data) la tabella seguente offre un possibile mapping di domini rispetto ai temi richiesti dal profilo Europeo DCAT-AP e quindi dall'estensione italiana DCAT-AP_IT.
@@ -958,6 +959,10 @@ Sulla base della [valutazione dei diversi temi per i dati discussa nell'ambito d
     <tr>
         <td align="left">Agricoltura, pesca, silvicoltura e prodotti alimentari</td>
         <td align="left">Rientra tutto ciò che riguarda il settore agricoltura, pesca, politiche forestali e alimentari</td>
+    </tr>
+    <tr>
+        <td align="left">Economia e Finanze</td>
+        <td align="left">Rientra tutto ciò che riguarda la tassazione, l'industria, il manifatturiero, il bilancio dello stato, la crescita economica, il commercio</td>
     </tr>
     
 </table>
