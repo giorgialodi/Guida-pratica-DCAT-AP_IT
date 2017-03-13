@@ -33,7 +33,20 @@ CC-BY 4.0 (Creative Commons Attribution).
     * [dcatapit:Dataset](#dcatapitdataset)
     * [Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle](#dataset-esempi-JSONLD-RDFXML-RDFTURTLE)
     * [Elementi obbligatori](#elementi-obbligatori-dataset)
+      * [Identificativo del dataset](#dctidentifierdataset-JSONLD-RDFXML-RDFTURTLE)
       * [Titolo del dataset](#dcttitledataset-JSONLD-RDFXML-RDFTURTLE)
+      * [Descrizione del dataset](#dctdescriptiondataset-JSONLD-RDFXML-RDFTURTLE)
+      * [Data di ultima modifica del dataset](#dctmodifieddataset-JSONLD-RDFXML-RDFTURTLE)
+      * [Temi del dataset](#dcatthemedataset-JSONLD-RDFXML-RDFTURTLE)
+      * [Titolare del dataset](#dctrightsHolderdataset-JSONLD-RDFXML-RDFTURTLE)
+      * [Frequenza di aggiornamento del dataset](#dctaccrualPeriodicity-JSONLD-RDFXML-RDFTURTLE)
+      * [Distribuzione del dataset](#dcatdistribution-JSONLD-RDFXML-RDFTURTLE)
+    * [Elementi raccomandati](#elementi-raccomandati-dataset)
+      * [Punto di Contatto del dataset](#dcatcontactpoint-JSONLD-RDFXML-RDFTURTLE)
+      * [Editore del dataset](#dctpublisherdataset-JSONLD-RDFXML-RDFTURTLE)
+      * [Sottotema del dataset](#dctsubject-JSONLD-RDFXML-RDFTURTLE)
+    * [Elementi opzionali](#elementi-opzionali-dataset)
+    
   * [Come mappare i temi di DCAT-AP_IT](#temi)
   
 <a name="modalita-alimentazione" />
