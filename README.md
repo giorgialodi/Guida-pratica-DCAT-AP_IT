@@ -1025,7 +1025,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
         <dct:modified rdf:datatype="&xsd;date">2015-05-25</dct:modified>
         <dct:identifier>agid:D.301</dct:identifier>
         <dcat:keyword>Acquisizione</dcat:keyword>
-	<dcat:keyword>SPC</dcat:keyword>
+		<dcat:keyword>SPC</dcat:keyword>
         <dcat:keyword>Contratto pubblico</dcat:keyword>
         <dct:title xml:lang="it">Contratti del Sistema Pubblico di Connettività (SPC)</dct:title>
         <dct:description xml:lang="it">Il dataset contiene i contratti SPC del Lotto 1 (2007)</dct:description>
@@ -1107,8 +1107,9 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
       "dcterms:title": {
         "@language": "it",
         "@value": "Contratti del Sistema Pubblico di Connettività (SPC)"
-      },      
-    altri elementi per specificere il dataset
+      },   
+      
+      altri elementi per specificere il dataset
 ```
 
 >``RDF/XML``
