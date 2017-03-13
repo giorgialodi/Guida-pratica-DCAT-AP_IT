@@ -9,7 +9,6 @@ CC-BY 4.0 (Creative Commons Attribution).
 
 ##Indice
 * [Alimentare il catalogo nazionale ``dati.gov.it``](#modalita-inserimento-metadati-catalogo)
-  * [Procedura di accreditamento](#accreditamento)
   * [Modalità di alimentazione](#modalita-alimentazione)
 * [Guida pratica a DCAT-AP_IT](#dcatapit)
   * [Come definire un soggetto/organizzazione in DCAT-AP_IT](#soggetto)
@@ -32,34 +31,14 @@ CC-BY 4.0 (Creative Commons Attribution).
       * [Temi del catalogo](#dcatthemetaxonomy-JSONLD-RDFXML-RDFTURTLE)
   * [Come definire un dataset in DCAT-AP_IT](#dataset)
     * [dcatapit:Dataset](#dcatapitdataset)
+  * [Come mappare i temi di DCAT-AP_IT](#temi)
   
-<a name="modalita-inserimento-metadati-catalogo" />
-##Alimentare il catalogo nazionale ``dati.gov.it``
-Per poter alimentare il catalogo nazionale è necessario accreditarsi presso il catalogo stesso. 
-<a name="accreditamento" />
-####Procedura di accreditamento
-La procedura di accreditamento al momento disponibile prevede l'esecuzione dei seguenti passi:
-
-1. l'utente dell'amministrazione accede alla [piattaforma di test](http://93.63.32.55);
-2. l'utente dell'amministrazione avvia la registrazione selezionando la voce *Registrati* nel menu in alto a destra;
-3. nella pagina Web seguente, l'utente inserisce nel box in fondo alla pagina il codice IPA, i.e., codice della propria amministrazione come assegnato dall'Indice della Pubblica Amministrazione (IPA). Il codice IPA è reperibile attraverso [il catalogo IPA;](http://www.indicepa.gov.it). L'utente preme "avanti";
-4. il sistema presenta all'utente uno o più nomi di cosiddetti referenti IPA, ovvero di responsabili, all'interno dell'amministrazione, del corretto e tempestivo aggiornamento dei dati dell'IPA. L'utente seleziona un referente IPA dalla lista e preme "avanti";
-5. l'utente è invitato a completare la registrazione inserendo l'*email* istituzionale, lo *username* da utilizzare per i successivi accessi e il *Nome e Cognome*. L'utente preme "invia";
-6. il sistema provvede a inoltrare una richiesta di accreditamento. Al momento la richiesta è inviata agli amministratori del sistema ``dati.gov.it`` e non al referente selezionato. L'invio al referente IPA sarà abilitato solo in una fase successiva;
-8. l'utente riceverà una email all’indirizzo indicato al suddetto passo 5. con il seguente testo “*Ti ringraziamo per la registrazione su dati.gov.it - i dati aperti della pubblica amministrazione. La tua richiesta di account è in attesa di approvazione. Una volta approvata, riceverai un'altra e-mail con le informazioni necessarie per effettuare il primo accesso, impostare la password ed altri dettagli.*”;
-9. a seguito dell’approvazione da parte degli amministrazioni di ``dati.gov.it``, l'utente riceverà una seconda email con un link; cliccando sul link dell'email, l'utente è indirizzato all'applicazione che gli consente di inserire la password da utilizzare per i successivi accessi.
-
-L'Agenzia per l'Italia Digitale sta valutando anche l'implementazione di una seconda modalità di accreditamento a ``dati.gov.it``che non contempla l'uso dei dati dell'IPA. In particolare, analogamente ad altri sistemi dell'Agenzia, si sta valutando l'accreditamento mediante 
-un *modulo firmato* digitalmente da inviare via Posta Elettronica Certificata (PEC) ad AgID. 
-
-Una volta ottenute le credenziali per l'accesso, l'utente può iniziare a documentare i propri dataset scegliendo attraverso [due modalità previste](#modalita-alimentazione).
-
 <a name="modalita-alimentazione" />
 ####Modalità di alimentazione del catalogo 
 Esistono due modalità di alimentazione:
 
-1. *editor*: applicazione Web integrata nel catalogo per l'acquisizione e l'aggiornamento guidato dei metadati. L'editor alimenta automaticamente il catalogo in modo da garantire la conformità al profilo DCAT-AP_IT. Tale modalità è consigliata in presenza di pochi dataset che hanno anche una frequenza di aggiornamento ampia. Per usufruirne, l'utente accede all'area privata di ``dati.gov.it`` selezionando *Login* dal menu in alto a destra. Una volta effettuato il login, l'utente può accedere al web editor selezionando la voce di menu *Aggiungi dataset*. Per poter visualizzare l’elenco dei dataset descritti si può selezionare la voce *I miei dataset* in alto a destra. Ogni dataset può essere eventualmente modificato (attraverso l'operazione *Modifica*) o eliminato (attraverso l'operazione *Elimina*);
-2. *harvesting*: funzionalità offerta dal catalogo per l'acquisizione e l'aggiornamento periodico dei metadati. L'uso di tale funzionalità richiede che l'amministrazione comunichi, una volta effettuato il login e solo la prima volta, l'URL dove poter acquisire tutti i dataset. Sarà lo stesso catalogo nazionale che si occuperà successivamente di raccogliere periodicamente i metadati che descrivono i dati. Tale modalità è consigliata in presenza di un numero elevato di dataset, soggetti anche a frequenti aggiornamenti. 
+1. *editor*: applicazione Web integrata nel catalogo per l'acquisizione e l'aggiornamento guidato dei metadati. L'editor alimenta automaticamente il catalogo in modo da garantire la conformità al profilo DCAT-AP_IT. Tale modalità è consigliata in presenza di pochi dataset che hanno anche una frequenza di aggiornamento ampia. Per usufruirne, l'utente accede all'area privata di ``dati.gov.it`` selezionando *Login* dal menu in alto a destra, previo accreditamento presso la piattaforma;
+2. *harvesting*: funzionalità offerta dal catalogo per l'acquisizione e l'aggiornamento periodico dei metadati. L'uso di tale funzionalità richiede che l'amministrazione comunichi, una volta effettuato il login e solo la prima volta, l'URL del catalogo e selezioni la modalità per l'harvesting (e.g., RDF, CKAN, CSW). Sarà lo stesso catalogo nazionale che si occuperà successivamente di raccogliere periodicamente i metadati che descrivono i dati. Tale modalità è consigliata in presenza di un numero elevato di dataset, soggetti anche a frequenti aggiornamenti. 
 
 <a name="dcatapit" />
 ##Guida a DCAT-AP_IT
@@ -967,5 +946,19 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
     </tr>
 </table>
 
+<a name="temi" />
+####Come mappare i temi di DCAT-AP_IT
+Sulla base della [valutazione dei diversi temi per i dati discussa nell'ambito del gruppo Europeo](https://joinup.ec.europa.eu/asset/dcat_application_profile/document/review-dcat-ap-draft-proposal-list-categorization-data) la tabella seguente offre un possibile mapping di domini rispetto ai temi richiesti dal profilo Europeo DCAT-AP e quindi dall'estensione italiana DCAT-AP_IT.
 
+<table align="left">
+    <tr>
+    	<td align="left"><b>Tema</b></td>
+	<td align="left"><b>Descrizione</b></td>
+    </tr>
+    <tr>
+        <td align="left">Agricoltura, pesca, silvicoltura e prodotti alimentari</td>
+        <td align="left">Rientra tutto ciò che riguarda il settore agricoltura, pesca, politiche forestali e alimentari</td>
+    </tr>
+    
+</table>
 
