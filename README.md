@@ -949,7 +949,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 <br />
 <a name="temi" />
 ####Come mappare i temi di DCAT-AP_IT
-Sulla base della [valutazione dei diversi temi per i dati discussa nell'ambito del gruppo Europeo](https://joinup.ec.europa.eu/asset/dcat_application_profile/document/review-dcat-ap-draft-proposal-list-categorization-data) la tabella seguente offre un possibile mapping di domini rispetto ai temi richiesti dal profilo Europeo DCAT-AP e quindi dall'estensione italiana DCAT-AP_IT.
+Sulla base della [valutazione dei diversi temi per i dati discussa nell'ambito del gruppo Europeo](https://joinup.ec.europa.eu/asset/dcat_application_profile/document/review-dcat-ap-draft-proposal-list-categorization-data) la tabella seguente offre un possibile mapping di domini rispetto ai temi richiesti dal profilo Europeo DCAT-AP, e quindi dall'estensione italiana DCAT-AP_IT.
 
 <table align="left">
     <tr>
@@ -964,6 +964,49 @@ Sulla base della [valutazione dei diversi temi per i dati discussa nell'ambito d
         <td align="left">Economia e Finanze</td>
         <td align="left">Rientra tutto ciò che riguarda la tassazione, l'industria, il manifatturiero, il bilancio dello stato, la crescita economica, il commercio</td>
     </tr>
-    
+    <tr>
+        <td align="left">Istruzione, cultura e sport</td>
+        <td align="left">Rientra tutto ciò che riguarda la cultura, il turismo, l'istruzione e le attività sportive</td>
+    </tr>
+    <tr>
+        <td align="left">Energia</td>
+        <td align="left">Rientra tutto ciò che concerne il settore dell'energia e dell'estrazione mineraria</td>
+    </tr>
+    <tr>
+        <td align="left">Ambiente</td>
+        <td align="left">Rientra tutto ciò che riguarda l'ambiente (rifiuti, consumo del suolo, oceani, ecc.) e il clima/meteo</td>
+    </tr>
+    <tr>
+        <td align="left">Governo e settore pubblico</td>
+        <td align="left">Rientra tutto ciò che riguarda le politiche di governo, gli affari istituzionali, la trasparenza del settore pubblico</td>
+    </tr>
+    <tr>
+        <td align="left">Salute</td>
+        <td align="left">Rientra tutto ciò che concerne le attività sulla salute e tutto ciò che riguarda gli animali</td>
+    </tr>
+    <tr>
+        <td align="left">Tematiche internazionali</td>
+        <td align="left">Rientra tutto ciò che concerne le relazioni internazionali, la cooperazione internazionale, i diritti umanitari, le organizzazioni internazionali e gli affari esteri</td>
+    </tr>
+    <tr>
+        <td align="left">Giustizia, sistema giuridico e sicurezza pubblica</td>
+        <td align="left">Rientra tutto ciò che riguarda le frodi, i crimini, la giustizia, le norme. Rientra anche tutto ciò che riguarda la difesa e gli aspetti legati alle attività del ministero dell'interno</td>
+    </tr>	
+    <tr>
+        <td align="left">Regioni e città</td>
+        <td align="left">Rientra tutto ciò che riguarda le strade urbane e i numeri civici. Il tema ha una forte sovrapposizione con ambiente perché potrebbe anche contenere tutto ciò che concerne la geografia del territorio (e.g., montagne, laghi, fiumi, ecc.)</td>
+    </tr>
+    <tr>
+        <td align="left">Popolazione e società</td>
+        <td align="left">Rientra tutto ciò che concerne lo sviluppo della società, le condizioni della società, la cittadinanza, la demografia, il welfare</td>
+    </tr>
+    <tr>
+        <td align="left">Scienza e tecnologia</td>
+        <td align="left">Rientra tutto ciò che riguarda la ricerca, l'innovazione, la tecnologia, la banda larga e ultralarga, la psicologia, lo spazio</td>
+    </tr>
+    <tr>
+        <td align="left">Trasporti</td>
+        <td align="left">Rientra tutto ciò che riguarda i trasporti e le relative infrastrutture, la mobilità</td>
+    </tr>
 </table>
 
