@@ -18,21 +18,21 @@ CC-BY 4.0 (Creative Commons Attribution).
   * [Come definire un catalogo in DCAT-AP_IT](#catalogo)
     * [dcatapit:Catalog](#catalog)
     * [Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle](#catalogo-esempi-JSONLD-RDFXML-RDFTURTLE)
-    * [Elementi obbligatori che descrivono un Catalogo in DCAT-AP_IT](#elementi-obbligatori-catalogo)
-      * [Titolo del catalogo](#dcttitle-JSONLD-RDFXML-RDFTURTLE)
-      * [Descrizione del catalogo](#dctdescription-JSONLD-RDFXML-RDFTURTLE)
-      * [Editore del catalogo](#dctpublisher-JSONLD-RDFXML-RDFTURTLE)
-      * [Data di ultima modifica del catalogo](#dctmodified-JSONLD-RDFXML-RDFTURTLE)
+    * [Elementi obbligatori](#elementi-obbligatori-catalogo)
+      * [Titolo del catalogo](#dcttitlecatalogo-JSONLD-RDFXML-RDFTURTLE)
+      * [Descrizione del catalogo](#dctdescriptioncatalogo-JSONLD-RDFXML-RDFTURTLE)
+      * [Editore del catalogo](#dctpublishercatalogo-JSONLD-RDFXML-RDFTURTLE)
+      * [Data di ultima modifica del catalogo](#dctmodifiedcatalogo-JSONLD-RDFXML-RDFTURTLE)
       * [Dataset del catalogo](#dcatdataset-JSONLD-RDFXML-RDFTURTLE)
-    * [Elementi raccomandati che descrivono un Catalogo in DCAT-AP_IT](#elementi-raccomandati-catalogo)
-      * [Home page del catalogo](#foafhomepage-JSONLD-RDFXML-RDFTURTLE)
-      * [Lingua del catalogo](#dctlanguage-JSONLD-RDFXML-RDFTURTLE)
-      * [Data di rilascio del catalogo](#dctissued-JSONLD-RDFXML-RDFTURTLE)
+    * [Elementi raccomandati](#elementi-raccomandati-catalogo)
+      * [Home page del catalogo](#foafhomepagecatalogo-JSONLD-RDFXML-RDFTURTLE)
+      * [Lingua del catalogo](#dctlanguagecatalogo-JSONLD-RDFXML-RDFTURTLE)
+      * [Data di rilascio del catalogo](#dctissuedcatalogo-JSONLD-RDFXML-RDFTURTLE)
       * [Temi del catalogo](#dcatthemetaxonomy-JSONLD-RDFXML-RDFTURTLE)
   * [Come definire un dataset in DCAT-AP_IT](#dataset)
     * [dcatapit:Dataset](#dcatapitdataset)
     * [Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle](#dataset-esempi-JSONLD-RDFXML-RDFTURTLE)
-    * [Elementi obbligatori che descrivono un Dataset in DCAT-AP_IT](#elementi-obbligatori-dataset)
+    * [Elementi obbligatori](#elementi-obbligatori-dataset)
   * [Come mappare i temi di DCAT-AP_IT](#temi)
   
 <a name="modalita-alimentazione" />
@@ -291,7 +291,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 ```
 <br />
 <a name="elementi-obbligatori-catalogo" />
-####Elementi obbligatori che descrivono un Catalogo in DCAT-AP_IT
+####Elementi obbligatori
 1) **_TITOLO del CATALOGO_**: ``dct:title``
 
 <table align="left">
@@ -317,8 +317,8 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
   </tr>
 </table>
 
-<a name="dcttitle-JSONLD-RDFXML-RDFTURTLE" />
-##### Esempi di uso di ``dct:title`` in JSON-LD, RDF/XML e RDF/Turtle
+<a name="dcttitlecatalogo-JSONLD-RDFXML-RDFTURTLE" />
+##### Esempi di uso di ``dct:title`` per il Catalogo in JSON-LD, RDF/XML e RDF/Turtle
 >``JSON-LD``
 
 ```JSON
@@ -392,7 +392,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 </table>
 
 <a name="dctdescription-JSONLD-RDFXML-RDFTURTLE" />
-##### Esempi di uso di ``dct:description`` in JSON-LD, RDF/XML e RDF/Turtle
+##### Esempi di uso di ``dct:description`` per il Catalogo in JSON-LD, RDF/XML e RDF/Turtle
 >``JSON-LD``
 
 ```JSON
@@ -652,7 +652,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 ```
 <br />
 <a name="elementi-raccomandati-catalogo" />
-####Elementi raccomandati che descrivono un Catalogo in DCAT-AP_IT
+####Elementi raccomandati
 
 <br />
 1) **_HOME PAGE del CATALOGO_**: ``foaf:homepage``
@@ -1010,7 +1010,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
       },
       "dcterms:title": {
         "@language": "it",
-        "@value": "Contratti del Sistema Pubblico di Connettività"
+        "@value": "Contratti del Sistema Pubblico di Connettività (SPC)"
       }
     },
 
@@ -1027,7 +1027,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
         <dcat:keyword>Acquisizione</dcat:keyword>
 	<dcat:keyword>SPC</dcat:keyword>
         <dcat:keyword>Contratto pubblico</dcat:keyword>
-        <dct:title xml:lang="it">Contratti del Sistema Pubblico di Connettività</dct:title>
+        <dct:title xml:lang="it">Contratti del Sistema Pubblico di Connettività (SPC)</dct:title>
         <dct:description xml:lang="it">Il dataset contiene i contratti SPC del Lotto 1 (2007)</dct:description>
         <dct:publisher rdf:resource="http://dati.gov.it/resource/Amministrazione/agid"/>
         <dct:creator rdf:resource="http://dati.gov.it/resource/Amministrazione/agid"/>
@@ -1049,7 +1049,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
 	a				dcatapit:Dataset , dcat:Dataset ;
 	dct:identifier			"agid:D.301" ;
-	dct:title 			"Contratti del Sistema Pubblico di Connettività"@it ;
+	dct:title 			"Contratti del Sistema Pubblico di Connettività (SPC)"@it ;
 	dct:description 		"Il dataset contiene i contratti SPC del Lotto 1 (2007)"@it ;
 	dcat:theme 			<http://publications.europa.eu/resource/authority/data-theme/ECON> ; 
 	dct:subject		 	<http://eurovoc.europa.eu/3193> , <http://eurovoc.europa.eu/1810>;
@@ -1066,7 +1066,74 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 ```
 <br />
 <a name="elementi-obbligatori-dataset" />
-####Elementi obbligatori che descrivono un Dataset in DCAT-AP_IT
+####Elementi obbligatori
+1) **_TITOLO del DATASET**: ``dct:title``
+
+<table align="left">
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">1..N (può esistere più di un'istanza in diverse lingue della stessa proprietà)</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Obbligatorio</td>
+  </tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">Il titolo del Dataset</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://purl.org/dc/terms/title</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left"><b>Si raccomanda di inserire un testo semplice e corto. Si raccomanda di non utilizzare acronimi o abbreviazioni incomprensibili. Se si vogliono utilizzare comunque gli acronimi, riportare anche il nome esteso. Nel caso il dataset sia legato a un progetto più ampio, si consiglia di indicare, tra parentesi, il nome del progetto alla fine del titolo stesso. Si può evitaere di inserire nel titolo del Dataset la distribuzione dello stesso (e.g., si può evitare di scrivere un titolo come "Luoghi ed eventi della cultura in LOD")</b> <br />Esempi di titoli di dataset: "Contratti del Sistema Pubblico di Connettività (SPC)" oppure "Luoghi ed eventi della cultura".</td>
+  </tr>
+</table>
+
+<a name="dcttitledataset-JSONLD-RDFXML-RDFTURTLE" />
+##### Esempi di uso di ``dct:title`` per il Dataset in JSON-LD, RDF/XML e RDF/Turtle
+>``JSON-LD``
+
+```JSON
+
+      {
+      "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid",
+      "@type": [
+        "dcat:Dataset",
+        "http://dati.gov.it/onto/dcatapit#\"Dataset"
+      ],
+      "dcterms:title": {
+        "@language": "it",
+        "@value": "Contratti del Sistema Pubblico di Connettività (SPC)"
+      },      
+    altri elementi per specificere il dataset
+```
+
+>``RDF/XML``
+
+```XML
+  <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
+
+    <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+        <rdf:type rdf:resource="&dcat;Dataset"/>
+	<dct:title xml:lang="it">Contratti del Sistema Pubblico di Connettività (SPC)</dct:title>
+        [altri elementi per specificare il dataset] 
+    </dcatapit:Dataset>
+```
+
+>``RDF/Turtle``
+
+```Turtle
+   <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
+   a				dcatapit:Dataset , dcat:Dataset ;
+   dct:title 			"Contratti del Sistema Pubblico di Connettività (SPC)"@it ;
+
+   [altri elementi per specificare il dataset] .
+	
+```
+
 
 
 <br />
