@@ -20,10 +20,10 @@ CC-BY 4.0 (Creative Commons Attribution).
     * [Esempi di uso di dcatapit:Catalog in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dcatapitcatalog-in-json-ld-rdfxml-rdfturtle-1)
     * [Elementi obbligatori](#elementi-obbligatori)
       * [Titolo del catalogo](#1-titolo-del-catalogo-dcttitle)
-      * [Descrizione del catalogo](#esempi-di-uso-di-dctdescription-per-il-catalogo-in-json-ld-rdfxml-rdfturtle)
-      * [Editore del catalogo](#esempi-di-uso-di-dctpublisher-per-il-catalogo-in-json-ld-rdfxml-rdfturtle)
-      * [Data di ultima modifica del catalogo](#esempi-di-uso-di-dctmodified-per-il-catalogo-in-json-ld-rdfxml-rdfturtle)
-      * [Dataset del catalogo](#esempi-di-uso-di-dcatdataset-in-json-ld-rdfxml-rdfturtle)
+      * [Descrizione del catalogo](#2-descrizione-del-catalogo-dctdescription)
+      * [Editore del catalogo](#3-editore-del-catalogo-dctpublisher)
+      * [Data di ultima modifica del catalogo](#4-data-di-ultima-modifica-del-catalogo-dctmodified)
+      * [Dataset del catalogo](#5-dataset-del-catalogo-dcatdataset)
     * [Elementi raccomandati](#elementi-raccomandati)
       * [Home page del catalogo](#esempi-di-uso-di-foafhomepage-per-il-catalogo-in-json-ld-rdfxml-rdfturtle)
       * [Lingua del catalogo](#esempi-di-uso-di-dctlanguage-per-il-catalogo-in-json-ld-rdfxml-rdfturtle)
@@ -368,7 +368,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 	
 ```
 
-2) **_DESCRIZIONE del CATALOGO_**: ``dct:description``
+##### 2) **_DESCRIZIONE del CATALOGO:_** ``dct:description``
 
 <table>
   <tr> 
@@ -434,7 +434,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 	[altri elementi per specificare il catalogo] .
 ```
 
-3) **_EDITORE del CATALOGO_**: ``dct:publisher``
+##### 3) **_EDITORE del CATALOGO:_** ``dct:publisher``
 <table>
   <tr> 
     <td align="left">Cardinalità</td>
@@ -519,7 +519,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 ```
 
 
-4) **_DATA di ULTIMA MODIFICA del CATALOGO_**: ``dct:modified``
+##### 4) **_DATA di ULTIMA MODIFICA del CATALOGO:_** ``dct:modified``
 <table>
   <tr> 
     <td align="left">Cardinalità</td>
@@ -582,7 +582,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 ```
 
 
-5) **_DATASET del CATALOGO_**: ``dcat:dataset``
+##### 5) **_DATASET del CATALOGO:_** ``dcat:dataset``
 <table>
   <tr> 
     <td align="left">Cardinalità</td>
@@ -652,7 +652,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 
 #### Elementi raccomandati
 
-1) **_HOME PAGE del CATALOGO_**: ``foaf:homepage``
+##### 1) **_HOME PAGE del CATALOGO:_** ``foaf:homepage``
 
 <table>
   <tr> 
@@ -718,7 +718,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 	
 ```
 
-2) **_LINGUA del CATALOGO_**: ``dct:language``
+##### 2) **_LINGUA del CATALOGO:_** ``dct:language``
 
 <table>
   <tr> 
@@ -784,7 +784,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 	
 ```
 
-3) **_DATA di RILASCIO del CATALOGO_**: ``dct:issued``
+##### 3) **_DATA di RILASCIO del CATALOGO:_** ``dct:issued``
 <table>
   <tr> 
     <td align="left">Cardinalità</td>
@@ -846,7 +846,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 	[altri elementi del catalogo] .
 ```
 
-4) **_TEMI del CATALOGO_**: ``dcat:themeTaxonomy``
+##### 4) **_TEMI del CATALOGO:_** ``dcat:themeTaxonomy``
 <table>
   <tr> 
     <td align="left">Cardinalità</td>
@@ -1057,7 +1057,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 ```
 
 #### Elementi obbligatori
-1) **_IDENTIFICATIVO del DATASET_**: ``dct:identifier``
+##### 1) **_IDENTIFICATIVO del DATASET:_** ``dct:identifier``
 
 <table>
   <tr> 
@@ -1121,7 +1121,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 	
 ```
 
-2) **_TITOLO del DATASET_**: ``dct:title``
+##### 2) **_TITOLO del DATASET:_** ``dct:title``
 
 <table>
   <tr> 
@@ -1188,7 +1188,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 	
 ```
 
-3) **_DESCRIZIONE del DATASET_**: ``dct:description``
+##### 3) **_DESCRIZIONE del DATASET:_** ``dct:description``
 
 <table>
   <tr> 
@@ -1260,7 +1260,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 	
 ```
 
-4) **_DATA DI ULTIMA MODIFICA del DATASET_**: ``dct:modified``
+##### 4) **_DATA DI ULTIMA MODIFICA del DATASET:_** ``dct:modified``
 
 <table>
   <tr> 
