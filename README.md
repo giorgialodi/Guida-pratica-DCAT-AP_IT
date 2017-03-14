@@ -57,7 +57,7 @@ Un soggetto/organizzazione è definito mediante la specifica della classe _Agent
 
 #### Definizione di ``dcatapit:Agent``
 
-<table align="left">
+<table>
 <tr>
 <td align="left">URI</td>
 <td align="left">dcatapit:Agent</td>
@@ -88,7 +88,7 @@ Un soggetto/organizzazione è definito mediante la specifica della classe _Agent
 
 1) **_IDENTIFICATIVO del SOGGETTO_**: ``dct:identifier``
 
-<table align="left">
+<table>
   <tr> 
     <td align="left">Cardinalità</td>
     <td align="left">1 </td>
@@ -113,7 +113,7 @@ Un soggetto/organizzazione è definito mediante la specifica della classe _Agent
 </table>
 
 2) **_NOME del SOGGETTO_**: ``foaf:name``
-<table align="left">
+<table>
   <tr> 
     <td align="left">Cardinalità</td>
     <td align="left">1 </td>
@@ -181,7 +181,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 
 #### Definizione di ``dcatapit:Catalog``
 
-<table align="left">
+<table>
     <tr>
         <td align="left">URI</td>
         <td align="left">dcatapit:Catalog</td>
@@ -298,7 +298,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 #### Elementi obbligatori
 1) **_TITOLO del CATALOGO_**: ``dct:title``
 
-<table align="left">
+<table>
   <tr> 
     <td align="left">Cardinalità</td>
     <td align="left">1..N (può esistere più di un'istanza in diverse lingue della stessa proprietà)</td>
@@ -370,7 +370,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 
 2) **_DESCRIZIONE del CATALOGO_**: ``dct:description``
 
-<table align="left">
+<table>
   <tr> 
     <td align="left">Cardinalità</td>
     <td align="left">1..N (può esistere più di un'istanza in diverse lingue della stessa proprietà)</td>
@@ -435,7 +435,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 ```
 
 3) **_EDITORE del CATALOGO_**: ``dct:publisher``
-<table align="left">
+<table>
   <tr> 
     <td align="left">Cardinalità</td>
     <td align="left">1</td>
@@ -520,7 +520,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 
 
 4) **_DATA di ULTIMA MODIFICA del CATALOGO_**: ``dct:modified``
-<table align="left">
+<table>
   <tr> 
     <td align="left">Cardinalità</td>
     <td align="left">1</td>
@@ -583,7 +583,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 
 
 5) **_DATASET del CATALOGO_**: ``dcat:dataset``
-<table align="left">
+<table>
   <tr> 
     <td align="left">Cardinalità</td>
     <td align="left">1</td>
@@ -654,7 +654,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 
 1) **_HOME PAGE del CATALOGO_**: ``foaf:homepage``
 
-<table align="left">
+<table>
   <tr> 
     <td align="left">Cardinalità</td>
     <td align="left">0..1</td>
@@ -720,7 +720,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 
 2) **_LINGUA del CATALOGO_**: ``dct:language``
 
-<table align="left">
+<table>
   <tr> 
     <td align="left">Cardinalità</td>
     <td align="left">0..N (possono esistere più istanze della proprietà per ciascuna lingua del catalogo)</td>
@@ -785,7 +785,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 ```
 
 3) **_DATA di RILASCIO del CATALOGO_**: ``dct:issued``
-<table align="left">
+<table>
   <tr> 
     <td align="left">Cardinalità</td>
     <td align="left">0..1</td>
@@ -847,7 +847,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 ```
 
 4) **_TEMI del CATALOGO_**: ``dcat:themeTaxonomy``
-<table align="left">
+<table>
   <tr> 
     <td align="left">Cardinalità</td>
     <td align="left">0..N</td>
@@ -913,7 +913,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 
 #### Definizione di ``dcatapit:Dataset``
 
-<table align="left">
+<table>
     <tr>
         <td align="left">URI</td>
         <td align="left">dcatapit:Dataset</td>
@@ -1059,7 +1059,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 #### Elementi obbligatori
 1) **_IDENTIFICATIVO del DATASET_**: ``dct:identifier``
 
-<table align="left">
+<table>
   <tr> 
     <td align="left">Cardinalità</td>
     <td align="left">1</td>
@@ -1123,7 +1123,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 
 2) **_TITOLO del DATASET_**: ``dct:title``
 
-<table align="left">
+<table>
   <tr> 
     <td align="left">Cardinalità</td>
     <td align="left">1..N (può esistere più di un'istanza, in diverse lingue, della stessa proprietà)</td>
@@ -1190,7 +1190,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 
 3) **_DESCRIZIONE del DATASET_**: ``dct:description``
 
-<table align="left">
+<table>
   <tr> 
     <td align="left">Cardinalità</td>
     <td align="left">1..N (può esistere più di un'istanza, in diverse lingue, della stessa proprietà)</td>
@@ -1262,7 +1262,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 
 4) **_DATA DI ULTIMA MODIFICA del DATASET_**: ``dct:modified``
 
-<table align="left">
+<table>
   <tr> 
     <td align="left">Cardinalità</td>
     <td align="left">1</td>
@@ -1332,7 +1332,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 #### Come mappare i temi di DCAT-AP_IT
 Sulla base della [valutazione dei diversi temi per i dati discussa nell'ambito del gruppo Europeo](https://joinup.ec.europa.eu/asset/dcat_application_profile/document/review-dcat-ap-draft-proposal-list-categorization-data), la tabella seguente offre un possibile mapping di domini applicativi rispetto ai temi richiesti dal profilo Europeo DCAT-AP, e quindi dall'estensione italiana DCAT-AP_IT.
 
-<table align="left">
+<table>
     <tr>
     	<td align="left"><b>Tema</b></td>
 	<td align="left"><b>Descrizione</b></td>
@@ -1390,5 +1390,3 @@ Sulla base della [valutazione dei diversi temi per i dati discussa nell'ambito d
         <td align="left">Rientra tutto ciò che riguarda i trasporti e le relative infrastrutture, la mobilità</td>
     </tr>
 </table>
-
-
