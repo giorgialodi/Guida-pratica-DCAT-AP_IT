@@ -17,9 +17,9 @@ CC-BY 4.0 (Creative Commons Attribution).
     * [Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-in-json-ld-rdfxml-rdfturtle)
   * [Come definire un catalogo in DCAT-AP_IT](#come-definire-un-catalogo-di-dati-in-dcat-ap_it)
     * [dcatapit:Catalog](#definizione-di-dcatapitcatalog)
-    * [Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-in-json-ld-rdfxml-rdfturtle-1)
+    * [Esempi di uso di dcatapit:Catalog in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dcatapitcatalog-in-json-ld-rdfxml-rdfturtle-1)
     * [Elementi obbligatori](#elementi-obbligatori)
-      * [Titolo del catalogo](#esempi-di-uso-di-dcttitle-per-il-catalogo-in-json-ld-rdfxml-rdfturtle)
+      * [Titolo del catalogo](#)
       * [Descrizione del catalogo](#esempi-di-uso-di-dctdescription-per-il-catalogo-in-json-ld-rdfxml-rdfturtle)
       * [Editore del catalogo](#esempi-di-uso-di-dctpublisher-per-il-catalogo-in-json-ld-rdfxml-rdfturtle)
       * [Data di ultima modifica del catalogo](#esempi-di-uso-di-dctmodified-per-il-catalogo-in-json-ld-rdfxml-rdfturtle)
@@ -209,7 +209,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 </table>
 
 
-#### Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle
+#### Esempi di uso di dcatapit:Catalog in JSON-LD, RDF/XML, RDF/Turtle
 >``JSON-LD``
 
 ```JSON
@@ -296,7 +296,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 
 
 #### Elementi obbligatori
-1) **_TITOLO del CATALOGO_**: ``dct:title``
+##### 1) **_TITOLO del CATALOGO_**: ``dct:title``
 
 <table>
   <tr> 
