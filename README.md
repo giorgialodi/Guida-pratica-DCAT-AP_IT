@@ -56,6 +56,7 @@ Nelle seguenti sezioni, per ciascun elemento (classe e proprietà) del profilo d
 Un soggetto/organizzazione è definito mediante la specifica della classe _Agente_ identificata univocamente da un URI (Uniform Resource Identifier).
 
 #### Definizione di ``dcatapit:Agent``
+
 <table align="left">
 <tr>
 <td align="left">URI</td>
@@ -84,6 +85,7 @@ Un soggetto/organizzazione è definito mediante la specifica della classe _Agent
 </table>
 
 #### Elementi obbligatori che descrivono un Soggetto o Organizzazione
+
 1) **_IDENTIFICATIVO del SOGGETTO_**: ``dct:identifier``
 
 <table align="left">
