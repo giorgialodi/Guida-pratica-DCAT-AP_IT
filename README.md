@@ -319,8 +319,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
   </tr>
 </table>
 
-
-##### Esempi di uso di ``dct:title`` per il Catalogo in JSON-LD, RDF/XML RDF/Turtle
+##### Esempi di uso di ``dct:title`` per il Catalogo in JSON-LD, RDF/XML, RDF/Turtle
 >``JSON-LD``
 
 ```JSON
@@ -366,7 +365,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
   [altri elementi per specificare il catalogo] .
 	
 ```
-<br />
+
 2) **_DESCRIZIONE del CATALOGO_**: ``dct:description``
 
 <table align="left">
@@ -393,7 +392,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
   </tr>
 </table>
 
-##### Esempi di uso di ``dct:description`` per il Catalogo in JSON-LD, RDF/XML RDF/Turtle
+##### Esempi di uso di ``dct:description`` per il Catalogo in JSON-LD, RDF/XML, RDF/Turtle
 >``JSON-LD``
 
 ```JSON
@@ -432,7 +431,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 	dct:description 		"Il catalogo dei dati aperti della pubblica amministrazione italiana"@it ;
 	[altri elementi per specificare il catalogo] .
 ```
-<br />
+
 3) **_EDITORE del CATALOGO_**: ``dct:publisher``
 <table align="left">
   <tr> 
@@ -517,7 +516,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 	foaf:name       "Agenzia per l'Italia Digitale" .
 ```
 
-<br />
+
 4) **_DATA di ULTIMA MODIFICA del CATALOGO_**: ``dct:modified``
 <table align="left">
   <tr> 
@@ -580,7 +579,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 	[altri elementi del catalogo] .
 ```
 
-<br />
+
 5) **_DATASET del CATALOGO_**: ``dcat:dataset``
 <table align="left">
   <tr> 
@@ -905,12 +904,11 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 	dcat:themeTaxonomy	<http://publications.europa.eu/resource/authority/data-theme> ;
 	[altri elementi del catalogo] .
 ```
-<br />
-<a name="dataset" />
+
 ### Come definire un dataset in DCAT-AP_IT
 Un dataset è definito mediante la classe _Dataset_ identificata univocamente da un URI (Uniform Resource Identifier).
 
-<a name="dcatapitdataset" />
+
 #### Definizione di ``dcatapit:Dataset``
 
 <table align="left">
@@ -939,8 +937,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
         <td align="left">http://www.dati.gov.it/onto/dcatapit#Dataset</td>
     </tr>
 </table>
-<br />
-<a name="dataset-esempi-JSONLD-RDFXML-RDFTURTLE" />
+
 #### Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle
 >``JSON-LD``
 
@@ -1056,8 +1053,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 	dct:spatial 			<http://www.geonames.org/3169070> ; 
 	dct:temporal 			<http://dati.gov.it/resource/PeriodoTemporale/periodTimeContrattiSPC> .
 ```
-<br />
-<a name="elementi-obbligatori-dataset" />
+
 #### Elementi obbligatori
 1) **_IDENTIFICATIVO del DATASET_**: ``dct:identifier``
 
@@ -1084,8 +1080,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
 </table>
 
-<a name="dctidentifier-dataset-JSONLD-RDFXML-RDFTURTLE" />
-##### Esempi di uso di ``dct:identifier`` per il Dataset in JSON-LD, RDF/XML e RDF/Turtle
+##### Esempi di uso di ``dct:identifier`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
 >``JSON-LD``
 
 ```JSON
@@ -1149,8 +1144,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
 </table>
 
-<a name="dcttitle-dataset-JSONLD-RDFXML-RDFTURTLE" />
-##### Esempi di uso di ``dct:title`` per il Dataset in JSON-LD, RDF/XML e RDF/Turtle
+##### Esempi di uso di ``dct:title`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
 >``JSON-LD``
 
 ```JSON
@@ -1191,7 +1185,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
    [altri elementi per specificare il dataset] .
 	
 ```
-<br />
+
 3) **_DESCRIZIONE del DATASET_**: ``dct:description``
 
 <table align="left">
@@ -1218,8 +1212,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
 </table>
 
-<a name="dctdescription-dataset-JSONLD-RDFXML-RDFTURTLE" />
-##### Esempi di uso di ``dct:description`` per il Dataset in JSON-LD, RDF/XML e RDF/Turtle
+##### Esempi di uso di ``dct:description`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
 >``JSON-LD``
 
 ```JSON
@@ -1291,8 +1284,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
 </table>
 
-<a name="dctmodified-dataset-JSONLD-RDFXML-RDFTURTLE" />
-##### Esempi di uso di ``dct:modified`` per il Dataset in JSON-LD, RDF/XML e RDF/Turtle
+##### Esempi di uso di ``dct:modified`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
 >``JSON-LD``
 
 ```JSON
@@ -1335,8 +1327,6 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 	
 ```
 
-<br />
-<a name="temi" />
 #### Come mappare i temi di DCAT-AP_IT
 Sulla base della [valutazione dei diversi temi per i dati discussa nell'ambito del gruppo Europeo](https://joinup.ec.europa.eu/asset/dcat_application_profile/document/review-dcat-ap-draft-proposal-list-categorization-data), la tabella seguente offre un possibile mapping di domini applicativi rispetto ai temi richiesti dal profilo Europeo DCAT-AP, e quindi dall'estensione italiana DCAT-AP_IT.
 
