@@ -13,7 +13,7 @@ CC-BY 4.0 (Creative Commons Attribution).
 * [Guida pratica a DCAT-AP_IT](#guida-pratica-a-dcat-ap_it)
   * [Come definire un soggetto/organizzazione in DCAT-AP_IT](#come-definire-un-soggetto-o-organizzazione-in-dcat-ap_it)
     * [dcatapit:Agent](#definizione-di-dcatapitagent)
-    * [Elementi obbligatori che descrivono un Soggetto o Organizzazione in DCAT-AP_IT](#elementi-obbligatori-che-descrivono-un-soggetto-o-organizzazione)
+    * [Elementi obbligatori che descrivono un Soggetto o Organizzazione](#elementi-obbligatori-che-descrivono-un-soggetto-o-organizzazione)
     * [Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-in-json-ld-rdfxml-rdfturtle)
   * [Come definire un catalogo in DCAT-AP_IT](#come-definire-un-catalogo-di-dati-in-dcat-ap_it)
     * [dcatapit:Catalog](#definizione-di-dcatapitcatalog)
@@ -57,30 +57,30 @@ Un soggetto/organizzazione è definito mediante la specifica della classe _Agent
 
 #### Definizione di ``dcatapit:Agent``
 <table align="left">
-    <tr>
-        <td align="left">URI</td>
-        <td align="left">dcatapit:Agent</td>
-    </tr>
-     <tr>
-        <td align="left">Sottoclasse</td>
-        <td align="left">foaf:Agent</td>
-    </tr>
-    <tr>
-        <td align="left">Descrizione</td>
-        <td align="left">Un soggetto (organizzazione) che gioca un certo ruolo sul catalogo e sui dataset del catalogo.</td>
-    </tr>
-    <tr>
-        <td align="left">Cardinalità</td>
-        <td align="left">1</td>
-    </tr>
-    <tr>
-        <td align="left">Stato</td>
-        <td align="left">Obbligatorio</td>
-    </tr>
-     <tr>
-        <td align="left">Riferimento</td>
-        <td align="left">http://www.dati.gov.it/onto/dcatapit#Agent</td>
-    </tr>
+<tr>
+<td align="left">URI</td>
+<td align="left">dcatapit:Agent</td>
+</tr>
+<tr>
+<td align="left">Sottoclasse</td>
+<td align="left">foaf:Agent</td>
+</tr>
+<tr>
+<td align="left">Descrizione</td>
+<td align="left">Un soggetto (organizzazione) che gioca un certo ruolo sul catalogo e sui dataset del catalogo.</td>
+</tr>
+<tr>
+<td align="left">Cardinalità</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">Stato</td>
+<td align="left">Obbligatorio</td>
+</tr>
+<tr>
+<td align="left">Riferimento</td>
+<td align="left">http://www.dati.gov.it/onto/dcatapit#Agent</td>
+</tr>
 </table>
 
 #### Elementi obbligatori che descrivono un Soggetto o Organizzazione
