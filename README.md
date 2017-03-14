@@ -7,6 +7,38 @@ La presente guida pratica fornisce una descrizione degli elementi principali del
 **Licenza:**
 CC-BY 4.0 (Creative Commons Attribution).
 
+## Indice
+* [Alimentare il catalogo nazionale dei dati](#catalogo-dati)
+  * [Modalità di alimentazione](#modalita-alimentazione)
+* [Guida pratica a DCAT-AP_IT](#dcatapit)
+  * [Come definire un soggetto/organizzazione in DCAT-AP_IT](#soggetto)
+    * [dcatapit:Agent](#agent)
+    * [Elementi obbligatori che descrivono un Soggetto/Organizzazione in DCAT-AP_IT](#elementi-obbligatori-soggetto)
+    * [Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle](#soggetto-esempi-JSONLD-RDFXML-RDFTURTLE)
+  * [Come definire un catalogo in DCAT-AP_IT](#catalogo)
+    * [dcatapit:Catalog](#catalogo)
+    * [Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle](#catalogo-esempi-JSONLD-RDFXML-RDFTURTLE)
+    * [Elementi obbligatori](#elementi-obbligatori-catalogo)
+      * [Titolo del catalogo](#dcttitle-catalogo-JSONLD-RDFXML-RDFTURTLE)
+      * [Descrizione del catalogo](#dctdescription-catalogo-JSONLD-RDFXML-RDFTURTLE)
+      * [Editore del catalogo](#dctpublisher-catalogo-JSONLD-RDFXML-RDFTURTLE)
+      * [Data di ultima modifica del catalogo](#dctmodified-catalogo-JSONLD-RDFXML-RDFTURTLE)
+      * [Dataset del catalogo](#dcatdataset-JSONLD-RDFXML-RDFTURTLE)
+    * [Elementi raccomandati](#elementi-raccomandati-catalogo)
+      * [Home page del catalogo](#foafhomepage-catalogo-JSONLD-RDFXML-RDFTURTLE)
+      * [Lingua del catalogo](#dctlanguage-catalogo-JSONLD-RDFXML-RDFTURTLE)
+      * [Data di rilascio del catalogo](#dctissued-catalogo-JSONLD-RDFXML-RDFTURTLE)
+      * [Temi del catalogo](#dcatthemetaxonomy-JSONLD-RDFXML-RDFTURTLE)
+  * [Come definire un dataset in DCAT-AP_IT](#dataset)
+    * [dcatapit:Dataset](#dcatapitdataset)
+    * [Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle](#dataset-esempi-JSONLD-RDFXML-RDFTURTLE)
+    * [Elementi obbligatori](#elementi-obbligatori-dataset)
+      * [Identificativo del dataset](#dctidentifier-dataset-JSONLD-RDFXML-RDFTURTLE)
+      * [Titolo del dataset](#dcttitle-dataset-JSONLD-RDFXML-RDFTURTLE)
+      * [Descrizione del dataset](#dctdescription-dataset-JSONLD-RDFXML-RDFTURTLE)
+      * [Data di ultima modifica del dataset](#dctmodified-dataset-JSONLD-RDFXML-RDFTURTLE)
+  * [Come mappare i temi di DCAT-AP_IT](#temi)
+
     
 <a name="catalogo-dati" />
 ## Alimentare il catalogo nazionale dei dati 
@@ -1323,7 +1355,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 ```
 
 <br />
-
+<a name="temi" />
 #### Come mappare i temi di DCAT-AP_IT
 Sulla base della [valutazione dei diversi temi per i dati discussa nell'ambito del gruppo Europeo](https://joinup.ec.europa.eu/asset/dcat_application_profile/document/review-dcat-ap-draft-proposal-list-categorization-data), la tabella seguente offre un possibile mapping di domini applicativi rispetto ai temi richiesti dal profilo Europeo DCAT-AP, e quindi dall'estensione italiana DCAT-AP_IT.
 
