@@ -13,7 +13,7 @@ CC-BY 4.0 (Creative Commons Attribution).
 * [Guida pratica a DCAT-AP_IT](#guida-pratica-a-dcat-ap_it)
   * [Come definire un soggetto/organizzazione in DCAT-AP_IT](#come-definire-un-soggetto-o-organizzazione-in-dcat-ap_it)
     * [dcatapit:Agent](#definizione-di-dcatapitagent)
-    * [Elementi obbligatori che descrivono un Soggetto o Organizzazione in DCAT-AP_IT](#elementi-obbligatori-che-descrivono-un-soggetto-o-organizzazione-in-dcat-ap_it)
+    * [Elementi obbligatori che descrivono un Soggetto o Organizzazione in DCAT-AP_IT](#elementi-obbligatori-che-descrivono-un-soggetto-o-organizzazione)
     * [Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-in-json-ld-rdfxml-rdfturtle)
   * [Come definire un catalogo in DCAT-AP_IT](#come-definire-un-catalogo-di-dati-in-dcat-ap_it)
     * [dcatapit:Catalog](#definizione-di-dcatapitcatalog)
@@ -83,7 +83,7 @@ Un soggetto/organizzazione è definito mediante la specifica della classe _Agent
     </tr>
 </table>
 
-#### Elementi obbligatori che descrivono un Soggetto o Organizzazione in DCAT-AP_IT
+#### Elementi obbligatori che descrivono un Soggetto o Organizzazione
 1) **_IDENTIFICATIVO del SOGGETTO_**: ``dct:identifier``
 
 <table align="left">
