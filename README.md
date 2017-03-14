@@ -17,7 +17,7 @@ CC-BY 4.0 (Creative Commons Attribution).
     * [Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-in-json-ld-rdfxml-rdfturtle)
   * [Come definire un catalogo in DCAT-AP_IT](#come-definire-un-catalogo-di-dati-in-dcat-ap_it)
     * [dcatapit:Catalog](#definizione-di-dcatapitcatalog)
-    * [Esempi di uso di dcatapit:Catalog in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dcatapitcatalog-in-json-ld-rdfxml-rdfturtle-1)
+    * [Esempi di uso di dcatapit:Catalog in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dcatapitcatalog-in-json-ld-rdfxml-rdfturtle)
     * [Elementi obbligatori](#elementi-obbligatori)
       * [Titolo del catalogo](#1-titolo-del-catalogo-dcttitle)
       * [Descrizione del catalogo](#2-descrizione-del-catalogo-dctdescription)
@@ -31,7 +31,7 @@ CC-BY 4.0 (Creative Commons Attribution).
       * [Temi del catalogo](#4-temi-del-catalogo-dcatthemetaxonomy)
   * [Come definire un dataset in DCAT-AP_IT](#come-definire-un-dataset-in-dcat-ap_it)
     * [dcatapit:Dataset](#definizione-di-dcatapitdataset)
-    * [Esempi di uso di dcatapit:Dataset in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dcatapitdataset-in-json-ld-rdfxml-rdfturtle-2)
+    * [Esempi di uso di dcatapit:Dataset in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dcatapitdataset-in-json-ld-rdfxml-rdfturtle)
     * [Elementi obbligatori](#elementi-obbligatori-1)
       * [Identificativo del dataset](#1-identificativo-del-dataset-dctidentifier)
       * [Titolo del dataset](#2-titolo-del-dataset-dcttitle)
@@ -784,7 +784,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 	
 ```
 
-##### 3) **_DATA di RILASCIO del CATALOGO:_** ``dct:issued``
+##### 3) **_DATA di RILASCIO del CATALOGO:_** ``dct:issued``
 <table>
   <tr> 
     <td align="left">Cardinalità</td>
@@ -846,7 +846,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 	[altri elementi del catalogo] .
 ```
 
-##### 4) **_TEMI del CATALOGO:_** ``dcat:themeTaxonomy``
+##### 4) **_TEMI del CATALOGO:_** ``dcat:themeTaxonomy``
 <table>
   <tr> 
     <td align="left">Cardinalità</td>
