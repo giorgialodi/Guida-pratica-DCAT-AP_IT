@@ -19,7 +19,7 @@ CC-BY 4.0 (Creative Commons Attribution).
     * [dcatapit:Catalog](#definizione-di-dcatapitcatalog)
     * [Esempi di uso di dcatapit:Catalog in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dcatapitcatalog-in-json-ld-rdfxml-rdfturtle-1)
     * [Elementi obbligatori](#elementi-obbligatori)
-      * [Titolo del catalogo](#)
+      * [Titolo del catalogo](#1-titolo-del-catalogo-dcttitle)
       * [Descrizione del catalogo](#esempi-di-uso-di-dctdescription-per-il-catalogo-in-json-ld-rdfxml-rdfturtle)
       * [Editore del catalogo](#esempi-di-uso-di-dctpublisher-per-il-catalogo-in-json-ld-rdfxml-rdfturtle)
       * [Data di ultima modifica del catalogo](#esempi-di-uso-di-dctmodified-per-il-catalogo-in-json-ld-rdfxml-rdfturtle)
