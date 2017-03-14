@@ -7,7 +7,7 @@ La presente guida pratica fornisce una descrizione degli elementi principali del
 **Licenza:**
 CC-BY 4.0 (Creative Commons Attribution).
 
-##Indice
+## Indice
 * [Alimentare il catalogo nazionale dei dati](#catalogo-dati)
   * [Modalità di alimentazione](#modalita-alimentazione)
 * [Guida pratica a DCAT-AP_IT](#dcatapit)
@@ -46,7 +46,6 @@ CC-BY 4.0 (Creative Commons Attribution).
       * [Editore del dataset](#dctpublisherdataset-JSONLD-RDFXML-RDFTURTLE)
       * [Sottotema del dataset](#dctsubject-JSONLD-RDFXML-RDFTURTLE)
     * [Elementi opzionali](#elementi-opzionali-dataset)
-    
   * [Come mappare i temi di DCAT-AP_IT](#temi)
   
 <a name="catalogo-dati" />
@@ -336,7 +335,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 </table>
 
 <a name="dcttitlecatalogo-JSONLD-RDFXML-RDFTURTLE" />
-##### Esempi di uso di ``dct:title`` per il Catalogo in JSON-LD, RDF/XML e RDF/Turtle
+#####Esempi di uso di ``dct:title`` per il Catalogo in JSON-LD, RDF/XML e RDF/Turtle
 >``JSON-LD``
 
 ```JSON
@@ -410,7 +409,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 </table>
 
 <a name="dctdescriptioncatalogo-JSONLD-RDFXML-RDFTURTLE" />
-##### Esempi di uso di ``dct:description`` per il Catalogo in JSON-LD, RDF/XML e RDF/Turtle
+#####Esempi di uso di ``dct:description`` per il Catalogo in JSON-LD, RDF/XML e RDF/Turtle
 >``JSON-LD``
 
 ```JSON
@@ -476,7 +475,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 </table>
 
 <a name="dctpublishercatalogo-JSONLD-RDFXML-RDFTURTLE" />
-##### Esempi di uso di ``dct:publisher`` per il Catalogo in JSON-LD, RDF/XML e RDF/Turtle
+#####Esempi di uso di ``dct:publisher`` per il Catalogo in JSON-LD, RDF/XML e RDF/Turtle
 >``JSON-LD``
 
 ```JSON
@@ -562,7 +561,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 </table>
 
 <a name="dctmodifiedcatalogo-JSONLD-RDFXML-RDFTURTLE" />
-##### Esempi di uso di ``dct:modified`` per il Catalogo in JSON-LD, RDF/XML e RDF/Turtle
+#####Esempi di uso di ``dct:modified`` per il Catalogo in JSON-LD, RDF/XML e RDF/Turtle
 >``JSON-LD``
 
 ```JSON
@@ -626,7 +625,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 </table>
 
 <a name="dcatdataset-JSONLD-RDFXML-RDFTURTLE" />
-##### Esempi di uso di ``dcat:dataset`` in JSON-LD, RDF/XML e RDF/Turtle
+#####Esempi di uso di ``dcat:dataset`` in JSON-LD, RDF/XML e RDF/Turtle
 >``JSON-LD``
 
 ```JSON
@@ -767,7 +766,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 </table>
 
 <a name="dctlanguagecatalogo-JSONLD-RDFXML-RDFTURTLE" />
-##### Esempi di uso di ``dct:language`` per il Catalogo in JSON-LD, RDF/XML e RDF/Turtle
+#####Esempi di uso di ``dct:language`` per il Catalogo in JSON-LD, RDF/XML e RDF/Turtle
 >``JSON-LD``
 
 ```JSON
@@ -834,7 +833,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 </table>
 
 <a name="dctissuedcatalogo-JSONLD-RDFXML-RDFTURTLE" />
-##### Esempi di uso di ``dct:issued`` per il Catalogo in JSON-LD, RDF/XML e RDF/Turtle
+#####Esempi di uso di ``dct:issued`` per il Catalogo in JSON-LD, RDF/XML e RDF/Turtle
 >``JSON-LD``
 
 ```JSON
@@ -897,7 +896,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 </table>
 
 <a name="dcatthemetaxonomy-JSONLD-RDFXML-RDFTURTLE" />
-##### Esempi di uso di ``dcat:themeTaxonomy`` in JSON-LD, RDF/XML e RDF/Turtle
+#####Esempi di uso di ``dcat:themeTaxonomy`` in JSON-LD, RDF/XML e RDF/Turtle
 >``JSON-LD``
 
 ```JSON
@@ -1111,7 +1110,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 </table>
 
 <a name="dctidentifierdataset-JSONLD-RDFXML-RDFTURTLE" />
-##### Esempi di uso di ``dct:identifier`` per il Dataset in JSON-LD, RDF/XML e RDF/Turtle
+#####Esempi di uso di ``dct:identifier`` per il Dataset in JSON-LD, RDF/XML e RDF/Turtle
 >``JSON-LD``
 
 ```JSON
@@ -1176,7 +1175,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 </table>
 
 <a name="dcttitledataset-JSONLD-RDFXML-RDFTURTLE" />
-##### Esempi di uso di ``dct:title`` per il Dataset in JSON-LD, RDF/XML e RDF/Turtle
+#####Esempi di uso di ``dct:title`` per il Dataset in JSON-LD, RDF/XML e RDF/Turtle
 >``JSON-LD``
 
 ```JSON
@@ -1245,7 +1244,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 </table>
 
 <a name="dctdescriptiondataset-JSONLD-RDFXML-RDFTURTLE" />
-##### Esempi di uso di ``dct:description`` per il Dataset in JSON-LD, RDF/XML e RDF/Turtle
+#####Esempi di uso di ``dct:description`` per il Dataset in JSON-LD, RDF/XML e RDF/Turtle
 >``JSON-LD``
 
 ```JSON
@@ -1318,7 +1317,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 </table>
 
 <a name="dctmodifieddataset-JSONLD-RDFXML-RDFTURTLE" />
-##### Esempi di uso di ``dct:modified`` per il Dataset in JSON-LD, RDF/XML e RDF/Turtle
+##### sempi di uso di ``dct:modified`` per il Dataset in JSON-LD, RDF/XML e RDF/Turtle
 >``JSON-LD``
 
 ```JSON
@@ -1394,11 +1393,11 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
     </tr>
     <tr>
         <td align="left">Agricoltura, pesca, silvicoltura e prodotti alimentari</td>
-        <td align="left">In presenza di tale tema l'URI da utilizzare è: http://publications.europa.eu/resource/authority/data-theme/AGRI </td>
+        <td align="left">In presenza di tale tema l'URI da utilizzare è: http://publications.europa.eu/resource/authority/data-theme/AGRI     </td>
     </tr>
     <tr>
         <td align="left">Economia e Finanze</td>
-        <td align="left">Rientra tutto ciò che riguarda la tassazione, l'industria, il manifatturiero, il bilancio dello stato, la crescita economica, il commercio</td>
+        <td align="left">In presenza di tale tema l'URI da utilizzare è: http://publications.europa.eu/resource/authority/data-theme/ECON </td>
     </tr>
     <tr>
         <td align="left">Istruzione, cultura e sport</td>
