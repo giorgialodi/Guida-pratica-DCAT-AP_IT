@@ -111,7 +111,7 @@ Un soggetto/organizzazione è definito mediante la specifica della classe _Agent
   </tr>
 </table>
 
-<br />
+
 2) **_NOME del SOGGETTO_**: ``foaf:name``
 <table align="left">
   <tr> 
@@ -208,7 +208,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
     </tr>
 </table>
 <br />
-<a name="catalogo-esempi-JSONLD-RDFXML-RDFTURTLE" />
+
 #### Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle
 >``JSON-LD``
 
