@@ -13,13 +13,13 @@ CC-BY 4.0 (Creative Commons Attribution).
 * [Guida pratica a DCAT-AP_IT](#guida-pratica-a-dcat-ap_it)
   * [Come definire un soggetto/organizzazione in DCAT-AP_IT](#come-definire-un-soggetto-o-organizzazione-in-dcat-ap_it)
     * [dcatapit:Agent](#definizione-di-dcatapitagent)
-    * [Elementi obbligatori che descrivono un Soggetto o Organizzazione](#elementi-obbligatori-che-descrivono-un-soggetto-o-organizzazione)
-    * [Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-in-json-ld-rdfxml-rdfturle)
-  * [Come definire un catalogo in DCAT-AP_IT](#catalogo)
-    * [dcatapit:Catalog](#catalogo)
-    * [Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle](#catalogo-esempi-JSONLD-RDFXML-RDFTURTLE)
-    * [Elementi obbligatori](#elementi-obbligatori-catalogo)
-      * [Titolo del catalogo](#dcttitle-catalogo-JSONLD-RDFXML-RDFTURTLE)
+    * [Elementi obbligatori che descrivono un Soggetto o Organizzazione in DCAT-AP_IT](#elementi-obbligatori-che-descrivono-un-soggetto-o-organizzazione-in-dcat-ap_it)
+    * [Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-in-json-ld-rdfxml-rdfturtle)
+  * [Come definire un catalogo in DCAT-AP_IT](#come-definire-un-catalogo-di-dati-in-dcat-ap_it)
+    * [dcatapit:Catalog](#definizione-di-dcatapitcatalog)
+    * [Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-in-json-ld-rdfxml-rdfturtle-1)
+    * [Elementi obbligatori](#elementi-obbligatori)
+      * [Titolo del catalogo](#esempi-di-uso-di-dcttitle-per-il-catalogo-in-json-ld-rdfxml-rdfturtle)
       * [Descrizione del catalogo](#dctdescription-catalogo-JSONLD-RDFXML-RDFTURTLE)
       * [Editore del catalogo](#dctpublisher-catalogo-JSONLD-RDFXML-RDFTURTLE)
       * [Data di ultima modifica del catalogo](#dctmodified-catalogo-JSONLD-RDFXML-RDFTURTLE)
@@ -82,9 +82,8 @@ Un soggetto/organizzazione è definito mediante la specifica della classe _Agent
         <td align="left">http://www.dati.gov.it/onto/dcatapit#Agent</td>
     </tr>
 </table>
-<br />
 
-#### Elementi obbligatori che descrivono un Soggetto o Organizzazione
+#### Elementi obbligatori che descrivono un Soggetto o Organizzazione in DCAT-AP_IT
 1) **_IDENTIFICATIVO del SOGGETTO_**: ``dct:identifier``
 
 <table align="left">
@@ -110,7 +109,6 @@ Un soggetto/organizzazione è definito mediante la specifica della classe _Agent
  <br />Esempio: "agid" oppure "r_lazio".</td>
   </tr>
 </table>
-
 
 2) **_NOME del SOGGETTO_**: ``foaf:name``
 <table align="left">
@@ -175,11 +173,11 @@ Un soggetto/organizzazione è definito mediante la specifica della classe _Agent
 	 dct:identifier  "agid" ;
 	 foaf:name       "Agenzia per l'Italia Digitale" .
 ```
-<a name="catalogo" />
+
 ### Come definire un catalogo di dati in DCAT-AP_IT
 Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente da un URI (Uniform Resource Identifier).
-<a name="catalogo" />
-#### Definitione di ``dcatapit:Catalog``
+
+#### Definizione di ``dcatapit:Catalog``
 
 <table align="left">
     <tr>
@@ -207,7 +205,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
         <td align="left">http://www.dati.gov.it/onto/dcatapit#Catalog</td>
     </tr>
 </table>
-<br />
+
 
 #### Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle
 >``JSON-LD``
@@ -293,8 +291,8 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 	foaf:homepage   		<http://spcdata.digitpa.gov.it/index.html> ;
 	dcat:themeTaxonomy  	<http://publications.europa.eu/resource/authority/data-theme> .
 ```
-<br />
-<a name="elementi-obbligatori-catalogo" />
+
+
 #### Elementi obbligatori
 1) **_TITOLO del CATALOGO_**: ``dct:title``
 
@@ -321,8 +319,8 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
   </tr>
 </table>
 
-<a name="dcttitle-catalogo-JSONLD-RDFXML-RDFTURTLE" />
-##### Esempi di uso di ``dct:title`` per il Catalogo in JSON-LD, RDF/XML e RDF/Turtle
+
+##### Esempi di uso di ``dct:title`` per il Catalogo in JSON-LD, RDF/XML RDF/Turtle
 >``JSON-LD``
 
 ```JSON
