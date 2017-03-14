@@ -9,12 +9,12 @@ CC-BY 4.0 (Creative Commons Attribution).
 
 ## Indice
 * [Alimentare il catalogo nazionale dei dati](#alimentare-il-catalogo-nazionale-dei-dati)
-  * [Modalità di alimentazione](#modalità-di-alimentazione-del-catalogo)
+  * [Modalità di alimentazione](#modalità-di-alimentazione)
 * [Guida pratica a DCAT-AP_IT](#guida-pratica-a-dcat-ap_it)
   * [Come definire un soggetto/organizzazione in DCAT-AP_IT](#come-definire-un-soggetto-o-organizzazione-in-dcat-ap_it)
-    * [dcatapit:Agent](#definizione-di-dcatapit:agent)
-    * [Elementi obbligatori che descrivono un Soggetto/Organizzazione in DCAT-AP_IT](#elementi-obbligatori-soggetto)
-    * [Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle](#soggetto-esempi-JSONLD-RDFXML-RDFTURTLE)
+    * [dcatapit:Agent](#definizione-di-dcatapitagent)
+    * [Elementi obbligatori che descrivono un Soggetto o Organizzazione in DCAT-AP_IT](#elementi-obbligatori-che-descrivono-un-soggetto-o-organizzazione-in-dcat-ap_it)
+    * [Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-in-JSONLD-RDFXML-RDFTURTLE)
   * [Come definire un catalogo in DCAT-AP_IT](#catalogo)
     * [dcatapit:Catalog](#catalogo)
     * [Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle](#catalogo-esempi-JSONLD-RDFXML-RDFTURTLE)
@@ -43,7 +43,7 @@ CC-BY 4.0 (Creative Commons Attribution).
 ## Alimentare il catalogo nazionale dei dati 
 Questa sezione illustra le modalità di alimentazione del catalogo nazionale dei dati.
 
-### Modalità di alimentazione del catalogo 
+### Modalità di alimentazione 
 Esistono due modalità di alimentazione:
 
 1. *editor*: applicazione Web integrata nel catalogo per l'acquisizione e l'aggiornamento guidato dei metadati. L'editor alimenta automaticamente il catalogo in modo da garantire la conformità al profilo DCAT-AP_IT. Tale modalità è consigliata in presenza di pochi dataset che hanno anche una frequenza di aggiornamento ampia. Per usufruirne, l'utente accede all'area privata di ``dati.gov.it`` selezionando *Login* dal menu in alto a destra, previo accreditamento presso la piattaforma;
@@ -84,7 +84,7 @@ Un soggetto/organizzazione è definito mediante la specifica della classe _Agent
 </table>
 <br />
 
-#### Elementi obbligatori che descrivono un Soggetto/Organizzazione in DCAT-AP_IT
+#### Elementi obbligatori che descrivono un Soggetto o Organizzazione in DCAT-AP_IT
 1) **_IDENTIFICATIVO del SOGGETTO_**: ``dct:identifier``
 
 <table align="left">
@@ -137,8 +137,6 @@ Un soggetto/organizzazione è definito mediante la specifica della classe _Agent
   </tr>
 </table>
 
-
-<a name="soggetto-esempi-JSONLD-RDFXML-RDFTURTLE" />
 #### Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle
 >``JSON-LD``
 
