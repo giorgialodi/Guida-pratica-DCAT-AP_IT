@@ -10,9 +10,9 @@ CC-BY 4.0 (Creative Commons Attribution).
 ## Indice
 * [Alimentare il catalogo nazionale dei dati](#alimentare-il-catalogo-nazionale-dei-dati)
   * [Modalità di alimentazione](#modalità-di-alimentazione-del-catalogo)
-* [Guida pratica a DCAT-AP_IT](#dcatapit)
-  * [Come definire un soggetto/organizzazione in DCAT-AP_IT](#soggetto)
-    * [dcatapit:Agent](#agent)
+* [Guida pratica a DCAT-AP_IT](#guida-pratica-a-dcat-ap_it)
+  * [Come definire un soggetto/organizzazione in DCAT-AP_IT](#come-definire-un-soggetto-o-organizzazione-in-dcat-ap_it)
+    * [dcatapit:Agent](#definizione-di-dcatapit:agent)
     * [Elementi obbligatori che descrivono un Soggetto/Organizzazione in DCAT-AP_IT](#elementi-obbligatori-soggetto)
     * [Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle](#soggetto-esempi-JSONLD-RDFXML-RDFTURTLE)
   * [Come definire un catalogo in DCAT-AP_IT](#catalogo)
@@ -49,14 +49,12 @@ Esistono due modalità di alimentazione:
 1. *editor*: applicazione Web integrata nel catalogo per l'acquisizione e l'aggiornamento guidato dei metadati. L'editor alimenta automaticamente il catalogo in modo da garantire la conformità al profilo DCAT-AP_IT. Tale modalità è consigliata in presenza di pochi dataset che hanno anche una frequenza di aggiornamento ampia. Per usufruirne, l'utente accede all'area privata di ``dati.gov.it`` selezionando *Login* dal menu in alto a destra, previo accreditamento presso la piattaforma;
 2. *harvesting*: funzionalità offerta dal catalogo per l'acquisizione e l'aggiornamento periodico dei metadati. L'uso di tale funzionalità richiede che l'amministrazione comunichi, una volta effettuato il login e solo la prima volta, l'URL del catalogo e selezioni la modalità per l'harvesting (e.g., RDF, CKAN, CSW). Sarà lo stesso catalogo nazionale che si occuperà successivamente di raccogliere periodicamente i metadati che descrivono i dati. Tale modalità è consigliata in presenza di un numero elevato di dataset, soggetti anche a frequenti aggiornamenti. 
 
-<a name="dcatapit" />
 ## Guida pratica a DCAT-AP_IT
 Nelle seguenti sezioni, per ciascun elemento (classe e proprietà) del profilo di metadatazione DCAT-AP_IT saranno fornite istruzioni per l'uso ed esempi pratici di definizione dei metadati in JSON-LD, RDF/XML e RDF/Turtle.
 
-<a name="soggetto" />
-### Come definire un Soggetto/Organizzazione in DCAT-AP_IT
+### Come definire un Soggetto o Organizzazione in DCAT-AP_IT
 Un soggetto/organizzazione è definito mediante la specifica della classe _Agente_ identificata univocamente da un URI (Uniform Resource Identifier).
-<a name="agent" /> 
+
 #### Definizione di ``dcatapit:Agent``
 <table align="left">
     <tr>
@@ -85,7 +83,7 @@ Un soggetto/organizzazione è definito mediante la specifica della classe _Agent
     </tr>
 </table>
 <br />
-<a name="elementi-obbligatori-soggetto" />
+
 #### Elementi obbligatori che descrivono un Soggetto/Organizzazione in DCAT-AP_IT
 1) **_IDENTIFICATIVO del SOGGETTO_**: ``dct:identifier``
 
