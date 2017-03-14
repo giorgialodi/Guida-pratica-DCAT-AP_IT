@@ -37,15 +37,10 @@ CC-BY 4.0 (Creative Commons Attribution).
       * [Titolo del dataset](#dcttitledataset-JSONLD-RDFXML-RDFTURTLE)
       * [Descrizione del dataset](#dctdescriptiondataset-JSONLD-RDFXML-RDFTURTLE)
       * [Data di ultima modifica del dataset](#dctmodifieddataset-JSONLD-RDFXML-RDFTURTLE)
-      * [Temi del dataset](#dcatthemedataset-JSONLD-RDFXML-RDFTURTLE)
   * [Come mappare i temi di DCAT-AP_IT](#temi)
-  
-<a name="catalogo-dati" />
-## Alimentare il catalogo nazionale dei dati 
-Questa sezione illustra le modalità di alimentazione del catalogo nazionale dei dati.
-  
+    
 <a name="modalita-alimentazione" />
-#### Modalità di alimentazione del catalogo 
+### Modalità di alimentazione del catalogo 
 Esistono due modalità di alimentazione:
 
 1. *editor*: applicazione Web integrata nel catalogo per l'acquisizione e l'aggiornamento guidato dei metadati. L'editor alimenta automaticamente il catalogo in modo da garantire la conformità al profilo DCAT-AP_IT. Tale modalità è consigliata in presenza di pochi dataset che hanno anche una frequenza di aggiornamento ampia. Per usufruirne, l'utente accede all'area privata di ``dati.gov.it`` selezionando *Login* dal menu in alto a destra, previo accreditamento presso la piattaforma;
@@ -54,6 +49,7 @@ Esistono due modalità di alimentazione:
 <a name="dcatapit" />
 ## Guida pratica a DCAT-AP_IT
 Nelle seguenti sezioni, per ciascun elemento (classe e proprietà) del profilo di metadatazione DCAT-AP_IT saranno fornite istruzioni per l'uso ed esempi pratici di definizione dei metadati in JSON-LD, RDF/XML e RDF/Turtle.
+
 <a name="soggetto" />
 ### Come definire un Soggetto/Organizzazione in DCAT-AP_IT
 Un soggetto/organizzazione è definito mediante la specifica della classe _Agente_ identificata univocamente da un URI (Uniform Resource Identifier).
@@ -1352,36 +1348,6 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 	[altri elementi per specificare il catalogo] .
 	
 ```
-
-<br />
-4) **_TEMI del DATASET_**: ``dcat:theme``
-<table align="left">
-  <tr> 
-    <td align="left">Cardinalità</td>
-    <td align="left">1..N</td>
-  </tr>
-  <tr> 
-    <td align="left">Stato</td>
-    <td align="left">Raccomandato</td>
-  </tr>
-  <tr>
-  <tr>
-    <td align="left">Descrizione</td>
-    <td align="left">Tema del Dataset. La proprietà lega l'oggetto (dominio) <a href="#dataset">Dataset</a> a un oggetto (codominio) di tipo skos:Concept (specificato mediante un URI- Uniform Resource Identifier)</td>
-  </tr>
-  <tr>
-    <td align="left">Riferimento</td>
-    <td align="left">http://www.w3.org/ns/dcat#theme</td>
-  </tr>
-  <tr>
-    <td align="left">Uso</td>
-    <td align="left">Nell'indicare il tema (o i temi) di riferimento per il dataset è <b>necessario specificare l’URI del tema</b> così come definito nel vocabolario Data Theme http://publications.europa.eu/resource/authority/data-theme. Si veda la tabella seguente per l'uso dell'URI corretto del tema da usare la classificazione dei dataset.</td>
-  </tr>
-</table>
-
-
-<a name="dcattheme-JSONLD-RDFXML-RDFTURTLE" />
-##### Esempi di uso di ``dcat:theme`` in JSON-LD, RDF/XML e RDF/Turtle
 
 <br />
 <a name="temi" />
