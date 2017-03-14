@@ -296,7 +296,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 
 
 #### Elementi obbligatori
-##### 1) **_TITOLO del CATALOGO_**: ``dct:title``
+##### 1) **_TITOLO del CATALOGO:_** ``dct:title``
 
 <table>
   <tr> 
