@@ -8,7 +8,7 @@ La presente guida pratica fornisce una descrizione degli elementi principali del
 CC-BY 4.0 (Creative Commons Attribution).
 
 ##Indice
-* [Alimentare il catalogo nazionale ``dati.gov.it``](#modalita-inserimento-metadati-catalogo)
+* [Alimentare il catalogo nazionale dei dati](#catalogo-dati)
   * [Modalità di alimentazione](#modalita-alimentazione)
 * [Guida pratica a DCAT-AP_IT](#dcatapit)
   * [Come definire un soggetto/organizzazione in DCAT-AP_IT](#soggetto)
@@ -48,6 +48,10 @@ CC-BY 4.0 (Creative Commons Attribution).
     * [Elementi opzionali](#elementi-opzionali-dataset)
     
   * [Come mappare i temi di DCAT-AP_IT](#temi)
+  
+<a name="catalogo-dati" />
+##Alimentare il catalogo nazionale dei dati 
+Questa sezione illustra le modalità di alimentazione del catalogo nazionale dei dati.
   
 <a name="modalita-alimentazione" />
 ####Modalità di alimentazione del catalogo 
@@ -405,7 +409,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
   </tr>
 </table>
 
-<a name="dctdescription-JSONLD-RDFXML-RDFTURTLE" />
+<a name="dctdescriptioncatalogo-JSONLD-RDFXML-RDFTURTLE" />
 ##### Esempi di uso di ``dct:description`` per il Catalogo in JSON-LD, RDF/XML e RDF/Turtle
 >``JSON-LD``
 
@@ -471,8 +475,8 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
   </tr>
 </table>
 
-<a name="dctpublisher-JSONLD-RDFXML-RDFTURTLE" />
-##### Esempi di uso di ``dct:publisher`` in JSON-LD, RDF/XML e RDF/Turtle
+<a name="dctpublishercatalogo-JSONLD-RDFXML-RDFTURTLE" />
+##### Esempi di uso di ``dct:publisher`` per il Catalogo in JSON-LD, RDF/XML e RDF/Turtle
 >``JSON-LD``
 
 ```JSON
@@ -557,8 +561,8 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
   </tr>
 </table>
 
-<a name="dctmodified-JSONLD-RDFXML-RDFTURTLE" />
-##### Esempi di uso di ``dct:modified`` in JSON-LD, RDF/XML e RDF/Turtle
+<a name="dctmodifiedcatalogo-JSONLD-RDFXML-RDFTURTLE" />
+##### Esempi di uso di ``dct:modified`` per il Catalogo in JSON-LD, RDF/XML e RDF/Turtle
 >``JSON-LD``
 
 ```JSON
@@ -694,8 +698,8 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
   </tr>
 </table>
 
-<a name="foafhomepage-JSONLD-RDFXML-RDFTURTLE" />
-##### Esempi di uso di ``foaf:homepage`` in JSON-LD, RDF/XML e RDF/Turtle
+<a name="foafhomepagecatalogo-JSONLD-RDFXML-RDFTURTLE" />
+##### Esempi di uso di ``foaf:homepage`` per il Catalogo in JSON-LD, RDF/XML e RDF/Turtle
 >``JSON-LD``
 
 ```JSON
@@ -762,8 +766,8 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
   </tr>
 </table>
 
-<a name="dctlanguage-JSONLD-RDFXML-RDFTURTLE" />
-##### Esempi di uso di ``dct:language`` in JSON-LD, RDF/XML e RDF/Turtle
+<a name="dctlanguagecatalogo-JSONLD-RDFXML-RDFTURTLE" />
+##### Esempi di uso di ``dct:language`` per il Catalogo in JSON-LD, RDF/XML e RDF/Turtle
 >``JSON-LD``
 
 ```JSON
@@ -829,8 +833,8 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
   </tr>
 </table>
 
-<a name="dctissued-JSONLD-RDFXML-RDFTURTLE" />
-##### Esempi di uso di ``dct:issued`` in JSON-LD, RDF/XML e RDF/Turtle
+<a name="dctissuedcatalogo-JSONLD-RDFXML-RDFTURTLE" />
+##### Esempi di uso di ``dct:issued`` per il Catalogo in JSON-LD, RDF/XML e RDF/Turtle
 >``JSON-LD``
 
 ```JSON
@@ -928,7 +932,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 	dcat:themeTaxonomy	<http://publications.europa.eu/resource/authority/data-theme> ;
 	[altri elementi del catalogo] .
 ```
-<br>
+<br />
 <a name="dataset" />
 ###Come definire un dataset in DCAT-AP_IT
 Un dataset è definito mediante la classe _Dataset_ identificata univocamente da un URI (Uniform Resource Identifier).
@@ -1355,6 +1359,118 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 
 	[altri elementi per specificare il catalogo] .
 	
+```
+
+<br />
+4) **_TEMI del DATASET_**: ``dcat:theme``
+<table align="left">
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">1..N</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Raccomandato</td>
+  </tr>
+  <tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">Tema del Dataset. La proprietà lega l'oggetto (dominio) <a href="#dataset">Dataset</a> a un oggetto (codominio) di tipo skos:Concept (specificato mediante un URI- Uniform Resource Identifier)</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://www.w3.org/ns/dcat#theme</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Nell'indicare il tema (o i temi) di riferimento per il dataset è <b>necessario specificare l’URI del tema</b> così come definito nel vocabolario Data Theme http://publications.europa.eu/resource/authority/data-theme. Si veda la tabella seguente per l'uso dell'URI appropriato rispetto al tema attraverso cui il dataset è classificato.</td>
+  </tr>
+</table>
+
+<table align="left">
+    <tr>
+    	<td align="left"><b>Tema</b></td>
+	<td align="left"><b>Descrizione</b></td>
+    </tr>
+    <tr>
+        <td align="left">Agricoltura, pesca, silvicoltura e prodotti alimentari</td>
+        <td align="left">In presenza di tale tema l'URI da utilizzare è: http://publications.europa.eu/resource/authority/data-theme/AGRI </td>
+    </tr>
+    <tr>
+        <td align="left">Economia e Finanze</td>
+        <td align="left">Rientra tutto ciò che riguarda la tassazione, l'industria, il manifatturiero, il bilancio dello stato, la crescita economica, il commercio</td>
+    </tr>
+    <tr>
+        <td align="left">Istruzione, cultura e sport</td>
+        <td align="left">Rientra tutto ciò che riguarda la cultura, il turismo, l'istruzione e le attività sportive</td>
+    </tr>
+    <tr>
+        <td align="left">Energia</td>
+        <td align="left">Rientra tutto ciò che concerne il settore dell'energia e dell'estrazione mineraria</td>
+    </tr>
+    <tr>
+        <td align="left">Ambiente</td>
+        <td align="left">Rientra tutto ciò che riguarda l'ambiente (rifiuti, consumo del suolo, oceani, ecc.) e il clima/meteo</td>
+    </tr>
+    <tr>
+        <td align="left">Governo e settore pubblico</td>
+        <td align="left">Rientra tutto ciò che riguarda le politiche di governo, gli affari istituzionali, la trasparenza del settore pubblico</td>
+    </tr>
+    <tr>
+        <td align="left">Salute</td>
+        <td align="left">Rientra tutto ciò che concerne le attività sulla salute e tutto ciò che riguarda gli animali</td>
+    </tr>
+    <tr>
+        <td align="left">Tematiche internazionali</td>
+        <td align="left">Rientra tutto ciò che concerne le relazioni internazionali, la cooperazione internazionale, i diritti umanitari, le organizzazioni internazionali e gli affari esteri</td>
+    </tr>
+    <tr>
+        <td align="left">Giustizia, sistema giuridico e sicurezza pubblica</td>
+        <td align="left">Rientra tutto ciò che riguarda le frodi, i crimini, la giustizia, le norme. Rientra anche tutto ciò che riguarda la difesa e gli aspetti legati alle attività del ministero dell'interno</td>
+    </tr>	
+    <tr>
+        <td align="left">Regioni e città</td>
+        <td align="left">Rientra tutto ciò che riguarda le strade urbane e i numeri civici. Il tema ha una forte sovrapposizione con ambiente perché potrebbe anche contenere tutto ciò che concerne la geografia del territorio (e.g., montagne, laghi, fiumi, ecc.)</td>
+    </tr>
+    <tr>
+        <td align="left">Popolazione e società</td>
+        <td align="left">Rientra tutto ciò che concerne lo sviluppo della società, le condizioni della società, la cittadinanza, la demografia, il welfare</td>
+    </tr>
+    <tr>
+        <td align="left">Scienza e tecnologia</td>
+        <td align="left">Rientra tutto ciò che riguarda la ricerca, l'innovazione, la tecnologia, la banda larga e ultralarga, la psicologia, lo spazio</td>
+    </tr>
+    <tr>
+        <td align="left">Trasporti</td>
+        <td align="left">Rientra tutto ciò che riguarda i trasporti e le relative infrastrutture, la mobilità</td>
+    </tr>
+</table>
+
+
+<a name="dcattheme-JSONLD-RDFXML-RDFTURTLE" />
+##### Esempi di uso di ``dcat:theme`` in JSON-LD, RDF/XML e RDF/Turtle
+>``JSON-LD``
+
+```JSON
+      
+      
+      altri elementi del catalogo
+
+ ```
+ >``RDF/XML``
+ 
+ ```XML
+ 
+ <!-- http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid -->
+    
+        [altri elementi del catalogo]
+    </dcatapit:Dataset>
+ ```
+ >``RDF/Turtle``
+ 
+ ```Turtle
+ 
+	[altri elementi del catalogo] .
 ```
 
 <br />
