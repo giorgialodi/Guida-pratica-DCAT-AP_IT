@@ -940,7 +940,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
     </tr>
 </table>
 
-#### Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle
+#### Esempi di uso di dcatapit:Dataset in JSON-LD, RDF/XML, RDF/Turtle
 >``JSON-LD``
 
 ```JSON
