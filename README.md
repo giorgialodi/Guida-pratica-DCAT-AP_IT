@@ -8,8 +8,8 @@ La presente guida pratica fornisce una descrizione degli elementi principali del
 CC-BY 4.0 (Creative Commons Attribution).
 
 ## Indice
-* [Alimentare il catalogo nazionale dei dati](#catalogo-dati)
-  * [Modalità di alimentazione](#modalita-alimentazione)
+* [Alimentare il catalogo nazionale dei dati](#alimentare-il-catalogo-nazionale-dei-dati)
+  * [Modalità di alimentazione](#modalità-di-alimentazione-del-catalogo)
 * [Guida pratica a DCAT-AP_IT](#dcatapit)
   * [Come definire un soggetto/organizzazione in DCAT-AP_IT](#soggetto)
     * [dcatapit:Agent](#agent)
@@ -39,12 +39,10 @@ CC-BY 4.0 (Creative Commons Attribution).
       * [Data di ultima modifica del dataset](#dctmodified-dataset-JSONLD-RDFXML-RDFTURTLE)
   * [Come mappare i temi di DCAT-AP_IT](#temi)
 
-    
-<a name="catalogo-dati" />
+   
 ## Alimentare il catalogo nazionale dei dati 
 Questa sezione illustra le modalità di alimentazione del catalogo nazionale dei dati.
 
-<a name="modalita-alimentazione" />
 ### Modalità di alimentazione del catalogo 
 Esistono due modalità di alimentazione:
 
