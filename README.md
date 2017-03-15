@@ -867,7 +867,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">ndicare un sistema di organizzazione della conoscenza (KOS) usato per classificare i dataset del Catalogo. Il valore da utilizzare per questa proprietà è l’URI dei vocabolari utilizzati (<b>non gli URI dei concetti presenti nel vocabolario</b>). Nel caso del vocabolario Data Theme da utilizzare obbligatoriamente per indicare i temi relativi ai Dataset, usare questo URI http://publications.europa.eu/resource/authority/data-theme come valore della proprietà.</td>
+    <td align="left">Indicare un sistema di organizzazione della conoscenza (KOS) usato per classificare i dataset del Catalogo. Il valore da utilizzare per questa proprietà è l’URI dei vocabolari utilizzati (<b>non gli URI dei concetti presenti nel vocabolario</b>). Nel caso del vocabolario Data Theme da utilizzare obbligatoriamente per indicare i temi relativi ai Dataset, usare questo URI http://publications.europa.eu/resource/authority/data-theme come valore della proprietà.</td>
   </tr>
 </table>
 
@@ -1327,6 +1327,75 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 
 	[altri elementi per specificare il catalogo] .
 	
+```
+
+##### 5) **_TEMI del DATASET:_** ``dcat:theme``
+
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">1..N</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Obbligatorio</td>
+  </tr>
+  <tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">I temi attraverso cui classificare il Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un oggetto (codominio) di tipo skos:Concept (specificato mediante un URI- Uniform Resource Identifier)</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://www.w3.org/ns/dcat#theme</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Il metadato assume come valore un URI che <b>deve essere necessariamente</b> uno di quelli definiti nel seguente vocabolario Europeo sui Temi per i dati: http://publications.europa.eu/mdr/resource/authority/data-theme/skos/data-theme-skos.rdf. Esempio: se il tema è l'agricoltura il relativo valore di questa proprietà è necessariamente http://publications.europa.eu/resource/authority/data-theme/AGRI. Si veda a tal proposito la sezione <a href="#come-mappare-i-temi-di-dcatapit">Come mappare i temi di DCAT-AP_IT</a> </td>
+  </tr>
+</table>
+
+##### Esempi di uso di ``dcat:theme`` in JSON-LD, RDF/XML, RDF/Turtle
+>``JSON-LD``
+
+```JSON
+
+      "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid",
+      "@type": [
+        "dcat:Dataset",
+        "http://dati.gov.it/onto/dcatapit#\"Dataset"
+      ],
+      "dcterms:modified": {
+        "@type": "xsd:date",
+        "@value": "2015-05-25"
+      },
+      
+     altri elementi per specificare il catalogo
+     
+```
+
+>``RDF/XML``
+
+```XML
+
+   <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
+   <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+        <rdf:type rdf:resource="&dcat;Dataset"/>
+        <dct:modified rdf:datatype="&xsd;date">2015-05-25</dct:modified>
+        [altri elementi per specificare il catalogo]
+   </dcatapit:Dataset>
+   
+```
+
+>``RDF/Turtle``
+
+```Turtle
+ <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
+	a		dcatapit:Dataset , dcat:Dataset ;
+	dct:modified	"2015-05-25"^^xsd:date ;
+
+	[altri elementi per specificare il catalogo] .
+
 ```
 
 #### Come mappare i temi di DCAT-AP_IT
