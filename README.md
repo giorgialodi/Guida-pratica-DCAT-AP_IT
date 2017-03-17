@@ -43,7 +43,7 @@ CC-BY 4.0 (Creative Commons Attribution).
       * [Distribuzione del dataset](#8-distribuzione-del-dataset-dcatdistribution)
     * [Elementi raccomandati](#elementi-obbligatori-1)
       * [Sottotema del dataset](#1-sottotema-del-dataset-dctsubject)
-      * [Punto di contatto del dataset](#2-punto-di-contatto-dcatcontactpoint)
+      * [Punto di contatto del dataset](#2-punto-di-contatto-del-dataset-dcatcontactpoint)
       * [Editore del dataset](#3-editore-del-dataset-dctpublisher)
     * [Elementi opzionali](#elementi-opzionali)
       * [Autore del dataset](#1-autore-del-dataset-dctcreator)
