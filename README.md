@@ -40,6 +40,26 @@ CC-BY 4.0 (Creative Commons Attribution).
       * [Temi del dataset](#5-temi-del-dataset-dcattheme)
       * [Titolare del dataset](#6-titolare-del-dataset-dctrightsholder)
       * [Frequenza di aggiornamento del dataset](#7-frequenza-di-aggiornamento-del-dataset-dctaccrualperiodicity)
+      * [Distribuzione del dataset](#8-distribuzione-del-dataset-dcatdistribution)
+    * [Elementi raccomandati](#elementi-obbligatori-1)
+      * [Soggetto del dataset](#1-soggetto-del-dataset-dctsubject)
+      * [Punto di contatto del dataset](#2-punto-di-contatto-dcatcontactpoint)
+      * [Editore del dataset](#3-editore-del-dataset-dctpublisher)
+    * [Elementi opzionali](#elementi-opzionali)
+      * [Autore del dataset](#1-autore-del-dataset-dctcreator)
+      * [Versione del dataset](#2-versione-del-dataset-owlversioninfo)
+      * [Data di rilascio del dataset](#3-data-di-rilascio-del-dataset-dctissued)
+      * [Pagina di accesso del dataset](#4-pagina-di-accesso-del-dataset-dcatlandingpage)
+  * [Come definire la distribuzione del Dataset in DCAT-AP_IT](#come-definire-la-distribuzione-del-dataset-in-dcat-ap_it)
+    * [dcatapit:Distribution](#definizione-di-dcatapitdistribution)
+    * [Esempi di uso di dcatapit:Distribution in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dcatapitdistribution-in-json-ld-rdfxml-rdfturtle)
+  * [Come definire il punto di contatto del Dataset in DCAT-AP_IT](#come-definire-il-punto-di-contatto-del-dataset-in-dcat-ap_it)
+    * [dcatapit:Organization](#descrizione-di-dcatapitdescrizione)
+    * [Elementi obbligatori che descrivono il Punto di Contatto](#elementi-obbligatori-che-descrivono-il-punto-di-contatto)
+  * [Come definire la copertura temporale del Dataset in DCAT-AP_IT](#come-definire-la-copertura-temporale-del-dataset-in-dcat-ap_it)
+  * [Come definire la copertura spaziale del Dataset in DCAT-AP_IT](#come-definire-la-copertura-spaziale-del-dataset-in-dcat-ap_it)
+  * [Come definire lo standard del Dataset in DCAT-AP_IT](#come-definire-il-punto-di-contatto-del-dataset-in-dcat-ap_it)
+  * [Come definire un identificativo alternativo del Dataset in DCAT-AP_IT](#come-definire-un-identificativo-alternativo-del-dataset-in-dcat-ap_it)
   * [Come mappare i temi di DCAT-AP_IT](#come-mappare-i-temi-di-dcat-ap_it)
 
    
@@ -1432,7 +1452,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   <tr>
   <tr>
     <td align="left">Descrizione</td>
-    <td align="left">I titolare del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un oggetto (codominio) di tipo <a href="#definizione-di-dcatapitagent">dcatapit:Agent</a> (specificato mediante un URI - Uniform Resource Identifier)</td>
+    <td align="left">Il titolare del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un oggetto (codominio) di tipo <a href="#definizione-di-dcatapitagent">dcatapit:Agent</a> (specificato mediante un URI - Uniform Resource Identifier)</td>
   </tr>
   <tr>
     <td align="left">Riferimento</td>
@@ -1440,7 +1460,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Il metadato assume come valore un URI (NON una stringa). Esso ha come valore un'organizzazione (o pubblica amministrazione) titolare del catalogo. <b>Si raccomanda di evitare l'inserimento di nomi di singole persone.</b><br />Si vedano gli <a href="#soggetto-esempi-JSONLD-RDFXML-RDFTURTLE">esempi riportati sull'uso della classe Agente</a>
+    <td align="left">Il metadato assume come valore un URI (NON una stringa). Esso rappresenta un’organizzazione (o pubblica amministrazione) responsabile della gestione complessiva del dataset in virtù dei propri compiti istituzionali. <b>Si raccomanda di evitare l'inserimento di nomi di singole persone.</b><br />Si vedano gli <a href="#soggetto-esempi-JSONLD-RDFXML-RDFTURTLE">esempi riportati sull'uso della classe Agente</a>
    </td>
  </tr>
 </table>
@@ -1448,14 +1468,80 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 ##### Esempi di uso di ``dct:rightsHolder`` in JSON-LD, RDF/XML, RDF/Turtle
 >``JSON-LD``
 
-DA COMPLETARE
+```JSON
 
-##### 5) **_FREQUENZA del DATASET:_** ``dct:accrualPeriodicity``
+      "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid",
+      "@type": [
+        "dcat:Dataset",
+        "http://dati.gov.it/onto/dcatapit#\"Dataset"
+      ],
+       "dcterms:rightsHolder": {
+        "@id": "http://dati.gov.it/resource/Amministraione/agid"
+      },
+      altri elementi per specificare il catalogo
+      
+      Dove l'Organizzazione http://dati.gov.it/resource/Amministraione/agid è definita come:
+      
+      "@id": "http://dati.gov.it/resource/Amministrazione/agid",
+      "@type": [
+        "foaf:Agent",
+        "http://dati.gov.it/onto/dcatapit#\"Agent"
+      ],
+      "dcterms:identifier": "agid",
+      "foaf:name": {
+        "@language": "it",
+        "@value": "Agenzia per l'Italia Digitale"
+      }
+    },
+     
+```
+
+>``RDF/XML``
+
+```XML
+
+   <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
+   <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+        <rdf:type rdf:resource="&dcat;Dataset"/>
+        <dct:rightsHolder rdf:resource="http://dati.gov.it/resource/Amministraione/agid"/>
+        [altri elementi per specificare il catalogo]
+   </dcatapit:Dataset>
+   
+   Dove l'organizzazione 
+   <!-- http://dati.gov.it/resource/Amministrazione/agid --> è definita come:
+   
+    <dcatapit:Agent rdf:about="http://dati.gov.it/resource/Amministrazione/agid">
+        <rdf:type rdf:resource="&foaf;Agent"/>
+        <dct:identifier>agid</dct:identifier>
+        <foaf:name xml:lang="it">Agenzia per l'Italia Digitale</foaf:name>
+    </dcatapit:Agent>
+   
+```
+
+>``RDF/Turtle``
+
+```Turtle
+ <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
+	a		  dcatapit:Dataset , dcat:Dataset ;
+	dct:rightsHolder  <http://dati.gov.it/resource/Amministraione/agid>
+
+	[altri elementi per specificare il catalogo] .
+
+  Dove l'organizzazione <http://dati.gov.it/resource/Amministraione/agid> è definita come
+  
+  <http://dati.gov.it/resource/Amministrazione/agid>
+  a 			dcatapit:Agent , foaf:Agent ;
+  dct:identifier  	"agid" ;
+  foaf:name		"Agenzia per l'Italia Digitale" .
+	
+```
+
+##### 7) **_FREQUENZA del DATASET:_** ``dct:accrualPeriodicity``
 
 <table>
   <tr> 
     <td align="left">Cardinalità</td>
-    <td align="left">1..N</td>
+    <td align="left">1</td>
   </tr>
   <tr> 
     <td align="left">Stato</td>
@@ -1464,22 +1550,60 @@ DA COMPLETARE
   <tr>
   <tr>
     <td align="left">Descrizione</td>
-    <td align="left">I temi attraverso cui classificare il Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un o più oggetto (codominio) di tipo skos:Concept (specificato mediante un URI - Uniform Resource Identifier)</td>
+    <td align="left">La frequenza di aggiornamento del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un oggetto (codominio) di tipo skos:Concept (specificato mediante un URI - Uniform Resource Identifier)</td>
   </tr>
   <tr>
     <td align="left">Riferimento</td>
-    <td align="left">http://www.w3.org/ns/dcat#theme</td>
+    <td align="left">http://purl.org/dc/terms/accrualPeriodicity</td>
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Il metadato assume come valore un URI (NON una stringa con l'URL del tema) che <b>deve essere necessariamente</b> uno di quelli definiti nel seguente vocabolario Europeo sui Temi per i dati: http://publications.europa.eu/mdr/resource/authority/data-theme/skos/data-theme-skos.rdf. Esempio: se il tema è Agricoltura, Pesca e Politiche Forestali e Alimentari il valore di questa proprietà è necessariamente http://publications.europa.eu/resource/authority/data-theme/AGRI. Si veda a tal proposito la sezione <a href="#come-mappare-i-temi-di-dcatapit">Come mappare i temi di DCAT-AP_IT</a> </td>
+    <td align="left">La frequenza con cui il dataset viene aggiornato <b>assume necessariamente</b> uno dei valori definiti nel seguente vocabolario Europeo sulle frequenze: http://publications.europa.eu/mdr/resource/authority/frequency/skos/frequencies-skos.rdf. Esempio: se il dataset si aggiorna ogni trimestre il valore da indicare è http://publications.europa.eu/resource/authority/frequency/QUARTERLY. Nel caso la frequenza di aggiornamento non sia disponibile è possibile indicare una frequenza sconosciuta utilizzando il seguente URI: http://publications.europa.eu/resource/authority/frequency/UNKNOWN</td>
   </tr>
 </table>
 
-##### Esempi di uso di ``dcat:theme`` in JSON-LD, RDF/XML, RDF/Turtle
+##### Esempi di uso di ``dct:accrualPeriodicity`` in JSON-LD, RDF/XML, RDF/Turtle
 >``JSON-LD``
 
-DA COMPLETARE
+```JSON
+
+      "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid",
+      "@type": [
+        "dcat:Dataset",
+        "http://dati.gov.it/onto/dcatapit#\"Dataset"
+      ],
+        "dcterms:accrualPeriodicity": {
+        "@id": "http://publications.europa.eu/resource/authority/frequency/ANNUAL_2"
+      },
+
+      altri elementi per specificare il catalogo
+      
+```
+
+>``RDF/XML``
+
+```XML
+
+   <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
+   <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+        <rdf:type rdf:resource="&dcat;Dataset"/>
+        <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/ANNUAL_2"/>
+        [altri elementi per specificare il catalogo]
+   </dcatapit:Dataset>
+   
+```
+
+>``RDF/Turtle``
+
+```Turtle
+ <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
+	a		         dcatapit:Dataset , dcat:Dataset ;
+	dct:accrualPeriodicity   <http://publications.europa.eu/resource/authority/frequency/ANNUAL_2>
+
+	[altri elementi per specificare il catalogo] .
+	
+```
+
 
 #### Come mappare i temi di DCAT-AP_IT
 I temi in cui i dataset sono classificati si basano sull'uso del vocabolario controllato come indicato nella sezione ["Temi del Dataset dcat:theme"(#5-temi-del-dataset-dcattheme). Sulla base della [valutazione dei diversi temi per i dati discussa nell'ambito del gruppo Europeo](https://joinup.ec.europa.eu/asset/dcat_application_profile/document/review-dcat-ap-draft-proposal-list-categorization-data), la tabella seguente offre un possibile mapping di domini applicativi rispetto ai temi richiesti dal profilo Europeo DCAT-AP, e quindi dall'estensione italiana DCAT-AP_IT.
