@@ -1352,7 +1352,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Il metadato assume come valore un URI che <b>deve essere necessariamente</b> uno di quelli definiti nel seguente vocabolario Europeo sui Temi per i dati: http://publications.europa.eu/mdr/resource/authority/data-theme/skos/data-theme-skos.rdf. Esempio: se il tema è l'agricoltura il relativo valore di questa proprietà è necessariamente http://publications.europa.eu/resource/authority/data-theme/AGRI. Si veda a tal proposito la sezione <a href="#come-mappare-i-temi-di-dcatapit">Come mappare i temi di DCAT-AP_IT</a> </td>
+    <td align="left">Il metadato assume come valore un URI (NON una stringa con l'URL del tema) che <b>deve essere necessariamente</b> uno di quelli definiti nel seguente vocabolario Europeo sui Temi per i dati: http://publications.europa.eu/mdr/resource/authority/data-theme/skos/data-theme-skos.rdf. Esempio: se il tema è Agricoltura, Pesca e Politiche Forestali e Alimentari il valore di questa proprietà è necessariamente http://publications.europa.eu/resource/authority/data-theme/AGRI. Si veda a tal proposito la sezione <a href="#come-mappare-i-temi-di-dcatapit">Come mappare i temi di DCAT-AP_IT</a> </td>
   </tr>
 </table>
 
@@ -1366,11 +1366,15 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
         "dcat:Dataset",
         "http://dati.gov.it/onto/dcatapit#\"Dataset"
       ],
-      "dcterms:modified": {
-        "@type": "xsd:date",
-        "@value": "2015-05-25"
-      },
-      
+      {
+       "@id": "http://publications.europa.eu/resource/authority/data-theme/ECON",
+       "@type": "skos:Concept",
+       "skos:prefLabel": {
+         "@language": "it",
+         "@value": "Economia e Finanze"
+      }
+    },
+
      altri elementi per specificare il catalogo
      
 ```
@@ -1382,10 +1386,17 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
    <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
    <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
         <rdf:type rdf:resource="&dcat;Dataset"/>
-        <dct:modified rdf:datatype="&xsd;date">2015-05-25</dct:modified>
+       	<dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/ECON"/>
         [altri elementi per specificare il catalogo]
    </dcatapit:Dataset>
    
+   Opzionalmente si può anche specificare 
+   <!-- http://publications.europa.eu/resource/authority/data-theme/ECON -->
+
+    <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/data-theme/ECON">
+        <skos:prefLabel xml:lang="it">Economia e Finanze</skos:prefLabel>
+    </skos:Concept>
+
 ```
 
 >``RDF/Turtle``
@@ -1393,10 +1404,16 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 ```Turtle
  <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
 	a		dcatapit:Dataset , dcat:Dataset ;
-	dct:modified	"2015-05-25"^^xsd:date ;
+	dcat:theme      <http://publications.europa.eu/resource/authority/data-theme/ECON>
 
 	[altri elementi per specificare il catalogo] .
 
+  Opzionalmente si può anche specificare 
+  
+  <http://publications.europa.eu/resource/authority/data-theme/ECON>
+	a 		skos:Concept ;
+	skos:prefLabel 	"Economia e Finanze"@it .
+	
 ```
 
 #### Come mappare i temi di DCAT-AP_IT
