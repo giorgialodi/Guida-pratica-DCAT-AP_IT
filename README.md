@@ -14,7 +14,7 @@ CC-BY 4.0 (Creative Commons Attribution).
   * [Come definire un soggetto/organizzazione in DCAT-AP_IT](#come-definire-un-soggetto-o-organizzazione-in-dcat-ap_it)
     * [dcatapit:Agent](#definizione-di-dcatapitagent)
     * [Elementi obbligatori che descrivono un Soggetto o Organizzazione](#elementi-obbligatori-che-descrivono-un-soggetto-o-organizzazione)
-    * [Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-in-json-ld-rdfxml-rdfturtle)
+    * [Esempi di uso di dcatapit:Agent in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso--di-dcatapitagent-in-json-ld-rdfxml-rdfturtle)
   * [Come definire un catalogo in DCAT-AP_IT](#come-definire-un-catalogo-di-dati-in-dcat-ap_it)
     * [dcatapit:Catalog](#definizione-di-dcatapitcatalog)
     * [Esempi di uso di dcatapit:Catalog in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dcatapitcatalog-in-json-ld-rdfxml-rdfturtle)
@@ -1891,8 +1891,91 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 	dct:identifier  "agid" ;
 	foaf:name       "Agenzia per l'Italia Digitale" .
 ```
+#### Elementi opzionali
 
+##### 1) **_AUTORE del DATASET:_** ``dct:creator``
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">0..N</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Opzionale</td>
+  </tr>
+  <tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">Il creatore del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a uno o più oggetti (codominio) di tipo <a href="#definizione-di-dcatapitagent">dcatapit:Agent</a> (specificato mediante un URI - Uniform Resource Identifier)</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://purl.org/dc/terms/creator</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Un'organizzazione (o pubblica amministrazione) che ha materialmente prodotto il dataset. <b> Si raccomanda di evitare l'inserimento di nomi di singole persone.</b><br />Si vedano gli <a href="#esempi-di-uso-in-json-ld-rdfxml-rdfturtle">esempi riportati sull'uso della classe Agente.</a></td>
+  </tr>
+</table>
 
+##### Esempi di uso di ``dct:creator`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
+>``JSON-LD``
+
+```JSON
+      "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid",
+      "@type": [
+        "dcat:Dataset",
+        "http://dati.gov.it/onto/dcatapit#\"Dataset"
+      ],
+       "dcterms:creator": {
+        "@id": "http://dati.gov.it/resource/Amministrazione/agid"
+      },
+      
+      altri elementi che descrivono il catalogo
+      
+   
+      "@id": "http://dati.gov.it/resource/Amministrazione/agid",
+      "@type": [
+        "foaf:Agent",
+        "http://dati.gov.it/onto/dcatapit#\"Agent"
+      ],
+      "dcterms:identifier": "agid",
+      "foaf:name": {
+        "@language": "it",
+        "@value": "Agenzia per l'Italia Digitale"
+      }
+ ```
+ >``RDF/XML``
+ 
+ ```XML
+ 
+ <!-- http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid -->
+    <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+        <rdf:type rdf:resource="&dcat;Dataset"/>
+        <dct:creator rdf:resource="http://dati.gov.it/resource/Amministrazione/agid"/>
+        [altri elementi del catalogo]
+    </dcatapit:Dataset>
+    
+ <!-- http://dati.gov.it/resource/Amministrazione/agid -->
+    <dcatapit:Agent rdf:about="http://dati.gov.it/resource/Amministrazione/agid">
+        <rdf:type rdf:resource="&foaf;Agent"/>
+        <dct:identifier>agid</dct:identifier>
+        <foaf:name xml:lang="it">Agenzia per l'Italia Digitale</foaf:name>
+    </dcatapit:Agent>
+ ```
+ >``RDF/Turtle``
+ 
+ ```Turtle
+ <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
+	a		dcatapit:Dataset , dcat:Dataset ;
+	dct:creator  	<http://dati.gov.it/resource/Amministrazione/agid> ;
+	[altri elementi del catalogo] .
+ 
+ <http://dati.gov.it/resource/Amministrazione/agid>
+	a 		dcatapit:Agent , foaf:Agent ;
+	dct:identifier  "agid" ;
+	foaf:name       "Agenzia per l'Italia Digitale" .
+```
 
 #### Come mappare i temi di DCAT-AP_IT
 I temi in cui i dataset sono classificati si basano sull'uso del vocabolario controllato come indicato nella sezione ["Temi del Dataset dcat:theme"(#5-temi-del-dataset-dcattheme). Sulla base della [valutazione dei diversi temi per i dati discussa nell'ambito del gruppo Europeo](https://joinup.ec.europa.eu/asset/dcat_application_profile/document/review-dcat-ap-draft-proposal-list-categorization-data), la tabella seguente offre un possibile mapping di domini applicativi rispetto ai temi richiesti dal profilo Europeo DCAT-AP, e quindi dall'estensione italiana DCAT-AP_IT.
