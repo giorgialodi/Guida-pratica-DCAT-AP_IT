@@ -1416,7 +1416,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 	
 ```
 
-##### 6) **_TITOLARE del DATASET:_** ``dcat:theme``
+##### 6) **_TITOLARE del DATASET:_** ``dct:rightsHolder``
 
 <table>
   <tr> 
@@ -1430,16 +1430,17 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   <tr>
   <tr>
     <td align="left">Descrizione</td>
-    <td align="left">I titolare del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un oggetto (codominio) di tipo [dcatapit:Agent](#definizione-di-dcatapitagent) (specificato mediante un URI - Uniform Resource Identifier)</td>
+    <td align="left">I titolare del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un oggetto (codominio) di tipo <a href="#definizione-di-dcatapitagent">dcatapit:Agent</a> (specificato mediante un URI - Uniform Resource Identifier)</td>
   </tr>
   <tr>
     <td align="left">Riferimento</td>
-    <td align="left">hhttp://purl.org/dc/terms/rightsHolder</td>
+    <td align="left">http://purl.org/dc/terms/rightsHolder</td>
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Il metadato assume come valore un URI (NON una stringa). Esso ha come valore un'organizzazione (o pubblica amministrazione) titolare del catalogo.<b> Si raccomanda di evitare l'inserimento di nomi di singole persone.</b><br />Si vedano gli <a href="#soggetto-esempi-JSONLD-RDFXML-RDFTURTLE">esempi riportati sull'uso della classe Agente </td>
-  </tr>
+    <td align="left">Il metadato assume come valore un URI (NON una stringa). Esso ha come valore un'organizzazione (o pubblica amministrazione) titolare del catalogo. <b>Si raccomanda di evitare l'inserimento di nomi di singole persone.</b><br />Si vedano gli <a href="#soggetto-esempi-JSONLD-RDFXML-RDFTURTLE">esempi riportati sull'uso della classe Agente</a>
+   </td>
+ </tr>
 </table>
 
 ##### Esempi di uso di ``dcat:theme`` in JSON-LD, RDF/XML, RDF/Turtle
