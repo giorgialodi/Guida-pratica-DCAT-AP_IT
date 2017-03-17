@@ -50,14 +50,21 @@ CC-BY 4.0 (Creative Commons Attribution).
       * [Versione del dataset](#2-versione-del-dataset-owlversioninfo)
       * [Data di rilascio del dataset](#3-data-di-rilascio-del-dataset-dctissued)
       * [Pagina di accesso del dataset](#4-pagina-di-accesso-del-dataset-dcatlandingpage)
+      * [Lingua del dataset](#5-lingua-del-dataset-dctlanguage)
+      * [Dataset correlato](#6-dataset-correlato-isverionof)
+      * [Estensione temporale del dataset](#7-estensione-temporale-del-dataset-dcttemporal)
+      * [Copertura geografica del dataset](#8-copertura-geografica-del-dataset-dctspatial)
+      * [Conformità del dataset](#9-conformità-del-dataset-dctconformsto)
+      * [Altro identificativo del dataset](#10-altro-identificativo-del-dataset-admsidentifier)
   * [Come definire la distribuzione del Dataset in DCAT-AP_IT](#come-definire-la-distribuzione-del-dataset-in-dcat-ap_it)
     * [dcatapit:Distribution](#definizione-di-dcatapitdistribution)
     * [Esempi di uso di dcatapit:Distribution in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dcatapitdistribution-in-json-ld-rdfxml-rdfturtle)
+    * [Elementi obbligatori](#elementi-obbligatori-2)
   * [Come definire il punto di contatto del Dataset in DCAT-AP_IT](#come-definire-il-punto-di-contatto-del-dataset-in-dcat-ap_it)
     * [dcatapit:Organization](#descrizione-di-dcatapitdescrizione)
-    * [Elementi obbligatori che descrivono il Punto di Contatto](#elementi-obbligatori-che-descrivono-il-punto-di-contatto)
+    * [Elementi obbligatori](#elementi-obbligatori-3)
   * [Come definire la copertura temporale del Dataset in DCAT-AP_IT](#come-definire-la-copertura-temporale-del-dataset-in-dcat-ap_it)
-  * [Come definire la copertura spaziale del Dataset in DCAT-AP_IT](#come-definire-la-copertura-spaziale-del-dataset-in-dcat-ap_it)
+  * [Come definire la copertura geografica del Dataset in DCAT-AP_IT](#come-definire-la-copertura-geografica-del-dataset-in-dcat-ap_it)
   * [Come definire lo standard del Dataset in DCAT-AP_IT](#come-definire-il-punto-di-contatto-del-dataset-in-dcat-ap_it)
   * [Come definire un identificativo alternativo del Dataset in DCAT-AP_IT](#come-definire-un-identificativo-alternativo-del-dataset-in-dcat-ap_it)
   * [Come mappare i temi di DCAT-AP_IT](#come-mappare-i-temi-di-dcat-ap_it)
@@ -73,7 +80,7 @@ Esistono due modalità di alimentazione:
 2. *harvesting*: funzionalità offerta dal catalogo per l'acquisizione e l'aggiornamento periodico dei metadati. L'uso di tale funzionalità richiede che l'amministrazione comunichi, una volta effettuato il login e solo la prima volta, l'URL del catalogo e selezioni la modalità per l'harvesting (e.g., RDF, CKAN, CSW). Sarà lo stesso catalogo nazionale che si occuperà successivamente di raccogliere periodicamente i metadati che descrivono i dati. Tale modalità è consigliata in presenza di un numero elevato di dataset, soggetti anche a frequenti aggiornamenti. 
 
 ## Guida pratica a DCAT-AP_IT
-Nelle seguenti sezioni, per ciascun elemento (classe e proprietà) del profilo di metadatazione DCAT-AP_IT saranno fornite istruzioni per l'uso ed esempi pratici di definizione dei metadati in JSON-LD, RDF/XML e RDF/Turtle.
+Nelle seguenti sezioni, per ciascun elemento (classe e proprietà) del profilo di metadatazione DCAT-AP_IT saranno fornite istruzioni per l'uso ed esempi pratici di definizione dei metadati in JSON-LD, RDF/XML e RDF/Turtle. Il profilo complessivo è illustrato nella seguente figura. 
 
 ### Come definire un Soggetto o Organizzazione in DCAT-AP_IT
 Un soggetto/organizzazione è definito mediante la specifica della classe _Agente_ identificata univocamente da un URI (Uniform Resource Identifier).
@@ -1117,7 +1124,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
       ],
       "dcterms:identifier": "agid:D.301",
       
-      altri elementi del catalogo
+      altri elementi del dataset
 
  ```
 
@@ -1184,7 +1191,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
         "@value": "Contratti del Sistema Pubblico di Connettività (SPC)"
       },
       
-      altri elementi del catalogo
+      altri elementi del dataset
 
  ```
 
@@ -1253,7 +1260,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 	           relativi al Lotto 1 dell'anno 2007"
       },
       
-     altri elementi per specificare il catalogo
+     altri elementi per specificare il dataset
      
 ```
 
@@ -1266,7 +1273,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
         <rdf:type rdf:resource="&dcat;Dataset"/>
         <dct:description xml:lang="it">Il dataset contiene i dati sui contratti del 
 				       Sistema Pubblico di Connettività (SPC) relativi al Lotto 1 dell'anno 2007.</dct:description>
-        [altri elementi per specificare il catalogo]
+        [altri elementi per specificare il dataset]
    </dcatapit:Dataset>
    
 ```
@@ -1279,7 +1286,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 	dct:description	"Il dataset contiene i dati sui contratti del Sistema Pubblico di Connettività (SPC) 
 			 relativi al Lotto 1 dell'anno 2007."
 
-	[altri elementi per specificare il catalogo] .
+	[altri elementi per specificare il dataset] .
 	
 ```
 
@@ -1324,7 +1331,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
         "@value": "2015-05-25"
       },
       
-     altri elementi per specificare il catalogo
+     altri elementi per specificare il dataset
      
 ```
 
@@ -1336,7 +1343,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
    <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
         <rdf:type rdf:resource="&dcat;Dataset"/>
         <dct:modified rdf:datatype="&xsd;date">2015-05-25</dct:modified>
-        [altri elementi per specificare il catalogo]
+        [altri elementi per specificare il dataset]
    </dcatapit:Dataset>
    
 ```
@@ -1348,7 +1355,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 	a		dcatapit:Dataset , dcat:Dataset ;
 	dct:modified	"2015-05-25"^^xsd:date ;
 
-	[altri elementi per specificare il catalogo] .
+	[altri elementi per specificare il dataset] .
 	
 ```
 
@@ -1397,7 +1404,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
       }
     },
 
-     altri elementi per specificare il catalogo
+     altri elementi per specificare il dataset
      
 ```
 
@@ -1409,7 +1416,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
    <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
         <rdf:type rdf:resource="&dcat;Dataset"/>
        	<dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/ECON"/>
-        [altri elementi per specificare il catalogo]
+        [altri elementi per specificare il dataset]
    </dcatapit:Dataset>
    
    Opzionalmente si può anche specificare 
@@ -1428,7 +1435,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 	a		dcatapit:Dataset , dcat:Dataset ;
 	dcat:theme      <http://publications.europa.eu/resource/authority/data-theme/ECON> ;
 
-	[altri elementi per specificare il catalogo] .
+	[altri elementi per specificare il dataset] .
 
   Opzionalmente si può anche specificare 
   
@@ -1478,7 +1485,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
        "dcterms:rightsHolder": {
         "@id": "http://dati.gov.it/resource/Amministraione/agid"
       },
-      altri elementi per specificare il catalogo
+      altri elementi per specificare il dataset
       
       Dove l'Organizzazione http://dati.gov.it/resource/Amministraione/agid è definita come:
       
@@ -1504,7 +1511,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
    <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
         <rdf:type rdf:resource="&dcat;Dataset"/>
         <dct:rightsHolder rdf:resource="http://dati.gov.it/resource/Amministraione/agid"/>
-        [altri elementi per specificare il catalogo]
+        [altri elementi per specificare il dataset]
    </dcatapit:Dataset>
    
    Dove l'organizzazione 
@@ -1525,7 +1532,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 	a		  dcatapit:Dataset , dcat:Dataset ;
 	dct:rightsHolder  <http://dati.gov.it/resource/Amministraione/agid> ;
 
-	[altri elementi per specificare il catalogo] .
+	[altri elementi per specificare il dataset] .
 
   Dove l'organizzazione <http://dati.gov.it/resource/Amministraione/agid> è definita come
   
@@ -1576,7 +1583,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
         "@id": "http://publications.europa.eu/resource/authority/frequency/ANNUAL_2"
       },
 
-      altri elementi per specificare il catalogo
+      altri elementi per specificare il dataset
       
 ```
 
@@ -1588,7 +1595,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
    <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
         <rdf:type rdf:resource="&dcat;Dataset"/>
         <dct:accrualPeriodicity rdf:resource="http://publications.europa.eu/resource/authority/frequency/ANNUAL_2"/>
-        [altri elementi per specificare il catalogo]
+        [altri elementi per specificare il dataset]
    </dcatapit:Dataset>
    
 ```
@@ -1600,7 +1607,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 	a		         dcatapit:Dataset , dcat:Dataset ;
 	dct:accrualPeriodicity   <http://publications.europa.eu/resource/authority/frequency/ANNUAL_2> ;
 
-	[altri elementi per specificare il catalogo] .
+	[altri elementi per specificare il dataset] .
 	
 ```
 
@@ -1644,7 +1651,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
         "@id": "http://dati.gov.it/resource/Distribuzione/SPCContratti-N3"
       }, 
 
-      altri elementi per specificare il catalogo
+      altri elementi per specificare il dataset
       
 ```
 
@@ -1656,7 +1663,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
    <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
         <rdf:type rdf:resource="&dcat;Dataset"/>
         <dcat:distribution rdf:resource="http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3"/>
-        [altri elementi per specificare il catalogo]
+        [altri elementi per specificare il dataset]
    </dcatapit:Dataset>
    
 ```
@@ -1668,7 +1675,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 	a		         dcatapit:Dataset , dcat:Dataset ;
 	dcat:distribution 		<http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3> ;
 
-	[altri elementi per specificare il catalogo] .
+	[altri elementi per specificare il dataset] .
 	
 ```
 
@@ -1716,7 +1723,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
           "@id": "http://eurovoc.europa.eu/1810"
         }
       ],
-
+      altri elementi del dataset
 ```
 >``RDF/XML``
 
@@ -1727,7 +1734,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
         <rdf:type rdf:resource="&dcat;Dataset"/>
         <dct:subject rdf:resource="http://eurovoc.europa.eu/3193"/>
         <dct:subject rdf:resource="http://eurovoc.europa.eu/1810"/>
-        [altri elementi per specificare il catalogo]
+        [altri elementi per specificare il dataset]
    </dcatapit:Dataset>
    
 ```
@@ -1738,7 +1745,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
    <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
 	a		         dcatapit:Dataset , dcat:Dataset ;
 	dct:subject		 <http://eurovoc.europa.eu/3193> , <http://eurovoc.europa.eu/1810> ;
-	[altri elementi per specificare il catalogo] .
+	[altri elementi per specificare il dataset] .
 	
 ```
 ##### 2) **_PUNTO di CONTATTO del DATASET:_** ``dcat:contactPoint``
@@ -1781,7 +1788,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
         "@id": "http://dati.gov.it/resource/PuntoContatto/contactPoint"
       },
 
-      altri elementi per specificare il catalogo
+      altri elementi per specificare il dataset
       
 ```
 
@@ -1793,7 +1800,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
    <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
         <rdf:type rdf:resource="&dcat;Dataset"/>
         <dcat:contactPoint rdf:resource="http://dati.gov.it/resource/PuntoContatto/contactPoint"/>
-        [altri elementi per specificare il catalogo]
+        [altri elementi per specificare il dataset]
    </dcatapit:Dataset>
    
 ```
@@ -1804,7 +1811,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
    <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
 	a		    dcatapit:Dataset , dcat:Dataset ;
 	cdat:contactPoint   <http://dati.gov.it/resource/PuntoContatto/contactPoint> ;
-	[altri elementi per specificare il catalogo] .
+	[altri elementi per specificare il dataset] .
 	
 ```
 
@@ -1846,7 +1853,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
         "@id": "http://dati.gov.it/resource/Amministrazione/agid"
       },
       
-      altri elementi che descrivono il catalogo
+      altri elementi che descrivono il dataset
       
    
       "@id": "http://dati.gov.it/resource/Amministrazione/agid",
@@ -1864,11 +1871,11 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
  
  ```XML
  
- <!-- http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid -->
+ <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
     <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
         <rdf:type rdf:resource="&dcat;Dataset"/>
         <dct:publisher rdf:resource="http://dati.gov.it/resource/Amministrazione/agid"/>
-        [altri elementi del catalogo]
+        [altri elementi del dataset]
     </dcatapit:Dataset>
     
  <!-- http://dati.gov.it/resource/Amministrazione/agid -->
@@ -1884,7 +1891,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
  <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
 	a		dcatapit:Dataset , dcat:Dataset ;
 	dct:publisher  	<http://dati.gov.it/resource/Amministrazione/agid> ;
-	[altri elementi del catalogo] .
+	[altri elementi del dataset] .
  
  <http://dati.gov.it/resource/Amministrazione/agid>
 	a 		dcatapit:Agent , foaf:Agent ;
@@ -1931,7 +1938,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
         "@id": "http://dati.gov.it/resource/Amministrazione/agid"
       },
       
-      altri elementi che descrivono il catalogo
+      altri elementi che descrivono il dataset
       
    
       "@id": "http://dati.gov.it/resource/Amministrazione/agid",
@@ -1949,11 +1956,11 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
  
  ```XML
  
- <!-- http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid -->
+  <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
     <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
         <rdf:type rdf:resource="&dcat;Dataset"/>
         <dct:creator rdf:resource="http://dati.gov.it/resource/Amministrazione/agid"/>
-        [altri elementi del catalogo]
+        [altri elementi del dataset]
     </dcatapit:Dataset>
     
  <!-- http://dati.gov.it/resource/Amministrazione/agid -->
@@ -1969,13 +1976,136 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
  <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
 	a		dcatapit:Dataset , dcat:Dataset ;
 	dct:creator  	<http://dati.gov.it/resource/Amministrazione/agid> ;
-	[altri elementi del catalogo] .
+	[altri elementi del dataset] .
  
  <http://dati.gov.it/resource/Amministrazione/agid>
 	a 		dcatapit:Agent , foaf:Agent ;
 	dct:identifier  "agid" ;
 	foaf:name       "Agenzia per l'Italia Digitale" .
 ```
+
+##### 2) **_VERSIONE del DATASET:_** ``owl:versionInfo``
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">0..1</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Opzionale</td>
+  </tr>
+  <tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">La versione del Dataset.</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://www.w3.org/2002/07/owl#versionInfo</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Utilizzato per specificare il numero della  versione o altre indicazioni della versione del dataset.<b>Per indicare la versione, è fortemente raccomandato l’utilizzo di numeri separati dal “.”.</b> Esempi: 0.7, 1.2.3, 1.10</td>
+  </tr>
+</table>
+
+##### Esempi di uso di ``owl:versionInfo`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
+>``JSON-LD``
+
+```JSON
+      "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid",
+      "@type": [
+        "dcat:Dataset",
+        "http://dati.gov.it/onto/dcatapit#\"Dataset"
+      ],
+        "owl:versionInfo": "2.0"
+     },
+      
+      altri elementi che descrivono il dataset
+      
+ ```
+ >``RDF/XML``
+ 
+ ```XML
+ 
+ <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
+    <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+        <rdf:type rdf:resource="&dcat;Dataset"/>
+        <owl:versionInfo>2.0</owl:versionInfo>
+        [altri elementi del dataset]
+    </dcatapit:Dataset>
+    
+ ```
+ >``RDF/Turtle``
+ 
+ ```Turtle
+ <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
+	a		dcatapit:Dataset , dcat:Dataset ;
+	owl:versionInfo	"2.0" ;
+	[altri elementi del dataset] .
+
+```
+##### 3) **_DATA di RILASCIO del DATASET:_** ``dct:issued``
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">0..1</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Opzionale</td>
+  </tr>
+  <tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">La data di rilascio del Dataset</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://purl.org/dc/terms/issued</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">La data di rilascio del dataset. E' la data in cui il dataset è reso disponibile. </td>
+  </tr>
+</table>
+
+##### Esempi di uso di ``dct:issued`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
+>``JSON-LD``
+
+```JSON
+      "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid",
+      "@type": [
+        "dcat:Dataset",
+        "http://dati.gov.it/onto/dcatapit#\"Dataset"
+      ],
+        "dcterms:issued": {
+        "@type": "xsd:date",
+        "@value": "2012-01-15"
+      },
+      
+      altri elementi del dataset
+
+ ```
+ >``RDF/XML``
+ 
+ ```XML
+ 
+    <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
+    <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+        <rdf:type rdf:resource="&dcat;Dataset"/>
+        <dct:issued rdf:datatype="&xsd;date">2012-01-15</dct:issued>
+        [altri elementi del dataset]
+    </dcatapit:Dataset>
+ ```
+ >``RDF/Turtle``
+ 
+ ```Turtle
+ <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
+	a 		dcatapit:Dataset , dcat:Dataset ;
+	dct:issued	"2012-01-15"^^xsd:date ;
+	[altri elementi del dataset] .
+ ```
 
 #### Come mappare i temi di DCAT-AP_IT
 I temi in cui i dataset sono classificati si basano sull'uso del vocabolario controllato come indicato nella sezione ["Temi del Dataset dcat:theme"(#5-temi-del-dataset-dcattheme). Sulla base della [valutazione dei diversi temi per i dati discussa nell'ambito del gruppo Europeo](https://joinup.ec.europa.eu/asset/dcat_application_profile/document/review-dcat-ap-draft-proposal-list-categorization-data), la tabella seguente offre un possibile mapping di domini applicativi rispetto ai temi richiesti dal profilo Europeo DCAT-AP, e quindi dall'estensione italiana DCAT-AP_IT.
