@@ -63,6 +63,7 @@ CC-BY 4.0 (Creative Commons Attribution).
   * [Come definire il punto di contatto del Dataset in DCAT-AP_IT](#come-definire-il-punto-di-contatto-del-dataset-in-dcat-ap_it)
     * [dcatapit:Organization](#descrizione-di-dcatapitdescrizione)
     * [Elementi obbligatori](#elementi-obbligatori-3)
+      * [Nome del punto di contatto](#1-nome-del-punto-di-contatto-vcardfn)
   * [Come definire la copertura temporale del Dataset in DCAT-AP_IT](#come-definire-la-copertura-temporale-del-dataset-in-dcat-ap_it)
   * [Come definire la copertura geografica del Dataset in DCAT-AP_IT](#come-definire-la-copertura-geografica-del-dataset-in-dcat-ap_it)
   * [Come definire lo standard del Dataset in DCAT-AP_IT](#come-definire-il-punto-di-contatto-del-dataset-in-dcat-ap_it)
