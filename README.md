@@ -37,6 +37,7 @@ CC-BY 4.0 (Creative Commons Attribution).
       * [Titolo del dataset](#2-titolo-del-dataset-dcttitle)
       * [Descrizione del dataset](#3-descrizione-del-dataset-dctdescription)
       * [Data di ultima modifica del dataset](#4-data-di-ultima-modifica-del-dataset-dctmodified)
+      * [Temi del dataset](#5-temi-del-dataset-dcattheme)
   * [Come mappare i temi di DCAT-AP_IT](#come-mappare-i-temi-di-dcat-ap_it)
 
    
@@ -1399,63 +1400,63 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 ```
 
 #### Come mappare i temi di DCAT-AP_IT
-Sulla base della [valutazione dei diversi temi per i dati discussa nell'ambito del gruppo Europeo](https://joinup.ec.europa.eu/asset/dcat_application_profile/document/review-dcat-ap-draft-proposal-list-categorization-data), la tabella seguente offre un possibile mapping di domini applicativi rispetto ai temi richiesti dal profilo Europeo DCAT-AP, e quindi dall'estensione italiana DCAT-AP_IT.
+I temi in cui i dataset sono classificati si basano sull'uso del vocabolario controllato come indicato nella sezione ["Temi del Dataset dcat:theme"(#5-temi-del-dataset-dcattheme). Sulla base della [valutazione dei diversi temi per i dati discussa nell'ambito del gruppo Europeo](https://joinup.ec.europa.eu/asset/dcat_application_profile/document/review-dcat-ap-draft-proposal-list-categorization-data), la tabella seguente offre un possibile mapping di domini applicativi rispetto ai temi richiesti dal profilo Europeo DCAT-AP, e quindi dall'estensione italiana DCAT-AP_IT.
 
 <table>
     <tr>
-    	<td align="left"><b>Tema</b></td>
+    	<td align="left"><b>Tema e relativo URI di riferimento da utilizzare</b></td>
 	<td align="left"><b>Descrizione</b></td>
     </tr>
     <tr>
-        <td align="left">Agricoltura, pesca, silvicoltura e prodotti alimentari</td>
+        <td align="left">Agricoltura, pesca, silvicoltura e prodotti alimentari, http://publications.europa.eu/resource/authority/data-theme/AGRI</td>
         <td align="left">Rientra tutto ciò che riguarda il settore agricoltura, pesca, politiche forestali e alimentari</td>
     </tr>
     <tr>
-        <td align="left">Economia e Finanze</td>
+        <td align="left">Economia e Finanze, http://publications.europa.eu/resource/authority/data-theme/ECON </td>
         <td align="left">Rientra tutto ciò che riguarda la tassazione, l'industria, il manifatturiero, il bilancio dello stato, la crescita economica, il commercio</td>
     </tr>
     <tr>
-        <td align="left">Istruzione, cultura e sport</td>
+        <td align="left">Istruzione, cultura e sport, http://publications.europa.eu/resource/authority/data-theme/EDUC</td>
         <td align="left">Rientra tutto ciò che riguarda la cultura, il turismo, l'istruzione e le attività sportive</td>
     </tr>
     <tr>
-        <td align="left">Energia</td>
+        <td align="left">Energia, http://publications.europa.eu/resource/authority/data-theme/ENER</td>
         <td align="left">Rientra tutto ciò che concerne il settore dell'energia e dell'estrazione mineraria</td>
     </tr>
     <tr>
-        <td align="left">Ambiente</td>
+        <td align="left">Ambiente, http://publications.europa.eu/resource/authority/data-theme/ENVI</td>
         <td align="left">Rientra tutto ciò che riguarda l'ambiente (rifiuti, consumo del suolo, oceani, ecc.) e il clima/meteo</td>
     </tr>
     <tr>
-        <td align="left">Governo e settore pubblico</td>
+        <td align="left">Governo e settore pubblico, http://publications.europa.eu/resource/authority/data-theme/GOVE</td>
         <td align="left">Rientra tutto ciò che riguarda le politiche di governo, gli affari istituzionali, la trasparenza del settore pubblico</td>
     </tr>
     <tr>
-        <td align="left">Salute</td>
+        <td align="left">Salute, http://publications.europa.eu/resource/authority/data-theme/HEAL</td>
         <td align="left">Rientra tutto ciò che concerne le attività sulla salute e tutto ciò che riguarda gli animali</td>
     </tr>
     <tr>
-        <td align="left">Tematiche internazionali</td>
+        <td align="left">Tematiche internazionali, http://publications.europa.eu/resource/authority/data-theme/INTR</td>
         <td align="left">Rientra tutto ciò che concerne le relazioni internazionali, la cooperazione internazionale, i diritti umanitari, le organizzazioni internazionali e gli affari esteri</td>
     </tr>
     <tr>
-        <td align="left">Giustizia, sistema giuridico e sicurezza pubblica</td>
+        <td align="left">Giustizia, sistema giuridico e sicurezza pubblica, http://publications.europa.eu/resource/authority/data-theme/JUST</td>
         <td align="left">Rientra tutto ciò che riguarda le frodi, i crimini, la giustizia, le norme. Rientra anche tutto ciò che riguarda la difesa e gli aspetti legati alle attività del ministero dell'interno</td>
     </tr>	
     <tr>
-        <td align="left">Regioni e città</td>
+        <td align="left">Regioni e città, http://publications.europa.eu/resource/authority/data-theme/REGI</td>
         <td align="left">Rientra tutto ciò che riguarda le strade urbane e i numeri civici. Il tema ha una forte sovrapposizione con ambiente perché potrebbe anche contenere tutto ciò che concerne la geografia del territorio (e.g., montagne, laghi, fiumi, ecc.)</td>
     </tr>
     <tr>
-        <td align="left">Popolazione e società</td>
+        <td align="left">Popolazione e società, http://publications.europa.eu/resource/authority/data-theme/SOCI</td>
         <td align="left">Rientra tutto ciò che concerne lo sviluppo della società, le condizioni della società, la cittadinanza, la demografia, il welfare</td>
     </tr>
     <tr>
-        <td align="left">Scienza e tecnologia</td>
+        <td align="left">Scienza e tecnologia, http://publications.europa.eu/resource/authority/data-theme/TECH</td>
         <td align="left">Rientra tutto ciò che riguarda la ricerca, l'innovazione, la tecnologia, la banda larga e ultralarga, la psicologia, lo spazio</td>
     </tr>
     <tr>
-        <td align="left">Trasporti</td>
+        <td align="left">Trasporti, http://publications.europa.eu/resource/authority/data-theme/TRAN</td>
         <td align="left">Rientra tutto ciò che riguarda i trasporti e le relative infrastrutture, la mobilità</td>
     </tr>
 </table>
