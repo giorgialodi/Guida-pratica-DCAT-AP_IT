@@ -448,7 +448,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
   <tr>
   <tr>
     <td align="left">Descrizione</td>
-    <td align="left">L'editore del Catalogo</td>
+    <td align="left">L'editore del Catalogo. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitcatalog">Catalog</a> a un oggetto (codominio) di tipo [dcatapit:Agent](#definizione-di-dcatapitagent) (specificato mediante un URI - Uniform Resource Identifier)</td>
   </tr>
   <tr>
     <td align="left">Riferimento</td>
@@ -1344,7 +1344,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   <tr>
   <tr>
     <td align="left">Descrizione</td>
-    <td align="left">I temi attraverso cui classificare il Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un oggetto (codominio) di tipo skos:Concept (specificato mediante un URI- Uniform Resource Identifier)</td>
+    <td align="left">I temi attraverso cui classificare il Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un o più oggetto (codominio) di tipo skos:Concept (specificato mediante un URI - Uniform Resource Identifier)</td>
   </tr>
   <tr>
     <td align="left">Riferimento</td>
@@ -1415,6 +1415,35 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 	skos:prefLabel 	"Economia e Finanze"@it .
 	
 ```
+
+##### 6) **_TITOLARE del DATASET:_** ``dcat:theme``
+
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">1</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Obbligatorio</td>
+  </tr>
+  <tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">I titolare del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un oggetto (codominio) di tipo [dcatapit:Agent](#definizione-di-dcatapitagent) (specificato mediante un URI - Uniform Resource Identifier)</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">hhttp://purl.org/dc/terms/rightsHolder</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Il metadato assume come valore un URI (NON una stringa). Esso ha come valore un'organizzazione (o pubblica amministrazione) titolare del catalogo.<b> Si raccomanda di evitare l'inserimento di nomi di singole persone.</b><br />Si vedano gli <a href="#soggetto-esempi-JSONLD-RDFXML-RDFTURTLE">esempi riportati sull'uso della classe Agente </td>
+  </tr>
+</table>
+
+##### Esempi di uso di ``dcat:theme`` in JSON-LD, RDF/XML, RDF/Turtle
+>``JSON-LD``
 
 #### Come mappare i temi di DCAT-AP_IT
 I temi in cui i dataset sono classificati si basano sull'uso del vocabolario controllato come indicato nella sezione ["Temi del Dataset dcat:theme"(#5-temi-del-dataset-dcattheme). Sulla base della [valutazione dei diversi temi per i dati discussa nell'ambito del gruppo Europeo](https://joinup.ec.europa.eu/asset/dcat_application_profile/document/review-dcat-ap-draft-proposal-list-categorization-data), la tabella seguente offre un possibile mapping di domini applicativi rispetto ai temi richiesti dal profilo Europeo DCAT-AP, e quindi dall'estensione italiana DCAT-AP_IT.
