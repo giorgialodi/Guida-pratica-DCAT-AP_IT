@@ -42,7 +42,7 @@ CC-BY 4.0 (Creative Commons Attribution).
       * [Frequenza di aggiornamento del dataset](#7-frequenza-di-aggiornamento-del-dataset-dctaccrualperiodicity)
       * [Distribuzione del dataset](#8-distribuzione-del-dataset-dcatdistribution)
     * [Elementi raccomandati](#elementi-obbligatori-1)
-      * [Soggetto del dataset](#1-soggetto-del-dataset-dctsubject)
+      * [Sottotema del dataset](#1-sottotema-del-dataset-dctsubject)
       * [Punto di contatto del dataset](#2-punto-di-contatto-dcatcontactpoint)
       * [Editore del dataset](#3-editore-del-dataset-dctpublisher)
     * [Elementi opzionali](#elementi-opzionali)
@@ -470,7 +470,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
   <tr>
   <tr>
     <td align="left">Descrizione</td>
-    <td align="left">L'editore del Catalogo. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitcatalog">Catalog</a> a un oggetto (codominio) di tipo [dcatapit:Agent](#definizione-di-dcatapitagent) (specificato mediante un URI - Uniform Resource Identifier)</td>
+    <td align="left">L'editore del Catalogo. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitcatalog">Catalog</a> a un oggetto (codominio) di tipo <a href="#definizione-di-dcatapitagent">Dataset</a>dcatapit:Agent (specificato mediante un URI - Uniform Resource Identifier)</td>
   </tr>
   <tr>
     <td align="left">Riferimento</td>
@@ -1664,13 +1664,235 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 >``RDF/Turtle``
 
 ```Turtle
- <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
+   <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
 	a		         dcatapit:Dataset , dcat:Dataset ;
 	dcat:distribution 		<http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3> ;
 
 	[altri elementi per specificare il catalogo] .
 	
 ```
+
+#### Elementi raccomandati
+
+##### 1) **_SOTTOTEMA del DATASET:_** ``dct:subject``
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">0..N</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Raccomandato</td>
+  </tr>
+  <tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">La sottocategoria in cui può  essere  classificato  il  Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un o più oggetti (codominio) di tipo skos:Concept (specificato mediante un URI - Uniform Resource Identifier)</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://purl.org/dc/terms/subject</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">In corrispondenza del <a href="#come-mappare-i-temi-in-dcatapit">tema scelto</a>, si può specificare una o più categorie per dettagliare le parole chiave specifiche in cui il dataset può essere classificato.</td>
+  </tr>
+</table>
+
+##### Esempi di uso di ``dct:subject`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
+>``JSON-LD``
+
+```JSON
+      "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid",
+      "@type": [
+        "dcat:Dataset",
+        "http://dati.gov.it/onto/dcatapit#\"Dataset"
+      ],
+       "dcterms:subject": [
+        {
+          "@id": "http://eurovoc.europa.eu/3193"
+        },
+        {
+          "@id": "http://eurovoc.europa.eu/1810"
+        }
+      ],
+
+```
+>``RDF/XML``
+
+```XML
+
+   <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
+   <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+        <rdf:type rdf:resource="&dcat;Dataset"/>
+        <dct:subject rdf:resource="http://eurovoc.europa.eu/3193"/>
+        <dct:subject rdf:resource="http://eurovoc.europa.eu/1810"/>
+        [altri elementi per specificare il catalogo]
+   </dcatapit:Dataset>
+   
+```
+
+>``RDF/Turtle``
+
+```Turtle
+   <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
+	a		         dcatapit:Dataset , dcat:Dataset ;
+	dct:subject		 <http://eurovoc.europa.eu/3193> , <http://eurovoc.europa.eu/1810> ;
+	[altri elementi per specificare il catalogo] .
+	
+```
+##### 2) **_PUNTO di CONTATTO del DATASET:_** ``dcat:contactPoint``
+
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">0..N</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Raccomandato</td>
+  </tr>
+  <tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">Il Punto di contatto del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un o più oggetti (codominio) di tipo <a href="#definizione-di-dcatcontactpoint">Punto di Contatto</a> (specificato mediante un URI - Uniform Resource Identifier)</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://www.w3.org/ns/dcat#contactPoint</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Utilizzare questa proprietà per specificare le informazioni di contatto usate per inviare osservazioni, richieste di informazioni e commenti sul Dataset. <b>E' bene non confondere questo metadato con l'organizzazione titolare o editore o creatore del dataset. Il punto di contatto è usato per specificare un ufficio dell'organizzazione che può fornire informazioni sul dataset Si veda la sezione <a href="#definizione-di-dcatcontactpoint">Come definire un Punto di Contatto</a></b></td>
+  </tr>
+</table>
+
+##### Esempi di uso di ``dcat:contactPoint`` in JSON-LD, RDF/XML, RDF/Turtle
+>``JSON-LD``
+
+```JSON
+
+      "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid",
+      "@type": [
+        "dcat:Dataset",
+        "http://dati.gov.it/onto/dcatapit#\"Dataset"
+      ],
+      "dcat:contactPoint": {
+        "@id": "http://dati.gov.it/resource/PuntoContatto/contactPoint"
+      },
+
+      altri elementi per specificare il catalogo
+      
+```
+
+>``RDF/XML``
+
+```XML
+
+   <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
+   <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+        <rdf:type rdf:resource="&dcat;Dataset"/>
+        <dcat:contactPoint rdf:resource="http://dati.gov.it/resource/PuntoContatto/contactPoint"/>
+        [altri elementi per specificare il catalogo]
+   </dcatapit:Dataset>
+   
+```
+
+>``RDF/Turtle``
+
+```Turtle
+   <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
+	a		    dcatapit:Dataset , dcat:Dataset ;
+	cdat:contactPoint   <http://dati.gov.it/resource/PuntoContatto/contactPoint> ;
+	[altri elementi per specificare il catalogo] .
+	
+```
+
+##### 3) **_EDITORE del DATASET:_** ``dct:publisher``
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">0..1</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Raccomandato</td>
+  </tr>
+  <tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">L'editore del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un oggetto (codominio) di tipo <a href="#definizione-di-dcatapitagent">Dataset</a>dcatapit:Agent (specificato mediante un URI - Uniform Resource Identifier)</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://purl.org/dc/terms/publisher</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Un'organizzazione (o pubblica amministrazione) responsabile di rendere disponibile (pubblicare) il dataset. <b> Si raccomanda di evitare l'inserimento di nomi di singole persone.</b><br />Si vedano gli <a href="#soggetto-esempi-JSONLD-RDFXML-RDFTURTLE">esempi riportati sull'uso della classe Agente.</a></td>
+  </tr>
+</table>
+
+##### Esempi di uso di ``dct:publisher`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
+>``JSON-LD``
+
+```JSON
+      "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid",
+      "@type": [
+        "dcat:Dataset",
+        "http://dati.gov.it/onto/dcatapit#\"Dataset"
+      ],
+       "dcterms:publisher": {
+        "@id": "http://dati.gov.it/resource/Amministrazione/agid"
+      },
+      
+      altri elementi che descrivono il catalogo
+      
+   
+      "@id": "http://dati.gov.it/resource/Amministrazione/agid",
+      "@type": [
+        "foaf:Agent",
+        "http://dati.gov.it/onto/dcatapit#\"Agent"
+      ],
+      "dcterms:identifier": "agid",
+      "foaf:name": {
+        "@language": "it",
+        "@value": "Agenzia per l'Italia Digitale"
+      }
+ ```
+ >``RDF/XML``
+ 
+ ```XML
+ 
+ <!-- http://dati.gov.it/resource/Catalogo/SPCDataCatalog_agid -->
+    <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+        <rdf:type rdf:resource="&dcat;Dataset"/>
+        <dct:publisher rdf:resource="http://dati.gov.it/resource/Amministrazione/agid"/>
+        [altri elementi del catalogo]
+    </dcatapit:Dataset>
+    
+ <!-- http://dati.gov.it/resource/Amministrazione/agid -->
+    <dcatapit:Agent rdf:about="http://dati.gov.it/resource/Amministrazione/agid">
+        <rdf:type rdf:resource="&foaf;Agent"/>
+        <dct:identifier>agid</dct:identifier>
+        <foaf:name xml:lang="it">Agenzia per l'Italia Digitale</foaf:name>
+    </dcatapit:Agent>
+ ```
+ >``RDF/Turtle``
+ 
+ ```Turtle
+ <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
+	a		dcatapit:Dataset , dcat:Dataset ;
+	dct:publisher  	<http://dati.gov.it/resource/Amministrazione/agid> ;
+	[altri elementi del catalogo] .
+ 
+ <http://dati.gov.it/resource/Amministrazione/agid>
+	a 		dcatapit:Agent , foaf:Agent ;
+	dct:identifier  "agid" ;
+	foaf:name       "Agenzia per l'Italia Digitale" .
+```
+
+
 
 #### Come mappare i temi di DCAT-AP_IT
 I temi in cui i dataset sono classificati si basano sull'uso del vocabolario controllato come indicato nella sezione ["Temi del Dataset dcat:theme"(#5-temi-del-dataset-dcattheme). Sulla base della [valutazione dei diversi temi per i dati discussa nell'ambito del gruppo Europeo](https://joinup.ec.europa.eu/asset/dcat_application_profile/document/review-dcat-ap-draft-proposal-list-categorization-data), la tabella seguente offre un possibile mapping di domini applicativi rispetto ai temi richiesti dal profilo Europeo DCAT-AP, e quindi dall'estensione italiana DCAT-AP_IT.
