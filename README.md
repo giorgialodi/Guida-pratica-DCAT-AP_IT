@@ -1695,7 +1695,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">In corrispondenza del <a href="#come-mappare-i-temi-in-dcatapit">tema scelto</a>, si può specificare una o più categorie per dettagliare le parole chiave specifiche in cui il dataset può essere classificato.</td>
+    <td align="left">In corrispondenza del <a href="#come-mappare-i-temi-di-dcat-ap_it">tema scelto</a>, si può specificare una o più categorie per dettagliare le parole chiave specifiche in cui il dataset può essere classificato.</td>
   </tr>
 </table>
 
@@ -1763,7 +1763,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Utilizzare questa proprietà per specificare le informazioni di contatto usate per inviare osservazioni, richieste di informazioni e commenti sul Dataset. <b>E' bene non confondere questo metadato con l'organizzazione titolare o editore o creatore del dataset. Il punto di contatto è usato per specificare un ufficio dell'organizzazione che può fornire informazioni sul dataset Si veda la sezione <a href="#definizione-di-dcatcontactpoint">Come definire un Punto di Contatto</a></b></td>
+    <td align="left">Utilizzare questa proprietà per specificare le informazioni di contatto usate per inviare osservazioni, richieste di informazioni e commenti sul Dataset. <b>E' bene non confondere questo metadato con l'organizzazione titolare o editore o creatore del dataset. Il punto di contatto è usato tipicamente per specificare i riferimenti di un ufficio dell'organizzazione che può fornire informazioni sul dataset. Si veda la sezione <a href="#definizione-di-dcatcontactpoint">Come definire un Punto di Contatto.</a></b></td>
   </tr>
 </table>
 
