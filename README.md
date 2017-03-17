@@ -1426,7 +1426,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 ```Turtle
  <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
 	a		dcatapit:Dataset , dcat:Dataset ;
-	dcat:theme      <http://publications.europa.eu/resource/authority/data-theme/ECON>
+	dcat:theme      <http://publications.europa.eu/resource/authority/data-theme/ECON> ;
 
 	[altri elementi per specificare il catalogo] .
 
@@ -1523,7 +1523,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 ```Turtle
  <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
 	a		  dcatapit:Dataset , dcat:Dataset ;
-	dct:rightsHolder  <http://dati.gov.it/resource/Amministraione/agid>
+	dct:rightsHolder  <http://dati.gov.it/resource/Amministraione/agid> ;
 
 	[altri elementi per specificare il catalogo] .
 
@@ -1536,7 +1536,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 	
 ```
 
-##### 7) **_FREQUENZA del DATASET:_** ``dct:accrualPeriodicity``
+##### 7) **_FREQUENZA di AGGIORNAMENTO del DATASET:_** ``dct:accrualPeriodicity``
 
 <table>
   <tr> 
@@ -1598,12 +1598,79 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 ```Turtle
  <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
 	a		         dcatapit:Dataset , dcat:Dataset ;
-	dct:accrualPeriodicity   <http://publications.europa.eu/resource/authority/frequency/ANNUAL_2>
+	dct:accrualPeriodicity   <http://publications.europa.eu/resource/authority/frequency/ANNUAL_2> ;
 
 	[altri elementi per specificare il catalogo] .
 	
 ```
 
+##### 8) **_DISTRIBUZIONE del DATASET:_** ``dcat:distribution``
+
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">1..N nel caso di dati aperti, 0..N negli altri casi</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Obbligatorio nel caso di dati aperti, Opzionale negli altri casi</td>
+  </tr>
+  <tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">La distribuzione del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un oggetto (codominio) di tipo <a href="#definizione-di-dcatapitdistribution">Distributione</a> (specificato mediante un URI - Uniform Resource Identifier)</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://www.w3.org/ns/dcat#distribution</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Una distribuzione è una forma attraverso cui il dataset è disponibile. Ogni dataset può essere disponibile in diverse forme, come per esempio diversi formati o differenti endpoint (e.g., SPARQL endpoint). Nel caso di serie temporali o spaziali o viste di un dataset, queste sono descritte mediante le distribuzioni. Per esempio, nel caso di un dataset suddiviso per regioni, le suddivisioni rappresentano distribuzioni di un dataset più ampio che include tutti i dati del territorio nazionale. <br /> Si veda <a href="#definizione-di-dcatapitdistribution">Come definire una distribuzione</a>.</td>
+  </tr>
+</table>
+
+##### Esempi di uso di ``dcat:distribution`` in JSON-LD, RDF/XML, RDF/Turtle
+>``JSON-LD``
+
+```JSON
+
+      "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid",
+      "@type": [
+        "dcat:Dataset",
+        "http://dati.gov.it/onto/dcatapit#\"Dataset"
+      ],
+       dcat:distribution": {
+        "@id": "http://dati.gov.it/resource/Distribuzione/SPCContratti-N3"
+      }, 
+
+      altri elementi per specificare il catalogo
+      
+```
+
+>``RDF/XML``
+
+```XML
+
+   <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
+   <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+        <rdf:type rdf:resource="&dcat;Dataset"/>
+        <dcat:distribution rdf:resource="http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3"/>
+        [altri elementi per specificare il catalogo]
+   </dcatapit:Dataset>
+   
+```
+
+>``RDF/Turtle``
+
+```Turtle
+ <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
+	a		         dcatapit:Dataset , dcat:Dataset ;
+	dcat:distribution 		<http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3> ;
+
+	[altri elementi per specificare il catalogo] .
+	
+```
 
 #### Come mappare i temi di DCAT-AP_IT
 I temi in cui i dataset sono classificati si basano sull'uso del vocabolario controllato come indicato nella sezione ["Temi del Dataset dcat:theme"(#5-temi-del-dataset-dcattheme). Sulla base della [valutazione dei diversi temi per i dati discussa nell'ambito del gruppo Europeo](https://joinup.ec.europa.eu/asset/dcat_application_profile/document/review-dcat-ap-draft-proposal-list-categorization-data), la tabella seguente offre un possibile mapping di domini applicativi rispetto ai temi richiesti dal profilo Europeo DCAT-AP, e quindi dall'estensione italiana DCAT-AP_IT.
