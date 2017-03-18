@@ -97,7 +97,7 @@ CC-BY 4.0 (Creative Commons Attribution).
     * [Elementi opzionali che descrivono lo standard](#elementi-opzionali-che-descrivono-lo-standard)
     * [Esempi di uso di dcatapit:Standard in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dcatapitstandard-in-json-ld-rdfxml-rdfturtle)
   * [Come definire un identificativo alternativo del Dataset in DCAT-AP_IT](#come-definire-un-identificativo-alternativo-del-dataset-in-dcat-ap_it)
-    * [adms:Identifier](#definizione-di-dctstandard)
+    * [adms:Identifier](#definizione-di-admsidentifier)
     * [Elementi raccomandati che descrivono altro identificativo del dataset](#elementi-raccomandati-che-descrivono-altro-identificativo-del-dataset)
     * [Esempi di uso di adms:Identifier in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-admsidentifier-in-json-ld-rdfxml-rdfturtle)
   * [Come mappare i temi di DCAT-AP_IT](#come-mappare-i-temi-di-dcat-ap_it)
