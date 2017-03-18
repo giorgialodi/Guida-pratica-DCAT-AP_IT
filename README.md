@@ -3888,7 +3888,7 @@ Uno standard è definito mediante la specifica della classe _Standard_ identific
 
 ```JSON
 {
-      ""@id": "http://dati.gov.it/resource/Standard/standard-org",
+      "@id": "http://dati.gov.it/resource/Standard/standard-org",
       "@type": [
         "dcterms:Standard",
         "http://dati.gov.it/onto/dcatapit#\"Standard"
