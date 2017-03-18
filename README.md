@@ -72,7 +72,7 @@ CC-BY 4.0 (Creative Commons Attribution).
       * [Ultima modifica della distribuzione](#3-ultima-modifica-della-distribuzione-dctmodified)
       * [Dimensione in byte](#4-dimensione-in-byte-dcatbytesize)
   * [Come definire il punto di contatto del Dataset in DCAT-AP_IT](#come-definire-il-punto-di-contatto-del-dataset-in-dcat-ap_it)
-    * [dcatapit:Organization](#descrizione-di-dcatapitdescrizione)
+    * [dcatapit:Organization](#definizione-di-dcatapitorganization)
     * [Elementi obbligatori che descrivono il punto di contatto](#elementi-obbligatori-che-descrivono-il-punto-di-contatto)
       * [Nome del punto di contatto](#1-nome-del-punto-di-contatto-vcardfn)
       * [Email del punto di contatto](#2-email-del-punto-di-contatto-vcardhasemail)
