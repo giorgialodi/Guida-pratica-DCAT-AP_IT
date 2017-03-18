@@ -11,7 +11,7 @@ CC-BY 4.0 (Creative Commons Attribution).
 * [Alimentare il catalogo nazionale dei dati](#alimentare-il-catalogo-nazionale-dei-dati)
   * [Modalità di alimentazione](#modalità-di-alimentazione)
 * [Guida pratica a DCAT-AP_IT](#guida-pratica-a-dcat-ap_it)
-  * [Come definire un catalogo in DCAT-AP_IT](#come-definire-un-catalogo-di-dati-in-dcat-ap_it)
+  * [Come definire un Catalogo in DCAT-AP_IT](#come-definire-un-catalogo-di-dati-in-dcat-ap_it)
     * [dcatapit:Catalog](#definizione-di-dcatapitcatalog)
     * [Esempi di uso di dcatapit:Catalog in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dcatapitcatalog-in-json-ld-rdfxml-rdfturtle)
     * [Elementi obbligatori](#elementi-obbligatori)
@@ -25,7 +25,7 @@ CC-BY 4.0 (Creative Commons Attribution).
       * [Lingua del catalogo](#2-lingua-del-catalogo-dctlanguage)
       * [Data di rilascio del catalogo](#3-data-di-rilascio-del-catalogo-dctissued)
       * [Temi del catalogo](#4-temi-del-catalogo-dcatthemetaxonomy)
-  * [Come definire un dataset in DCAT-AP_IT](#come-definire-un-dataset-in-dcat-ap_it)
+  * [Come definire un Dataset in DCAT-AP_IT](#come-definire-un-dataset-in-dcat-ap_it)
     * [dcatapit:Dataset](#definizione-di-dcatapitdataset)
     * [Esempi di uso di dcatapit:Dataset in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dcatapitdataset-in-json-ld-rdfxml-rdfturtle)
     * [Elementi obbligatori](#elementi-obbligatori-1)
@@ -76,9 +76,8 @@ CC-BY 4.0 (Creative Commons Attribution).
     * [Elementi obbligatori che descrivono il punto di contatto](#elementi-obbligatori-che-descrivono-il-punto-di-contatto)
     * [Elementi ozionali che descrivono il punto di contatto](#elementi-opzionali-che-descrivono-il-punto-di-contatto)
     * [Esempi di uso di dcatapit:Organization in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dcatapitorganization-in-json-ld-rdfxml-rdfturtle)
-  * [Come definire la licenza in DCAT-AP_IT](#come-definire-la-licenza-in-dcat-ap_it)
-    * [dcaapit:LicenseDocument](#definizione-di-dcatapitlicensedocument)
-    * [Elementi obbligatori che descrivono la licenza](#elementi-obbligatori-che-descrivono-la-licenza)
+  * [Come definire la Licenza in DCAT-AP_IT](#come-definire-la-licenza-in-dcat-ap_it)
+    * [dcatapit:LicenseDocument](#definizione-di-dcatapitlicensedocument)
     * [Elementi raccomandati che descrivono la licenza](#elementi-raccomandati-che-descrivono-la-licenza)
     * [Elementi opzionali che descrivono la licenza](#elementi-opzionali-che-descrivono-la-licenza)
     * [Esempi di uso di dcatapit:LicenseDocument in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dcatapitlicensedocument-in-json-ld-rdfxml-rdfturtle)
@@ -3393,7 +3392,7 @@ La licenza è definita mediante la specifica della classe _dcatapti:LicenseDocum
   </tr>
 </table>
 
-#### Esempi di uso di dcatapit:LinceseDocument in JSON-LD, RDF/XML, RDF/Turtle
+#### Esempi di uso di dcatapit:LicenseDocument in JSON-LD, RDF/XML, RDF/Turtle
 >``JSON-LD``
 
 ```JSON
