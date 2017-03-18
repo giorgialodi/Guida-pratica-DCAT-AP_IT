@@ -3269,7 +3269,7 @@ Una distribuzione è definita mediante la classe _Distribution(Distribuzione)_ i
 ```
 
 
-### Come definire il Punto di Contatto in DCAT-AP_IT
+### Come definire il Punto di Contatto del Dataset in DCAT-AP_IT
 Il punto di contatto è definito mediante la specifica della classe _dcatapti:Organization_ identificata univocamente da un URI (Uniform Resource Identifier).
 
 #### Definizione di ``dcatapit:Organization``
