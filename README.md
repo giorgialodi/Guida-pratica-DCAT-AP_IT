@@ -79,7 +79,7 @@ CC-BY 4.0 (Creative Commons Attribution).
     * [Elementi ozionali che descrivono il punto di contatto](#elementi-opzionali-che-descrivono-il-punto-di-contatto)
       * [Telefono del punto di contatto](#1-telefono-del-punto-di-contatto-vcardhastelephone)
       * [Sito del punto di contatto](#2-sito-del-punto-di-contatto-vcardhasurl)
-    * [Esempi di uso di dcatapit:Organization in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso--di-dcatapitorganization-in-json-ld-rdfxml-rdfturtle)
+    * [Esempi di uso di dcatapit:Organization in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dcatapitorganization-in-json-ld-rdfxml-rdfturtle)
   * [Come definire la copertura temporale del Dataset in DCAT-AP_IT](#come-definire-la-copertura-temporale-del-dataset-in-dcat-ap_it)
   * [Come definire la copertura geografica del Dataset in DCAT-AP_IT](#come-definire-la-copertura-geografica-del-dataset-in-dcat-ap_it)
   * [Come definire lo standard del Dataset in DCAT-AP_IT](#come-definire-il-punto-di-contatto-del-dataset-in-dcat-ap_it)
