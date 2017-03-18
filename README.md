@@ -2485,7 +2485,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
   <tr>
     <td align="left">Descrizione</td>
-    <td align="left">Un eventuale identificativo secondario del Dataset (e.g., DOI, ISBN, W3ID, ecc.). La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un o più oggetti (codominio) di tipo <a href="#come-definire-un-identificativo-alternativo-del-dataset-in-dcat-ap_it">Altro Identificativo</a> (specificato mediante un URI- Uniform Resource Identifier)</td>
+    <td align="left">Un eventuale identificativo secondario del Dataset (e.g., DOI, ISBN, W3ID, ecc.). La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un o più oggetti (codominio) di tipo <a href="#definizione-di-admsidentifier">Altro Identificativo</a> (specificato mediante un URI- Uniform Resource Identifier)</td>
   </tr>
   <tr>
     <td align="left">Riferimento</td>
@@ -2493,7 +2493,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Specificare uno o più identificativi secondari per il dataset. Per esempio, un identificativo secondario può essere un identificativo DOI (e.g., doi:10.10.1038/nphys1170) oppure un identificativo permanente per il Web W3ID (e.g., http://w3id.org/food) oppure un identificativo stabile utilizzato in cataloghi locali. Per l'uso pratico di questa proprietà <a href="#esempi-di-uso-di-admsidentifier-in-dcatap_it">si vedano gli esempi d'uso per l'Identificativo Alternativo del Dataset</a></td>
+    <td align="left">Specificare uno o più identificativi secondari per il dataset. Per esempio, un identificativo secondario può essere un identificativo DOI (e.g., doi:10.10.1038/nphys1170) oppure un identificativo permanente per il Web W3ID (e.g., http://w3id.org/food) oppure un identificativo stabile utilizzato in cataloghi locali. Per l'uso pratico di questa proprietà <a href="#esempi-di-uso-di-admsidentifier-in-json-ld-rdfxml-rdfturtle">si vedano gli esempi d'uso per l'Identificativo Alternativo del Dataset</a></td>
   </tr>
 </table>
 
@@ -3746,6 +3746,199 @@ La copertura (o estensione) temporale del dataset è definita mediante la specif
 	dcatapit:startDate		"2007-01-01"^^xsd:date ;
 	dcatapit:endDate		"2012-12-31"^^xsd:date .
 ```
+
+### Come definire lo Standard del Dataset in DCAT-AP_IT
+Uno standard è definito mediante la specifica della classe _Standard_ identificata univocamente da un URI (Uniform Resource Identifier).
+
+#### Definizione di ``dcatapit:Standard``
+
+<table>
+<tr>
+<td align="left">URI</td>
+<td align="left">dcatapit:Standard</td>
+</tr>
+<tr>
+<td align="left">Sottoclasse</td>
+<td align="left">dct:Standard</td>
+</tr>
+<tr>
+<td align="left">Descrizione</td>
+<td align="left">Un standard al quale il dataset è conforme.</td>
+</tr>
+<tr>
+<td align="left">Cardinalità</td>
+<td align="left">0..N</td>
+</tr>
+<tr>
+<td align="left">Stato</td>
+<td align="left">Opzionale</td>
+</tr>
+<tr>
+<td align="left">Riferimento</td>
+<td align="left">http://www.dati.gov.it/onto/dcatapit#Standard</td>
+</tr>
+</table>
+
+#### Elementi obbligatori che descrivono lo Standard
+
+##### 1) **_IDENTIFICATIVO dello STANDARD**: ``dct:identifier``
+
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">1 </td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Obbligatorio</td>
+  </tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">L'identificativo dello standard.</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://purl.org/dc/terms/identifier</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Inserire l’URL di riferimento dello Standard. Nel caso di riferimenti normativi, includere il link permanente disponibile presso la gazzetta ufficiale (e.g., www.gazzettaufficiale.it/eli/id/2005/05/16/005G0104/sg). E’ obbligatorio specificare l’identificativo qualora si scelga di descrivere standard riferibili al dataset.</td>
+  </tr>
+</table>
+
+#### Elementi opzionali che descrivono lo Standard
+
+##### 1) **_TITOLO dello STANDARD**: ``dct:title``
+
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">0..N (può esistere più di un'istanza in diverse lingue della stessa proprietà)</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Opzionale</td>
+  </tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">Il titolo dello standard.</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://purl.org/dc/terms/title</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Indicare un titolo dello standard comprensibile in quanto il metadato potrebbe essere utilizzato nella ricerca e nelle indicizzazioni (evitare acronimi, evitare codici non esaustivi).  Nel caso di riferimenti normativi, indicare per esempio la tipologia di norma il numero e l’anno e inserire il titolo ufficiale della norma.</td>
+  </tr>
+</table>
+
+##### 2) **_DESCRIZIONE dello STANDARD**: ``dct:description``
+
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">0..N (può esistere più di un'istanza in diverse lingue della stessa proprietà)</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Opzionale</td>
+  </tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">La descrizione dello standard.</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://purl.org/dc/terms/description</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Indicare una descrizione per lo standard. Evitare di utilizzare un linguaggio ricco di riferimenti normativi. Utilizzare invece un linguaggio semplice che possa aiutare qualsiasi utente a identificare lo standard riferibile al dataset. Si ricorda che: nessun tag HTML è consentito,</td>
+  </tr>
+</table>
+
+##### 3) **_DOCUMENTAZIONE di RIFERIMENTO**: ``dcatapit:referenceDocumentation``
+
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">0..N</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Opzionale</td>
+  </tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">URL attraverso i quali viene fornito l’accesso a documenti di dettaglio relativi allo Standard indicato.</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://www.dati.gov.it/onto/dcatapit#referenceDocumentation</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Indicare uno o più URL della documentazione di riferimento relativa allo standard. Ad esempio, nel caso della raccomandazione DCAT, alcuni URL relativi alla documentazione di riferimento sono: https://www.w3.org/TR/vocab-dcat/ e https://www.w3.org/ns/dcat.rdf</td>
+  </tr>
+</table>
+
+#### Esempi di uso di dcatapit:Standard in JSON-LD, RDF/XML, RDF/Turtle
+>``JSON-LD``
+
+```JSON
+{
+      ""@id": "http://dati.gov.it/resource/Standard/standard-org",
+      "@type": [
+        "dcterms:Standard",
+        "http://dati.gov.it/onto/dcatapit#\"Standard"
+      ],
+      "dcterms:description": {
+        "@language": "en",
+        "@value": "The ontology of the organizations"
+      },
+      "dcterms:title": {
+        "@language": "en",
+        "@value": "W3C Org organization ontology"
+      },
+      "http://dati.gov.it/onto/dcatapit#\"referenceDocumentation": [
+        {
+          "@type": "xsd:anyURI",
+          "@value": "https://www.w3.org/TR/vocab-org/"
+        },
+        {
+          "@type": "xsd:anyURI",
+          "@value": "https://www.w3.org/ns/org.rdf"
+        }
+      ]
+    },
+
+    
+```
+> ``RDF/XML``
+
+```XML
+<!-- http://dati.gov.it/resource/Standard/standard-org -->
+    <dcatapit:Standard rdf:about="http://dati.gov.it/resource/Standard/standard-org">
+        <rdf:type rdf:resource="&dct;Standard"/>
+        <dcatapit:referenceDocumentation rdf:datatype="&xsd;anyURI">https://www.w3.org/TR/vocab-org/</dcatapit:referenceDocumentation>
+        <dcatapit:referenceDocumentation rdf:datatype="&xsd;anyURI">https://www.w3.org/ns/org.rdf</dcatapit:referenceDocumentation>
+        <dct:title xml:lang="en">W3C Org organization ontology</dct:title>
+        <dct:description xml:lang="en">The ontology of the organizations</dct:description>
+    </dcatapit:Standard>
+
+```
+> ``RDF/TURTLE``
+
+```Turtle
+   <http://dati.gov.it/resource/Standard/standard-org>
+	a				dcatapit:Standard , dct:Standard ;
+	dct:title			"W3C Org organization ontology"@en ;
+	dct:description			"The ontology of the organizations"@en ;
+	dcatapit:referenceDocumentation "https://www.w3.org/ns/org.rdf"^^xsd:anyURI ;
+	dcatapit:referenceDocumentation "https://www.w3.org/TR/vocab-org/"^^xsd:anyURI .
+```
+
 
 #### Come definire un identificativo alternativo del Dataset in DCAT-AP_IT
 L'identificativo alternativo del dataset può essere specificato mediante la classe _adms:Identifier_ specificata mediante un URI (Uniform Resource Identifier)
