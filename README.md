@@ -74,16 +74,32 @@ CC-BY 4.0 (Creative Commons Attribution).
   * [Come definire il punto di contatto del Dataset in DCAT-AP_IT](#come-definire-il-punto-di-contatto-del-dataset-in-dcat-ap_it)
     * [dcatapit:Organization](#definizione-di-dcatapitorganization)
     * [Elementi obbligatori che descrivono il punto di contatto](#elementi-obbligatori-che-descrivono-il-punto-di-contatto)
-      * [Nome del punto di contatto](#1-nome-del-punto-di-contatto-vcardfn)
-      * [Email del punto di contatto](#2-email-del-punto-di-contatto-vcardhasemail)
     * [Elementi ozionali che descrivono il punto di contatto](#elementi-opzionali-che-descrivono-il-punto-di-contatto)
-      * [Telefono del punto di contatto](#1-telefono-del-punto-di-contatto-vcardhastelephone)
-      * [Sito del punto di contatto](#2-sito-del-punto-di-contatto-vcardhasurl)
     * [Esempi di uso di dcatapit:Organization in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dcatapitorganization-in-json-ld-rdfxml-rdfturtle)
+  * [Come definire la licenza in DCAT-AP_IT](#come-definire-la-licenza-in-dcat-ap_it)
+    * [dcaapit:LicenseDocument](#definizione-di-dcatapitlicensedocument)
+    * [Elementi obbligatori che descrivono la licenza](#elementi-obbligatori-che-descrivono-la-licenza)
+    * [Elementi raccomandati che descrivono la licenza](#elementi-raccomandati-che-descrivono-la-licenza)
+    * [Elementi opzionali che descrivono la licenza](#elementi-opzionali-che-descrivono-la-licenza)
+    * [Esempi di uso di dcatapit:LicenseDocument in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dcatapitlicensedocument-in-json-ld-rdfxml-rdfturtle)
   * [Come definire la copertura temporale del Dataset in DCAT-AP_IT](#come-definire-la-copertura-temporale-del-dataset-in-dcat-ap_it)
+    * [dct:PeriodOfTime](#definizione-di-dctperiodoftime)
+    * [Elementi obbligatori che descrivono il periodo di tempo](#elementi-obbligatori-che-descrivono-il-periodo-di-tempo)
+    * [Elementi opzionali che descrivono il periodo di tempo](#elementi-opzionali-che-descrivono-il-periodo-di-tempo)
+    * [Esempi di uso di dct:PeriodOfTime in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dctperiodoftime-in-json-ld-rdfxml-rdfturtle)
   * [Come definire la copertura geografica del Dataset in DCAT-AP_IT](#come-definire-la-copertura-geografica-del-dataset-in-dcat-ap_it)
+    * [dct:Location](#definizione-di-dctlocation)
+    * [Elementi obbligatori che descrivono la copertura geografica](#elementi-obbligatori-che-descrivono-la-copertura-geografica)
+    * [Elementi opzionali che descrivono la copertura geografica](#elementi-opzionali-che-descrivono-la-copertura-geografica)
+    * [Esempi di uso di dct:Location in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dctlocation-in-json-ld-rdfxml-rdfturtle)
   * [Come definire lo standard del Dataset in DCAT-AP_IT](#come-definire-il-punto-di-contatto-del-dataset-in-dcat-ap_it)
+    * [dct:Standard](#definizione-di-dctstandard)
+    * [Elementi obbligatori che descrivono lo standard](#elementi-obbligatori-che-descrivono-lo-standard)
+    * [Elementi opzionali che descrivono lo standard](#elementi-opzionali-che-descrivono-lo-standard)
+    * [Esempi di uso di dct:Standard in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dctstandard-in-json-ld-rdfxml-rdfturtle)
   * [Come definire un identificativo alternativo del Dataset in DCAT-AP_IT](#come-definire-un-identificativo-alternativo-del-dataset-in-dcat-ap_it)
+    * [adms:Identifier](#definizione-di-dctstandard)
+    * [Elementi raccomandati che descrivono altro identificativo del dataset](#elementi-raccomandati-che-descrivono-altro-identificativo-del-dataset)
   * [Come mappare i temi di DCAT-AP_IT](#come-mappare-i-temi-di-dcat-ap_it)
   * [Alcuni errori comuni](#alcuni-errori-comuni)
 
@@ -3457,6 +3473,123 @@ http://dati.gov.it/resource/PuntoContatto/contactPointLODIPA>
 	vcard:hasEmail 			<mailto:info@dati.gov.it> ;
 	vcard:hasTelephone		[ a vcard:Voice ; vcard:value "06123456" ] ;
 	vcard:hasURL			<http://spcdata.digitpa.gov.it/contattaci.html> .
+```
+
+#### Come definire la copertura temporale del Dataset in DCAT-AP_IT
+La copertura (o estensione) temporale del dataset è definita mediante la specifica della classe _PeriodOfTime (Periodo di Tempo)_ identificata univocamente da un URI (Uniform Resource Identifier).
+
+#### Definizione di ``dct:PeriodOfTime``
+
+<table>
+<tr>
+<td align="left">URI</td>
+<td align="left">dct:PeriodOfTime</td>
+</tr>
+<tr>
+<td align="left">Descrizione</td>
+<td align="left">L'estensione temporale del dataset.</td>
+</tr>
+<tr>
+<td align="left">Cardinalità</td>
+<td align="left">0..N</td>
+</tr>
+<tr>
+<td align="left">Stato</td>
+<td align="left">Opzionale</td>
+</tr>
+<tr>
+<td align="left">Riferimento</td>
+<td align="left">http://purl.org/dc/terms/PeriodOfTime</td>
+</tr>
+</table>
+
+#### Elementi obbligatori che descrivono il Periodo di Tempo
+
+##### 1) **_DATA INIZIO_**: ``dcatapit:startDate``
+
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">1</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Obbligatorio</td>
+  </tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">La data di inizio del Periodo di tempo (estensione temporale).</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://dati.gov.it/onto/dcatapit#startDate</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Qualora si indichi una copertura temporale per il dataset è obbligatorio specificare almeno la data di inizio</td>
+  </tr>
+</table>
+
+#### Elementi opzionali che descrivono il Periodo di Tempo
+
+##### 1) **_DATA FINE_**: ``dcatapit:endDate``
+
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">0..1</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Opzionale</td>
+  </tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">La data di fine del Periodo di tempo (estensione temporale).</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://dati.gov.it/onto/dcatapit#endDate</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Indicare la data di fine del periodo temporale qualora il periodo temporale complessivo è ultimato. Nel caso di Periodi temporali ancora aperti alla data corrente, si può evitare di specificare questo metadato. </td>
+  </tr>
+</table>
+
+#### Esempi di uso di dct:PeriodOfTime in JSON-LD, RDF/XML, RDF/Turtle
+>``JSON-LD``
+
+```JSON
+   {
+      "@id": "http://dati.gov.it/resource/PeriodoTemporale/periodTimeLinkedOpenIPA",
+      "@type": "dcterms:PeriodOfTime",
+      "http://dati.gov.it/onto/dcatapit#\"startDate": {
+        "@type": "xsd:date",
+        "@value": "2016-01-01"
+      }
+    }
+
+```
+
+>``RDF/XML``
+
+```XML
+
+  <!-- http://dati.gov.it/resource/PeriodoTemporale/periodTimeLinkedOpenIPA -->
+    <dct:PeriodOfTime rdf:about="http://dati.gov.it/resource/PeriodoTemporale/periodTimeLinkedOpenIPA">
+        <dcatapit:startDate rdf:datatype="&xsd;date">2016-01-01</dcatapit:startDate>
+    </dct:PeriodOfTime>
+   
+```
+
+>``RDF/Turtle``
+
+```Turtle
+<http://dati.gov.it/resource/PeriodoTemporale/periodTimeContrattiSPC>
+	a 						dct:PeriodOfTime ;
+	dcatapit:startDate		"2007-01-01"^^xsd:date ;
+	dcatapit:endDate		"2012-12-31"^^xsd:date .
 ```
 
 
