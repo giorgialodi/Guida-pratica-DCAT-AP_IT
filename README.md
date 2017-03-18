@@ -57,7 +57,7 @@ CC-BY 4.0 (Creative Commons Attribution).
       * [Copertura geografica del dataset](#9-copertura-geografica-del-dataset-dctspatial)
       * [Conformità del dataset](#10-conformita-del-dataset-dctconformsto)
       * [Altro identificativo del dataset](#11-altro-identificativo-del-dataset-admsidentifier)
-  * [Come definire la distribuzione del Dataset in DCAT-AP_IT](#come-definire-la-distribuzione-del-dataset-in-dcat-ap_it)
+  * [Come definire una Distribuzione del Dataset in DCAT-AP_IT](#come-definire-la-distribuzione-del-dataset-in-dcat-ap_it)
     * [dcatapit:Distribution](#definizione-di-dcatapitdistribution)
     * [Esempi di uso di dcatapit:Distribution in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dcatapitdistribution-in-json-ld-rdfxml-rdfturtle)
     * [Elementi obbligatori](#elementi-obbligatori-2)
@@ -73,13 +73,13 @@ CC-BY 4.0 (Creative Commons Attribution).
       * [Dimensione in byte](#4-dimensione-in-byte-dcatbytesize)
   * [Come definire il punto di contatto del Dataset in DCAT-AP_IT](#come-definire-il-punto-di-contatto-del-dataset-in-dcat-ap_it)
     * [dcatapit:Organization](#descrizione-di-dcatapitdescrizione)
+    * [Esempi di uso di dcatapit:Organization in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso--di-dcatapitorganization-in-json-ld-rdfxml-rdfturtle)
     * [Elementi obbligatori](#elementi-obbligatori-3)
       * [Nome del punto di contatto](#1-nome-del-punto-di-contatto-vcardfn)
       * [Email del punto di contatto](#2-email-del-punto-di-contatto-vcardhasemail)
     * [Elementi ozionali](#elementi-opzionali-2)
       * [Telefono del punto di contatto](#1-telefono-del-punto-di-contatto-vcardhastelephone)
       * [Sito del punto di contatto](#2-sito-del-punto-di-contatto-vcardhasurl)
-      * [Esempi di uso di dcatapit:Organization in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso--di-dcatapitorganization-in-json-ld-rdfxml-rdfturtle)
   * [Come definire la copertura temporale del Dataset in DCAT-AP_IT](#come-definire-la-copertura-temporale-del-dataset-in-dcat-ap_it)
   * [Come definire la copertura geografica del Dataset in DCAT-AP_IT](#come-definire-la-copertura-geografica-del-dataset-in-dcat-ap_it)
   * [Come definire lo standard del Dataset in DCAT-AP_IT](#come-definire-il-punto-di-contatto-del-dataset-in-dcat-ap_it)
@@ -2642,8 +2642,633 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 	
 ```
  
+### Come definire una Distribuzione del Dataset in DCAT-AP_IT
+Una distribuzione è definita mediante la classe _Distribution(Distribuzione)_ identificata univocamente da un URI (Uniform Resource Identifier).
+
+
+#### Definizione di ``dcatapit:Distribution``
+
+<table>
+    <tr>
+        <td align="left">URI</td>
+        <td align="left">dcatapit:Distribution</td>
+    </tr>
+     <tr>
+        <td align="left">Sottoclasse</td>
+        <td align="left">dcat:Distribution</td>
+    </tr>
+    <tr>
+        <td align="left">Descrizione</td>
+        <td align="left">La distribuzione del dataset da descrivere.</td>
+    </tr>
+    <tr>
+        <td align="left">Cardinalità</td>
+        <td align="left">1 (se in presenza di dati aperti)</td>
+    </tr>
+    <tr>
+        <td align="left">Stato</td>
+        <td align="left">Obbligatorio (se in presenza di dati aperti)</td>
+    </tr>
+     <tr>
+        <td align="left">Riferimento</td>
+        <td align="left">http://www.dati.gov.it/onto/dcatapit#Distribution</td>
+    </tr>
+</table>
+
+#### Esempi di uso di dcatapit:Distribution in JSON-LD, RDF/XML, RDF/Turtle
+>``JSON-LD``
+
+```JSON
+ {
+      {
+      "@id": "http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3",
+      "@type": [
+        "http://dati.gov.it/onto/dcatapit#\"Distribution",
+        "dcat:Distribution"
+      ],
+      "dcat:accessURL": {
+        "@id": "http://spcdata.digitpa.gov.it:8899/sparql"
+      },
+      "dcat:downloadURL": {
+        "@id": "http://spcdata.digitpa.gov.it/data/contrattiLotto1.nt"
+      },
+      "dcterms:description": {
+        "@language": "it",
+        "@value": "Questa è la distribuzione N3 del dataset Linked Open Data relativo ai contratti del Sistema Pubblico di Connettività"
+      },
+      "dcterms:format": {
+        "@id": "http://publications.europa.eu/resource/authority/file-type/RDF"
+      },
+      "dcterms:license": {
+        "@id": "http://creativecommons.org/licenses/by/4.0/"
+      },
+      "dcterms:title": "Distribuzione Turtle di LOD SPC Contratti"
+ },
+
+
+```
+>``RDF/XML``
+
+```XML
+  <!-- http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3 -->
+
+    <dcatapit:Distribution rdf:about="http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3">
+        <rdf:type rdf:resource="&dcat;Distribution"/>
+        <dct:format rdf:resource="http://publications.europa.eu/resource/authority/file-type/RDF"/>
+        <dct:title xml:lang="it">Distribuzione Turtle di LOD SPC Contratti</dct:title>
+        <dct:description xml:lang="it">Questa è la distribuzione N3 del dataset Linked Open Data relativo ai contratti del Sistema Pubblico di Connettività</dct:description>
+        <dct:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
+        <dcat:downloadURL rdf:resource="http://spcdata.digitpa.gov.it/data/contrattiLotto1.nt"/>
+        <dcat:accessURL rdf:resource="http://spcdata.digitpa.gov.it:8899/sparql"/>
+    </dcatapit:Distribution>
+    
+```
+>``RDF/Turtle``
+
+```Turtle
+<http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3>
+	a				dcatapit:Distribution , dcat:Distribution ;
+	dct:title			Distribuzione Turtle di LOD SPC Contratti"@it ;
+	dct:description			"Questa è la distribuzione N3 del dataset Linked Open Data relativo ai contratti del Sistema Pubblico di Connettività"@it ;
+	dct:format 			<http://publications.europa.eu/resource/authority/file-type/RDF> ;
+	dct:license 			<http://creativecommons.org/licenses/by/4.0/> ;
+	dcat:downloadURL		<http://spcdata.digitpa.gov.it/data/contrattiLotto1.nt> ;
+	dcat:accessURL 			<http://spcdata.digitpa.gov.it:8899/sparql> .
+```
+
+#### Elementi obbligatori
+
+##### 1) **_FORMATO della DISTRIBUZIONE:_** ``dct:format``
+
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">1</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Obbligatorio</td>
+  </tr>
+  <tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">Il formato della Distribuzione del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdistribution">Distribuzione(Distribution)</a> a un oggetto (codominio) di tipo dct:MediaTypeOrExtent (specificato mediante un URI - Uniform Resource Identifier)</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://purl.org/dc/terms/format</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Scegliere il formato in cui è reso disponibile il file relativo alla distribuzione descritta. Nel caso in cui il formato del file è di tipo “nidificato” (i.e. un file compresso, ad esempio nomefile.ttl.zip), allora indicare il formato originario del file compresso (nel caso dell’esempio, va indicato il formato ttl). <br /><b> Per specificare il formato si deve necessariamente utilizzare il vocabolario controllato http://publications.europa.eu/mdr/resource/authority/file-type/skos/filetypes-skos.rdf. </b> 
+   </td>
+ </tr>
+</table>
+
+##### Esempi di uso di ``dct:format`` per la Distribuzione in JSON-LD, RDF/XML, RDF/Turtle
+>``JSON-LD``
+
+```JSON
+
+     {
+      "@id": "http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3",
+      "@type": [
+        "http://dati.gov.it/onto/dcatapit#\"Distribution",
+        "dcat:Distribution"
+      ],
+       "dcterms:format": {
+        "@id": "http://publications.europa.eu/resource/authority/file-type/RDF"
+      },
+      altri elementi per specificare la distribuzione
+```
+
+>``RDF/XML``
+
+```XML
+
+   <!-- http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3 -->
+    <dcatapit:Distribution rdf:about="http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3">
+        <rdf:type rdf:resource="&dcat;Distribution"/>
+        <dct:format rdf:resource="http://publications.europa.eu/resource/authority/file-type/RDF"/>
+        [altri elementi per specificare la distribuzione]
+   </dcatapit:Distribution>
+   
+```
+
+>``RDF/Turtle``
+
+```Turtle
+<http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3>
+	a				dcatapit:Distribution , dcat:Distribution ;
+	dct:format 	  <http://publications.europa.eu/resource/authority/file-type/RDF> ;
+	[altri elementi per specificare la distribuzione] .
+```
  
+##### 2) **_URL di ACCESSO:_** ``dcat:accessURL``
+
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">1</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Obbligatorio</td>
+  </tr>
+  <tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">Un URL tramite cui si può accedere alla Distribuzione del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdistribution">Distribuzione(Distribution)</a> a un oggetto (codominio) di tipo rdfs:Resource (specificato mediante un URI - Uniform Resource Identifier)</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">https://www.w3.org/ns/dcat#accessURL</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Inserire l’URL di una pagina web tramite cui si accede alla distribuzione. Essa può essere anche una pagina informativa che fornisce le indicazioni su come ottenere il dataset oppure l'URL di endpoint di accesso al dataset (e.g., SPARQL endpoint). Si consiglia di indicare l’indirizzo completo, comprensivo anche di protocollo (es. http://). <b> Si raccomanda di usare questa proprietà, e NON la proprietà <a href="#2-url-di-download-dcatdownloadurl">URL di download</a>, quando non è assolutamente una pagina di download o non si è sicuri che lo sia.</b></td>
+ </tr>
+</table>
+
+##### Esempi di uso di ``dcat:accessURL``per la Distribuzione in JSON-LD, RDF/XML, RDF/Turtle
+>``JSON-LD``
+
+```JSON
+
+     {
+      "@id": "http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3",
+      "@type": [
+        "http://dati.gov.it/onto/dcatapit#\"Distribution",
+        "dcat:Distribution"
+      ],
+       "dcat:accessURL": {
+        "@id": "http://spcdata.digitpa.gov.it:8899/sparql"
+      },
+      altri elementi per specificare la distribuzione
+```
+
+>``RDF/XML``
+
+```XML
+
+   <!-- http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3 -->
+    <dcatapit:Distribution rdf:about="http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3">
+        <rdf:type rdf:resource="&dcat;Distribution"/>
+        <dcat:accessURL rdf:resource="http://spcdata.digitpa.gov.it:8899/sparql"/>
+        [altri elementi per specificare la distribuzione]
+   </dcatapit:Distribution>
+   
+```
+
+>``RDF/Turtle``
+
+```Turtle
+<http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3>
+	a		   dcatapit:Distribution , dcat:Distribution ;
+	dcat:accessURL 	  <http://spcdata.digitpa.gov.it:8899/sparql> ;
+	[altri elementi per specificare la distribuzione] .
+```
  
+##### 3) **_LICENZA:_** ``dct:license``
+
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">1</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Obbligatorio</td>
+  </tr>
+  <tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">La licenza con la quale è resa disponibile per il riuso la Distribuzione del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdistribution">Distribuzione(Distribution)</a> a un oggetto (codominio) di tipo <a href="#definizione-di-dcatapitdlicenseDocument">Licenza</a> (specificato mediante un URI - Uniform Resource Identifier)</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://purl.org/dc/terms/license</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Per un uso pratico del metadato licenza si veda <a href="#definizione-di-dcatapitdlicenseDocument">Come definire la licenza.</a><br /><b> Si raccomanda tuttavia, in presenza di licenze creative commons, di riferirsi a quelle specificate in http://creativecommons.org come negli esempi di uso riportati sotto.</b></td>
+ </tr>
+</table>
+
+##### Esempi di uso di ``dct:license`` per la Distribuzione in JSON-LD, RDF/XML, RDF/Turtle
+>``JSON-LD``
+
+```JSON
+
+     {
+      "@id": "http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3",
+      "@type": [
+        "http://dati.gov.it/onto/dcatapit#\"Distribution",
+        "dcat:Distribution"
+      ],
+       "dcterms:license": {
+        "@id": "http://creativecommons.org/licenses/by/4.0/"
+      },
+      altri elementi per specificare la distribuzione
+```
+
+>``RDF/XML``
+
+```XML
+
+   <!-- http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3 -->
+    <dcatapit:Distribution rdf:about="http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3">
+        <rdf:type rdf:resource="&dcat;Distribution"/>
+        <dct:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
+        [altri elementi per specificare la distribuzione]
+   </dcatapit:Distribution>
+   
+```
+
+>``RDF/Turtle``
+
+```Turtle
+<http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3>
+	a		   dcatapit:Distribution , dcat:Distribution ;
+	dct:license 	  <http://creativecommons.org/licenses/by/4.0/> ;
+	[altri elementi per specificare la distribuzione] .
+```
+ 
+#### Elementi raccomandati
+
+##### 1) **_DESCRIZIONE della DISTRIBUZIONE:_** ``dct:description``
+
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">0..N (può esistere più di un'istanza in diverse lingue della stessa proprietà)</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Raccomandato</td>
+  </tr>
+  <tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">La descrizione della Distribuzione del Dataset.</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://purl.org/dc/terms/description</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Specificare una descrizione per la distribuzione, con una breve illustrazione delle sue caratteristiche principali. Evitare di utilizzare un linguaggio ricco di riferimenti normativi. Utilizzare invece un linguaggio semplice che possa aiutare qualsiasi utente a identificare la distribuzione. Si ricorda che: nessun tag HTML è consentito,</td>
+ </tr>
+</table>
+
+##### Esempi di uso di ``dct:description`` per la Distribuzione in JSON-LD, RDF/XML, RDF/Turtle
+>``JSON-LD``
+
+```JSON
+
+     {
+      "@id": "http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3",
+      "@type": [
+        "http://dati.gov.it/onto/dcatapit#\"Distribution",
+        "dcat:Distribution"
+      ],
+       "dcterms:description": {
+        "@language": "it",
+        "@value": "Questa è la distribuzione N3 del dataset Linked Open Data relativo ai contratti del Sistema Pubblico di Connettività"
+      },
+      altri elementi per specificare la distribuzione
+```
+
+>``RDF/XML``
+
+```XML
+
+   <!-- http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3 -->
+    <dcatapit:Distribution rdf:about="http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3">
+        <rdf:type rdf:resource="&dcat;Distribution"/>
+       <dct:description xml:lang="it">Questa è la distribuzione N3 del dataset Linked Open Data relativo ai contratti del Sistema Pubblico di Connettività</dct:description>
+        [altri elementi per specificare la distribuzione]
+   </dcatapit:Distribution>
+   
+```
+
+>``RDF/Turtle``
+
+```Turtle
+<http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3>
+	a		 dcatapit:Distribution , dcat:Distribution ;
+	dct:description	 "Questa è la distribuzione N3 del dataset Linked Open Data relativo ai contratti del Sistema Pubblico di Connettività"@it ;
+	[altri elementi per specificare la distribuzione] .
+```
+
+#### Elementi opzionali
+
+##### 1) **_TITOLO della DISTRIBUZIONE:_** ``dct:description``
+ 
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">0..N (può esistere più di un'istanza in diverse lingue della stessa proprietà)</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Opzionale</td>
+  </tr>
+  <tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">Il titolo della Distribuzione del Dataset.</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://purl.org/dc/terms/title</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Se disponibile o ritenuto opportuno, inserire un titolo della distribuzione. Si raccomanda di non utilizzare acronimi o abbreviazioni incomprensibili. Se si vogliono utilizzare comunque gli acronimi, riportare anche il nome esteso o fornire una loro spiegazione nella descrizione.</td>
+ </tr>
+</table>
+
+##### Esempi di uso di ``dct:title`` per la Distribuzione in JSON-LD, RDF/XML, RDF/Turtle
+>``JSON-LD``
+
+```JSON
+
+     {
+      "@id": "http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3",
+      "@type": [
+        "http://dati.gov.it/onto/dcatapit#\"Distribution",
+        "dcat:Distribution"
+      ],
+       "dcterms:description": {
+        "@language": "it",
+        "@value": "Questa è la distribuzione N3 del dataset Linked Open Data relativo ai contratti del Sistema Pubblico di Connettività"
+      },
+      altri elementi per specificare la distribuzione
+```
+
+>``RDF/XML``
+
+```XML
+
+   <!-- http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3 -->
+    <dcatapit:Distribution rdf:about="http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3">
+        <rdf:type rdf:resource="&dcat;Distribution"/>
+       <dct:description xml:lang="it">Questa è la distribuzione N3 del dataset Linked Open Data relativo ai contratti del Sistema Pubblico di Connettività</dct:description>
+        [altri elementi per specificare la distribuzione]
+   </dcatapit:Distribution>
+   
+```
+
+>``RDF/Turtle``
+
+```Turtle
+<http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3>
+	a		 dcatapit:Distribution , dcat:Distribution ;
+	dct:description	 "Questa è la distribuzione N3 del dataset Linked Open Data relativo ai contratti del Sistema Pubblico di Connettività"@it ;
+	[altri elementi per specificare la distribuzione] .
+```
+
+##### 2) **_URL di DOWNLOAD:_** ``dcat:downloadURL``
+
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">0..N</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Opzionale</td>
+  </tr>
+  <tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">Un URL che rappresenta un link diretto al file scaricabile in un dato formato. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdistribution">Distribuzione(Distribution)</a> a un oggetto (codominio) di tipo rdfs:Resource (specificato mediante un URI - Uniform Resource Identifier)</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">https://www.w3.org/ns/dcat#downloadURL</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Indicare l’URL che fornisce il link diretto ad un file scaricabile nel formato indicato per la distribuzione. Si consiglia di indicare l’indirizzo completo, comprensivo anche di protocollo (es. http://).</td>
+ </tr>
+</table>
+
+##### Esempi di uso di ``dcat:downloadURL``per la Distribuzione in JSON-LD, RDF/XML, RDF/Turtle
+>``JSON-LD``
+
+```JSON
+
+     {
+      "@id": "http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3",
+      "@type": [
+        "http://dati.gov.it/onto/dcatapit#\"Distribution",
+        "dcat:Distribution"
+      ],
+       "dcat:downloadURL": {
+        "@id": "http://spcdata.digitpa.gov.it/data/contrattiLotto1.nt"
+      },
+      altri elementi per specificare la distribuzione
+```
+
+>``RDF/XML``
+
+```XML
+
+   <!-- http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3 -->
+    <dcatapit:Distribution rdf:about="http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3">
+        <rdf:type rdf:resource="&dcat;Distribution"/>
+        <dcat:downloadURL rdf:resource="http://spcdata.digitpa.gov.it/data/contrattiLotto1.nt"/>
+        [altri elementi per specificare la distribuzione]
+   </dcatapit:Distribution>
+   
+```
+
+>``RDF/Turtle``
+
+```Turtle
+<http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3>
+	a		   dcatapit:Distribution , dcat:Distribution ;
+	dcat:downloadURL   <http://spcdata.digitpa.gov.it/data/contrattiLotto1.nt> ;
+	[altri elementi per specificare la distribuzione] .
+```
+
+##### 3) **_ULTIMA MODIFICA della DISTRIBUZIONE:_** ``dct:modified``
+ 
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">0..1</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Opzionale</td>
+  </tr>
+  <tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">La data di ultima modifica della Distribuzione del Dataset.</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://purl.org/dc/terms/modified</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Indicare la data di ultima modifica o di aggiornamento della distribuzione.</td>
+ </tr>
+</table>
+
+##### Esempi di uso di ``dct:modified`` per la Distribuzione in JSON-LD, RDF/XML, RDF/Turtle
+>``JSON-LD``
+
+```JSON
+
+     {
+      "@id": "http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3",
+      "@type": [
+        "http://dati.gov.it/onto/dcatapit#\"Distribution",
+        "dcat:Distribution"
+      ],
+       "dcterms:modified": {
+        "@type": "xsd:date",
+        "@value": "2015-05-25"
+      },
+
+      altri elementi per specificare la distribuzione
+```
+
+>``RDF/XML``
+
+```XML
+
+   <!-- http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3 -->
+    <dcatapit:Distribution rdf:about="http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3">
+        <rdf:type rdf:resource="&dcat;Distribution"/>
+        <dct:modified rdf:datatype="&xsd;date">2015-05-25</dct:modified>
+        [altri elementi per specificare la distribuzione]
+   </dcatapit:Distribution>
+   
+```
+
+>``RDF/Turtle``
+
+```Turtle
+<http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3>
+	a		 dcatapit:Distribution , dcat:Distribution ;
+	dct:modified	"2015-05-25"^^xsd:date ;
+	[altri elementi per specificare la distribuzione] .
+```
+
+##### 4) **_DIMENSIONE in BYTE:_** ``dcat:byteSize``
+
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">0..1</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Opzionale</td>
+  </tr>
+  <tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">La dimensione in byte della distribuzione del dataset</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">https://www.w3.org/ns/dcat#byteSize</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Indicare il valore della dimensione del file espresso in byte</td>
+ </tr>
+</table>
+
+##### Esempi di uso di ``dcat:dbyteSize``per la Distribuzione in JSON-LD, RDF/XML, RDF/Turtle
+>``JSON-LD``
+
+```JSON
+
+     {
+      "@id": "http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3",
+      "@type": [
+        "http://dati.gov.it/onto/dcatapit#\"Distribution",
+        "dcat:Distribution"
+      ],
+       "dcat:byteSize": {
+        "@type": "xsd:float",
+        "@value": "3000"
+      },
+      altri elementi per specificare la distribuzione
+```
+
+>``RDF/XML``
+
+```XML
+
+   <!-- http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3 -->
+    <dcatapit:Distribution rdf:about="http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3">
+        <rdf:type rdf:resource="&dcat;Distribution"/>
+       <dcat:byteSize rdf:datatype="&xsd;float">3000</dcat:byteSize>
+        [altri elementi per specificare la distribuzione]
+   </dcatapit:Distribution>
+   
+```
+
+>``RDF/Turtle``
+
+```Turtle
+<http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3>
+	a		   dcatapit:Distribution , dcat:Distribution ;
+	dcat:byteSize	   "3000"^^xsd:float ;
+	[altri elementi per specificare la distribuzione] .
+```
+
+
 
 #### Come mappare i temi di DCAT-AP_IT
 I temi in cui i dataset sono classificati si basano sull'uso del vocabolario controllato come indicato nella sezione ["Temi del Dataset dcat:theme"(#5-temi-del-dataset-dcattheme). Sulla base della [valutazione dei diversi temi per i dati discussa nell'ambito del gruppo Europeo](https://joinup.ec.europa.eu/asset/dcat_application_profile/document/review-dcat-ap-draft-proposal-list-categorization-data), la tabella seguente offre un possibile mapping di domini applicativi rispetto ai temi richiesti dal profilo Europeo DCAT-AP, e quindi dall'estensione italiana DCAT-AP_IT.
