@@ -51,11 +51,12 @@ CC-BY 4.0 (Creative Commons Attribution).
       * [Data di rilascio del dataset](#3-data-di-rilascio-del-dataset-dctissued)
       * [Pagina di accesso del dataset](#4-pagina-di-accesso-del-dataset-dcatlandingpage)
       * [Lingua del dataset](#5-lingua-del-dataset-dctlanguage)
-      * [Dataset correlato](#6-dataset-correlato-isverionof)
-      * [Estensione temporale del dataset](#7-estensione-temporale-del-dataset-dcttemporal)
-      * [Copertura geografica del dataset](#8-copertura-geografica-del-dataset-dctspatial)
-      * [Conformità del dataset](#9-conformità-del-dataset-dctconformsto)
-      * [Altro identificativo del dataset](#10-altro-identificativo-del-dataset-admsidentifier)
+      * [Parole chiave del dataset](#6-parole-chiave-del-dataset-dcatkeyword)
+      * [Dataset correlato](#7-dataset-correlato-isverionof)
+      * [Estensione temporale del dataset](#8-estensione-temporale-del-dataset-dcttemporal)
+      * [Copertura geografica del dataset](#9-copertura-geografica-del-dataset-dctspatial)
+      * [Conformità del dataset](#10-conformità-del-dataset-dctconformsto)
+      * [Altro identificativo del dataset](#11-altro-identificativo-del-dataset-admsidentifier)
   * [Come definire la distribuzione del Dataset in DCAT-AP_IT](#come-definire-la-distribuzione-del-dataset-in-dcat-ap_it)
     * [dcatapit:Distribution](#definizione-di-dcatapitdistribution)
     * [Esempi di uso di dcatapit:Distribution in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dcatapitdistribution-in-json-ld-rdfxml-rdfturtle)
@@ -81,7 +82,7 @@ Esistono due modalità di alimentazione:
 2. *harvesting*: funzionalità offerta dal catalogo per l'acquisizione e l'aggiornamento periodico dei metadati. L'uso di tale funzionalità richiede che l'amministrazione comunichi, una volta effettuato il login e solo la prima volta, l'URL del catalogo e selezioni la modalità per l'harvesting (e.g., RDF, CKAN, CSW). Sarà lo stesso catalogo nazionale che si occuperà successivamente di raccogliere periodicamente i metadati che descrivono i dati. Tale modalità è consigliata in presenza di un numero elevato di dataset, soggetti anche a frequenti aggiornamenti. 
 
 ## Guida pratica a DCAT-AP_IT
-Nelle seguenti sezioni, per ciascun elemento (classe e proprietà) del profilo di metadatazione DCAT-AP_IT saranno fornite istruzioni per l'uso ed esempi pratici di definizione dei metadati in JSON-LD, RDF/XML e RDF/Turtle. Il profilo complessivo è illustrato nella seguente figura. 
+Nelle seguenti sezioni, per ciascun elemento (classe e proprietà) del profilo di metadatazione DCAT-AP_IT saranno fornite istruzioni per l'uso ed esempi pratici di definizione dei metadati in JSON-LD, RDF/XML e RDF/Turtle. Il profilo complessivo è illustrato nella seguente <a href="http://www.dati.gov.it/sites/default/files/DCAT-AP_IT_UML.png">figura</a>. 
 
 ### Come definire un Soggetto o Organizzazione in DCAT-AP_IT
 Un soggetto/organizzazione è definito mediante la specifica della classe _Agente_ identificata univocamente da un URI (Uniform Resource Identifier).
