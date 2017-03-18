@@ -91,11 +91,11 @@ CC-BY 4.0 (Creative Commons Attribution).
     * [Elementi obbligatori che descrivono la copertura geografica](#elementi-obbligatori-che-descrivono-la-copertura-geografica)
     * [Elementi opzionali che descrivono la copertura geografica](#elementi-opzionali-che-descrivono-la-copertura-geografica)
     * [Esempi di uso di dct:Location in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dctlocation-in-json-ld-rdfxml-rdfturtle)
-  * [Come definire lo standard del Dataset in DCAT-AP_IT](#come-definire-il-punto-di-contatto-del-dataset-in-dcat-ap_it)
+  * [Come definire lo standard del Dataset in DCAT-AP_IT](#come-definire-lo-standard-del-dataset-in-dcat-ap_it)
     * [dctapit:Standard](#definizione-di-dcatapitstandard)
     * [Elementi obbligatori che descrivono lo standard](#elementi-obbligatori-che-descrivono-lo-standard)
     * [Elementi opzionali che descrivono lo standard](#elementi-opzionali-che-descrivono-lo-standard)
-    * [Esempi di uso di dct:Standard in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dctstandard-in-json-ld-rdfxml-rdfturtle)
+    * [Esempi di uso di dcatapit:Standard in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dcatapitstandard-in-json-ld-rdfxml-rdfturtle)
   * [Come definire un identificativo alternativo del Dataset in DCAT-AP_IT](#come-definire-un-identificativo-alternativo-del-dataset-in-dcat-ap_it)
     * [adms:Identifier](#definizione-di-dctstandard)
     * [Elementi raccomandati che descrivono altro identificativo del dataset](#elementi-raccomandati-che-descrivono-altro-identificativo-del-dataset)
@@ -114,6 +114,8 @@ Esistono due modalità di alimentazione:
 
 ## Guida pratica a DCAT-AP_IT
 Nelle seguenti sezioni, per ciascun elemento (classe e proprietà) del profilo di metadatazione DCAT-AP_IT saranno fornite istruzioni per l'uso ed esempi pratici di definizione dei metadati in JSON-LD, RDF/XML e RDF/Turtle. Il profilo complessivo è illustrato nella seguente <a href="http://www.dati.gov.it/sites/default/files/DCAT-AP_IT_UML.png">figura</a>. 
+
+<img src="http://www.dati.gov.it/sites/default/files/DCAT-AP_IT_UML.png" />
 
 ### Come definire un catalogo di dati in DCAT-AP_IT
 Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente da un URI (Uniform Resource Identifier).
@@ -3743,6 +3745,30 @@ La copertura (o estensione) temporale del dataset è definita mediante la specif
 	dcatapit:startDate		"2007-01-01"^^xsd:date ;
 	dcatapit:endDate		"2012-12-31"^^xsd:date .
 ```
+
+#### Come definire un identificativo alternativo del Dataset in DCAT-AP_IT
+L'identificativo alternativo del dataset può essere specificato mediante la classe _adms:Identifier_ specificata mediante un URI (Uniform Resource Identifier)
+
+### Elementi raccomandati che descrivono altro identificativo del dataset
+##### 1) **_NOTAZIONE_**: ``skos:notation``
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">0..N</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Raccomandato</td>
+  </tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">Un identificativo nel contesto dello schema di identificazione a cui fa riferimento il suo tipo.</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://www.w3.org/2004/02/skos/core#notation</td>
+  </tr>
+</table>
 
 
 
