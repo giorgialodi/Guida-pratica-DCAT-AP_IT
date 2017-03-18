@@ -88,9 +88,9 @@ CC-BY 4.0 (Creative Commons Attribution).
     * [Esempi di uso di dct:PeriodOfTime in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dctperiodoftime-in-json-ld-rdfxml-rdfturtle)
   * [Come definire la copertura geografica del Dataset in DCAT-AP_IT](#come-definire-la-copertura-geografica-del-dataset-in-dcat-ap_it)
     * [dct:Location](#definizione-di-dctlocation)
-    * [Elementi obbligatori che descrivono la copertura geografica](#elementi-obbligatori-che-descrivono-la-copertura-geografica)
     * [Elementi opzionali che descrivono la copertura geografica](#elementi-opzionali-che-descrivono-la-copertura-geografica)
-    * [Esempi di uso di dct:Location in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dctlocation-in-json-ld-rdfxml-rdfturtle)
+    * [Elementi che descrivono la geometria della copertura geografica](#elementi-che-descrivono-la-geometria-della-copertura-geografica)
+    * [Esempi di uso di dct:Location e locn:Geometry in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dctlocation-e-locngeometry-in-json-ld-rdfxml-rdfturtle)
   * [Come definire lo standard del Dataset in DCAT-AP_IT](#come-definire-lo-standard-del-dataset-in-dcat-ap_it)
     * [dctapit:Standard](#definizione-di-dcatapitstandard)
     * [Elementi obbligatori che descrivono lo standard](#elementi-obbligatori-che-descrivono-lo-standard)
@@ -3747,6 +3747,176 @@ La copertura (o estensione) temporale del dataset è definita mediante la specif
 	dcatapit:endDate		"2012-12-31"^^xsd:date .
 ```
 
+### Come definire la copertura geografica del Dataset in DCAT-AP_IT
+La copertura geografica del dataset è definita mediante la specifica della classe _Location(Localizzazione)_ identificata univocamente da un URI (Uniform Resource Identifier).
+
+#### Definizione di ``dct:Location``
+<table>
+<tr>
+<td align="left">URI</td>
+<td align="left">dct:Location:</td>
+</tr>
+<tr>
+<td align="left">Descrizione</td>
+<td align="left">La copertura geografica del dataset.</td>
+</tr>
+<tr>
+<td align="left">Cardinalità</td>
+<td align="left">0..N</td>
+</tr>
+<tr>
+<td align="left">Stato</td>
+<td align="left">Opzionale</td>
+</tr>
+<tr>
+<td align="left">Riferimento</td>
+<td align="left">http://purl.org/dc/terms/Location</td>
+</tr>
+</table>
+
+#### Elementi opzionali che descrivono la copertura geografica
+
+##### 1) **_NOME GEOGRAFICO_**: ``locn:geographicName``
+
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">0..1</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Opzionale</td>
+  </tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">Nome proprio associato all'oggetto spaziale.</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://www.w3.org/ns/locn#geographicName"</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left"><b>Da indicare solo se non è disponibile un identificativo geografico o non sono note le coordinate.</b></td>
+  </tr>
+</table>
+
+##### 2) **_GEOMETRIA_**: ``loc:Geometry``
+
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">0..1</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Opzionale</td>
+  </tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">La Geometria dell'oggetto spaziale..</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://www.w3.org/ns/locn#Geometry"</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Le proprietà  indicate,  nella  pratica,  possono  essere  specificate  attraverso  diverse  codifiche.  La
+specifica GeoDCAT-AP prevede che deve essere utilizzata almeno una delle seguenti: GML o WKT.</td>
+  </tr>
+</table>
+
+#### Elementi che descrivono la geometria della copertura geografica
+I seguenti elementi sono obbligatori se la geometria dell'oggetto spaziale che descrive la copertura geografica del dataset viene specificata.
+
+##### 1) **_CRS_**
+
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">1</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Obbligatorio</td>
+  </tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">L’indicazione del sistema di riferimento spaziale in cui sono rappresentati i dati. Secondo quanto indicato in <a href="https://joinup.ec.europa.eu/asset/dcat_application_profile/asset_release/geodcat-ap-v10">GeoDCAT-AP</a>, nelle codifiche GML o WKT il CRS deve essere specificato come definito in GeoSPARQL.</td>
+  </tr>
+</table>
+
+##### 2) **_COORDINATE_**
+
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">1</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Obbligatorio</td>
+  </tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">Le coordinate dell’area geografica coperta dal Dataset.
+</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Fornire le coordinate relative alla latitudine e longitudine, espresse nel sistema di riferimento WGS84, del riquadro di delimitazione (bounding box) dell’area geografica coperta dal dataset descritto. Se è stato già indicato un identificativo geografico come URI della classe <a href="#definizione-di-dct:Location">dct:Location</a>, le coordinate possono essere omesse.</td>
+  </tr>
+</table>
+
+##### 3) **_TIPO DI GEOMETRIA_**
+
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">1</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Obbligatorio</td>
+  </tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">Il tipo di geometria che caratterizza l’oggetto spaziale utilizzato per la localizzazione del Dataset</td>
+  </tr>
+</table>
+
+##### Esempi di uso di dct:Location e locn:Geometry in JSON-LD, RDF/XML, RDF/Turtle
+>``JSON-LD``
+
+```JSON
+{
+   {
+      "@id": "http://dati.gov.it/resource/CoperturaSpaziale/LocalizzazioneStudiMedici_r_liguri:D.658",
+      "@type": "dcterms:Location",
+      "locn:geometry": {
+        "@type": "gsp:gmlLiteral",
+        "@value": "<gml:Envelope srsName=\"http://www.opengis.net/def/EPSG/0/4326\"><gml:lowerCorner>7.48820862370018 43.5963597132668</gml:lowerCorner><gml:upperCorner>10.0879518636137 44.849579861466</gml:upperCorner></gml:Envelope>"
+      }
+    },
+```
+>``RDF/XML``
+
+```XML
+<!-- http://dati.gov.it/resource/CoperturaSpaziale/LocalizzazioneLineaCosta -->
+    <dct:Location rdf:about="http://dati.gov.it/resource/CoperturaSpaziale/LocalizzazioneLineaCosta_r_liguri:D.658">
+        <locn:geometry rdf:datatype="&gsp;gmlLiteral">&lt;gml:Envelope srsName=&quot;http://www.opengis.net/def/EPSG/0/4326&quot;&gt;&lt;gml:lowerCorner&gt;7.48820862370018 43.5963597132668&lt;/gml:lowerCorner&gt;&lt;gml:upperCorner&gt;10.0879518636137 44.849579861466&lt;/gml:upperCorner&gt;&lt;/gml:Envelope&gt;</locn:geometry>
+    </dct:Location>
+```
+>``RDF/Turtle``
+```Turtle
+<http://dati.gov.it/resource/CoperturaSpaziale/LocalizzazioneLineaCosta_r_liguri:D.658>
+	a		dct:Location ;
+	locn:geometry	"<gml:Envelope srsName=\"http://www.opengis.net/def/EPSG/0/4326\"><gml:lowerCorner>7.48820862370018 43.5963597132668</gml:lowerCorner><gml:upperCorner>10.0879518636137 44.849579861466</gml:upperCorner></gml:Envelope>"^^gsp:gmlLiteral .
+	
+```
+
+
 ### Come definire lo Standard del Dataset in DCAT-AP_IT
 Uno standard è definito mediante la specifica della classe _Standard_ identificata univocamente da un URI (Uniform Resource Identifier).
 
@@ -4085,3 +4255,67 @@ I temi in cui i dataset sono classificati si basano sull'uso del vocabolario con
         <td align="left">Rientra tutto ciò che riguarda i trasporti e le relative infrastrutture, la mobilità</td>
     </tr>
 </table>
+
+### Riepilogo dei vocabolari controllati da utilizzare
+
+<table>
+    <tr>
+    	<td align="left"><b>Oggetto</b></td>
+	<td align="left"><b>Riferimento del vocabolario controllato</b></td>
+    </tr>
+    <tr>
+        <td align="left">Lingua del Catalogo e del Dataset</td>
+        <td align="left">http://publications.europa.eu/mdr/resource/authority/language/skos/languages-skos.rdf</td>
+    </tr>
+    <tr>
+        <td align="left">Tema del Dataset</td>
+        <td align="left">http://publications.europa.eu/mdr/resource/authority/data-theme/skos/data-theme-skos.rdf</td>
+    </tr>
+    <tr>
+        <td align="left">Sottotema del Dataset</td>
+        <td align="left">http://eurovoc.europa.eu/</td>
+    </tr>
+    <tr>
+        <td align="left">Frenquenza di Aggiornamento del Dataset</td>
+        <td align="left">http://publications.europa.eu/mdr/resource/authority/frequency/skos/frequencies-skos.rdf</td>
+    </tr>
+    <tr>
+        <td align="left">Formato della Distribuzione</td>
+        <td align="left">http://publications.europa.eu/mdr/resource/authority/file-type/skos/filetypes-skos.rdf</td>
+    </tr>
+    <tr>
+        <td align="left">Tipo di Licenza della Distribuzione</td>
+        <td align="left">http://purl.org/adms/licencetype</td>
+    </tr>
+    <tr>
+        <td align="left">Identificativo della Localizzazione (copertura geografica) del Dataset</td>
+        <td align="left">http://sws.geonames.org/</td>
+    </tr>
+</table>
+
+
+### Alcuni errori comuni
+
+**URI**. L'errore più diffuso riguarda la gestione degli URI. Si ricorda che oggetti di tipo diverso devono avere URI differenti. Per esempio, **NON** è corretto utilizzare lo stesso URI per definire <a href="#definizione-di-dcatapit:Agent">il soggetto o organizzazione </a> che ha un certo ruolo (titolare, editore, creatore) su un catalogo o dataset, e per definire <a href="#definizione-di-dcatapit:Organization">il punto di contatto del dataset</a>. I due concetti sono diversi e devono avere URI diversi. Ci si riferisca <a href="#esempi-di-uso-di-dcatapitagent-in-json-ld-rdfxml-rdfturtle">agli esempi di uso di Soggetto o Organizzazione</a> e di <a href="#esempi-di-uso-di-dcatapitorganization-in-json-ld-rdfxml-rdfturtle">Punto di Contatto</a> per maggiori dettagli.
+
+**Differenza tra Literal(valore) e URI**. Molto spesso, soprattutto in presenza di dati serializzati in RDF/XML si tende a confondere il concetto di URI <http://....> con una stringa che all'interno contiene un URI "http://....". In quest'ultimo caso non si sta definendo un URI ma un valore (detto Literal nel contesto RDF). 
+
+Il seguente codice è corretto:
+
+```XML
+ <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+        <rdf:type rdf:resource="&dcat;Dataset"/>
+       	<dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/ECON"/>
+ ...
+ </dcatapit:Dataset>
+
+```
+Il seguente codice definirebbe il tema come una stringa che include un URI e **NON** è corretto rispetto alle specifiche riguardanti il tema del Dataset:
+ 
+``XML
+ <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
+        <rdf:type rdf:resource="&dcat;Dataset"/>
+       	<dcat:theme>"http://publications.europa.eu/resource/authority/data-theme/ECON"</dcat:theme>
+ ...
+ </dcatapit:Dataset>
+ ```
