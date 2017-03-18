@@ -11,10 +11,6 @@ CC-BY 4.0 (Creative Commons Attribution).
 * [Alimentare il catalogo nazionale dei dati](#alimentare-il-catalogo-nazionale-dei-dati)
   * [Modalità di alimentazione](#modalità-di-alimentazione)
 * [Guida pratica a DCAT-AP_IT](#guida-pratica-a-dcat-ap_it)
-  * [Come definire un soggetto/organizzazione in DCAT-AP_IT](#come-definire-un-soggetto-o-organizzazione-in-dcat-ap_it)
-    * [dcatapit:Agent](#definizione-di-dcatapitagent)
-    * [Elementi obbligatori che descrivono un Soggetto o Organizzazione](#elementi-obbligatori-che-descrivono-un-soggetto-o-organizzazione)
-    * [Esempi di uso di dcatapit:Agent in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso--di-dcatapitagent-in-json-ld-rdfxml-rdfturtle)
   * [Come definire un catalogo in DCAT-AP_IT](#come-definire-un-catalogo-di-dati-in-dcat-ap_it)
     * [dcatapit:Catalog](#definizione-di-dcatapitcatalog)
     * [Esempi di uso di dcatapit:Catalog in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dcatapitcatalog-in-json-ld-rdfxml-rdfturtle)
@@ -71,6 +67,10 @@ CC-BY 4.0 (Creative Commons Attribution).
       * [URL di download](#2-url-di-download-dcatdownloadurl)
       * [Ultima modifica della distribuzione](#3-ultima-modifica-della-distribuzione-dctmodified)
       * [Dimensione in byte](#4-dimensione-in-byte-dcatbytesize)
+  * [Come definire un soggetto/organizzazione in DCAT-AP_IT](#come-definire-un-soggetto-o-organizzazione-in-dcat-ap_it)
+    * [dcatapit:Agent](#definizione-di-dcatapitagent)
+    * [Elementi obbligatori che descrivono un Soggetto o Organizzazione](#elementi-obbligatori-che-descrivono-un-soggetto-o-organizzazione)
+    * [Esempi di uso di dcatapit:Agent in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso--di-dcatapitagent-in-json-ld-rdfxml-rdfturtle)
   * [Come definire il punto di contatto del Dataset in DCAT-AP_IT](#come-definire-il-punto-di-contatto-del-dataset-in-dcat-ap_it)
     * [dcatapit:Organization](#definizione-di-dcatapitorganization)
     * [Elementi obbligatori che descrivono il punto di contatto](#elementi-obbligatori-che-descrivono-il-punto-di-contatto)
@@ -115,130 +115,6 @@ Esistono due modalità di alimentazione:
 
 ## Guida pratica a DCAT-AP_IT
 Nelle seguenti sezioni, per ciascun elemento (classe e proprietà) del profilo di metadatazione DCAT-AP_IT saranno fornite istruzioni per l'uso ed esempi pratici di definizione dei metadati in JSON-LD, RDF/XML e RDF/Turtle. Il profilo complessivo è illustrato nella seguente <a href="http://www.dati.gov.it/sites/default/files/DCAT-AP_IT_UML.png">figura</a>. 
-
-### Come definire un Soggetto o Organizzazione in DCAT-AP_IT
-Un soggetto/organizzazione è definito mediante la specifica della classe _Agente_ identificata univocamente da un URI (Uniform Resource Identifier).
-
-#### Definizione di ``dcatapit:Agent``
-
-<table>
-<tr>
-<td align="left">URI</td>
-<td align="left">dcatapit:Agent</td>
-</tr>
-<tr>
-<td align="left">Sottoclasse</td>
-<td align="left">foaf:Agent</td>
-</tr>
-<tr>
-<td align="left">Descrizione</td>
-<td align="left">Un soggetto (organizzazione) che gioca un certo ruolo sul catalogo e sui dataset del catalogo.</td>
-</tr>
-<tr>
-<td align="left">Cardinalità</td>
-<td align="left">1</td>
-</tr>
-<tr>
-<td align="left">Stato</td>
-<td align="left">Obbligatorio</td>
-</tr>
-<tr>
-<td align="left">Riferimento</td>
-<td align="left">http://www.dati.gov.it/onto/dcatapit#Agent</td>
-</tr>
-</table>
-
-#### Elementi obbligatori che descrivono un Soggetto o Organizzazione
-
-1) **_IDENTIFICATIVO del SOGGETTO_**: ``dct:identifier``
-
-<table>
-  <tr> 
-    <td align="left">Cardinalità</td>
-    <td align="left">1 </td>
-  </tr>
-  <tr> 
-    <td align="left">Stato</td>
-    <td align="left">Obbligatorio</td>
-  </tr>
-  <tr>
-    <td align="left">Descrizione</td>
-    <td align="left">L'identificativo del soggetto (organizzazione)</td>
-  </tr>
-  <tr>
-    <td align="left">Riferimento</td>
-    <td align="left">http://purl.org/dc/terms/identifier</td>
-  </tr>
-  <tr>
-    <td align="left">Uso</td>
-    <td align="left">Nel caso di pubbliche amministrazioni, l'identificativo è rappresentato dal codice IPA (Indice della Pubblica Amministrazione). Per organizzazioni private, l'identiticativo è rappresentato dalla partita IVA. Si consiglia di far riferimento all'organizzazione e non a singoli uffici. 
- <br />Esempio: "agid" oppure "r_lazio".</td>
-  </tr>
-</table>
-
-2) **_NOME del SOGGETTO_**: ``foaf:name``
-<table>
-  <tr> 
-    <td align="left">Cardinalità</td>
-    <td align="left">1 </td>
-  </tr>
-  <tr> 
-    <td align="left">Stato</td>
-    <td align="left">Obbligatorio</td>
-  </tr>
-  <tr>
-    <td align="left">Descrizione</td>
-    <td align="left">Il nome del soggetto (organizzazione) </td>
-  </tr>
-  <tr>
-    <td align="left">Riferimento</td>
-    <td align="left">http://xmlns.com/foaf/0.1/name</td>
-  </tr>
-  <tr>
-    <td align="left">Uso</td>
-    <td align="left">Specificare il nome ufficiale della pubblica amministrazione così come riportato nell'Indice della Pubblica Amministrazione. Nel caso di oganizzazione privata, specificare il nome ufficiale della stessa così come riportato nel Registro Imprese.
- <br />Esempio: "Agenzia per l'Italia Digitale".</td>
-  </tr>
-</table>
-
-#### Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle
->``JSON-LD``
-
-```JSON
-{
-      "@id": "http://dati.gov.it/resource/Amministrazione/agid",
-      "@type": [
-        "foaf:Agent",
-        "http://dati.gov.it/onto/dcatapit#\"Agent"
-      ],
-      "dcterms:identifier": "agid",
-      "foaf:name": {
-        "@language": "it",
-        "@value": "Agenzia per l'Italia Digitale"
-      }
-    },
-    
-```
-> ``RDF/XML``
-
-```XML
-<!-- http://dati.gov.it/resource/Amministrazione/agid -->
-
-    <rdf:Description rdf:about="http://dati.gov.it/resource/Amministrazione/agid">
-        <rdf:type rdf:resource="http://dati.gov.it/onto/dcatapit#&quot;Agent"/>
-        <rdf:type rdf:resource="&foaf;Agent"/>
-        <dct:identifier>agid</dct:identifier>
-        <foaf:name xml:lang="it">Agenzia per l'Italia Digitale</foaf:name>
-    </rdf:Description>
-```
-> ``RDF/TURTLE``
-
-```Turtle
-   <http://dati.gov.it/resource/Amministrazione/agid>
-	 a               dcatapit:Agent , foaf:Agent ;
-	 dct:identifier  "agid" ;
-	 foaf:name       "Agenzia per l'Italia Digitale" .
-```
 
 ### Come definire un catalogo di dati in DCAT-AP_IT
 Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente da un URI (Uniform Resource Identifier).
@@ -3282,6 +3158,130 @@ Una distribuzione è definita mediante la classe _Distribution(Distribuzione)_ i
 	a		   dcatapit:Distribution , dcat:Distribution ;
 	dcat:byteSize	   "3000"^^xsd:float ;
 	[altri elementi per specificare la distribuzione] .
+```
+
+### Come definire un Soggetto o Organizzazione in DCAT-AP_IT
+Un soggetto/organizzazione è definito mediante la specifica della classe _Agente_ identificata univocamente da un URI (Uniform Resource Identifier).
+
+#### Definizione di ``dcatapit:Agent``
+
+<table>
+<tr>
+<td align="left">URI</td>
+<td align="left">dcatapit:Agent</td>
+</tr>
+<tr>
+<td align="left">Sottoclasse</td>
+<td align="left">foaf:Agent</td>
+</tr>
+<tr>
+<td align="left">Descrizione</td>
+<td align="left">Un soggetto (organizzazione) che gioca un certo ruolo sul catalogo e sui dataset del catalogo.</td>
+</tr>
+<tr>
+<td align="left">Cardinalità</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">Stato</td>
+<td align="left">Obbligatorio</td>
+</tr>
+<tr>
+<td align="left">Riferimento</td>
+<td align="left">http://www.dati.gov.it/onto/dcatapit#Agent</td>
+</tr>
+</table>
+
+#### Elementi obbligatori che descrivono un Soggetto o Organizzazione
+
+1) **_IDENTIFICATIVO del SOGGETTO_**: ``dct:identifier``
+
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">1 </td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Obbligatorio</td>
+  </tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">L'identificativo del soggetto (organizzazione)</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://purl.org/dc/terms/identifier</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Nel caso di pubbliche amministrazioni, l'identificativo è rappresentato dal codice IPA (Indice della Pubblica Amministrazione). Per organizzazioni private, l'identiticativo è rappresentato dalla partita IVA. Si consiglia di far riferimento all'organizzazione e non a singoli uffici. 
+ <br />Esempio: "agid" oppure "r_lazio".</td>
+  </tr>
+</table>
+
+2) **_NOME del SOGGETTO_**: ``foaf:name``
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">1 </td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Obbligatorio</td>
+  </tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">Il nome del soggetto (organizzazione) </td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://xmlns.com/foaf/0.1/name</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Specificare il nome ufficiale della pubblica amministrazione così come riportato nell'Indice della Pubblica Amministrazione. Nel caso di oganizzazione privata, specificare il nome ufficiale della stessa così come riportato nel Registro Imprese.
+ <br />Esempio: "Agenzia per l'Italia Digitale".</td>
+  </tr>
+</table>
+
+#### Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle
+>``JSON-LD``
+
+```JSON
+{
+      "@id": "http://dati.gov.it/resource/Amministrazione/agid",
+      "@type": [
+        "foaf:Agent",
+        "http://dati.gov.it/onto/dcatapit#\"Agent"
+      ],
+      "dcterms:identifier": "agid",
+      "foaf:name": {
+        "@language": "it",
+        "@value": "Agenzia per l'Italia Digitale"
+      }
+    },
+    
+```
+> ``RDF/XML``
+
+```XML
+<!-- http://dati.gov.it/resource/Amministrazione/agid -->
+
+    <rdf:Description rdf:about="http://dati.gov.it/resource/Amministrazione/agid">
+        <rdf:type rdf:resource="http://dati.gov.it/onto/dcatapit#&quot;Agent"/>
+        <rdf:type rdf:resource="&foaf;Agent"/>
+        <dct:identifier>agid</dct:identifier>
+        <foaf:name xml:lang="it">Agenzia per l'Italia Digitale</foaf:name>
+    </rdf:Description>
+```
+> ``RDF/TURTLE``
+
+```Turtle
+   <http://dati.gov.it/resource/Amministrazione/agid>
+	 a               dcatapit:Agent , foaf:Agent ;
+	 dct:identifier  "agid" ;
+	 foaf:name       "Agenzia per l'Italia Digitale" .
 ```
 
 
