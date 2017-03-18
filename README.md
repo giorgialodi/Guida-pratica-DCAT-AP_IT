@@ -101,6 +101,7 @@ CC-BY 4.0 (Creative Commons Attribution).
     * [Elementi raccomandati che descrivono altro identificativo del dataset](#elementi-raccomandati-che-descrivono-altro-identificativo-del-dataset)
     * [Esempi di uso di adms:Identifier in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-admsidentifier-in-json-ld-rdfxml-rdfturtle)
   * [Come mappare i temi di DCAT-AP_IT](#come-mappare-i-temi-di-dcat-ap_it)
+  * [Riepilogo dei vocabolari controllati da utilizzare](#riepilogo-dei-vocabolari-controllati-da-utilizzare)
   * [Alcuni errori comuni](#alcuni-errori-comuni)
 
    
