@@ -1064,7 +1064,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
         <dct:modified rdf:datatype="&xsd;date">2015-05-25</dct:modified>
         <dct:identifier>agid:D.301</dct:identifier>
         <dcat:keyword>Acquisizione</dcat:keyword>
-		<dcat:keyword>SPC</dcat:keyword>
+		<dcat:keyword>SPC</dcat:keyword> 
         <dcat:keyword>Contratto pubblico</dcat:keyword>
         <dct:title xml:lang="it">Contratti del Sistema Pubblico di Connettività (SPC)</dct:title>
         <dct:description xml:lang="it">Il dataset contiene i contratti SPC del Lotto 1 (2007)</dct:description>
@@ -3004,7 +3004,7 @@ Una distribuzione è definita mediante la classe _Distribution(Distribuzione)_ i
 
 #### Elementi opzionali
 
-##### 1) **_TITOLO della DISTRIBUZIONE:_** ``dct:description``
+##### 1) **_TITOLO della DISTRIBUZIONE:_** ``dct:title``
  
 <table>
   <tr> 
