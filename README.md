@@ -3120,7 +3120,7 @@ Una distribuzione è definita mediante la classe _Distribution(Distribuzione)_ i
  </tr>
 </table>
 
-##### Esempi di uso di ``dcat:dbyteSize``per la Distribuzione in JSON-LD, RDF/XML, RDF/Turtle
+##### Esempi di uso di ``dcat:byteSize``per la Distribuzione in JSON-LD, RDF/XML, RDF/Turtle
 >``JSON-LD``
 
 ```JSON
@@ -3194,7 +3194,7 @@ Un soggetto/organizzazione è definito mediante la specifica della classe _Agent
 
 #### Elementi obbligatori che descrivono un Soggetto o Organizzazione
 
-1) **_IDENTIFICATIVO del SOGGETTO_**: ``dct:identifier``
+##### 1) **_IDENTIFICATIVO del SOGGETTO_**: ``dct:identifier``
 
 <table>
   <tr> 
@@ -3220,7 +3220,7 @@ Un soggetto/organizzazione è definito mediante la specifica della classe _Agent
   </tr>
 </table>
 
-2) **_NOME del SOGGETTO_**: ``foaf:name``
+##### 2) **_NOME del SOGGETTO_**: ``foaf:name``
 <table>
   <tr> 
     <td align="left">Cardinalità</td>
@@ -3245,7 +3245,7 @@ Un soggetto/organizzazione è definito mediante la specifica della classe _Agent
   </tr>
 </table>
 
-#### Esempi di uso in JSON-LD, RDF/XML, RDF/Turtle
+#### Esempi di uso di dcatapit:Agent in JSON-LD, RDF/XML, RDF/Turtle
 >``JSON-LD``
 
 ```JSON
@@ -3282,6 +3282,159 @@ Un soggetto/organizzazione è definito mediante la specifica della classe _Agent
 	 a               dcatapit:Agent , foaf:Agent ;
 	 dct:identifier  "agid" ;
 	 foaf:name       "Agenzia per l'Italia Digitale" .
+```
+
+### Come definire la licenza in DCAT-AP_IT
+La licenza è definita mediante la specifica della classe _dcatapti:LicenseDocument_ identificata univocamente da un URI (Uniform Resource Identifier).
+
+#### Definizione di ``dcatapit:LicenseDocument``
+
+<table>
+<tr>
+<td align="left">URI</td>
+<td align="left">dcatapit:LisenceDocument</td>
+</tr>
+<tr>
+<td align="left">Sottoclasse</td>
+<td align="left">dct:LicenseDocument</td>
+</tr>
+<tr>
+<td align="left">Descrizione</td>
+<td align="left">La licenza della distribuzione del dataset.</td>
+</tr>
+<tr>
+<td align="left">Cardinalità</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">Stato</td>
+<td align="left">Obbligatorio</td>
+</tr>
+<tr>
+<td align="left">Riferimento</td>
+<td align="left">http://www.dati.gov.it/onto/dcatapit#LicenseDocument</td>
+</tr>
+</table>
+
+
+#### Elementi raccomandati che descrivono la Licenza
+##### 1) **_TIPO della LICENZA_**: ``dct:type``
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">0..1</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Raccomandato</td>
+  </tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">Il tipo di licenza associata alla distribuzione del dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitlicensedocument">dcatapit:LicenseDocument</a> a un oggetto (codominio) di tipo skos:Concept (specificato mediante un URI - Uniform Resource Identifier).</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://purl.org/dc/terms/type</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Indicare il tipo di licenza. Esempi: “pubblico dominio”, “richiesto pagamento diritti”. I valori da utilizzare per  questa  proprietà sono gli URI dei concetti del vocabolario  “ADMS  licence  type  vocabulary” (http://purl.org/adms/licencetype/).</td>
+  </tr>
+</table>
+
+
+#### Elementi opzionali che descrivono la Licenza
+##### 1) **_NOME della LICENZA:_** ``foaf:name``
+
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">0..N</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Opzionale</td>
+  </tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">Il nome della licenza.</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://xmlns.com/foaf/0.1/name</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Indicare il nome della licenza associata alla distribuzione. Esempio: CC_BY oppure Creative Commons Attribution (CC-BY).</td>
+  </tr>
+</table>
+
+##### 2) **_VERSIONE della LICENZA:_** ``owl:versionInfo``
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">0..1</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Opzionale</td>
+  </tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">La versione della licenza</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://www.w3.org/2002/07/owl#versionInfo</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Indicare la versione della licenza. Esempio: 4.0 oppure 3.0</td>
+  </tr>
+</table>
+
+#### Esempi di uso di dcatapit:LinceseDocument in JSON-LD, RDF/XML, RDF/Turtle
+>``JSON-LD``
+
+```JSON
+   {
+      "@id": "http://creativecommons.org/licenses/by/4.0/",
+      "@type": [
+        "http://dati.gov.it/onto/dcatapit#\"LicenseDocument",
+        "dcterms:LicenseDocument"
+      ],
+      "dcterms:type": {
+        "@id": "http://purl.org/adms/licencetype/Attribution"
+      },
+      "foaf:name": "CC BY",
+      "owl:versionInfo": "4.0"
+    },
+
+```
+
+>``RDF/XML``
+
+```XML
+
+   <!-- http://creativecommons.org/licenses/by/4.0/ -->
+    <dcatapit:LicenseDocument rdf:about="http://creativecommons.org/licenses/by/4.0/">
+        <rdf:type rdf:resource="&dct;LicenseDocument"/>
+        <dct:type rdf:resource="http://purl.org/adms/licencetype/Attribution"/>
+        <owl:versionInfo>4.0</owl:versionInfo>
+        <foaf:name>CC BY</foaf:name>
+    </dcatapit:LicenseDocument>
+   
+```
+
+>``RDF/Turtle``
+
+```Turtle
+<http://creativecommons.org/licenses/by/4.0/>
+	a		 dcatapit:LicenseDocument , dct:LicenseDocument ;
+	dct:type	 <http://purl.org/adms/licencetype/Attribution> ;
+	foaf:name	 "CC BY" ;
+	owl:versionInfo	 "4.0" .
+
 ```
 
 
@@ -3467,7 +3620,7 @@ Il punto di contatto è definito mediante la specifica della classe _dcatapti:Or
 >``RDF/Turtle``
 
 ```Turtle
-http://dati.gov.it/resource/PuntoContatto/contactPointLODIPA>
+<http://dati.gov.it/resource/PuntoContatto/contactPointLODIPA>
 	a				catapit:Organization , vcard:Organization, vcard:Kind ;
 	vcard:fn			"banche dati e open data" ;
 	vcard:hasEmail 			<mailto:info@dati.gov.it> ;
