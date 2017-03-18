@@ -115,7 +115,8 @@ Esistono due modalità di alimentazione:
 ## Guida pratica a DCAT-AP_IT
 Nelle seguenti sezioni, per ciascun elemento (classe e proprietà) del profilo di metadatazione DCAT-AP_IT saranno fornite istruzioni per l'uso ed esempi pratici di definizione dei metadati in JSON-LD, RDF/XML e RDF/Turtle. Il profilo complessivo è illustrato nella seguente <a href="http://www.dati.gov.it/sites/default/files/DCAT-AP_IT_UML.png">figura</a>. 
 
-<img src="http://www.dati.gov.it/sites/default/files/DCAT-AP_IT_UML.png" />
+![UML Diagram](http://www.dati.gov.it/sites/default/files/DCAT-AP_IT_UML.png)
+
 
 ### Come definire un catalogo di dati in DCAT-AP_IT
 Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente da un URI (Uniform Resource Identifier).
