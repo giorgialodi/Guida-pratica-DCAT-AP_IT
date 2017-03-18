@@ -4312,7 +4312,7 @@ Il seguente codice è corretto:
 ```
 Il seguente codice definirebbe il tema come una stringa che include un URI e **NON** è corretto rispetto alle specifiche riguardanti il tema del Dataset:
  
-``XML
+```XML
  <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
         <rdf:type rdf:resource="&dcat;Dataset"/>
        	<dcat:theme>"http://publications.europa.eu/resource/authority/data-theme/ECON"</dcat:theme>
