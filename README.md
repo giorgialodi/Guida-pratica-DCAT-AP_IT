@@ -92,7 +92,7 @@ CC-BY 4.0 (Creative Commons Attribution).
     * [Elementi opzionali che descrivono la copertura geografica](#elementi-opzionali-che-descrivono-la-copertura-geografica)
     * [Esempi di uso di dct:Location in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dctlocation-in-json-ld-rdfxml-rdfturtle)
   * [Come definire lo standard del Dataset in DCAT-AP_IT](#come-definire-il-punto-di-contatto-del-dataset-in-dcat-ap_it)
-    * [dct:Standard](#definizione-di-dctstandard)
+    * [dctapit:Standard](#definizione-di-dcatapitstandard)
     * [Elementi obbligatori che descrivono lo standard](#elementi-obbligatori-che-descrivono-lo-standard)
     * [Elementi opzionali che descrivono lo standard](#elementi-opzionali-che-descrivono-lo-standard)
     * [Esempi di uso di dct:Standard in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dctstandard-in-json-ld-rdfxml-rdfturtle)
@@ -2426,7 +2426,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Specificare uno o più standard riferibili al dataset. Si possono specificare sia standard tecnici (anche de-facto) come per esempio DCAT, ISO/IEC 25012, CSW, ecc., sia riferimenti normativi (e.g., Decreto legislativo n.82/2005 - Codice dell’Amministrazione Digitale). Per l'uso pratico di questa proprietà <a href="#esempi-di-uso-di-dctconformsTo-in-dcatap_it">si vedano gli esempi d'uso per lo Standard del Dataset</a> </td>
+    <td align="left">Specificare uno o più standard riferibili al dataset. Si possono specificare sia standard tecnici (anche de-facto) come per esempio DCAT, ISO/IEC 25012, CSW, ecc., sia riferimenti normativi (e.g., Decreto legislativo n.82/2005 - Codice dell’Amministrazione Digitale). Per l'uso pratico di questa proprietà <a href="#esempi-di-uso-di-dcatapitstandard-in-dcatap_it">si vedano gli esempi d'uso per lo Standard del Dataset</a> </td>
   </tr>
 </table>
 
