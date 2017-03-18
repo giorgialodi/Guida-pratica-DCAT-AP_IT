@@ -73,13 +73,13 @@ CC-BY 4.0 (Creative Commons Attribution).
       * [Dimensione in byte](#4-dimensione-in-byte-dcatbytesize)
   * [Come definire il punto di contatto del Dataset in DCAT-AP_IT](#come-definire-il-punto-di-contatto-del-dataset-in-dcat-ap_it)
     * [dcatapit:Organization](#descrizione-di-dcatapitdescrizione)
-    * [Esempi di uso di dcatapit:Organization in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso--di-dcatapitorganization-in-json-ld-rdfxml-rdfturtle)
-    * [Elementi obbligatori](#elementi-obbligatori-3)
+    * [Elementi obbligatori che descrivono il punto di contatto](#elementi-obbligatori-che-descrivono-il-punto-di-contatto)
       * [Nome del punto di contatto](#1-nome-del-punto-di-contatto-vcardfn)
       * [Email del punto di contatto](#2-email-del-punto-di-contatto-vcardhasemail)
-    * [Elementi ozionali](#elementi-opzionali-2)
+    * [Elementi ozionali che descrivono il punto di contatto](#elementi-opzionali-che-descrivono-il-punto-di-contatto)
       * [Telefono del punto di contatto](#1-telefono-del-punto-di-contatto-vcardhastelephone)
       * [Sito del punto di contatto](#2-sito-del-punto-di-contatto-vcardhasurl)
+    * [Esempi di uso di dcatapit:Organization in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso--di-dcatapitorganization-in-json-ld-rdfxml-rdfturtle)
   * [Come definire la copertura temporale del Dataset in DCAT-AP_IT](#come-definire-la-copertura-temporale-del-dataset-in-dcat-ap_it)
   * [Come definire la copertura geografica del Dataset in DCAT-AP_IT](#come-definire-la-copertura-geografica-del-dataset-in-dcat-ap_it)
   * [Come definire lo standard del Dataset in DCAT-AP_IT](#come-definire-il-punto-di-contatto-del-dataset-in-dcat-ap_it)
@@ -3266,6 +3266,197 @@ Una distribuzione è definita mediante la classe _Distribution(Distribuzione)_ i
 	a		   dcatapit:Distribution , dcat:Distribution ;
 	dcat:byteSize	   "3000"^^xsd:float ;
 	[altri elementi per specificare la distribuzione] .
+```
+
+
+### Come definire il Punto di Contatto in DCAT-AP_IT
+Il punto di contatto è definito mediante la specifica della classe _dcatapti:Organization_ identificata univocamente da un URI (Uniform Resource Identifier).
+
+#### Definizione di ``dcatapit:Organization``
+
+<table>
+<tr>
+<td align="left">URI</td>
+<td align="left">dcatapit:Organization</td>
+</tr>
+<tr>
+<td align="left">Sottoclasse</td>
+<td align="left">vcard:Organization a sua volta sotto classe di vcard:Kind</td>
+</tr>
+<tr>
+<td align="left">Descrizione</td>
+<td align="left">Un ufficio/organizzazione che agisce come punto di contatto per il dataset.</td>
+</tr>
+<tr>
+<td align="left">Cardinalità</td>
+<td align="left">0..N</td>
+</tr>
+<tr>
+<td align="left">Stato</td>
+<td align="left">Raccomandato</td>
+</tr>
+<tr>
+<td align="left">Riferimento</td>
+<td align="left">http://www.dati.gov.it/onto/dcatapit#Organization</td>
+</tr>
+</table>
+
+#### Elementi obbligatori che descrivono il Punto di Contatto
+
+##### 1) **_NOME del PUNTO di CONTATTO_**: ``vcard:fn``
+
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">1 </td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Obbligatorio</td>
+  </tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">Il nome del contatto stabile per il dataset.</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://www.w3.org/2006/vcard/ns#fn</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">E’ fortemente raccomandato indicare il nome di uno specifico ufficio (unità organizzativa) responsabile della raccolta delle richieste/commenti e della predisposizione delle relative risposte. Solo se non è possibile individuare il riferimento dell’ufficio, si può indicare l’organizzazione nel suo complesso. Sono da evitare comunque nomi di singole persone. Questo metadato deve essere specificato qualora si inseriscano informazioni di contatto per il dataset. Per esempio, per il dataset LOD dell’Indice della Pubblica amministrazione il nome dell’ufficio/organizzazione è “banche dati e open data".</td>
+  </tr>
+</table>
+
+##### 2) **_EMAIL del PUNTO DI CONTATTO_**: ``vcard:hasEmail``
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">1 </td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Obbligatorio</td>
+  </tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">L’indirizzo email del punto di contatto per il dataset La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitorganization">dcatapit:Organization</a> a un oggetto (codominio) di tipo vcard:Email (specificato mediante un URI - Uniform Resource Identifier).</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://www.w3.org/2006/vcard/ns#hasEmail</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Indicare l’indirizzo email primario dell’ufficio (o gestito dall’ufficio) identificato come punto di contatto per il dataset. Se non è possibile identificare l’ufficio, si può inserire l’indirizzo email principale dell’organizzazione. Evitare in ogni caso di specificare indirizzi email di singole persone fisiche. Questo metadato deve essere specificato qualora si inseriscano informazioni di contatto per il dataset. Esempio: “mailto:info@dati.gov.it"</td>
+  </tr>
+</table>
+
+#### Elementi opzionali che descrivono il Punto di Contatto
+
+##### 1) **_TELEFONO del PUNTO di CONTATTO_**: ``vcard:hasTelephone``
+
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">0..1</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Opzionale</td>
+  </tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">Il telefono del contatto stabile per il dataset.La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitorganization">dcatapit:Organization</a> a un oggetto (codominio) di tipo vcard:TelephoneType (specificato mediante un URI - Uniform Resource Identifier).</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://www.w3.org/2006/vcard/ns#hasTelephone</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Indicare il numero di telefono dell’ufficio (o gestito dall’ufficio) identificato come punto di contatto per il dataset. Se non è possibile identificare l’ufficio, si può indicare il numero di telefono del centralino dell’amministrazione. Evitare in ogni caso di specificare numeri di telefono di singole persone.</td>
+  </tr>
+</table>
+
+##### 2) **_SITO del PUNTO DI CONTATTO_**: ``vcard:hasURL``
+<table>
+  <tr> 
+    <td align="left">Cardinalità</td>
+    <td align="left">0..1</td>
+  </tr>
+  <tr> 
+    <td align="left">Stato</td>
+    <td align="left">Opzionale</td>
+  </tr>
+  <tr>
+    <td align="left">Descrizione</td>
+    <td align="left">L’indirizzo email del punto di contatto per il dataset.La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitorganization">dcatapit:Organization</a> a un oggetto (codominio) di tipo owl:Thing (specificato mediante un URI - Uniform Resource Identifier).</td>
+  </tr>
+  <tr>
+    <td align="left">Riferimento</td>
+    <td align="left">http://www.w3.org/2006/vcard/ns#hasEmail</td>
+  </tr>
+  <tr>
+    <td align="left">Uso</td>
+    <td align="left">Se esiste, inserire l’URL primario di una pagina di contatto o di un form di contatto. Evitare il più possibile di indicare l’URL dell’home page dell’organizzazione. Un esempio di possibile valore per questo metadato è il seguente “http://spcdata.digitpa.gov.it/contattaci.html  (NON dovrebbe essere per esempio “httpi://www.agid.gov.it”). Nel caso in cui si abbia la necessità di indicare ulteriori URL di interesse per la risorsa descritta, oltre  a  quello  principale, allora si  possono  aggiungere  n  istanze della proprietà foaf:page.</td>
+  </tr>
+</table>
+
+#### Esempi di uso di dcatapit:Organization in JSON-LD, RDF/XML, RDF/Turtle
+>``JSON-LD``
+
+```JSON
+   {
+     "@id": "http://dati.gov.it/resource/PuntoContatto/contactPointLODIPA",
+      "@type": [
+        "vcard:Organization",
+        "vcard:Kind",
+        "http://dati.gov.it/onto/dcatapit#\"Organization"
+      ],
+      "vcard:fn": "banche dati e open data",
+      "vcard:hasEmail": {
+        "@id": "mailto:info@agid.gov.it"
+      },
+      "vcard:hasTelephone": {
+        "@id": "_:N423506244f6e46028ea51a957fe407f3"
+      },
+      "vcard:hasURL": {
+        "@id": "http://spcdata.digitpa.gov.it/contattaci.html"
+      }
+    },
+
+```
+
+>``RDF/XML``
+
+```XML
+
+   <!-- http://dati.gov.it/resource/PuntoContatto/contactPointLODIPA -->
+    <dcatapit:Organization rdf:about="http://dati.gov.it/resource/PuntoContatto/contactPointLODIPA">
+        <rdf:type rdf:resource="&vcard;Kind"/>
+        <rdf:type rdf:resource="&vcard;Organization"/>
+        <vcard:hasEmail rdf:resource="mailto:info@agid.gov.it"/>
+        <vcard:fn>banche dati e open data</vcard:fn>
+        <vcard:hasTelephone rdf:parseType="Resource">
+         	<vcard:value>06123456</vcard:value>
+         	<rdf:type rdf:resource="http://www.w3.org/2006/vcard/ns#Voice"/>
+        </vcard:hasTelephone>
+        <vcard:hasURL rdf:resource="http://spcdata.digitpa.gov.it/contattaci.html"/>
+    </dcatapit:Organization>
+
+   
+```
+
+>``RDF/Turtle``
+
+```Turtle
+http://dati.gov.it/resource/PuntoContatto/contactPointLODIPA>
+	a				catapit:Organization , vcard:Organization, vcard:Kind ;
+	vcard:fn			"banche dati e open data" ;
+	vcard:hasEmail 			<mailto:info@dati.gov.it> ;
+	vcard:hasTelephone		[ a vcard:Voice ; vcard:value "06123456" ] ;
+	vcard:hasURL			<http://spcdata.digitpa.gov.it/contattaci.html> .
 ```
 
 
