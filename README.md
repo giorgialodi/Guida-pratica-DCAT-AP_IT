@@ -4299,9 +4299,9 @@ I temi in cui i dataset sono classificati si basano sull'uso del vocabolario con
 
 **URI**. L'errore più diffuso riguarda la gestione degli URI. Si ricorda che oggetti di tipo diverso devono avere URI differenti. Per esempio, **NON** è corretto utilizzare lo stesso URI per definire <a href="#definizione-di-dcatapit:Agent">il soggetto o organizzazione </a> che ha un certo ruolo (titolare, editore, creatore) su un catalogo o dataset, e per definire <a href="#definizione-di-dcatapit:Organization">il punto di contatto del dataset</a>. I due concetti sono diversi e devono avere URI diversi. Ci si riferisca <a href="#esempi-di-uso-di-dcatapitagent-in-json-ld-rdfxml-rdfturtle">agli esempi di uso di Soggetto o Organizzazione</a> e di <a href="#esempi-di-uso-di-dcatapitorganization-in-json-ld-rdfxml-rdfturtle">Punto di Contatto</a> per maggiori dettagli.
 
-**Differenza tra Literal(valore) e URI**. Molto spesso, soprattutto in presenza di dati serializzati in RDF/XML si tende a confondere il concetto di URI <http://....> con una stringa che all'interno contiene un URI "http://....". In quest'ultimo caso non si sta definendo un URI ma un valore (detto Literal nel contesto RDF). 
+**Differenza tra Literal(valore) e URI**. Molto spesso, soprattutto in presenza di dati serializzati in RDF/XML si tende a confondere il concetto di URI <http://....> con una stringa che all'interno contiene un URI "http://....". In quest'ultimo caso non si sta definendo un URI ma un valore (detto Literal nel contesto RDF). Per esempio:
 
-Il seguente codice è corretto:
+il seguente codice è corretto:
 
 ```XML
  <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
@@ -4311,7 +4311,7 @@ Il seguente codice è corretto:
  </dcatapit:Dataset>
 
 ```
-Il seguente codice definirebbe il tema come una stringa che include un URI e **NON** è corretto rispetto alle specifiche riguardanti il tema del Dataset:
+il seguente codice definirebbe il tema come una stringa che include un URI e **NON** è corretto rispetto alle specifiche riguardanti il tema del Dataset:
  
 ```XML
  <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
