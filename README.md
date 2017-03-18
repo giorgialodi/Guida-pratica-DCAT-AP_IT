@@ -57,7 +57,7 @@ CC-BY 4.0 (Creative Commons Attribution).
       * [Copertura geografica del dataset](#9-copertura-geografica-del-dataset-dctspatial)
       * [Conformità del dataset](#10-conformita-del-dataset-dctconformsto)
       * [Altro identificativo del dataset](#11-altro-identificativo-del-dataset-admsidentifier)
-  * [Come definire una Distribuzione del Dataset in DCAT-AP_IT](#come-definire-la-distribuzione-del-dataset-in-dcat-ap_it)
+  * [Come definire una Distribuzione del Dataset in DCAT-AP_IT](#come-definire-una-distribuzione-del-dataset-in-dcat-ap_it)
     * [dcatapit:Distribution](#definizione-di-dcatapitdistribution)
     * [Esempi di uso di dcatapit:Distribution in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dcatapitdistribution-in-json-ld-rdfxml-rdfturtle)
     * [Elementi obbligatori](#elementi-obbligatori-2)
