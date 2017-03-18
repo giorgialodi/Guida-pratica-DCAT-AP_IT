@@ -3750,6 +3750,31 @@ La copertura (o estensione) temporale del dataset è definita mediante la specif
 #### Come definire un identificativo alternativo del Dataset in DCAT-AP_IT
 L'identificativo alternativo del dataset può essere specificato mediante la classe _adms:Identifier_ specificata mediante un URI (Uniform Resource Identifier)
 
+#### Definizione di ``adms:Identifier``
+
+<table>
+<tr>
+<td align="left">URI</td>
+<td align="left">adms:Identifier</td>
+</tr>
+<tr>
+<td align="left">Descrizione</td>
+<td align="left">Un identificativo alternativo per il dataset.</td>
+</tr>
+<tr>
+<td align="left">Cardinalità</td>
+<td align="left">0..N</td>
+</tr>
+<tr>
+<td align="left">Stato</td>
+<td align="left">Opzionale</td>
+</tr>
+<tr>
+<td align="left">Riferimento</td>
+<td align="left">http://www.w3.org/ns/adms#Identifier</td>
+</tr>
+</table>
+
 ### Elementi raccomandati che descrivono altro identificativo del dataset
 ##### 1) **_NOTAZIONE_**: ``skos:notation``
 <table>
