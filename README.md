@@ -3770,6 +3770,39 @@ L'identificativo alternativo del dataset può essere specificato mediante la cla
   </tr>
 </table>
 
+#### Esempi di uso di adms:Identifier in JSON-LD, RDF/XML, RDF/Turtle
+>``JSON-LD``
+
+```JSON
+   {
+      "@id": "http://dati.gov.it/resource/AltroIdentificativo/altroidentificativoDataset1",
+      "@type": "adms:Identifier",
+      "skos:notation": {
+        "@value": "doi:10.1109/5.771073"
+      }
+    }
+
+```
+
+>``RDF/XML``
+
+```XML
+
+  <!-- http://dati.gov.it/resource/AltroIdentificativo/altroidentificativoDataset1 -->
+    <adms:Identifier rdf:about="http://dati.gov.it/resource/AltroIdentificativo/altroidentificativoDataset1">
+        <skos:notation>"doi:10.1109/5.771073"</skos:notation>
+    </adms:Identifier>
+   
+```
+
+>``RDF/Turtle``
+
+```Turtle
+<hhttp://dati.gov.it/resource/AltroIdentificativo/altroidentificativoDataset1>
+	a 		adms:Identifier ;
+	skos:notation	"doi:10.1109/5.771073" ;
+```
+
 
 
 #### Come mappare i temi di DCAT-AP_IT
