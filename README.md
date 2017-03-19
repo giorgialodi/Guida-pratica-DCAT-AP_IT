@@ -2672,7 +2672,7 @@ Una distribuzione è definita mediante la classe _Distribution (Distribuzione)_ 
 
 ```JSON
 
-     {
+    
       "@id": "http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3",
       "@type": [
         "http://dati.gov.it/onto/dcatapit#\"Distribution",
@@ -2682,7 +2682,7 @@ Una distribuzione è definita mediante la classe _Distribution (Distribuzione)_ 
         "@id": "http://publications.europa.eu/resource/authority/file-type/RDF"
       },
       altri elementi per specificare la distribuzione
-     }
+   
 ```
 
 >``RDF/XML``
