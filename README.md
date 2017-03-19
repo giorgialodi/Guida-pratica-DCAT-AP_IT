@@ -2672,7 +2672,6 @@ Una distribuzione è definita mediante la classe _Distribution (Distribuzione)_ 
 
 ```JSON
 
-    
       "@id": "http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3",
       "@type": [
         "http://dati.gov.it/onto/dcatapit#\"Distribution",
@@ -2702,7 +2701,7 @@ Una distribuzione è definita mediante la classe _Distribution (Distribuzione)_ 
 
 ```Turtle
 <http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3>
-	a				dcatapit:Distribution , dcat:Distribution ;
+	a		  dcatapit:Distribution , dcat:Distribution ;
 	dct:format 	  <http://publications.europa.eu/resource/authority/file-type/RDF> ;
 	[altri elementi per specificare la distribuzione] .
 ```
@@ -2721,7 +2720,7 @@ Una distribuzione è definita mediante la classe _Distribution (Distribuzione)_ 
   <tr>
   <tr>
     <td align="left">Descrizione</td>
-    <td align="left">Un URL tramite cui si può accedere alla Distribuzione del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdistribution">Distribuzione(Distribution)</a> a un oggetto (codominio) di tipo rdfs:Resource (specificato mediante un URI - Uniform Resource Identifier)</td>
+    <td align="left">Un URL tramite cui accedere alla Distribuzione del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdistribution">Distribuzione(Distribution)</a> a un oggetto (codominio) di tipo rdfs:Resource (specificato mediante un URI - Uniform Resource Identifier)</td>
   </tr>
   <tr>
     <td align="left">Riferimento</td>
@@ -2729,7 +2728,7 @@ Una distribuzione è definita mediante la classe _Distribution (Distribuzione)_ 
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Inserire l’URL di una pagina web tramite cui si accede alla distribuzione. Essa può essere anche una pagina informativa che fornisce le indicazioni su come ottenere il dataset oppure l'URL di endpoint di accesso al dataset (e.g., SPARQL endpoint). Si consiglia di indicare l’indirizzo completo, comprensivo anche di protocollo (es. http://). <b> Si raccomanda di usare questa proprietà, e NON la proprietà <a href="#2-url-di-download-dcatdownloadurl">URL di download</a>, quando non è assolutamente una pagina di download o non si è sicuri che lo sia.</b></td>
+    <td align="left">Inserire l’URL di una pagina web tramite cui si possa accedere alla distribuzione. Essa può essere anche una pagina informativa che fornisce le indicazioni su come ottenere il dataset oppure l'URL di endpoint di accesso al dataset (e.g., SPARQL endpoint). Si consiglia di indicare l’indirizzo completo, comprensivo anche di protocollo (es. http://). <b> Si raccomanda di usare questa proprietà, e NON la proprietà <a href="#2-url-di-download-dcatdownloadurl">URL di download</a>, quando non è assolutamente una pagina di download o non si è sicuri che lo sia.</b></td>
  </tr>
 </table>
 
@@ -2738,7 +2737,6 @@ Una distribuzione è definita mediante la classe _Distribution (Distribuzione)_ 
 
 ```JSON
 
-     {
       "@id": "http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3",
       "@type": [
         "http://dati.gov.it/onto/dcatapit#\"Distribution",
@@ -2786,7 +2784,7 @@ Una distribuzione è definita mediante la classe _Distribution (Distribuzione)_ 
   <tr>
   <tr>
     <td align="left">Descrizione</td>
-    <td align="left">La licenza con la quale è resa disponibile per il riuso la Distribuzione del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdistribution">Distribuzione(Distribution)</a> a un oggetto (codominio) di tipo <a href="#definizione-di-dcatapitdlicenseDocument">Licenza</a> (specificato mediante un URI - Uniform Resource Identifier)</td>
+    <td align="left">La licenza con la quale è resa disponibile per il riuso la Distribuzione del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdistribution">Distribuzione(Distribution)</a> a un oggetto (codominio) di tipo <a href="#definizione-di-dcatapitdlicensedocument">Licenza</a> (specificato mediante un URI - Uniform Resource Identifier)</td>
   </tr>
   <tr>
     <td align="left">Riferimento</td>
