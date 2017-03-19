@@ -80,7 +80,8 @@ CC-BY 4.0 (Creative Commons Attribution).
     * [dcatapit:Organization](#definizione-di-dcatapitorganization)
     * [Elementi obbligatori che descrivono il punto di contatto](#elementi-obbligatori-che-descrivono-il-punto-di-contatto)
     * [Elementi ozionali che descrivono il punto di contatto](#elementi-opzionali-che-descrivono-il-punto-di-contatto)
-    * [Esempi di uso di dcatapit:Organization in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dcatapitorganization-in-json-ld-rdfxml-rdfturtle)  * [Come definire la copertura temporale del Dataset in DCAT-AP_IT](#come-definire-la-copertura-temporale-del-dataset-in-dcat-ap_it)
+    * [Esempi di uso di dcatapit:Organization in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dcatapitorganization-in-json-ld-rdfxml-rdfturtle)  
+  * [Come definire la copertura temporale del Dataset in DCAT-AP_IT](#come-definire-la-copertura-temporale-del-dataset-in-dcat-ap_it)
     * [dct:PeriodOfTime](#definizione-di-dctperiodoftime)
     * [Elementi obbligatori che descrivono il periodo di tempo](#elementi-obbligatori-che-descrivono-il-periodo-di-tempo)
     * [Elementi opzionali che descrivono il periodo di tempo](#elementi-opzionali-che-descrivono-il-periodo-di-tempo)
@@ -3512,7 +3513,7 @@ Il punto di contatto è definito mediante la specifica della classe _dcatapti:Or
   </tr>
   <tr>
     <td align="left">Descrizione</td>
-    <td align="left">L’indirizzo email del punto di contatto per il dataset La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitorganization">dcatapit:Organization</a> a un oggetto (codominio) di tipo vcard:Email (specificato mediante un URI - Uniform Resource Identifier).</td>
+    <td align="left">L’indirizzo email del punto di contatto per il Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitorganization">dcatapit:Organization</a> a un oggetto (codominio) di tipo vcard:Email (specificato mediante un URI - Uniform Resource Identifier).</td>
   </tr>
   <tr>
     <td align="left">Riferimento</td>
@@ -3539,7 +3540,7 @@ Il punto di contatto è definito mediante la specifica della classe _dcatapti:Or
   </tr>
   <tr>
     <td align="left">Descrizione</td>
-    <td align="left">Il telefono del contatto stabile per il dataset.La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitorganization">dcatapit:Organization</a> a un oggetto (codominio) di tipo vcard:TelephoneType (specificato mediante un URI - Uniform Resource Identifier).</td>
+    <td align="left">Il telefono del contatto stabile per il dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitorganization">dcatapit:Organization</a> a un oggetto (codominio) di tipo vcard:TelephoneType (specificato mediante un URI - Uniform Resource Identifier).</td>
   </tr>
   <tr>
     <td align="left">Riferimento</td>
@@ -3563,15 +3564,15 @@ Il punto di contatto è definito mediante la specifica della classe _dcatapti:Or
   </tr>
   <tr>
     <td align="left">Descrizione</td>
-    <td align="left">L’indirizzo email del punto di contatto per il dataset.La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitorganization">dcatapit:Organization</a> a un oggetto (codominio) di tipo owl:Thing (specificato mediante un URI - Uniform Resource Identifier).</td>
+    <td align="left">L’La pagina di contatto per il Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitorganization">dcatapit:Organization</a> a un oggetto (codominio) di tipo owl:Thing (specificato mediante un URI - Uniform Resource Identifier).</td>
   </tr>
   <tr>
     <td align="left">Riferimento</td>
-    <td align="left">http://www.w3.org/2006/vcard/ns#hasEmail</td>
+    <td align="left">http://www.w3.org/2006/vcard/ns#hasURL</td>
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Se esiste, inserire l’URL primario di una pagina di contatto o di un form di contatto. Evitare il più possibile di indicare l’URL dell’home page dell’organizzazione. Un esempio di possibile valore per questo metadato è il seguente “http://spcdata.digitpa.gov.it/contattaci.html  (NON dovrebbe essere per esempio “httpi://www.agid.gov.it”). Nel caso in cui si abbia la necessità di indicare ulteriori URL di interesse per la risorsa descritta, oltre  a  quello  principale, allora si  possono  aggiungere  n  istanze della proprietà foaf:page.</td>
+    <td align="left">Se esiste, inserire l’URL primario di una pagina di contatto o di un form di contatto. Evitare il più possibile di indicare l’URL dell’home page dell’organizzazione. Un esempio di possibile valore per questo metadato è il seguente “http://spcdata.digitpa.gov.it/contattaci.html  (NON dovrebbe essere per esempio “httpi://www.agid.gov.it”). Nel caso in cui si abbia la necessità di indicare ulteriori URL di interesse per la risorsa descritta, oltre a quello principale, si possono aggiungere più istanze della proprietà foaf:page.</td>
   </tr>
 </table>
 
@@ -3588,7 +3589,7 @@ Il punto di contatto è definito mediante la specifica della classe _dcatapti:Or
       ],
       "vcard:fn": "banche dati e open data",
       "vcard:hasEmail": {
-        "@id": "mailto:info@agid.gov.it"
+        "@id": "mailto:info@dati.gov.it"
       },
       "vcard:hasTelephone": {
         "@id": "_:N423506244f6e46028ea51a957fe407f3"
@@ -3596,6 +3597,11 @@ Il punto di contatto è definito mediante la specifica della classe _dcatapti:Or
       "vcard:hasURL": {
         "@id": "http://spcdata.digitpa.gov.it/contattaci.html"
       }
+      {
+       "@id": "_:N423506244f6e46028ea51a957fe407f3",
+       "@type": "vcard:Voice",
+       "vcard:value": "06123456"
+       },
     },
 
 ```
@@ -3608,7 +3614,7 @@ Il punto di contatto è definito mediante la specifica della classe _dcatapti:Or
     <dcatapit:Organization rdf:about="http://dati.gov.it/resource/PuntoContatto/contactPointLODIPA">
         <rdf:type rdf:resource="&vcard;Kind"/>
         <rdf:type rdf:resource="&vcard;Organization"/>
-        <vcard:hasEmail rdf:resource="mailto:info@agid.gov.it"/>
+        <vcard:hasEmail rdf:resource="mailto:info@dati.gov.it"/>
         <vcard:fn>banche dati e open data</vcard:fn>
         <vcard:hasTelephone rdf:parseType="Resource">
          	<vcard:value>06123456</vcard:value>
