@@ -3897,7 +3897,7 @@ I seguenti elementi sono obbligatori se la geometria dell'oggetto spaziale che d
   </tr>
   <tr>
     <td align="left">Descrizione</td>
-    <td align="left">Il tipo di geometria che caratterizza l’oggetto spaziale utilizzato per la localizzazione del Dataset</td>
+    <td align="left">Il tipo di geometria che caratterizza l’oggetto spaziale utilizzato per la localizzazione del Dataset (es., punto (point)). </td>
   </tr>
 </table>
 
@@ -3906,7 +3906,6 @@ I seguenti elementi sono obbligatori se la geometria dell'oggetto spaziale che d
 
 ```JSON
 {
-   {
       "@id": "http://dati.gov.it/resource/CoperturaSpaziale/LocalizzazioneStudiMedici_r_liguri:D.658",
       "@type": "dcterms:Location",
       "locn:geometry": {
@@ -3948,7 +3947,7 @@ Uno standard è definito mediante la specifica della classe _Standard_ identific
 </tr>
 <tr>
 <td align="left">Descrizione</td>
-<td align="left">Un standard al quale il dataset è conforme.</td>
+<td align="left">Uno standard al quale il dataset è conforme.</td>
 </tr>
 <tr>
 <td align="left">Cardinalità</td>
@@ -3966,7 +3965,7 @@ Uno standard è definito mediante la specifica della classe _Standard_ identific
 
 #### Elementi obbligatori che descrivono lo Standard
 
-##### 1) **_IDENTIFICATIVO dello STANDARD**: ``dct:identifier``
+##### 1) **_IDENTIFICATIVO dello STANDARD_**: ``dct:identifier``
 
 <table>
   <tr> 
@@ -3993,12 +3992,12 @@ Uno standard è definito mediante la specifica della classe _Standard_ identific
 
 #### Elementi opzionali che descrivono lo Standard
 
-##### 1) **_TITOLO dello STANDARD**: ``dct:title``
+##### 1) **_TITOLO dello STANDARD_**: ``dct:title``
 
 <table>
   <tr> 
     <td align="left">Cardinalità</td>
-    <td align="left">0..N (può esistere più di un'istanza in diverse lingue della stessa proprietà)</td>
+    <td align="left">0..N (può esistere più di un'istanza, in diverse lingue, della stessa proprietà)</td>
   </tr>
   <tr> 
     <td align="left">Stato</td>
@@ -4018,12 +4017,12 @@ Uno standard è definito mediante la specifica della classe _Standard_ identific
   </tr>
 </table>
 
-##### 2) **_DESCRIZIONE dello STANDARD**: ``dct:description``
+##### 2) **_DESCRIZIONE dello STANDARD_**: ``dct:description``
 
 <table>
   <tr> 
     <td align="left">Cardinalità</td>
-    <td align="left">0..N (può esistere più di un'istanza in diverse lingue della stessa proprietà)</td>
+    <td align="left">0..N (può esistere più di un'istanza, in diverse lingue, della stessa proprietà)</td>
   </tr>
   <tr> 
     <td align="left">Stato</td>
@@ -4039,11 +4038,11 @@ Uno standard è definito mediante la specifica della classe _Standard_ identific
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Indicare una descrizione per lo standard. Evitare di utilizzare un linguaggio ricco di riferimenti normativi. Utilizzare invece un linguaggio semplice che possa aiutare qualsiasi utente a identificare lo standard riferibile al dataset. Si ricorda che: nessun tag HTML è consentito,</td>
+    <td align="left">Indicare una descrizione per lo standard. Evitare di utilizzare un linguaggio ricco di riferimenti normativi. Utilizzare invece un linguaggio semplice che possa aiutare qualsiasi utente a identificare lo standard riferibile al dataset. Si ricorda che nessun tag HTML è consentito,</td>
   </tr>
 </table>
 
-##### 3) **_DOCUMENTAZIONE di RIFERIMENTO**: ``dcatapit:referenceDocumentation``
+##### 3) **_DOCUMENTAZIONE di RIFERIMENTO_**: ``dcatapit:referenceDocumentation``
 
 <table>
   <tr> 
@@ -4166,7 +4165,7 @@ L'identificativo alternativo del dataset può essere specificato mediante la cla
   </tr>
   <tr>
     <td align="left">Descrizione</td>
-    <td align="left">Un identificativo nel contesto dello schema di identificazione a cui fa riferimento il suo tipo.</td>
+    <td align="left">Un identificativo, nel contesto dello schema di identificazione, a cui fa riferimento il suo tipo.</td>
   </tr>
   <tr>
     <td align="left">Riferimento</td>
@@ -4210,7 +4209,7 @@ L'identificativo alternativo del dataset può essere specificato mediante la cla
 
 
 #### Come mappare i temi di DCAT-AP_IT
-I temi in cui i dataset sono classificati si basano sull'uso del vocabolario controllato come indicato nella sezione ["Temi del Dataset dcat:theme"(#5-temi-del-dataset-dcattheme). Sulla base della [valutazione dei diversi temi per i dati discussa nell'ambito del gruppo Europeo](https://joinup.ec.europa.eu/asset/dcat_application_profile/document/review-dcat-ap-draft-proposal-list-categorization-data), la tabella seguente offre un possibile mapping di domini applicativi rispetto ai temi richiesti dal profilo Europeo DCAT-AP, e quindi dall'estensione italiana DCAT-AP_IT.
+I temi in cui i dataset sono classificati si basano sull'uso del vocabolario controllato come indicato nella sezione ["Temi del Dataset dcat:theme"](#5-temi-del-dataset-dcattheme). Sulla base della [valutazione dei diversi temi per i dati discussa nell'ambito del gruppo Europeo DCAT-AP](https://joinup.ec.europa.eu/asset/dcat_application_profile/document/review-dcat-ap-draft-proposal-list-categorization-data), la tabella seguente offre un possibile mapping di domini applicativi rispetto ai temi richiesti dal profilo DCAT-AP_IT.
 
 <table>
     <tr>
@@ -4315,7 +4314,7 @@ I temi in cui i dataset sono classificati si basano sull'uso del vocabolario con
 
 **Differenza tra Literal(valore) e URI**. Molto spesso, soprattutto in presenza di dati serializzati in RDF/XML si tende a confondere il concetto di URI <http://....> con una stringa che all'interno contiene un URI "http://....". In quest'ultimo caso non si sta definendo un URI ma un valore (detto Literal nel contesto RDF). Per esempio:
 
-il seguente codice è corretto:
+il seguente codice **è** corretto:
 
 ```XML
  <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
