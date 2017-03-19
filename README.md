@@ -71,17 +71,16 @@ CC-BY 4.0 (Creative Commons Attribution).
     * [dcatapit:Agent](#definizione-di-dcatapitagent)
     * [Elementi obbligatori che descrivono un Soggetto o Organizzazione](#elementi-obbligatori-che-descrivono-un-soggetto-o-organizzazione)
     * [Esempi di uso di dcatapit:Agent in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dcatapitagent-in-json-ld-rdfxml-rdfturtle)
-  * [Come definire il punto di contatto del Dataset in DCAT-AP_IT](#come-definire-il-punto-di-contatto-del-dataset-in-dcat-ap_it)
-    * [dcatapit:Organization](#definizione-di-dcatapitorganization)
-    * [Elementi obbligatori che descrivono il punto di contatto](#elementi-obbligatori-che-descrivono-il-punto-di-contatto)
-    * [Elementi ozionali che descrivono il punto di contatto](#elementi-opzionali-che-descrivono-il-punto-di-contatto)
-    * [Esempi di uso di dcatapit:Organization in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dcatapitorganization-in-json-ld-rdfxml-rdfturtle)
   * [Come definire la Licenza in DCAT-AP_IT](#come-definire-la-licenza-in-dcat-ap_it)
     * [dcatapit:LicenseDocument](#definizione-di-dcatapitlicensedocument)
     * [Elementi raccomandati che descrivono la licenza](#elementi-raccomandati-che-descrivono-la-licenza)
     * [Elementi opzionali che descrivono la licenza](#elementi-opzionali-che-descrivono-la-licenza)
     * [Esempi di uso di dcatapit:LicenseDocument in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dcatapitlicensedocument-in-json-ld-rdfxml-rdfturtle)
-  * [Come definire la copertura temporale del Dataset in DCAT-AP_IT](#come-definire-la-copertura-temporale-del-dataset-in-dcat-ap_it)
+  * [Come definire il punto di contatto del Dataset in DCAT-AP_IT](#come-definire-il-punto-di-contatto-del-dataset-in-dcat-ap_it)
+    * [dcatapit:Organization](#definizione-di-dcatapitorganization)
+    * [Elementi obbligatori che descrivono il punto di contatto](#elementi-obbligatori-che-descrivono-il-punto-di-contatto)
+    * [Elementi ozionali che descrivono il punto di contatto](#elementi-opzionali-che-descrivono-il-punto-di-contatto)
+    * [Esempi di uso di dcatapit:Organization in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dcatapitorganization-in-json-ld-rdfxml-rdfturtle)  * [Come definire la copertura temporale del Dataset in DCAT-AP_IT](#come-definire-la-copertura-temporale-del-dataset-in-dcat-ap_it)
     * [dct:PeriodOfTime](#definizione-di-dctperiodoftime)
     * [Elementi obbligatori che descrivono il periodo di tempo](#elementi-obbligatori-che-descrivono-il-periodo-di-tempo)
     * [Elementi opzionali che descrivono il periodo di tempo](#elementi-opzionali-che-descrivono-il-periodo-di-tempo)
@@ -224,17 +223,17 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 
 ```Turtle
 <http://dati.gov.it/resource/Catalogp/datigov_agid>
-	a 						dcatapit:Catalog , dcat:Catalog ;
-	dct:title				"Catalogo Dati.gov.it"@it ;
+	a 				dcatapit:Catalog , dcat:Catalog ;
+	dct:title			"Catalogo Dati.gov.it"@it ;
 	dct:description 		"Il catalogo dei dati aperti della pubblica amministrazione italiana"@it ;
 	dct:modified			"2016-03-20"^^xsd:date ;
-	dct:issued				"2012-01-15"^^xsd:date ;
+	dct:issued			"2012-01-15"^^xsd:date ;
 	dct:publisher  			<http://dati.gov.it/resource/Amministrazione/agid> ;
 	dct:language			<http://publications.europa.eu/resource/authority/language/ITA> ;
 	dcat:dataset    		<http://dati.gov.it/resource/Dataset/LinkedOpenIPA20_agid> ;
 	dcat:dataset    		<http://dati.gov.it/resource/Dataset/ContrattiSPC_agid> ;
 	foaf:homepage   		<http://spcdata.digitpa.gov.it/index.html> ;
-	dcat:themeTaxonomy  	<http://publications.europa.eu/resource/authority/data-theme> .
+	dcat:themeTaxonomy  	        <http://publications.europa.eu/resource/authority/data-theme> .
 ```
 
 
@@ -3342,7 +3341,7 @@ La licenza è definita mediante la specifica della classe _dcatapti:LicenseDocum
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Indicare il tipo di licenza. Esempi: “pubblico dominio”, “richiesto pagamento diritti”. I valori da utilizzare per  questa  proprietà sono gli URI dei concetti del vocabolario  “ADMS  licence  type  vocabulary” (http://purl.org/adms/licencetype/).</td>
+    <td align="left">Indicare il tipo di licenza. Esempi: “pubblico dominio”, “richiesto pagamento diritti”. I valori da utilizzare per  questa  proprietà sono gli URI dei concetti del vocabolario <a href="http://purl.org/adms/licencetype/">“ADMS licence type vocabulary.”</a></td>
   </tr>
 </table>
 
@@ -3353,7 +3352,7 @@ La licenza è definita mediante la specifica della classe _dcatapti:LicenseDocum
 <table>
   <tr> 
     <td align="left">Cardinalità</td>
-    <td align="left">0..N</td>
+    <td align="left">0..N (possono esistere più istanze di questa proprietà, una per ogni lingua</td>
   </tr>
   <tr> 
     <td align="left">Stato</td>
@@ -3369,7 +3368,7 @@ La licenza è definita mediante la specifica della classe _dcatapti:LicenseDocum
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Indicare il nome della licenza associata alla distribuzione. Esempio: CC_BY oppure Creative Commons Attribution (CC-BY).</td>
+    <td align="left">Indicare il nome della licenza associata alla distribuzione. Esempio: "CC_BY" oppure "Creative Commons Attribution (CC-BY)".</td>
   </tr>
 </table>
 
@@ -3393,7 +3392,7 @@ La licenza è definita mediante la specifica della classe _dcatapti:LicenseDocum
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Indicare la versione della licenza. Esempio: 4.0 oppure 3.0</td>
+    <td align="left">Indicare la versione della licenza. Esempio: "4.0" oppure "3.0"</td>
   </tr>
 </table>
 
