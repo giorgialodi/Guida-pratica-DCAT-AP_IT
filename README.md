@@ -70,7 +70,7 @@ CC-BY 4.0 (Creative Commons Attribution).
   * [Come definire un soggetto/organizzazione in DCAT-AP_IT](#come-definire-un-soggetto-o-organizzazione-in-dcat-ap_it)
     * [dcatapit:Agent](#definizione-di-dcatapitagent)
     * [Elementi obbligatori che descrivono un Soggetto o Organizzazione](#elementi-obbligatori-che-descrivono-un-soggetto-o-organizzazione)
-    * [Esempi di uso di dcatapit:Agent in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso--di-dcatapitagent-in-json-ld-rdfxml-rdfturtle)
+    * [Esempi di uso di dcatapit:Agent in JSON-LD, RDF/XML, RDF/Turtle](#esempi-di-uso-di-dcatapitagent-in-json-ld-rdfxml-rdfturtle)
   * [Come definire il punto di contatto del Dataset in DCAT-AP_IT](#come-definire-il-punto-di-contatto-del-dataset-in-dcat-ap_it)
     * [dcatapit:Organization](#definizione-di-dcatapitorganization)
     * [Elementi obbligatori che descrivono il punto di contatto](#elementi-obbligatori-che-descrivono-il-punto-di-contatto)
@@ -2784,7 +2784,7 @@ Una distribuzione è definita mediante la classe _Distribution (Distribuzione)_ 
   <tr>
   <tr>
     <td align="left">Descrizione</td>
-    <td align="left">La licenza con la quale è resa disponibile per il riuso la Distribuzione del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdistribution">Distribuzione(Distribution)</a> a un oggetto (codominio) di tipo <a href="#definizione-di-dcatapitdlicensedocument">Licenza</a> (specificato mediante un URI - Uniform Resource Identifier)</td>
+    <td align="left">La licenza con la quale è resa disponibile, per il riutilizzo, la Distribuzione del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdistribution">Distribuzione(Distribution)</a> a un oggetto (codominio) di tipo <a href="#definizione-di-dcatapitlicensedocument">Licenza</a> (specificato mediante un URI - Uniform Resource Identifier)</td>
   </tr>
   <tr>
     <td align="left">Riferimento</td>
@@ -2792,7 +2792,7 @@ Una distribuzione è definita mediante la classe _Distribution (Distribuzione)_ 
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Per un uso pratico del metadato licenza si veda <a href="#definizione-di-dcatapitdlicenseDocument">Come definire la licenza.</a><br /><b> Si raccomanda tuttavia, in presenza di licenze creative commons, di riferirsi a quelle specificate in http://creativecommons.org come negli esempi di uso riportati sotto.</b></td>
+    <td align="left">Per un uso pratico del metadato licenza si veda <a href="#esempi-di-uso-di-dcatapitlicensedocument-in-json-ld-rdfxml-rdfturtle">Come definire la licenza.</a><br /><b> Si raccomanda tuttavia, in presenza di licenze creative commons, di riferirsi a quelle specificate in http://creativecommons.org come negli esempi sotto riportati.</b></td>
  </tr>
 </table>
 
@@ -2801,7 +2801,6 @@ Una distribuzione è definita mediante la classe _Distribution (Distribuzione)_ 
 
 ```JSON
 
-     {
       "@id": "http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3",
       "@type": [
         "http://dati.gov.it/onto/dcatapit#\"Distribution",
@@ -2842,7 +2841,7 @@ Una distribuzione è definita mediante la classe _Distribution (Distribuzione)_ 
 <table>
   <tr> 
     <td align="left">Cardinalità</td>
-    <td align="left">0..N (può esistere più di un'istanza in diverse lingue della stessa proprietà)</td>
+    <td align="left">0..N (può esistere più di un'istanza, in diverse lingue, della stessa proprietà)</td>
   </tr>
   <tr> 
     <td align="left">Stato</td>
@@ -2859,7 +2858,7 @@ Una distribuzione è definita mediante la classe _Distribution (Distribuzione)_ 
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Specificare una descrizione per la distribuzione, con una breve illustrazione delle sue caratteristiche principali. Evitare di utilizzare un linguaggio ricco di riferimenti normativi. Utilizzare invece un linguaggio semplice che possa aiutare qualsiasi utente a identificare la distribuzione. Si ricorda che: nessun tag HTML è consentito,</td>
+    <td align="left">Specificare una descrizione per la distribuzione, con una breve illustrazione delle sue caratteristiche principali. <b>Evitare di utilizzare un linguaggio ricco di riferimenti normativi</b>. Utilizzare invece un linguaggio semplice che possa aiutare qualsiasi utente a identificare la distribuzione. Si ricorda che nessun tag HTML è consentito,</td>
  </tr>
 </table>
 
@@ -2868,7 +2867,6 @@ Una distribuzione è definita mediante la classe _Distribution (Distribuzione)_ 
 
 ```JSON
 
-     {
       "@id": "http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3",
       "@type": [
         "http://dati.gov.it/onto/dcatapit#\"Distribution",
@@ -2887,7 +2885,7 @@ Una distribuzione è definita mediante la classe _Distribution (Distribuzione)_ 
 
    <!-- http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3 -->
     <dcatapit:Distribution rdf:about="http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3">
-        <rdf:type rdf:resource="&dcat;Distribution"/>
+       <rdf:type rdf:resource="&dcat;Distribution"/>
        <dct:description xml:lang="it">Questa è la distribuzione N3 del dataset Linked Open Data relativo ai contratti del Sistema Pubblico di Connettività</dct:description>
         [altri elementi per specificare la distribuzione]
    </dcatapit:Distribution>
@@ -2910,7 +2908,7 @@ Una distribuzione è definita mediante la classe _Distribution (Distribuzione)_ 
 <table>
   <tr> 
     <td align="left">Cardinalità</td>
-    <td align="left">0..N (può esistere più di un'istanza in diverse lingue della stessa proprietà)</td>
+    <td align="left">0..N (può esistere più di un'istanza, in diverse lingue, della stessa proprietà)</td>
   </tr>
   <tr> 
     <td align="left">Stato</td>
@@ -2927,7 +2925,7 @@ Una distribuzione è definita mediante la classe _Distribution (Distribuzione)_ 
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Se disponibile o ritenuto opportuno, inserire un titolo della distribuzione. Si raccomanda di non utilizzare acronimi o abbreviazioni incomprensibili. Se si vogliono utilizzare comunque gli acronimi, riportare anche il nome esteso o fornire una loro spiegazione nella descrizione.</td>
+    <td align="left">Se disponibile o ritenuto opportuno, inserire un titolo della distribuzione. Si raccomanda di non utilizzare acronimi o abbreviazioni incomprensibili. Se si vogliono utilizzare comunque gli acronimi, riportare anche il nome esteso o fornire una loro spiegazione.</td>
  </tr>
 </table>
 
@@ -2936,7 +2934,6 @@ Una distribuzione è definita mediante la classe _Distribution (Distribuzione)_ 
 
 ```JSON
 
-     {
       "@id": "http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3",
       "@type": [
         "http://dati.gov.it/onto/dcatapit#\"Distribution",
@@ -2955,9 +2952,9 @@ Una distribuzione è definita mediante la classe _Distribution (Distribuzione)_ 
 
    <!-- http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3 -->
     <dcatapit:Distribution rdf:about="http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3">
-        <rdf:type rdf:resource="&dcat;Distribution"/>
+       <rdf:type rdf:resource="&dcat;Distribution"/>
        <dct:description xml:lang="it">Questa è la distribuzione N3 del dataset Linked Open Data relativo ai contratti del Sistema Pubblico di Connettività</dct:description>
-        [altri elementi per specificare la distribuzione]
+       [altri elementi per specificare la distribuzione]
    </dcatapit:Distribution>
    
 ```
@@ -2970,6 +2967,7 @@ Una distribuzione è definita mediante la classe _Distribution (Distribuzione)_ 
 	dct:description	 "Questa è la distribuzione N3 del dataset Linked Open Data relativo ai contratti del Sistema Pubblico di Connettività"@it ;
 	[altri elementi per specificare la distribuzione] .
 ```
+
 
 ##### 2) **_URL di DOWNLOAD:_** ``dcat:downloadURL``
 
@@ -2993,7 +2991,7 @@ Una distribuzione è definita mediante la classe _Distribution (Distribuzione)_ 
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Indicare l’URL che fornisce il link diretto ad un file scaricabile nel formato indicato per la distribuzione. Si consiglia di indicare l’indirizzo completo, comprensivo anche di protocollo (es. http://).</td>
+    <td align="left">Indicare l’URL che fornisce il link diretto a un file scaricabile nel formato indicato per la distribuzione. Si consiglia di indicare l’indirizzo completo, comprensivo anche di protocollo (es. http://).</td>
  </tr>
 </table>
 
@@ -3002,7 +3000,6 @@ Una distribuzione è definita mediante la classe _Distribution (Distribuzione)_ 
 
 ```JSON
 
-     {
       "@id": "http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3",
       "@type": [
         "http://dati.gov.it/onto/dcatapit#\"Distribution",
@@ -3067,7 +3064,6 @@ Una distribuzione è definita mediante la classe _Distribution (Distribuzione)_ 
 
 ```JSON
 
-     {
       "@id": "http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3",
       "@type": [
         "http://dati.gov.it/onto/dcatapit#\"Distribution",
@@ -3134,7 +3130,6 @@ Una distribuzione è definita mediante la classe _Distribution (Distribuzione)_ 
 
 ```JSON
 
-     {
       "@id": "http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3",
       "@type": [
         "http://dati.gov.it/onto/dcatapit#\"Distribution",
@@ -3170,7 +3165,7 @@ Una distribuzione è definita mediante la classe _Distribution (Distribuzione)_ 
 ```
 
 ### Come definire un Soggetto o Organizzazione in DCAT-AP_IT
-Un soggetto/organizzazione è definito mediante la specifica della classe _Agente_ identificata univocamente da un URI (Uniform Resource Identifier).
+Un soggetto/organizzazione è definito mediante la specifica della classe _Agente (Agent)_ identificata univocamente da un URI (Uniform Resource Identifier).
 
 #### Definizione di ``dcatapit:Agent``
 
@@ -3189,7 +3184,7 @@ Un soggetto/organizzazione è definito mediante la specifica della classe _Agent
 </tr>
 <tr>
 <td align="left">Cardinalità</td>
-<td align="left">1</td>
+<td align="left">1..N</td>
 </tr>
 <tr>
 <td align="left">Stato</td>
