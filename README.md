@@ -3675,6 +3675,10 @@ La copertura (o estensione) temporale del dataset è definita mediante la specif
     <td align="left">1</td>
   </tr>
   <tr> 
+    <td align="left">Sottoproprietà</td>
+    <td align="left">schema:startDate</td>
+  </tr>
+  <tr> 
     <td align="left">Stato</td>
     <td align="left">Obbligatorio</td>
   </tr>
@@ -3702,6 +3706,10 @@ La copertura (o estensione) temporale del dataset è definita mediante la specif
     <td align="left">0..1</td>
   </tr>
   <tr> 
+    <td align="left">Sottoproprietà</td>
+    <td align="left">schema:endDate</td>
+  </tr>
+  <tr> 
     <td align="left">Stato</td>
     <td align="left">Opzionale</td>
   </tr>
@@ -3715,7 +3723,7 @@ La copertura (o estensione) temporale del dataset è definita mediante la specif
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Indicare la data di fine del periodo temporale qualora il periodo temporale complessivo è ultimato. Nel caso di Periodi temporali ancora aperti alla data corrente, si può evitare di specificare questo metadato. </td>
+    <td align="left">Indicare la data di fine del periodo temporale qualora il periodo temporale complessivo è ultimato. Nel caso di periodi temporali ancora aperti alla data corrente, si può evitare di specificare questo metadato. </td>
   </tr>
 </table>
 
@@ -3749,13 +3757,13 @@ La copertura (o estensione) temporale del dataset è definita mediante la specif
 
 ```Turtle
 <http://dati.gov.it/resource/PeriodoTemporale/periodTimeContrattiSPC>
-	a 						dct:PeriodOfTime ;
-	dcatapit:startDate		"2007-01-01"^^xsd:date ;
-	dcatapit:endDate		"2012-12-31"^^xsd:date .
+	a 			dct:PeriodOfTime ;
+	dcatapit:startDate	"2007-01-01"^^xsd:date ;
+	dcatapit:endDate	"2012-12-31"^^xsd:date .
 ```
 
 ### Come definire la copertura geografica del Dataset in DCAT-AP_IT
-La copertura geografica del dataset è definita mediante la specifica della classe _Location(Localizzazione)_ identificata univocamente da un URI (Uniform Resource Identifier).
+La copertura geografica del dataset è definita mediante la specifica della classe _Location (Localizzazione)_ identificata univocamente da un URI (Uniform Resource Identifier).
 
 #### Definizione di ``dct:Location``
 <table>
@@ -3830,7 +3838,7 @@ La copertura geografica del dataset è definita mediante la specifica della clas
   <tr>
     <td align="left">Uso</td>
     <td align="left">Le proprietà  indicate,  nella  pratica,  possono  essere  specificate  attraverso  diverse  codifiche.  La
-specifica GeoDCAT-AP prevede che deve essere utilizzata almeno una delle seguenti: GML o WKT.</td>
+specifica <a href="https://joinup.ec.europa.eu/asset/dcat_application_profile/asset_release/geodcat-ap-v10">GeoDCAT-AP</a> prevede che debba essere utilizzata almeno una delle seguenti: GML o WKT.</td>
   </tr>
 </table>
 
@@ -3872,7 +3880,7 @@ I seguenti elementi sono obbligatori se la geometria dell'oggetto spaziale che d
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Fornire le coordinate relative alla latitudine e longitudine, espresse nel sistema di riferimento WGS84, del riquadro di delimitazione (bounding box) dell’area geografica coperta dal dataset descritto. Se è stato già indicato un identificativo geografico come URI della classe <a href="#definizione-di-dct:Location">dct:Location</a>, le coordinate possono essere omesse.</td>
+    <td align="left">Fornire le coordinate relative alla latitudine e longitudine, espresse nel sistema di riferimento WGS84, del riquadro di delimitazione (bounding box) dell’area geografica coperta dal dataset descritto. Se è stato già indicato un identificativo geografico come URI della classe <a href="#definizione-di-dctlocation">dct:Location</a>, le coordinate possono essere omesse.</td>
   </tr>
 </table>
 
