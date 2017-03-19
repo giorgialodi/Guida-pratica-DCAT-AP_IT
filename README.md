@@ -2374,7 +2374,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Per l'uso pratico di questa proprietà <a href="#esempi-di-uso-di-dctlocation-e-locngeometry-in-json-ld-rdfxml-rdfturtle">si vedano gli esempi d'uso per la copertura spaziale del Dataset</a> </td>
+    <td align="left">Per l'uso pratico di questa proprietà <a href="#esempi-di-uso-di-dctlocation-e-locngeometry-in-json-ld-rdfxml-rdfturtle">si vedano gli esempi d'uso per la copertura geografica del Dataset</a> </td>
   </tr>
 </table>
 
