@@ -1,6 +1,6 @@
-# Guida pratica a DCAT-AP_IT e all'alimentazione del catalogo nazionale ``dati.gov.it``
+# Guida pratica a DCAT-AP_IT e all'alimentazione del catalogo nazionale dei dati
 
-Questo progetto rappresenta la guida pratica offerta da ``dati.gov.it`` per l'accreditamento, l'alimentazione dello stesso secondo le due diverse modalità previste, e per l'adeguamento delle Pubbliche Amministrazioni al profilo nazionale di metadatazione DCAT-AP_IT, così come raccomandato nelle [linee guida per la valorizzazione del patrimonio informativo pubblico (anno 2016)](http://www.dati.gov.it/sites/default/files/LG2016_0.pdf).
+Questo progetto rappresenta la guida pratica per l'alimentazione del catalogo dei dati (attualmente ``dati.gov.it``) secondo le due diverse modalità previste, e per l'adeguamento delle Pubbliche Amministrazioni al profilo nazionale di metadatazione DCAT-AP_IT, così come raccomandato nelle [linee guida per la valorizzazione del patrimonio informativo pubblico (anno 2016)](http://www.dati.gov.it/sites/default/files/LG2016_0.pdf).
 Per dettagli sulla semantica degli elementi si invita a consultare anche l'[ontologia OWL](http://dati.gov.it/onto/dcatapit) del profilo DCAT-AP_IT.
 La presente guida pratica fornisce una descrizione degli elementi principali del profilo con le relative proprietà. Per ciascun elemento e proprietà, al fine di facilitare le amministrazioni nella predisposizione dei metadati per abilitare la modalità di alimentazione del catalogo detta harvesting, sono forniti esempi di uso nelle seguenti serializzazioni RDF: JSON-LD, RDF/XML, RDF/Turtle. 
 
@@ -48,7 +48,7 @@ CC-BY 4.0 (Creative Commons Attribution).
       * [Pagina di accesso del dataset](#4-pagina-di-accesso-del-dataset-dcatlandingpage)
       * [Lingua del dataset](#5-lingua-del-dataset-dctlanguage)
       * [Parole chiave del dataset](#6-parole-chiave-del-dataset-dcatkeyword)
-      * [Dataset correlato](#7-dataset-correlato-isverionof)
+      * [Dataset correlato](#7-dataset-correlato-isversionof)
       * [Estensione temporale del dataset](#8-estensione-temporale-del-dataset-dcttemporal)
       * [Copertura geografica del dataset](#9-copertura-geografica-del-dataset-dctspatial)
       * [Conformità del dataset](#10-conformita-del-dataset-dctconformsto)
@@ -111,8 +111,8 @@ Questa sezione illustra le modalità di alimentazione del catalogo nazionale dei
 ### Modalità di alimentazione 
 Esistono due modalità di alimentazione:
 
-1. *editor*: applicazione Web integrata nel catalogo per l'acquisizione e l'aggiornamento guidato dei metadati. L'editor alimenta automaticamente il catalogo in modo da garantire la conformità al profilo DCAT-AP_IT. Tale modalità è consigliata in presenza di pochi dataset che hanno anche una frequenza di aggiornamento ampia. Per usufruirne, l'utente accede all'area privata di ``dati.gov.it`` selezionando *Login* dal menu in alto a destra, previo accreditamento presso la piattaforma;
-2. *harvesting*: funzionalità offerta dal catalogo per l'acquisizione e l'aggiornamento periodico dei metadati. L'uso di tale funzionalità richiede che l'amministrazione comunichi, una volta effettuato il login e solo la prima volta, l'URL del catalogo e selezioni la modalità per l'harvesting (e.g., RDF, CKAN, CSW). Sarà lo stesso catalogo nazionale che si occuperà successivamente di raccogliere periodicamente i metadati che descrivono i dati. Tale modalità è consigliata in presenza di un numero elevato di dataset, soggetti anche a frequenti aggiornamenti. 
+1. *editor*: applicazione Web integrata nel catalogo per l'acquisizione e l'aggiornamento guidato dei metadati. L'editor alimenta automaticamente il catalogo in modo da garantire la conformità al profilo DCAT-AP_IT. Tale modalità è consigliata in presenza di pochi dataset che hanno anche una frequenza di aggiornamento ampia. Al momento la funzionalità non è ancora attiva. Si prevede tuttavia la possibilità per l'utente di accedere all'area privata del catalogo dei dati selezionando *Login* dal menu in alto a destra, previo accreditamento presso la piattaforma;
+2. *harvesting*: funzionalità offerta dal catalogo per l'acquisizione e l'aggiornamento periodico dei metadati. L'uso di tale funzionalità richiede che l'amministrazione comunichi, solo la prima volta, l'URL del catalogo e indichi la modalità di harvesting (e.g., RDF (DCAT-AP_IT), CKAN, CSW). Sarà lo stesso catalogo nazionale che si occuperà successivamente di raccogliere periodicamente i metadati che descrivono i dati. Tale modalità è consigliata in presenza di un numero elevato di dataset, soggetti anche a frequenti aggiornamenti. 
 
 ## Guida pratica a DCAT-AP_IT
 Nelle seguenti sezioni, per ciascun elemento (classe e proprietà) del profilo di metadatazione DCAT-AP_IT saranno fornite istruzioni per l'uso ed esempi pratici di definizione dei metadati in JSON-LD, RDF/XML e RDF/Turtle. Il profilo complessivo è illustrato nella seguente figura. 
@@ -244,7 +244,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 <table>
   <tr> 
     <td align="left">Cardinalità</td>
-    <td align="left">1..N (può esistere più di un'istanza in diverse lingue della stessa proprietà)</td>
+    <td align="left">1..N (può esistere più di un'istanza in diverse lingue, della stessa proprietà)</td>
   </tr>
   <tr> 
     <td align="left">Stato</td>
@@ -260,7 +260,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left"><b>Si raccomanda di inserire un testo semplice e corto. Si raccomanda di non utilizzare acronimi o abbreviazioni incomprensibili. Se si vogliono utilizzare comunque gli acronimi, riportare anche il nome esteso. Nel caso il catalogo sia parte di un progetto più ampio, si consiglia di indicare, tra parentesi, il nome del progetto alla fine del titolo stesso.</b> <br />Esempio: "Catalogo dei dati aperti dell'AgID (Agenzia per l'Italia Digitale)" oppure "Catalogo delle banche dati della Regione Lazio".</td>
+    <td align="left">Si raccomanda di inserire un testo <b>semplice e corto</b>. Si raccomanda di <b>non utilizzare acronimi o abbreviazioni incomprensibili</b>. Se si vogliono utilizzare comunque gli acronimi, riportare anche il nome esteso. Nel caso il catalogo sia parte di un progetto più ampio, si consiglia di indicare, tra parentesi, il nome del progetto alla fine del titolo stesso.<br />Esempio: "Catalogo dei dati aperti dell'AgID (Agenzia per l'Italia Digitale)" oppure "Catalogo delle banche dati della Regione Lazio".</td>
   </tr>
 </table>
 
@@ -316,7 +316,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 <table>
   <tr> 
     <td align="left">Cardinalità</td>
-    <td align="left">1..N (può esistere più di un'istanza in diverse lingue della stessa proprietà)</td>
+    <td align="left">1..N (può esistere più di un'istanza, in diverse lingue, della stessa proprietà)</td>
   </tr>
   <tr> 
     <td align="left">Stato</td>
@@ -333,7 +333,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left"><b>Si raccomanda di fornire una breve descrizione delle caratteristiche principali del catalogo. Evitare di utilizzare un linguaggio ricco di riferimenti normativi. Utilizzare invece un linguaggio semplice che possa aiutare qualsiasi utente a identificare il catalogo. Si ricorda che nessun tag HTML è consentito.</b> <br />Esempio: "Il catalogo contiene i dati aperti dell'Agenzia per l'Italia Digitale, in particolare, i dati aperti dell'Indice della Pubblica Amministrazione (IPA) e dei contratti del Sistema Pubblico di Connettività (SPC) relativi alle gare del 2007".</td>
+    <td align="left">Si raccomanda di fornire una breve descrizione delle caratteristiche principali del catalogo. <b>Evitare di utilizzare un linguaggio ricco di riferimenti normativi. Utilizzare invece un linguaggio semplice che possa aiutare qualsiasi utente a identificare il catalogo.</b> Si ricorda che nessun tag HTML è consentito. <br />Esempio: "Il catalogo contiene i dati aperti dell'Agenzia per l'Italia Digitale, in particolare, i dati aperti dell'Indice della Pubblica Amministrazione (IPA) e dei contratti del Sistema Pubblico di Connettività (SPC) relativi alle gare del 2007".</td>
   </tr>
 </table>
 
@@ -390,7 +390,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
   <tr>
   <tr>
     <td align="left">Descrizione</td>
-    <td align="left">L'editore del Catalogo. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitcatalog">Catalog</a> a un oggetto (codominio) di tipo <a href="#definizione-di-dcatapitagent">Dataset</a>dcatapit:Agent (specificato mediante un URI - Uniform Resource Identifier)</td>
+    <td align="left">L'editore del Catalogo. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitcatalog">Catalog</a> a un oggetto (codominio) di tipo <a href="#definizione-di-dcatapitagent">Agent</a> (specificato mediante un URI - Uniform Resource Identifier)</td>
   </tr>
   <tr>
     <td align="left">Riferimento</td>
@@ -398,7 +398,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Un'organizzazione (o pubblica amministrazione) responsabile di rendere disponibile (pubblicare) il catalogo. <b> Si raccomanda di evitare l'inserimento di nomi di singole persone.</b><br />Si vedano gli <a href="#soggetto-esempi-JSONLD-RDFXML-RDFTURTLE">esempi riportati sull'uso della classe Agente</a></td>
+    <td align="left">Un'organizzazione (o pubblica amministrazione) responsabile di rendere disponibile (pubblicare) il catalogo. <b> Si raccomanda di evitare l'inserimento di nomi di singole persone.</b><br />Si vedano gli <a href="#esempi-di-uso--di-dcatapitagent-in-json-ld-rdfxml-rdfturtle">esempi riportati sull'uso della classe Agente</a></td>
   </tr>
 </table>
 
@@ -417,7 +417,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
       
       altri elementi che descrivono il catalogo
       
-   
+      Dove l'amministrazione è definita come:
       "@id": "http://dati.gov.it/resource/Amministrazione/agid",
       "@type": [
         "foaf:Agent",
@@ -440,6 +440,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
         [altri elementi del catalogo]
     </dcatapit:Catalog>
     
+ Dove l'amministrazione è definita come:   
  <!-- http://dati.gov.it/resource/Amministrazione/agid -->
     <dcatapit:Agent rdf:about="http://dati.gov.it/resource/Amministrazione/agid">
         <rdf:type rdf:resource="&foaf;Agent"/>
@@ -454,6 +455,8 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 	a 		dcatapit:Catalog , dcat:Catalog ;
 	dct:publisher  	<http://dati.gov.it/resource/Amministrazione/agid> ;
 	[altri elementi del catalogo] .
+ 
+ Dove l'amministrazione è definita come:
  
  <http://dati.gov.it/resource/Amministrazione/agid>
 	a 		dcatapit:Agent , foaf:Agent ;
@@ -483,7 +486,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">La data di ultima modifica del catalogo. E' la data in cui si verificano operazioni di modifica del catalogo o dei dataset (es. l’inserimento di un nuovo dataset nel catalogo, la modifica dei metadati del catalogo o di uno dei dataset in esso inclusi) </td>
+    <td align="left">La data di ultima modifica del catalogo. E' la data in cui si verificano operazioni di modifica del catalogo (es. l’inserimento di un nuovo dataset nel catalogo, la modifica dei metadati del catalogo o di uno dei dataset in esso inclusi) </td>
   </tr>
 </table>
 
@@ -538,7 +541,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
   <tr>
   <tr>
     <td align="left">Descrizione</td>
-    <td align="left">E' una proprietà che lega un oggetto (dominio) <a href="#catalogo">Catalogo</a> all'oggetto (codominio) Dataset ed è utilizzata per elencare la lista di dataset presenti nel catalogo</td>
+    <td align="left">E' una proprietà che lega un oggetto (dominio) <a href="#definizione-di-dcatapitcatalog">Catalog(Catalogo)</a> all'oggetto (codominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> ed è utilizzata per elencare la lista di dataset presenti nel catalogo</td>
   </tr>
   <tr>
     <td align="left">Riferimento</td>
@@ -546,11 +549,11 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Indicare tante proprietà quanti sono i dataset presenti nel catalogo</td>
+    <td align="left">Indicare tante proprietà dcat:dataset quanti sono i dataset presenti nel catalogo</td>
   </tr>
 </table>
 
-##### Esempi di uso di ``dcat:dataset`` in JSON-LD, RDF/XML, RDF/Turtle
+##### Esempi di uso di ``dcat:dataset`` per il Catalogo in JSON-LD, RDF/XML, RDF/Turtle
 >``JSON-LD``
 
 ```JSON
@@ -608,7 +611,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
   </tr>
   <tr>
     <td align="left">Descrizione</td>
-    <td align="left">L'home page del Catalogo. La proprietà lega l'oggetto (dominio) <a href="#catalogo">Catalogo</a> a un oggetto (codominio) di tipo foaf:Document (specificato mediante un URI- Uniform Resource Identifier)</td>
+    <td align="left">L'home page del Catalogo. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitcatalog">Catalog(Catalogo)</a> a un oggetto (codominio) di tipo foaf:Document (specificato mediante un URI- Uniform Resource Identifier)</td>
   </tr>
   <tr>
     <td align="left">Riferimento</td>
@@ -666,7 +669,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 <table>
   <tr> 
     <td align="left">Cardinalità</td>
-    <td align="left">0..N (possono esistere più istanze della proprietà per ciascuna lingua del catalogo)</td>
+    <td align="left">0..N</td>
   </tr>
   <tr> 
     <td align="left">Stato</td>
@@ -674,7 +677,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
   </tr>
   <tr>
     <td align="left">Descrizione</td>
-    <td align="left">La lingua del Catalogo. La proprietà lega l'oggetto (dominio) <a href="#catalogo">Catalogo</a> a un oggetto (codominio) di tipo dct:LinguisticSystem (specificato mediante un URI- Uniform Resource Identifier)</td>
+    <td align="left">La lingua del Catalogo. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitcatalog">Catalog(Catalogo)</a> a un oggetto (codominio) di tipo dct:LinguisticSystem (specificato mediante un URI- Uniform Resource Identifier)</td>
   </tr>
   <tr>
     <td align="left">Riferimento</td>
@@ -682,7 +685,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Scegliere una o più lingue utilizzate nel catalogo. <b>La scelta della lingua è regolata dall'uso obbligatorio del <a href="http://publications.europa.eu/mdr/resource/authority/language/skos/languages-skos.rdf">vocabolario definito a livello Europeo sulle lingue.</a></b></td>
+    <td align="left">Indicare una o più lingue utilizzate nel catalogo. <b>La scelta della lingua è regolata dall'uso obbligatorio del <a href="http://publications.europa.eu/mdr/resource/authority/language/skos/languages-skos.rdf">vocabolario definito a livello Europeo sulle lingue.</a></b></td>
   </tr>
 </table>
 
@@ -748,7 +751,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">La data di rilascio del catalogo. E' la data in cui il catalogo è reso disponibile. </td>
+    <td align="left">E' la data in cui il catalogo è reso disponibile. </td>
   </tr>
 </table>
 
@@ -797,12 +800,12 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
   </tr>
   <tr> 
     <td align="left">Stato</td>
-    <td align="left">Raccomandata</td>
+    <td align="left">Raccomandato</td>
   </tr>
   <tr>
   <tr>
     <td align="left">Descrizione</td>
-    <td align="left">Tema del Catalogo. La proprietà lega l'oggetto (dominio) <a href="#catalogo">Catalogo</a> a un oggetto (codominio) di tipo skos:Concept (specificato mediante un URI- Uniform Resource Identifier)</td>
+    <td align="left">Tema del Catalogo. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitcatalog">Catalogo</a> a un oggetto (codominio) di tipo skos:Concept (specificato mediante un URI- Uniform Resource Identifier)</td>
   </tr>
   <tr>
     <td align="left">Riferimento</td>
@@ -810,11 +813,11 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Indicare un sistema di organizzazione della conoscenza (KOS) usato per classificare i dataset del Catalogo. Il valore da utilizzare per questa proprietà è l’URI dei vocabolari utilizzati (<b>non gli URI dei concetti presenti nel vocabolario</b>). Nel caso del vocabolario Data Theme da utilizzare obbligatoriamente per indicare i temi relativi ai Dataset, usare questo URI http://publications.europa.eu/resource/authority/data-theme come valore della proprietà.</td>
+    <td align="left">Indicare un sistema di organizzazione della conoscenza (KOS) usato per classificare i dataset del Catalogo. Il valore da utilizzare per questa proprietà è l’URI dei vocabolari utilizzati (<b>non gli URI dei concetti presenti nel vocabolario</b>). Nel caso del vocabolario Data Theme da utilizzare obbligatoriamente per indicare i temi relativi ai Dataset, usare questo URI http://publications.europa.eu/resource/authority/data-theme come valore di questa proprietà.</td>
   </tr>
 </table>
 
-##### Esempi di uso di ``dcat:themeTaxonomy`` in JSON-LD, RDF/XML, RDF/Turtle
+##### Esempi di uso di ``dcat:themeTaxonomy`` per il Catalogo in JSON-LD, RDF/XML, RDF/Turtle
 >``JSON-LD``
 
 ```JSON
@@ -871,7 +874,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
     </tr>
     <tr>
         <td align="left">Cardinalità</td>
-        <td align="left">1</td>
+        <td align="left">1..N</td>
     </tr>
     <tr>
         <td align="left">Stato</td>
@@ -959,7 +962,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
         <dct:modified rdf:datatype="&xsd;date">2015-05-25</dct:modified>
         <dct:identifier>agid:D.301</dct:identifier>
         <dcat:keyword>Acquisizione</dcat:keyword>
-		<dcat:keyword>SPC</dcat:keyword> 
+	<dcat:keyword>SPC</dcat:keyword> 
         <dcat:keyword>Contratto pubblico</dcat:keyword>
         <dct:title xml:lang="it">Contratti del Sistema Pubblico di Connettività (SPC)</dct:title>
         <dct:description xml:lang="it">Il dataset contiene i contratti SPC del Lotto 1 (2007)</dct:description>
@@ -1085,8 +1088,8 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left"><b>Si raccomanda di inserire un testo semplice e corto. Si raccomanda di non utilizzare acronimi o abbreviazioni incomprensibili. Se si vogliono utilizzare comunque gli acronimi, riportare anche il nome esteso. Nel caso il dataset sia legato a un progetto più ampio, si consiglia di indicare, tra parentesi, il nome del progetto alla fine del titolo stesso. Si può evitare di inserire nel titolo del Dataset la distribuzione dello stesso (e.g., si può evitare di scrivere un titolo come "Luoghi ed eventi della cultura in LOD")</b> <br />Esempi di titoli di dataset: "Contratti del Sistema Pubblico di Connettività (SPC)" oppure "Luoghi ed eventi della cultura".</td>
-  </tr>
+    <td align="left">Si raccomanda di inserire un testo <b>semplice e corto</b>. Si raccomanda di non utilizzare acronimi o abbreviazioni incomprensibili. Se si vogliono utilizzare comunque gli acronimi, riportare anche il nome esteso. Nel caso il dataset sia legato a un progetto più ampio, si consiglia di indicare, tra parentesi, il nome del progetto alla fine del titolo stesso. Si può evitare di inserire nel titolo del Dataset la distribuzione dello stesso (e.g., si può evitare di scrivere un titolo come "Luoghi ed eventi della cultura in LOD"). <br />Esempi di titoli di dataset: "Contratti del Sistema Pubblico di Connettività (SPC)" oppure "Luoghi ed eventi della cultura".</td>
+ </tr>
 </table>
 
 ##### Esempi di uso di ``dct:title`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
@@ -1153,7 +1156,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left"><b>Si raccomanda di fornire una breve descrizione dei contenuti principali del dataset. Evitare di utilizzare un linguaggio ricco di riferimenti normativi. Utilizzare invece un linguaggio semplice che possa aiutare qualsiasi utente a identificare il contenuto del dataset. Ove possibile, si possono descrivere gli oggetti principali contenuti nel dataset. Si ricorda che nessun tag HTML è consentito.</b> <br />Esempi: "Il dataset contiene i dati sui contratti del Sistema Pubblico di Connettività (SPC) relativi al Lotto 1 dell'anno 2007." oppure "Il dataset contiene i dati relativi ai luoghi della cultura (e.g., musei, biblioteche, siti archeologici, ecc.) e i relativi eventi culturali che si tengono nei luoghi. Informazioni sugli orari di apertura per i luoghi e i relativi eventi sono incluse nel dataset".</td>
+    <td align="left"><b>Si raccomanda di fornire una breve descrizione dei contenuti principali del dataset. Evitare di utilizzare un linguaggio ricco di riferimenti normativi. Utilizzare invece un linguaggio semplice che possa aiutare qualsiasi utente a identificare il contenuto del dataset. Ove possibile, si possono fornire indicazioni sulla struttura dei dati che compongono il dataset. Si ricorda che nessun tag HTML è consentito.</b> <br />Esempi: "Il dataset contiene i dati sui contratti del Sistema Pubblico di Connettività (SPC) relativi al Lotto 1 dell'anno 2007." oppure "Il dataset contiene i dati relativi ai luoghi della cultura (e.g., musei, biblioteche, siti archeologici, ecc.) e i relativi eventi culturali che si tengono nei luoghi. Informazioni sugli orari di apertura per i luoghi e i relativi eventi sono incluse nel dataset".</td>
   </tr>
 </table>
 
@@ -1184,8 +1187,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
    <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
    <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
         <rdf:type rdf:resource="&dcat;Dataset"/>
-        <dct:description xml:lang="it">Il dataset contiene i dati sui contratti del 
-				       Sistema Pubblico di Connettività (SPC) relativi al Lotto 1 dell'anno 2007.</dct:description>
+        <dct:description xml:lang="it">Il dataset contiene i dati sui contratti del Sistema Pubblico di Connettività (SPC) relativi al Lotto 1 dell'anno 2007.</dct:description>
         [altri elementi per specificare il dataset]
    </dcatapit:Dataset>
    
@@ -1225,7 +1227,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left"><b>Si raccomanda di usare il formato ISO 8601, i.e., yyyy-mm-dd</b></td>
+    <td align="left">Si raccomanda di usare il formato ISO 8601, i.e., yyyy-mm-dd</td>
   </tr>
 </table>
 
@@ -1294,11 +1296,11 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Il metadato assume come valore un URI (NON una stringa con l'URL del tema) che <b>deve essere necessariamente</b> uno di quelli definiti nel seguente vocabolario Europeo sui Temi per i dati: http://publications.europa.eu/mdr/resource/authority/data-theme/skos/data-theme-skos.rdf. Esempio: se il tema è Agricoltura, Pesca e Politiche Forestali e Alimentari il valore di questa proprietà è necessariamente http://publications.europa.eu/resource/authority/data-theme/AGRI. Si veda a tal proposito la sezione <a href="#come-mappare-i-temi-di-dcatapit">Come mappare i temi di DCAT-AP_IT</a> </td>
+    <td align="left">Il metadato assume come valore un URI (NON una stringa con l'URL del tema) che <b>deve essere necessariamente</b> uno tra quelli definiti nel <a href="http://publications.europa.eu/mdr/resource/authority/data-theme/skos/data-theme-skos.rdf">vocabolario Europeo sui Temi per i dati</a>. Esempio: se il tema è Agricoltura, Pesca e Politiche Forestali e Alimentari il valore di questa proprietà è necessariamente http://publications.europa.eu/resource/authority/data-theme/AGRI. Si veda a tal proposito la sezione <a href="#come-mappare-i-temi-di-dcat-ap_it">Come mappare i temi di DCAT-AP_IT</a> </td>
   </tr>
 </table>
 
-##### Esempi di uso di ``dcat:theme`` in JSON-LD, RDF/XML, RDF/Turtle
+##### Esempi di uso di ``dcat:theme`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
 >``JSON-LD``
 
 ```JSON
@@ -1372,7 +1374,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   <tr>
   <tr>
     <td align="left">Descrizione</td>
-    <td align="left">Il titolare del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un oggetto (codominio) di tipo <a href="#definizione-di-dcatapitagent">dcatapit:Agent</a> (specificato mediante un URI - Uniform Resource Identifier)</td>
+    <td align="left">Il titolare del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un oggetto (codominio) di tipo <a href="#definizione-di-dcatapitagent">Agent(Soggetto)</a> (specificato mediante un URI - Uniform Resource Identifier)</td>
   </tr>
   <tr>
     <td align="left">Riferimento</td>
@@ -1380,12 +1382,12 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Il metadato assume come valore un URI (NON una stringa). Esso rappresenta un’organizzazione (o pubblica amministrazione) responsabile della gestione complessiva del dataset in virtù dei propri compiti istituzionali. <b>Si raccomanda di evitare l'inserimento di nomi di singole persone.</b><br />Si vedano gli <a href="#soggetto-esempi-JSONLD-RDFXML-RDFTURTLE">esempi riportati sull'uso della classe Agente</a>
+    <td align="left">Il metadato assume come valore un URI (NON una stringa). Esso rappresenta un’organizzazione (o pubblica amministrazione) responsabile della gestione complessiva del dataset in virtù dei propri compiti istituzionali. <b>Si raccomanda di evitare l'inserimento di nomi di singole persone.</b><br />Si vedano gli <a href="#esempi-di-uso-di-dcatapitagent-in-json-ld-rdfxml-rdfturtle">esempi riportati sull'uso della classe Agente</a>
    </td>
  </tr>
 </table>
 
-##### Esempi di uso di ``dct:rightsHolder`` in JSON-LD, RDF/XML, RDF/Turtle
+##### Esempi di uso di ``dct:rightsHolder`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
 >``JSON-LD``
 
 ```JSON
@@ -1470,7 +1472,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   <tr>
   <tr>
     <td align="left">Descrizione</td>
-    <td align="left">La frequenza di aggiornamento del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un oggetto (codominio) di tipo skos:Concept (specificato mediante un URI - Uniform Resource Identifier)</td>
+    <td align="left">La frequenza di aggiornamento del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un oggetto (codominio) di tipo dct:Frequency (specificato mediante un URI - Uniform Resource Identifier)</td>
   </tr>
   <tr>
     <td align="left">Riferimento</td>
@@ -1478,11 +1480,11 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">La frequenza con cui il dataset viene aggiornato <b>assume necessariamente</b> uno dei valori definiti nel seguente vocabolario Europeo sulle frequenze: http://publications.europa.eu/mdr/resource/authority/frequency/skos/frequencies-skos.rdf. Esempio: se il dataset si aggiorna ogni trimestre il valore da indicare è http://publications.europa.eu/resource/authority/frequency/QUARTERLY. Nel caso la frequenza di aggiornamento non sia disponibile è possibile indicare una frequenza sconosciuta utilizzando il seguente URI: http://publications.europa.eu/resource/authority/frequency/UNKNOWN</td>
+    <td align="left">La frequenza con cui il dataset viene aggiornato <b>assume necessariamente</b> uno dei valori definiti nel <a href="http://publications.europa.eu/mdr/resource/authority/frequency/skos/frequencies-skos.rdf">vocabolario Europeo sulle frequenze.</a> Esempio: se il dataset si aggiorna ogni trimestre il valore da indicare è http://publications.europa.eu/resource/authority/frequency/QUARTERLY. Nel caso la frequenza di aggiornamento non sia disponibile è possibile indicare una frequenza sconosciuta utilizzando il seguente URI: http://publications.europa.eu/resource/authority/frequency/UNKNOWN</td>
   </tr>
 </table>
 
-##### Esempi di uso di ``dct:accrualPeriodicity`` in JSON-LD, RDF/XML, RDF/Turtle
+##### Esempi di uso di ``dct:accrualPeriodicity`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
 >``JSON-LD``
 
 ```JSON
@@ -1538,7 +1540,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   <tr>
   <tr>
     <td align="left">Descrizione</td>
-    <td align="left">La distribuzione del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un oggetto (codominio) di tipo <a href="#definizione-di-dcatapitdistribution">Distributione</a> (specificato mediante un URI - Uniform Resource Identifier)</td>
+    <td align="left">La distribuzione del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un oggetto (codominio) di tipo <a href="#definizione-di-dcatapitdistribution">Distribuzione</a> (specificato mediante un URI - Uniform Resource Identifier)</td>
   </tr>
   <tr>
     <td align="left">Riferimento</td>
@@ -1546,11 +1548,11 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Una distribuzione è una forma attraverso cui il dataset è disponibile. Ogni dataset può essere disponibile in diverse forme, come per esempio diversi formati o differenti endpoint (e.g., SPARQL endpoint). Nel caso di serie temporali o spaziali o viste di un dataset, queste sono descritte mediante le distribuzioni. Per esempio, nel caso di un dataset suddiviso per regioni, le suddivisioni rappresentano distribuzioni di un dataset più ampio che include tutti i dati del territorio nazionale. <br /> Si veda <a href="#definizione-di-dcatapitdistribution">Come definire una distribuzione</a>.</td>
+    <td align="left">Una distribuzione è una forma attraverso cui il dataset è disponibile. Ogni dataset può essere disponibile in diverse forme, come per esempio diversi formati o differenti endpoint (e.g., SPARQL endpoint). Nel caso di serie temporali o spaziali o viste di un dataset, queste sono descritte mediante le distribuzioni. Per esempio, nel caso di un dataset suddiviso per regioni, le suddivisioni rappresentano distribuzioni di un dataset più ampio che include tutti i dati del territorio nazionale. <br /> Si veda <a href="#definizione-di-dcatapitdistribution">Come definire una distribuzione</a> per maggiori dettagli.</td>
   </tr>
 </table>
 
-##### Esempi di uso di ``dcat:distribution`` in JSON-LD, RDF/XML, RDF/Turtle
+##### Esempi di uso di ``dcat:distribution`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
 >``JSON-LD``
 
 ```JSON
@@ -1585,8 +1587,8 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 
 ```Turtle
    <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
-	a		         dcatapit:Dataset , dcat:Dataset ;
-	dcat:distribution 		<http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3> ;
+	a		        dcatapit:Dataset , dcat:Dataset ;
+	dcat:distribution 	<http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3> ;
 
 	[altri elementi per specificare il dataset] .
 	
@@ -1615,7 +1617,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">In corrispondenza del <a href="#come-mappare-i-temi-di-dcat-ap_it">tema scelto</a>, si può specificare una o più categorie per dettagliare le parole chiave specifiche in cui il dataset può essere classificato.</td>
+    <td align="left">In corrispondenza del <a href="#come-mappare-i-temi-di-dcat-ap_it">tema scelto</a>, si possono specificare più categorie per indicare parole chiave specifiche con cui il dataset può essere ulteriormente classificato.</td>
   </tr>
 </table>
 
@@ -1675,7 +1677,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   <tr>
   <tr>
     <td align="left">Descrizione</td>
-    <td align="left">Il Punto di contatto del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un o più oggetti (codominio) di tipo <a href="#definizione-di-dcatcontactpoint">Punto di Contatto</a> (specificato mediante un URI - Uniform Resource Identifier)</td>
+    <td align="left">Il Punto di contatto del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a uno o più oggetti (codominio) di tipo <a href="#definizione-di-dcatapitorganization">Punto di Contatto</a> (specificato mediante un URI - Uniform Resource Identifier)</td>
   </tr>
   <tr>
     <td align="left">Riferimento</td>
@@ -1683,11 +1685,11 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Utilizzare questa proprietà per specificare le informazioni di contatto usate per inviare osservazioni, richieste di informazioni e commenti sul Dataset. <b>E' bene non confondere questo metadato con l'organizzazione titolare o editore o creatore del dataset. Il punto di contatto è usato tipicamente per specificare i riferimenti di un ufficio dell'organizzazione che può fornire informazioni sul dataset. Si veda la sezione <a href="#definizione-di-dcatcontactpoint">Come definire un Punto di Contatto.</a></b></td>
+    <td align="left">Utilizzare questa proprietà per specificare le informazioni di contatto usate per inviare osservazioni, richieste di informazioni e commenti sul Dataset. <b>E' bene non confondere questo metadato con l'organizzazione titolare o editore o creatore del dataset. Il punto di contatto è usato tipicamente per specificare i riferimenti di un ufficio dell'organizzazione che può fornire informazioni sul dataset. Si veda la sezione <a href="#come-definire-il-punto-di-contatto-del-dataset-in-dcat-ap_it">Come definire un Punto di Contatto.</a></b></td>
   </tr>
 </table>
 
-##### Esempi di uso di ``dcat:contactPoint`` in JSON-LD, RDF/XML, RDF/Turtle
+##### Esempi di uso di ``dcat:contactPoint`` per il Dataset in JSON-LD, RDF/XML, RDF/Turtle
 >``JSON-LD``
 
 ```JSON
@@ -1698,7 +1700,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
         "http://dati.gov.it/onto/dcatapit#\"Dataset"
       ],
       "dcat:contactPoint": {
-        "@id": "http://dati.gov.it/resource/PuntoContatto/contactPoint"
+        "@id": "http://dati.gov.it/resource/PuntoContatto/contactPointContrattiSPC"
       },
 
       altri elementi per specificare il dataset
@@ -1712,7 +1714,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
    <!-- http://dati.gov.it/resource/Dataset/ContrattiSPC_agid -->
    <dcatapit:Dataset rdf:about="http://dati.gov.it/resource/Dataset/ContrattiSPC_agid">
         <rdf:type rdf:resource="&dcat;Dataset"/>
-        <dcat:contactPoint rdf:resource="http://dati.gov.it/resource/PuntoContatto/contactPoint"/>
+        <dcat:contactPoint rdf:resource="http://dati.gov.it/resource/PuntoContatto/contactPointContrattiSPC"/>
         [altri elementi per specificare il dataset]
    </dcatapit:Dataset>
    
@@ -1723,7 +1725,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 ```Turtle
    <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
 	a		    dcatapit:Dataset , dcat:Dataset ;
-	cdat:contactPoint   <http://dati.gov.it/resource/PuntoContatto/contactPoint> ;
+	dcat:contactPoint   <http://dati.gov.it/resource/PuntoContatto/contactPointContrattiSPC> ;
 	[altri elementi per specificare il dataset] .
 	
 ```
@@ -1741,7 +1743,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   <tr>
   <tr>
     <td align="left">Descrizione</td>
-    <td align="left">L'editore del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un oggetto (codominio) di tipo <a href="#definizione-di-dcatapitagent">dcatapit:Agent</a> (specificato mediante un URI - Uniform Resource Identifier)</td>
+    <td align="left">L'editore del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un oggetto (codominio) di tipo <a href="#definizione-di-dcatapitagent">Agent (Soggetto)</a> (specificato mediante un URI - Uniform Resource Identifier)</td>
   </tr>
   <tr>
     <td align="left">Riferimento</td>
@@ -1749,7 +1751,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Un'organizzazione (o pubblica amministrazione) responsabile di rendere disponibile (pubblicare) il dataset. <b> Si raccomanda di evitare l'inserimento di nomi di singole persone.</b><br />Si vedano gli <a href="#esempi-di-uso-in-json-ld-rdfxml-rdfturtle">esempi riportati sull'uso della classe Agente.</a></td>
+    <td align="left">Un'organizzazione (o pubblica amministrazione) responsabile di rendere disponibile (pubblicare) il dataset. <b> Si raccomanda di evitare l'inserimento di nomi di singole persone.</b><br />Si vedano gli <a href="#esempi-di-uso-di-dcatapitagent-in-json-ld-rdfxml-rdfturtle">esempi riportati sull'uso della classe Agent.</a></td>
   </tr>
 </table>
 
@@ -1768,7 +1770,8 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
       
       altri elementi che descrivono il dataset
       
-   
+      Dove l'organizzazione editore è definita come:
+      
       "@id": "http://dati.gov.it/resource/Amministrazione/agid",
       "@type": [
         "foaf:Agent",
@@ -1790,7 +1793,8 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
         <dct:publisher rdf:resource="http://dati.gov.it/resource/Amministrazione/agid"/>
         [altri elementi del dataset]
     </dcatapit:Dataset>
-    
+ 
+ Dove l'organizzazione editore è descritta come:
  <!-- http://dati.gov.it/resource/Amministrazione/agid -->
     <dcatapit:Agent rdf:about="http://dati.gov.it/resource/Amministrazione/agid">
         <rdf:type rdf:resource="&foaf;Agent"/>
@@ -1806,6 +1810,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 	dct:publisher  	<http://dati.gov.it/resource/Amministrazione/agid> ;
 	[altri elementi del dataset] .
  
+ Dove l'organizzazione editore è definita come:
  <http://dati.gov.it/resource/Amministrazione/agid>
 	a 		dcatapit:Agent , foaf:Agent ;
 	dct:identifier  "agid" ;
@@ -1826,7 +1831,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   <tr>
   <tr>
     <td align="left">Descrizione</td>
-    <td align="left">Il creatore del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a uno o più oggetti (codominio) di tipo <a href="#definizione-di-dcatapitagent">dcatapit:Agent</a> (specificato mediante un URI - Uniform Resource Identifier)</td>
+    <td align="left">Il creatore del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a uno o più oggetti (codominio) di tipo <a href="#definizione-di-dcatapitagent">Agent (Soggetto)</a> (specificato mediante un URI - Uniform Resource Identifier)</td>
   </tr>
   <tr>
     <td align="left">Riferimento</td>
@@ -1834,7 +1839,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Un'organizzazione (o pubblica amministrazione) che ha materialmente prodotto il dataset. <b> Si raccomanda di evitare l'inserimento di nomi di singole persone.</b><br />Si vedano gli <a href="#esempi-di-uso-in-json-ld-rdfxml-rdfturtle">esempi riportati sull'uso della classe Agente.</a></td>
+    <td align="left">Un'organizzazione (o pubblica amministrazione) che ha materialmente prodotto il dataset. <b> Si raccomanda di evitare l'inserimento di nomi di singole persone.</b><br />Si vedano gli <a href="#esempi-di-uso-di-dcatapitagent-in-json-ld-rdfxml-rdfturtle">esempi riportati sull'uso della classe Agent.</a></td>
   </tr>
 </table>
 
@@ -1853,7 +1858,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
       
       altri elementi che descrivono il dataset
       
-   
+      Dove l'amministrazione creatore è specificata come:
       "@id": "http://dati.gov.it/resource/Amministrazione/agid",
       "@type": [
         "foaf:Agent",
@@ -1875,7 +1880,8 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
         <dct:creator rdf:resource="http://dati.gov.it/resource/Amministrazione/agid"/>
         [altri elementi del dataset]
     </dcatapit:Dataset>
-    
+ 
+ Dove l'amministrazione creatore è specificata come:
  <!-- http://dati.gov.it/resource/Amministrazione/agid -->
     <dcatapit:Agent rdf:about="http://dati.gov.it/resource/Amministrazione/agid">
         <rdf:type rdf:resource="&foaf;Agent"/>
@@ -1891,6 +1897,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 	dct:creator  	<http://dati.gov.it/resource/Amministrazione/agid> ;
 	[altri elementi del dataset] .
  
+ Dove l'amministrazione creatore è specificata come:
  <http://dati.gov.it/resource/Amministrazione/agid>
 	a 		dcatapit:Agent , foaf:Agent ;
 	dct:identifier  "agid" ;
@@ -1918,7 +1925,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Utilizzato per specificare il numero della  versione o altre indicazioni della versione del dataset.<b>Per indicare la versione, è fortemente raccomandato l’utilizzo di numeri separati dal “.”.</b> Esempi: 0.7, 1.2.3, 1.10</td>
+    <td align="left">Utilizzato per specificare il numero della versione o altre indicazioni della versione del dataset. <b>Per indicare il numero della versione, è fortemente raccomandato l’utilizzo di numeri separati dal “.”.</b> Esempi: 0.7, 1.2.3, 1.10</td>
   </tr>
 </table>
 
@@ -1953,11 +1960,12 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
  
  ```Turtle
  <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
-	a		dcatapit:Dataset , dcat:Dataset ;
-	owl:versionInfo	"2.0" ;
+	a		 dcatapit:Dataset , dcat:Dataset ;
+	owl:versionInfo	 "2.0" ;
 	[altri elementi del dataset] .
 
 ```
+
 ##### 3) **_DATA di RILASCIO del DATASET:_** ``dct:issued``
 <table>
   <tr> 
@@ -1979,7 +1987,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">La data di rilascio del dataset. E' la data in cui il dataset è reso disponibile. </td>
+    <td align="left">E' la data in cui il dataset è reso disponibile.</td>
   </tr>
 </table>
 
@@ -2041,7 +2049,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left"><b>Si raccomanda di utilizzare l’URL della pagina web che fornisce l’accesso al dataset o alla sua distribuzione o ad altre informazioni aggiuntive. La pagina di accesso è quella di origine del fornitore del dato. Non è valido l’URL di una pagina web riferibile a un sito fornito da una terza parte, come nel caso di un aggregatore.</td>
+    <td align="left">Si raccomanda di utilizzare l’URL della pagina web che fornisce l’accesso al dataset o alla sua distribuzione o ad altre informazioni aggiuntive. La pagina di accesso è quella di origine del fornitore del dato. Non è valido l’URL di una pagina web riferibile a un sito fornito da una terza parte, come nel caso di un aggregatore.</td>
   </tr>
 </table>
 
@@ -2080,7 +2088,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 ```Turtle
 <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
 	a 		 dcatapit:Dataset , dcat:Dataset ;
-	dcat:landingPage <http://spcdata.digitpa.gov.it/dataLotto1.html>; 
+	dcat:landingPage <http://spcdata.digitpa.gov.it/dataLotto1.html> ; 
 	[altri elementi del dataset] .
 	
 ```
@@ -2089,7 +2097,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 <table>
   <tr> 
     <td align="left">Cardinalità</td>
-    <td align="left">0..N (possono esistere più istanze della proprietà per ciascuna lingua del dataset)</td>
+    <td align="left">0..N</td>
   </tr>
   <tr> 
     <td align="left">Stato</td>
@@ -2097,7 +2105,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
   <tr>
     <td align="left">Descrizione</td>
-    <td align="left">La lingua del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un o più oggetti (codominio) di tipo dct:LinguisticSystem (specificato mediante un URI- Uniform Resource Identifier)</td>
+    <td align="left">La lingua del Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a uno o più oggetti (codominio) di tipo dct:LinguisticSystem (specificato mediante un URI- Uniform Resource Identifier)</td>
   </tr>
   <tr>
     <td align="left">Riferimento</td>
@@ -2105,7 +2113,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Scegliere una o più lingue utilizzate nel dataset. <b>La scelta della lingua è regolata dall'uso obbligatorio del <a href="http://publications.europa.eu/mdr/resource/authority/language/skos/languages-skos.rdf">vocabolario definito a livello Europeo sulle lingue.</a></b></td>
+    <td align="left">Indicaare una o più lingue utilizzate nel dataset. <b>La scelta della lingua è regolata dall'uso obbligatorio del <a href="http://publications.europa.eu/mdr/resource/authority/language/skos/languages-skos.rdf">vocabolario definito a livello Europeo sulle lingue.</a></b></td>
   </tr>
 </table>
 
@@ -2169,7 +2177,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">inserire una o più parole chiave che consentono di identificare l'oggetto principale del dataset. Se si è scelto di inserire un tema più specifico per il dataset (soggetto o sotto tema)  assicurarsi che le parole chiave qui inserite siano allineate ai temi e sotto temi usati, derivanti dai relativi vocabolari controllati.<br /><b> Si ricorda che nella definizione delle parole chiave non sono ammessi alcuni caratteri come la virgola, l'apostrofo, la "/" e altri caratteri non alfanumerici. Pertanto NON sono ammesse parole chiave come "controllo della qualità dell'aria" oppure "cave dismesse, cave" oppure "legge 190/2012". In questi casi si suggerisce di sosituirle rispettivamente con "controllo qualità aria" ovvero togliendo testo superfluo, "cave dismesse" "cave" ovvero separando le diverse parole chiave, "legge 190-2012" ovvero inserendo un "-", ecc.</b></td>
+    <td align="left">inserire una o più parole chiave che consentono di identificare l'oggetto principale del dataset. Se si è scelto di inserire un tema più specifico per il dataset (soggetto o sotto tema)  assicurarsi che le parole chiave siano allineate ai temi e sotto temi usati, derivanti dai relativi vocabolari controllati.<br /><b> Si ricorda che nella definizione delle parole chiave non sono ammessi alcuni caratteri come la virgola, l'apostrofo, la "/" e altri caratteri non alfanumerici. Pertanto NON sono ammesse parole chiave come "controllo della qualità dell'aria" oppure "cave dismesse, cave" oppure "legge 190/2012". In questi casi si suggerisce di sostituirle rispettivamente con "controllo qualità aria" ovvero togliendo testo superfluo, "cave dismesse" "cave" ovvero separando le diverse parole chiave, "legge 190-2012" ovvero inserendo un "-", ecc.</b></td>
   </tr>
 </table>
 
@@ -2177,18 +2185,18 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 >``JSON-LD``
 
 ```JSON
-
+  
       "@id": "http://dati.gov.it/resource/Dataset/ContrattiSPC_agid",
       "@type": [
         "dcat:Dataset",
         "http://dati.gov.it/onto/dcatapit#\"Dataset"
       ],
-        "dcat:keyword": {
+        "dcat:keyword": [
       	"Contratto pubblico",
         "SPC",
         "Acquisizione"
       ],
-      
+       
       altri elementi del dataset
 
 ```
@@ -2212,7 +2220,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 ```Turtle
 <http://dati.gov.it/resource/Dataset/ContrattiSPC_agid>
 	a 		 dcatapit:Dataset , dcat:Dataset ;
-	dcat:keyword 			"Acquisizione" , "Contratto pubblico" , "SPC" ;
+	dcat:keyword 	 "Acquisizione" , "Contratto pubblico" , "SPC" ;
 	[altri elementi del dataset] .
 	
 ```
@@ -2230,7 +2238,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
   <tr>
     <td align="left">Descrizione</td>
-    <td align="left">Un Dataset correlato che è una versione, un’edizione o un adattamento del Dataset descritto. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un o più oggetti (codominio) di tipo <a href="#definizione-di-dcatapitdataset">Dataset</a> (specificato mediante un URI- Uniform Resource Identifier)</td>
+    <td align="left">Un Dataset correlato che è una versione, un’edizione o un adattamento del Dataset descritto. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a uno o più oggetti (codominio) di tipo <a href="#definizione-di-dcatapitdataset">Dataset</a> (specificato mediante un URI- Uniform Resource Identifier)</td>
   </tr>
   <tr>
     <td align="left">Riferimento</td>
@@ -2238,7 +2246,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Utilizzare l'URI del dataset correlato, ovvero a una versione, un’edizione, un adattamento del dataset descritto. Per esempio, se si vuole inserire una nuova versione 2.0 di un dataset già presente nel catalogo (con versione 1.0) si richiede di indicare il riferimento al dataset già incluso nel catalogo. <b>Si sconsiglia fortemente comunque di creare nuovi dataset per piccoli cambiamenti. E’ invece consigliato definire nuovi dataset solo in presenza di cambiamenti significativi rispetto a precedenti versioni (e.g., nuovi elementi inclusi, adattamenti significativi di alcuni elementi, ecc).</b></td>
+    <td align="left">Utilizzare l'URI del dataset correlato, ovvero il riferimento a una versione, un’edizione, un adattamento del dataset descritto. Per esempio, se si vuole inserire una nuova versione 2.0 di un dataset già presente nel catalogo (con versione 1.0) si richiede di indicare il riferimento al dataset già incluso nel catalogo. <b>Si sconsiglia fortemente comunque di creare nuovi dataset per piccoli cambiamenti. E’ invece consigliato definire nuovi dataset solo in presenza di cambiamenti significativi rispetto a precedenti versioni (e.g., nuovi elementi inclusi, adattamenti significativi di alcuni elementi, ecc).</b></td>
   </tr>
 </table>
 
@@ -2294,7 +2302,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
   <tr>
     <td align="left">Descrizione</td>
-    <td align="left">Un periodo temporale coperto dal Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un o più oggetti (codominio) di tipo <a href="#come-definire-la-copertura-temporale-del-dataset-in-dcat-ap_it">Periodo di Tempo</a> (specificato mediante un URI- Uniform Resource Identifier)</td>
+    <td align="left">Un periodo temporale coperto dal Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a uno o più oggetti (codominio) di tipo <a href="#come-definire-la-copertura-temporale-del-dataset-in-dcat-ap_it">Periodo di Tempo</a> (specificato mediante un URI- Uniform Resource Identifier)</td>
   </tr>
   <tr>
     <td align="left">Riferimento</td>
@@ -2302,7 +2310,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Questo metadato è utilizzato per rappresentare per esempio casi come “il dataset sul censimento della popolazione residente del 2011” oppure “dataset sulla spesa pubblica dal 2000 al 2015". Per l'uso pratico di questa proprietà <a href="#esempi-di-uso-di-dcttemporal-in-dcatap_it">si vedano gli esempi d'uso per la copertura temporale del Dataset</a> </td>
+    <td align="left">Questo metadato è utilizzato per rappresentare, per esempio, casi quali “il dataset sul censimento della popolazione residente del 2011” oppure “il dataset sulla spesa pubblica dal 2000 al 2015". Per l'uso pratico di questa proprietà <a href="#esempi-di-uso-di-dctperiodoftime-in-json-ld-rdfxml-rdfturtle">si vedano gli esempi d'uso per la copertura temporale del Dataset</a> </td>
   </tr>
 </table>
 
@@ -2358,7 +2366,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
   <tr>
     <td align="left">Descrizione</td>
-    <td align="left">Un'area geografica coperta dal Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a un o più oggetti (codominio) di tipo <a href="#come-definire-la-copertura-geografica-del-dataset-in-dcat-ap_it">Localizzazione</a> (specificato mediante un URI- Uniform Resource Identifier)</td>
+    <td align="left">Un'area geografica coperta dal Dataset. La proprietà lega l'oggetto (dominio) <a href="#definizione-di-dcatapitdataset">Dataset</a> a uno o più oggetti (codominio) di tipo <a href="#come-definire-la-copertura-geografica-del-dataset-in-dcat-ap_it">Localizzazione</a> (specificato mediante un URI- Uniform Resource Identifier)</td>
   </tr>
   <tr>
     <td align="left">Riferimento</td>
@@ -2366,7 +2374,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Per l'uso pratico di questa proprietà <a href="#esempi-di-uso-di-dctspatial-in-dcatap_it">si vedano gli esempi d'uso per la copertura spaziale del Dataset</a> </td>
+    <td align="left">Per l'uso pratico di questa proprietà <a href="#esempi-di-uso-di-dctlocation-e-locngeometry-in-json-ld-rdfxml-rdfturtle">si vedano gli esempi d'uso per la copertura spaziale del Dataset</a> </td>
   </tr>
 </table>
 
@@ -2430,7 +2438,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Specificare uno o più standard riferibili al dataset. Si possono specificare sia standard tecnici (anche de-facto) come per esempio DCAT, ISO/IEC 25012, CSW, ecc., sia riferimenti normativi (e.g., Decreto legislativo n.82/2005 - Codice dell’Amministrazione Digitale). Per l'uso pratico di questa proprietà <a href="#esempi-di-uso-di-dcatapitstandard-in-dcatap_it">si vedano gli esempi d'uso per lo Standard del Dataset</a> </td>
+    <td align="left">Specificare uno o più standard riferibili al dataset. Si possono specificare sia standard tecnici (anche de-facto) come per esempio DCAT, ISO/IEC 25012, CSW, ecc., sia riferimenti normativi (e.g., Decreto legislativo n.82/2005 - Codice dell’Amministrazione Digitale). Per l'uso pratico di questa proprietà <a href="#esempi-di-uso-di-dcatapitstandard-in-json-ld-rdfxml-rdfturtle">si vedano gli esempi d'uso per lo Standard del Dataset</a> </td>
   </tr>
 </table>
 
@@ -2494,7 +2502,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Specificare uno o più identificativi secondari per il dataset. Per esempio, un identificativo secondario può essere un identificativo DOI (e.g., doi:10.10.1038/nphys1170) oppure un identificativo permanente per il Web W3ID (e.g., http://w3id.org/food) oppure un identificativo stabile utilizzato in cataloghi locali. Per l'uso pratico di questa proprietà <a href="#esempi-di-uso-di-admsidentifier-in-json-ld-rdfxml-rdfturtle">si vedano gli esempi d'uso per l'Identificativo Alternativo del Dataset</a></td>
+    <td align="left">Specificare uno o più identificativi secondari per il dataset. Per esempio, un identificativo secondario può essere un identificativo DOI (e.g., doi:10.10.1038/nphys1170) oppure un identificativo permanente per il Web W3ID (e.g., http://w3id.org/food) <b>oppure un identificativo stabile utilizzato in cataloghi locali</b>. Per l'uso pratico di questa proprietà <a href="#esempi-di-uso-di-admsidentifier-in-json-ld-rdfxml-rdfturtle">si vedano gli esempi d'uso per l'Identificativo Alternativo del Dataset</a></td>
   </tr>
 </table>
 
@@ -2538,7 +2546,7 @@ Un dataset è definito mediante la classe _Dataset_ identificata univocamente da
 ```
  
 ### Come definire una Distribuzione del Dataset in DCAT-AP_IT
-Una distribuzione è definita mediante la classe _Distribution(Distribuzione)_ identificata univocamente da un URI (Uniform Resource Identifier).
+Una distribuzione è definita mediante la classe _Distribution (Distribuzione)_ identificata univocamente da un URI (Uniform Resource Identifier).
 
 
 #### Definizione di ``dcatapit:Distribution``
@@ -2558,7 +2566,7 @@ Una distribuzione è definita mediante la classe _Distribution(Distribuzione)_ i
     </tr>
     <tr>
         <td align="left">Cardinalità</td>
-        <td align="left">1 (se in presenza di dati aperti)</td>
+        <td align="left">1..N (se in presenza di dati aperti)</td>
     </tr>
     <tr>
         <td align="left">Stato</td>
@@ -2575,7 +2583,6 @@ Una distribuzione è definita mediante la classe _Distribution(Distribuzione)_ i
 
 ```JSON
  {
-      {
       "@id": "http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3",
       "@type": [
         "http://dati.gov.it/onto/dcatapit#\"Distribution",
@@ -2622,13 +2629,13 @@ Una distribuzione è definita mediante la classe _Distribution(Distribuzione)_ i
 
 ```Turtle
 <http://dati.gov.it/resource/Distribuzione/SPCContratti_agid-N3>
-	a				dcatapit:Distribution , dcat:Distribution ;
-	dct:title			Distribuzione Turtle di LOD SPC Contratti"@it ;
-	dct:description			"Questa è la distribuzione N3 del dataset Linked Open Data relativo ai contratti del Sistema Pubblico di Connettività"@it ;
-	dct:format 			<http://publications.europa.eu/resource/authority/file-type/RDF> ;
-	dct:license 			<http://creativecommons.org/licenses/by/4.0/> ;
-	dcat:downloadURL		<http://spcdata.digitpa.gov.it/data/contrattiLotto1.nt> ;
-	dcat:accessURL 			<http://spcdata.digitpa.gov.it:8899/sparql> .
+	a			dcatapit:Distribution , dcat:Distribution ;
+	dct:title		Distribuzione Turtle di LOD SPC Contratti"@it ;
+	dct:description		"Questa è la distribuzione N3 del dataset Linked Open Data relativo ai contratti del Sistema Pubblico di Connettività"@it ;
+	dct:format 		<http://publications.europa.eu/resource/authority/file-type/RDF> ;
+	dct:license 		<http://creativecommons.org/licenses/by/4.0/> ;
+	dcat:downloadURL	<http://spcdata.digitpa.gov.it/data/contrattiLotto1.nt> ;
+	dcat:accessURL 		<http://spcdata.digitpa.gov.it:8899/sparql> .
 ```
 
 #### Elementi obbligatori
@@ -2655,7 +2662,7 @@ Una distribuzione è definita mediante la classe _Distribution(Distribuzione)_ i
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Scegliere il formato in cui è reso disponibile il file relativo alla distribuzione descritta. Nel caso in cui il formato del file è di tipo “nidificato” (i.e. un file compresso, ad esempio nomefile.ttl.zip), allora indicare il formato originario del file compresso (nel caso dell’esempio, va indicato il formato ttl). <br /><b> Per specificare il formato si deve necessariamente utilizzare il vocabolario controllato http://publications.europa.eu/mdr/resource/authority/file-type/skos/filetypes-skos.rdf. </b> 
+    <td align="left">Scegliere il formato in cui è reso disponibile il file relativo alla distribuzione descritta. Nel caso in cui il formato del file è di tipo “nidificato” (i.e. un file compresso, ad esempio nomefile.ttl.zip), allora indicare il formato originario del file compresso (nel caso dell’esempio, va indicato il formato ttl). <br /><b> Per specificare il formato si deve necessariamente utilizzare <a href="http://publications.europa.eu/mdr/resource/authority/file-type/skos/filetypes-skos.rdf">il vocabolario controllato definito a livello Europeo sui "File Type".</a> </b> 
    </td>
  </tr>
 </table>
@@ -2675,6 +2682,7 @@ Una distribuzione è definita mediante la classe _Distribution(Distribuzione)_ i
         "@id": "http://publications.europa.eu/resource/authority/file-type/RDF"
       },
       altri elementi per specificare la distribuzione
+     }
 ```
 
 >``RDF/XML``
