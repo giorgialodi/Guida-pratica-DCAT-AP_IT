@@ -304,8 +304,8 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 
 ```Turtle
 <http://dati.gov.it/resource/Catalogp/datigov_agid>
-	a 						dcatapit:Catalog , dcat:Catalog ;
-	dct:title				"Catalogo Dati.gov.it"@it , "SPCData Catalog"@en ;
+	a 		dcatapit:Catalog , dcat:Catalog ;
+	dct:title	"Catalogo Dati.gov.it"@it , "SPCData Catalog"@en ;
   
   [altri elementi per specificare il catalogo] .
 	
@@ -372,8 +372,8 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
 
 ```Turtle
 <http://dati.gov.it/resource/Catalogp/datigov_agid>
-	a 						dcatapit:Catalog , dcat:Catalog ;
-	dct:description 		"Il catalogo dei dati aperti della pubblica amministrazione italiana"@it ;
+	a 		  dcatapit:Catalog , dcat:Catalog ;
+	dct:description   "Il catalogo dei dati aperti della pubblica amministrazione italiana"@it ;
 	[altri elementi per specificare il catalogo] .
 ```
 
@@ -398,7 +398,7 @@ Un catalogo è definito mediante la classe _Catalogo_ identificata univocamente 
   </tr>
   <tr>
     <td align="left">Uso</td>
-    <td align="left">Un'organizzazione (o pubblica amministrazione) responsabile di rendere disponibile (pubblicare) il catalogo. <b> Si raccomanda di evitare l'inserimento di nomi di singole persone.</b><br />Si vedano gli <a href="#esempi-di-uso--di-dcatapitagent-in-json-ld-rdfxml-rdfturtle">esempi riportati sull'uso della classe Agente</a></td>
+    <td align="left">Un'organizzazione (o pubblica amministrazione) responsabile di rendere disponibile (pubblicare) il catalogo. <b> Si raccomanda di evitare l'inserimento di nomi di singole persone.</b><br />Si vedano gli <a href="#esempi-di-uso-di-dcatapitagent-in-json-ld-rdfxml-rdfturtle">esempi riportati sull'uso della classe Agente</a></td>
   </tr>
 </table>
 
